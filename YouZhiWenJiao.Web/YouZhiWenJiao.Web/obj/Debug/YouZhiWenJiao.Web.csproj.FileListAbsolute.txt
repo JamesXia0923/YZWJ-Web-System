@@ -1,0 +1,6 @@
+C:\Git\YZWJ\YouZhiWenJiao.Web\YouZhiWenJiao.Web\bin\YouZhiWenJiao.Web.dll
+C:\Git\YZWJ\YouZhiWenJiao.Web\YouZhiWenJiao.Web\bin\YouZhiWenJiao.Web.pdb
+C:\Git\YZWJ\YouZhiWenJiao.Web\YouZhiWenJiao.Web\bin\System.Data.SQLite.dll
+C:\Git\YZWJ\YouZhiWenJiao.Web\YouZhiWenJiao.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Git\YZWJ\YouZhiWenJiao.Web\YouZhiWenJiao.Web\obj\Debug\YouZhiWenJiao.Web.dll
+C:\Git\YZWJ\YouZhiWenJiao.Web\YouZhiWenJiao.Web\obj\Debug\YouZhiWenJiao.Web.pdb

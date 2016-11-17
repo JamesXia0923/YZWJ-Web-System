@@ -31,7 +31,7 @@ $(".xc_pic .block").hover(function(){
 });
 
 //精英团队
-jQuery(".team").slide({mainCell:".bd ul",autoPlay:true,effect:"leftMarquee",vis:5,interTime:50});
+jQuery(".team").slide({mainCell:".bd ul",autoPlay:true,effect:"leftMarquee",vis:6,interTime:50});
  $(".team .bd ul li").hover(function(){
         $(this).children('.title').stop().animate({bottom:'3px'},{queue:false,duration:136});
     },function(){
