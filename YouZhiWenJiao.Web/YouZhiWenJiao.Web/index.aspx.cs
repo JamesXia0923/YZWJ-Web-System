@@ -12,8 +12,7 @@ namespace YouZhiWenJiao.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //var path = System.Environment.CurrentDirectory;
-            SQLiteConnection connection = new SQLiteConnection(@"Data Source=.\YouZhiWenJiao.Web\YouZhiWenJiao.Web\Database\sqlite.db;Version=3;");
+            SQLiteConnection connection = new SQLiteConnection(string.Format(@"Data Source={0}\Database\sqlite.db;Version=3;", System.AppDomain.CurrentDomain.BaseDirectory));
             var sql = "select * from jaffer";
             var dt = SQLiteHelper.ExecuteDataSet(connection, sql, null);
         }
