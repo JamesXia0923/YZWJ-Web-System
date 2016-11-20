@@ -163,9 +163,9 @@
     <Compile Include="CompanyProfile.aspx.cs">
       <DependentUpon>CompanyProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="CommonPage.cs">
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     </Compile>
     <Compile Include="CompanyProfile.aspx.designer.cs">
       <DependentUpon>CompanyProfile.aspx</DependentUpon>
