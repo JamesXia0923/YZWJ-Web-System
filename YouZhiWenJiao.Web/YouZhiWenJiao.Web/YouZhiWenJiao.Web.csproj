@@ -62,12 +62,13 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CompanyProfile.aspx" />
+    <Content Include="CorporateProductDetail.aspx" />
     <Content Include="cpzs.html" />
     <Content Include="css\base.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\flexslider.css" />
     <Content Include="css\master.css" />
-    <Content Include="gsjj.html" />
     <Content Include="images\1.jpg" />
     <Content Include="images\2.jpg" />
     <Content Include="images\3.jpg" />
@@ -115,8 +116,8 @@
     <Content Include="js\all.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\imagezoom.js" />
-    <Content Include="js\jquery-1.8.3.min.js" />
     <Content Include="js\jquery.flexslider.js" />
+    <Content Include="js\jquery.min.js" />
     <Content Include="js\jquery.SuperSlide.2.1.1.js" />
     <Content Include="Lib\FreeTextBox.dll" />
     <Content Include="Lib\sailing.DataModule.dll" />
@@ -159,8 +160,22 @@
     <Content Include="zxly.html" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompanyProfile.aspx.cs">
+      <DependentUpon>CompanyProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     <Compile Include="CommonPage.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    </Compile>
+    <Compile Include="CompanyProfile.aspx.designer.cs">
+      <DependentUpon>CompanyProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CorporateProductDetail.aspx.cs">
+      <DependentUpon>CorporateProductDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CorporateProductDetail.aspx.designer.cs">
+      <DependentUpon>CorporateProductDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
