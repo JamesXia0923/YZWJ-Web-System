@@ -1,0 +1,98 @@
+﻿body {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	background: #ffffff; 
+	width: 100%;
+	overflow:hidden;
+	border: 0;
+}
+
+body,tr,td {
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;	
+	color:#006600; 
+	font-weight:bold;
+	background-repeat:repeat-x;
+	background-position:0% 100%;
+}
+
+#CkbSC
+{
+    background: #ffffff; 
+}
+
+div.imagespacer {
+	width: 120;
+	height: 126;
+	text-align: center;			
+	float: left;
+	font: 10pt verdana;
+	margin: 5px;
+	overflow: hidden;
+	vertical-align:middle;
+}
+div.imageholder {
+	margin: 0px;
+	
+	border: 1 solid #CCCCCC;
+	width: 100;
+	height: 100;
+	vertical-align:middle;
+
+}
+
+div.titleholder {
+	font-family: ms sans serif, arial;
+	font-size: 8pt;
+	width: 100;
+	
+	overflow: hidden;
+	white-space: nowrap;			
+}		
+
+#gallerymessage
+{
+    color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+
+input
+{
+    background:#ffffff;
+    height:22px;
+    width:50px;
+    VERTICAL-ALIGN: middle;
+    font-style: normal;
+    border-top: 1px solid #ADB1C6;
+    border-right: 1px solid #ADB1C6;
+    border-bottom: 1px solid #ADB1C6;
+    border-left: 1px solid #ADB1C6;
+}
+.File
+{
+    background:#ffffff;
+    height:22px;
+    width:200px;
+    VERTICAL-ALIGN: middle;
+    font-style: normal;
+    border-top: 1px solid #ADB1C6;
+    border-right: 1px solid #ADB1C6;
+    border-bottom: 1px solid #ADB1C6;
+    border-left: 1px solid #ADB1C6;
+}
+      
+.btn
+{
+    FONT-SIZE:12px;
+    height:22px;
+    width:60px;
+    vertical-align:middle;
+    PADDING-RIGHT: 1px;
+    PADDING-LEFT: 1px;
+    CURSOR: hand;
+    COLOR: #006600;
+    background-image: url(../images/bgbutton.gif);
+    border: 1px solid #64B4AF;
+}

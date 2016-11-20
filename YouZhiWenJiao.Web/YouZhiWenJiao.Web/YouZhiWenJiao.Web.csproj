@@ -30,6 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FreeTextBox, Version=1.6.3.26073, Culture=neutral" />
+    <Reference Include="sailing.DataModule, Version=1.0.3099.29294, Culture=neutral" />
+    <Reference Include="SailingDataDLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="SailingWebControl, Version=2.0.2011.1203, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="SailingWebDLL, Version=1.0.2013.313, Culture=neutral, processorArchitecture=x86" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core">
@@ -113,19 +118,93 @@
     <Content Include="js\jquery-1.8.3.min.js" />
     <Content Include="js\jquery.flexslider.js" />
     <Content Include="js\jquery.SuperSlide.2.1.1.js" />
+    <Content Include="Lib\FreeTextBox.dll" />
+    <Content Include="Lib\sailing.DataModule.dll" />
+    <Content Include="Lib\SailingDataDLL.dll" />
+    <Content Include="Lib\SailingWebControl.dll" />
+    <Content Include="Lib\SailingWebDLL.dll" />
     <Content Include="Lib\System.Data.SQLite.dll" />
+    <Content Include="Manage\about.aspx" />
+    <Content Include="Manage\about_info.aspx" />
+    <Content Include="Manage\CQEdit\ftb.colorpicker.aspx" />
+    <Content Include="Manage\CQEdit\ftb.imagegallery.aspx" />
+    <Content Include="Manage\CQEdit\ftb.inserttable.aspx" />
+    <Content Include="Manage\CQEdit\ImageGallery.css" />
+    <Content Include="Manage\CQEdit\说明.txt" />
+    <Content Include="Manage\css\admin.css" />
+    <Content Include="Manage\images\admin.css" />
+    <Content Include="Manage\images\admin_p.gif" />
+    <Content Include="Manage\images\bt_login.gif" />
+    <Content Include="Manage\images\header_bg.jpg" />
+    <Content Include="Manage\images\header_left.jpg" />
+    <Content Include="Manage\images\header_right.jpg" />
+    <Content Include="Manage\images\login_1.jpg" />
+    <Content Include="Manage\images\login_2.jpg" />
+    <Content Include="Manage\images\login_3.jpg" />
+    <Content Include="Manage\images\login_4.jpg" />
+    <Content Include="Manage\images\login_5.jpg" />
+    <Content Include="Manage\images\login_6.gif" />
+    <Content Include="Manage\images\menu_bg.jpg" />
+    <Content Include="Manage\images\menu_bt.jpg" />
+    <Content Include="Manage\images\menu_icon.gif" />
+    <Content Include="Manage\images\search.gif" />
+    <Content Include="Manage\images\shadow_bg.jpg" />
+    <Content Include="Manage\images\title_bg1.jpg" />
+    <Content Include="Manage\images\title_bg2.jpg" />
+    <Content Include="Manage\index.aspx" />
+    <Content Include="Manage\login.aspx" />
     <Content Include="Web.config" />
     <Content Include="xwnr.html" />
     <Content Include="xwzx.html" />
     <Content Include="zxly.html" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\about.aspx.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\about.aspx.designer.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\about_info.aspx.cs">
+      <DependentUpon>about_info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\about_info.aspx.designer.cs">
+      <DependentUpon>about_info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\CQEdit\ftb.imagegallery.aspx.cs">
+      <DependentUpon>ftb.imagegallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\CQEdit\ftb.imagegallery.aspx.designer.cs">
+      <DependentUpon>ftb.imagegallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\css\ViewData.cs" />
+    <Compile Include="Manage\Entity\Info.cs" />
+    <Compile Include="Manage\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\SqLiteHelper.cs" />

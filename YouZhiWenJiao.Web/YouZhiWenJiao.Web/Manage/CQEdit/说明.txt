@@ -1,0 +1,9 @@
+﻿需要根目录下的的images\ftb 图片
+属性::HelperFilesPath="../文本编辑器/edit1" 编辑器路径
+	 ToolbarLayout 需要的工具. 图片名称 逗号分开即可
+	 ToolbarType="office2003"  显示哪种图片
+	 
+	 
+	 HelperFilesParameters 设置公共图片的根路径 例子:HelperFilesParameters="PublicImageGalleryPath=/CQEdit/ULImage"
+	 
+	 ImageGalleryPath="/CQEdit/ULImage"  设置上传图片的路径
