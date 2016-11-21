@@ -9,6 +9,11 @@
 <body>
     <form id="form1" runat="server">
     <div>
+    <div><iframe frameborder="0" scrolling="no" width="100%" height="165px" src="header.aspx"></iframe></div>
+    
+    <div></div>
+    
+    <div><iframe frameborder="0" scrolling="no" width="100%" src="footer.aspx"></iframe></div>
     
     </div>
     </form>
