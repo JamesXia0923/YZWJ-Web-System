@@ -16,19 +16,7 @@
 </head>
 <body>
     <!--头部-->
-    <div><iframe frameborder="0" scrolling="no" width="100%" height="165px" src="header.aspx"></iframe></div>
-	<!--幻灯片-->
-<div class="fullSlide">
-		<div class="bd">
-			<ul>
-			<li style="background:url(images/banner.jpg) #FFF center 0 no-repeat;"><a target="_blank" href="#"></a></li>
-			</ul>
-		</div>
-		<div class='db'>				
-		</div>
-</div>  
-<div class="fullSlideBlockForCompany"></div>
-<div class="fullSlideBlockForCompanyMark" id="mark"></div>
+    <div><iframe frameborder="0" scrolling="no" width="100%" height="405px" src="header.aspx"></iframe></div>
 <!--文字列表页主体-->
 <div class="newsbox yh">
     	<div class="block">
@@ -101,12 +89,7 @@ function onclick(obj) {
                 </div>
                 <div class="clearfix"></div>
           </div>
-            
-
-        </div>
-    </div>	
-    
-	<div><iframe frameborder="0" scrolling="no" width="100%" src="footer.aspx"></iframe></div>
+	<div><iframe frameborder="0" scrolling="no" width="100%" height="110px" src="footer.aspx"></iframe></div>
 
 <script src="js/all.js" type="text/javascript"></script>
 </body>
