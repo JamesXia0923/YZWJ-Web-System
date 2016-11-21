@@ -10,7 +10,7 @@ namespace YouZhiWenJiao.Web
 
 		protected void onclick(object sender, EventArgs e)
 		{
-			Response.Redirect("xxxx.aspx?search=" + input_value.Value.Trim());
+			//Response.Redirect("xxxx.aspx?search=" + input_value.Value.Trim());
 		}
 	}
 }
