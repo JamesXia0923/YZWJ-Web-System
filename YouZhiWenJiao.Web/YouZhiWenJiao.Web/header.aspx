@@ -36,5 +36,15 @@
 			</div>
 		</div>
 	</div>
+<!--»ÃµÆÆ¬-->
+<div class="fullSlide">
+	<div class="bd">
+		<ul>
+		<li style="background:url(images/banner.jpg) #FFF center 0 no-repeat;"><a target="_blank" href="#"></a></li>
+		</ul>
+	</div>
+	<div class='db'>				
+    </div>
+</div>  
 </body>
 </html>

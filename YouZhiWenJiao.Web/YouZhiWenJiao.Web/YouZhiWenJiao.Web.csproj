@@ -156,11 +156,11 @@
     <Content Include="zxly.html" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompanyProfile.aspx.cs">
-      <DependentUpon>CompanyProfile.aspx</DependentUpon>
+    <Compile Include="Common\CommonPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CommonPage.cs">
+    <Compile Include="CompanyProfile.aspx.cs">
+      <DependentUpon>CompanyProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CompanyProfile.aspx.designer.cs">
@@ -182,7 +182,6 @@
     </Compile>
     <Compile Include="header.aspx.cs">
       <DependentUpon>header.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="header.aspx.designer.cs">
       <DependentUpon>header.aspx</DependentUpon>
@@ -196,14 +195,12 @@
     </Compile>
     <Compile Include="Manage\about.aspx.cs">
       <DependentUpon>about.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Manage\about.aspx.designer.cs">
       <DependentUpon>about.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\about_info.aspx.cs">
       <DependentUpon>about_info.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Manage\about_info.aspx.designer.cs">
       <DependentUpon>about_info.aspx</DependentUpon>
@@ -226,7 +223,6 @@
     </Compile>
     <Compile Include="Manage\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Manage\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
