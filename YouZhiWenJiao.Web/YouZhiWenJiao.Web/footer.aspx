@@ -1,12 +1,49 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="footer.aspx.cs" Inherits="YouZhiWenJiao.Web.footer" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
-<head runat="server">
-	<link href="css/master.css" type="text/css" rel="stylesheet" />
-	<link href="css/base.css" type="text/css" rel="stylesheet" />
+<head>
+<meta charset="utf-8">
+<link href="css/master.css" type="text/css" rel="stylesheet" />
+<link href="css/base.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
 </head>
 <body>
+<div class="team clearfix yh mt20">
+		<div class="block">
+			<div class="t1">产品欣赏 <span class="f14 c_666">Product</span></div>			
+			<div class="bd">
+				<ul class="picList">
+					<li>
+						<div class="pic"><a href="#" target="_blank"><img src="images/pic7.jpg" /></a></div>
+						<div class="title"><a href="#" target="_blank">产品1</a></div>
+					</li>
+					<li>
+						<div class="pic"><a href="#" target="_blank"><img src="images/pic8.jpg" /></a></div>
+						<div class="title"><a href="#" target="_blank">产品2</a></div>
+					</li>
+					<li>
+						<div class="pic"><a href="#" target="_blank"><img src="images/pic3.jpg" /></a></div>
+						<div class="title"><a href="#" target="_blank">产品3</a></div>
+					</li>
+					<li>
+						<div class="pic"><a href="#" target="_blank"><img src="images/pic4.jpg" /></a></div>
+						<div class="title"><a href="#" target="_blank">产品4</a></div>
+					</li>
+					<li>
+						<div class="pic"><a href="#" target="_blank"><img src="images/pic5.jpg" /></a></div>
+						<div class="title"><a href="#" target="_blank">产品5</a></div>
+					</li>
+					<li>
+						<div class="pic"><a href="#" target="_blank"><img src="images/pic6.jpg" /></a></div>
+						<div class="title"><a href="#" target="_blank">产品6</a></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 	<div class="foot clearfix">
 		<div class="block">
 			<div class="fleft">
