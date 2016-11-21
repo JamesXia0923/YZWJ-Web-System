@@ -4,27 +4,39 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using System.Data.SQLite;
+using System.Data;
 namespace YouZhiWenJiao.Web
 {
     public partial class CompanyProfile : CommonPage
     {
         protected List<CompanyProfileModel> CompanyProfileList;
         protected List<CompanyProfileTypeModel> CompanyProfileTypeList;
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             CompanyProfileTypeList = new List<CompanyProfileTypeModel>();
-            CompanyProfileTypeList.Add(new CompanyProfileTypeModel() { id = 1, categoryid = 1, description = "公司概述" });
-            CompanyProfileTypeList.Add(new CompanyProfileTypeModel() { id = 2, categoryid = 1, description = "公司理念" });
-            CompanyProfileTypeList.Add(new CompanyProfileTypeModel() { id = 3, categoryid = 1, description = "成长历程" });
-            CompanyProfileTypeList.Add(new CompanyProfileTypeModel() { id = 4, categoryid = 1, description = "合作伙伴" });
+            var sql = "select * from type where categoryid = 1";
+            
+            sqlCmd.CommandText = sql;
+            IDataReader rdr = sqlCmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                CompanyProfileTypeList.Add(new CompanyProfileTypeModel() { id = ToInt(rdr["id"]), categoryid = ToInt(rdr["categoryid"]), description = rdr["description"].ToString() });
+            }
+            rdr.Close();
 
             CompanyProfileList = new List<CompanyProfileModel>();
-            CompanyProfileList.Add(new CompanyProfileModel() { id = 1, typeid = 1, title = "公司概述", content = "公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述公司概述" });
-            CompanyProfileList.Add(new CompanyProfileModel() { id = 2, typeid = 2, title = "公司理念", content = "公司理念公司理念公司理念公司理念公司理念公司理念公司理念公司理念公司理念公司理念公司理念公司理念公司理念公司理念公司理念公司理念公司理念公司理念公司理念公司理念公司理念公司理念公司理念公司理念公司理念公司理念公司理念" });
-            CompanyProfileList.Add(new CompanyProfileModel() { id = 3, typeid = 3, title = "成长历程", content = "成长历程成长历程成长历程成长历程成长历程成长历程成长历程成长历程成长历程成长历程成长历程成长历程成长历程成长历程成长历程成长历程成长历程成长历程成长历程成长历程成长历程成长历程成长历程成长历程成长历程成长历程成长历程成长历程成长历程" });
-            CompanyProfileList.Add(new CompanyProfileModel() { id = 4, typeid = 4, title = "合作伙伴", content = "合作伙伴合作伙伴合作伙伴合作伙伴合作伙伴合作伙伴合作伙伴合作伙伴合作伙伴合作伙伴合作伙伴合作伙伴合作伙伴合作伙伴合作伙伴合作伙伴合作伙伴合作伙伴合作伙伴合作伙伴合作伙伴" });
+            sql = "select * from product where categoryid = 1";
+            sqlCmd.CommandText = sql;
+            rdr = sqlCmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                CompanyProfileList.Add(new CompanyProfileModel() { id = ToInt(rdr["id"]), typeid = ToInt(rdr["typeid"]), title = rdr["title"].ToString(), content = rdr["content"].ToString() });
+            }
+            rdr.Close();
         }        
     }
 
