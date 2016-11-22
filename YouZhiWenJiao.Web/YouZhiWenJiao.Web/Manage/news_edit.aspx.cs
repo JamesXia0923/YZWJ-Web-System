@@ -4,7 +4,7 @@ using System.Data;
 
 namespace YouZhiWenJiao.Web.Manage
 {
-	public partial class news_info : CommonPage
+	public partial class news_edit : CommonPage
 	{
 		protected int intID = 0;
 

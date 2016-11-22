@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="news_info.aspx.cs" Inherits="YouZhiWenJiao.Web.Manage.news_info" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="news_edit.aspx.cs" Inherits="YouZhiWenJiao.Web.Manage.news_edit" %>
 <%@ Register assembly="FreeTextBox" namespace="FreeTextBoxControls" tagprefix="FTB" %>
 <%@ Register TagPrefix="cc1" Namespace="SailingWebControl" Assembly="SailingWebControl" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

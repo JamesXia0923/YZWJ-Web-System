@@ -6,7 +6,7 @@ using System.Web.UI;
 
 namespace YouZhiWenJiao.Web.Manage
 {
-	public partial class about_info : CommonPage
+	public partial class about_edit : CommonPage
 	{
 		protected int intID = 0;
 

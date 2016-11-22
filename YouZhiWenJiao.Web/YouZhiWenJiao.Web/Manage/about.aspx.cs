@@ -84,14 +84,13 @@ where category.description = '公司简介' and product.title like '@search'";
 			SQLiteDataAdapter da = new SQLiteDataAdapter(sqlCmd);
 			da.Fill(ds);
 			DataTable dt = ds.Tables[0];
-			Info info = null;
+			Information info = new Information();
 
 			for (int i = 0; i < dt.Rows.Count; i++)
 			{
-				info = new Info();
-				info.Num = (i + 1).ToString();
+				info.Number = (i + 1).ToString();
 				info.ID = dt.Rows[i]["id"].ToString();
-				info.Name = dt.Rows[i]["title"].ToString();
+				info.Title = dt.Rows[i]["title"].ToString();
 				info.DateTime = DateTime.Parse(dt.Rows[i]["Datetime"].ToString()).ToShortDateString();
 				info.Type = DateTime.Parse(dt.Rows[i]["description"].ToString()).ToShortDateString();
 				info.ShowPic = DateTime.Parse(dt.Rows[i]["showpicture"].ToString()).ToShortDateString();

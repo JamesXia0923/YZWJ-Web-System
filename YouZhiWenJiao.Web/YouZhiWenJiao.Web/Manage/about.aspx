@@ -53,8 +53,8 @@
 							<td ><%# DataBinder.Eval(Container.DataItem,"Num")%></td >
 							<td height="25" style="text-align:center"><a href='about_info.aspx?id=<%# DataBinder.Eval(Container.DataItem,"ID")%>'><%# DataBinder.Eval(Container.DataItem, "Name")%></a></td>
 							<td height="25"><%# DataBinder.Eval(Container.DataItem, "DateTime")%></td >
-							<td height="25"><%# DataBinder.Eval(Container.DataItem, "description")%></td >
-							<td height="25"><%# DataBinder.Eval(Container.DataItem, "showpicture")%></td >
+							<td height="25"><%# DataBinder.Eval(Container.DataItem, "Type")%></td >
+							<td height="25"><%# DataBinder.Eval(Container.DataItem, "ShowPic")%></td >
 							<td height="25"><%# DataBinder.Eval(Container.DataItem, "ShowInHomePage")%></td >
 						</tr>
 					</ITEMTEMPLATE>

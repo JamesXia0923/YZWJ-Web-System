@@ -49,14 +49,14 @@ namespace YouZhiWenJiao.Web.Manage
 			SQLiteDataAdapter da = new SQLiteDataAdapter(sqlCmd);
 			da.Fill(ds);
 			DataTable dt = ds.Tables[0];
-			Info info = null;
+			Information info = null;
 
 			for (int i = 0; i < dt.Rows.Count; i++)
 			{
-				info = new Info();
-				info.Num = (i + 1).ToString();
+				info = new Information();
+				info.Number = (i + 1).ToString();
 				info.ID = dt.Rows[i]["id"].ToString();
-				info.Name = dt.Rows[i]["title"].ToString();
+				info.Title = dt.Rows[i]["title"].ToString();
 				info.DateTime = DateTime.Parse(dt.Rows[i]["Datetime"].ToString()).ToShortDateString();
 
 				li.Add(info);
