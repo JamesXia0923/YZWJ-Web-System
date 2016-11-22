@@ -50,8 +50,8 @@
 					<ITEMTEMPLATE>
 						<tr align="center">
 						<td><input type="checkbox" value='<%#DataBinder.Eval(Container.DataItem,"ID")%>' name="chkEleId"/></td >
-							<td ><%# DataBinder.Eval(Container.DataItem,"Num")%></td >
-							<td height="25" style="text-align:center"><a href='about_info.aspx?id=<%# DataBinder.Eval(Container.DataItem,"ID")%>'><%# DataBinder.Eval(Container.DataItem, "Name")%></a></td>
+							<td ><%# DataBinder.Eval(Container.DataItem, "Number")%></td >
+							<td height="25" style="text-align:center"><a href='about_edit.aspx?id=<%# DataBinder.Eval(Container.DataItem,"ID")%>'><%# DataBinder.Eval(Container.DataItem, "Title")%></a></td>
 							<td height="25"><%# DataBinder.Eval(Container.DataItem, "DateTime")%></td >
 							<td height="25"><%# DataBinder.Eval(Container.DataItem, "Type")%></td >
 							<td height="25"><%# DataBinder.Eval(Container.DataItem, "ShowPic")%></td >
@@ -65,6 +65,7 @@
 				<tr>
 					<td colspan="6" />&nbsp;&nbsp;
 					<input type="button" value="删除" class="coolbg" runat="server" ID="BtnDel" name="BtnDel" onserverclick="SubDelClick" />
+					<input type="button" value="保存" class="coolbg" runat="server" ID="BtnSave" name="BtnSave" onserverclick="SubSaveClick" />
 					<input type="button" value="新增" class="coolbg" runat="server" ID="BtnCre" name="BtnCre" onserverclick="SubCreClick" />
 					<!--<a target="_self" href='about_info.aspx' class="coolbg" >新增</a> -->
 				</tr>

@@ -147,13 +147,13 @@ where id=@id;";
 			else
 			{
 				sqlCmd.CommandText =@"
-insert into product (
+insert into product(
 typeid,
 categoryid,
 title,
 datetime,
 content,
-picture
+picture,
 createdatetime,
 createuser,
 updatedatetime,
@@ -164,7 +164,7 @@ values(
 @title,
 @datetime,
 @content,
-@picture
+@picture,
 @createdatetime,
 @createuser,
 @updatedatetime,
@@ -189,10 +189,10 @@ values(
 			sqlCmd.Parameters["@createdatetime"].Value = DateTime.Now;
 			sqlCmd.Parameters.Add("@createuser", DbType.String);
 			sqlCmd.Parameters["@createuser"].Value = user;
-			sqlCmd.Parameters.Add("@createdatetime", DbType.DateTime);
-			sqlCmd.Parameters["@createdatetime"].Value = DateTime.Now;
-			sqlCmd.Parameters.Add("@createuser", DbType.String);
-			sqlCmd.Parameters["@createuser"].Value = user;
+			sqlCmd.Parameters.Add("@updatedatetime", DbType.DateTime);
+			sqlCmd.Parameters["@updatedatetime"].Value = DateTime.Now;
+			sqlCmd.Parameters.Add("@updateuser", DbType.String);
+			sqlCmd.Parameters["@updateuser"].Value = user;
 			sqlCmd.ExecuteNonQuery();
 
 			if (intID == 0)
