@@ -174,7 +174,7 @@ values(
 			sqlCmd.Parameters.Add("@typeid", DbType.Int16);
 			sqlCmd.Parameters["@typeid"].Value = ddlListType.SelectedIndex;
 			sqlCmd.Parameters.Add("@categoryid", DbType.Int16);
-			sqlCmd.Parameters["@categoryid"].Value = category.公司简介;
+			sqlCmd.Parameters["@categoryid"].Value = (int)category.公司简介;
 
 			sqlCmd.Parameters.Add("@title", DbType.String);
 			sqlCmd.Parameters["@title"].Value = txtTitle.Text;
