@@ -41,22 +41,13 @@ namespace YouZhiWenJiao.Web.Manage {
         protected global::System.Web.UI.WebControls.TextBox txtName;
         
         /// <summary>
-        /// CreateDate control.
+        /// datetime control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SailingWebControl.Tq_Calendar CreateDate;
-        
-        /// <summary>
-        /// ddlList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::SailingWebControl.Tq_DropdownEdit ddlList;
+        protected global::SailingWebControl.Tq_Calendar datetime;
         
         /// <summary>
         /// InputFile control.
@@ -68,31 +59,22 @@ namespace YouZhiWenJiao.Web.Manage {
         protected global::System.Web.UI.HtmlControls.HtmlInputFile InputFile;
         
         /// <summary>
-        /// videoTr control.
+        /// Lb_Info control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow videoTr;
+        protected global::System.Web.UI.WebControls.Label Lb_Info;
         
         /// <summary>
-        /// InputVideo control.
+        /// ftbContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Sailing.Web.UI.WebControls.FileUpload InputVideo;
-        
-        /// <summary>
-        /// FreeTextBox1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::FreeTextBoxControls.FreeTextBox FreeTextBox1;
+        protected global::FreeTextBoxControls.FreeTextBox ftbContent;
         
         /// <summary>
         /// btnOK control.
@@ -102,6 +84,15 @@ namespace YouZhiWenJiao.Web.Manage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnOK;
+        
+        /// <summary>
+        /// btnBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBack;
         
         /// <summary>
         /// txtcontent control.

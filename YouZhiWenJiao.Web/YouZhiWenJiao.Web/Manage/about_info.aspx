@@ -5,19 +5,29 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head id="Head1" runat="server">
-	<link href="css/admin.css" type="text/css" rel="stylesheet" />
+		<link href="css/admin.css" type="text/css" rel="stylesheet" />
+		<script type="text/javascript">
+			function ddlList_change() {
+				if (document.getElementById("ddlList").value == "公司概述") {
+					videoTr.style.display = "block";
+				}
+				else {
+					videoTr.style.display = "none";
+				}
+			}
+		</script>
 	</head>
 	<body  style=" background-color:#fff">
 		<form id="form1" runat="server">
 			<table cellspacing=0 cellpadding=0 width="100%" align=center border=0>
 				<tr height=28>
-					<td align="left" background=images/title_bg1.jpg>&nbsp;</td>
+					<td align="left" background="images/title_bg1.jpg">&nbsp;</td>
 				</tr>
 				<tr>
 					<td bgcolor=#b1ceef height=1></td>
 				</tr>
 				<tr height=20>
-					<td background=images/shadow_bg.jpg></td>
+					<td background="images/shadow_bg.jpg"></td>
 				</tr>
 			</table>
 
@@ -32,14 +42,27 @@
 				</tr>
 				<tr>
 					<td align="center">日期：</td>
-					<td style=" padding:10px;"><cc1:tq_calendar id="datetime" runat="server" Width="120px"></cc1:tq_calendar></td>
+					<td style=" padding:10px;"><cc1:tq_calendar id="datetime" runat="server" Width="100px"></cc1:tq_calendar></td>
 				</tr>
-				<tr>
 				
-				<td height="45" align="center">上传图片</td>
-					<td height="45" style=" padding:10px;" align="left">   
+				<tr>
+					<td  width="80" align="center"  height="45">类型：</td>
+					<td width='45' style=" padding:10px;" align="left">
+					<asp:DropDownList Width="124px" ID="ddlList" runat="server" onblur="ddlList_change()"></asp:DropDownList></td>
+				</tr>
+				
+				<tr>
+					<td height="45" align="center">上传图片</td>
+					<td height="45" style=" padding:10px;" align="left">
 						<input id="InputFile" style="width: 399px" type="file" runat="server" />
 						<asp:Label ID="Lb_Info" runat="server" ForeColor="Red"></asp:Label>
+					</td>
+				</tr>
+				
+				<tr id="videoTr" runat="server">
+					<td height="45" align="center">上传视频：</td>
+					<td height="45" style=" padding:10px;" align="left">
+						<Asp:FileUpload id="InputVideo" runat="server" name="InputVideo"/>
 					</td>
 				</tr>
 				

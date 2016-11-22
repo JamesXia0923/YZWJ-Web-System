@@ -50,6 +50,15 @@ namespace YouZhiWenJiao.Web.Manage {
         protected global::SailingWebControl.Tq_Calendar datetime;
         
         /// <summary>
+        /// ddlList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlList;
+        
+        /// <summary>
         /// InputFile control.
         /// </summary>
         /// <remarks>
@@ -66,6 +75,24 @@ namespace YouZhiWenJiao.Web.Manage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Lb_Info;
+        
+        /// <summary>
+        /// videoTr control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow videoTr;
+        
+        /// <summary>
+        /// InputVideo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload InputVideo;
         
         /// <summary>
         /// ftbContent control.
