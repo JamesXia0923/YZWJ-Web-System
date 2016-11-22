@@ -78,32 +78,19 @@ namespace YouZhiWenJiao.Web.Manage.Entity
             set { this._Type = value; }
         }
 
-        private string _TSe = "";
-        public string TSe
+        private string _showPic = "";
+        public string ShowPic
         {
-            get { return this._TSe; }
-            set { this._TSe = value; }
-        }
-        private string _XS = "";
-        public string XS
-        {
-            get { return this._XS; }
-            set { this._XS = value; }
+			get { return this._showPic; }
+			set { this._showPic = value; }
         }
 
-        private string _SYXS = "";
-        public string SYXS
-        {
-            get { return this._SYXS; }
-            set { this._SYXS = value; }
-        }
-
-        private string _XSPic = "";
-        public string XSPic
-        {
-            get { return this._XSPic; }
-            set { this._XSPic = value; }
-        }
+		private string _showInHomePage = "";
+		public string ShowInHomePage
+		{
+			get { return this._showInHomePage; }
+			set { this._showInHomePage = value; }
+		}
 
         private string _CJXS = "";
         public string CJXS

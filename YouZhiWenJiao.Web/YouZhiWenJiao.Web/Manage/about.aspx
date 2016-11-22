@@ -42,15 +42,20 @@
 							<th>序号</th>
 							<th>标题</th>
 							<th>日期</th>
+							<th>类型</th>
+							<th>显示图片</th>
+							<th>首页显示</th>
 						</tr>
 					</HEADERTEMPLATE>
 					<ITEMTEMPLATE>
 						<tr align="center">
 						<td><input type="checkbox" value='<%#DataBinder.Eval(Container.DataItem,"ID")%>' name="chkEleId"/></td >
 							<td ><%# DataBinder.Eval(Container.DataItem,"Num")%></td >
-							<td height="25" style="text-align:center"><a href='about_info.aspx?id=<%# DataBinder.Eval(Container.DataItem,"ID")%>'><%# DataBinder.Eval(Container.DataItem, "Name")%></a>
-							</td>
-							<td height="25"><%# DataBinder.Eval(Container.DataItem, "DateTime")%></td >						
+							<td height="25" style="text-align:center"><a href='about_info.aspx?id=<%# DataBinder.Eval(Container.DataItem,"ID")%>'><%# DataBinder.Eval(Container.DataItem, "Name")%></a></td>
+							<td height="25"><%# DataBinder.Eval(Container.DataItem, "DateTime")%></td >
+							<td height="25"><%# DataBinder.Eval(Container.DataItem, "description")%></td >
+							<td height="25"><%# DataBinder.Eval(Container.DataItem, "showpicture")%></td >
+							<td height="25"><%# DataBinder.Eval(Container.DataItem, "ShowInHomePage")%></td >
 						</tr>
 					</ITEMTEMPLATE>
 				</CONTROL:VIEWDATA>

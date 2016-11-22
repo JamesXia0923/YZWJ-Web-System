@@ -172,5 +172,17 @@ namespace YouZhiWenJiao.Web
 			}
 			return filtered.ToString();
 		}
+
+		public enum category
+		{
+			公司简介 = 1,
+			公司新闻 = 2,
+			园所装备 = 3,
+			园长书库 = 4,
+			教师书库 = 5,
+			资料下载 = 6,
+			在线留言 = 7,
+			联系我们 = 8
+		}
 	}
 }

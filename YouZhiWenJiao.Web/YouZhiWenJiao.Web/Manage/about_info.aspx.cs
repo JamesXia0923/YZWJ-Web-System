@@ -10,8 +10,9 @@ namespace YouZhiWenJiao.Web.Manage
 	{
 		protected int intID = 0;
 
+		string user = @"";
 		string imgURL = @"";
-		string videoURL = @"";
+		//string videoURL = @"";
 		string href_string = @"../about.aspx?";
 		protected string href_value = "";
 		protected void Page_Load(object sender, EventArgs e)
@@ -20,6 +21,7 @@ namespace YouZhiWenJiao.Web.Manage
 			{
 				Response.Redirect("login.aspx");
 			}
+			user = Session["user"].ToString();
 
 			intID = ToInt(Request["ID"]);
 
@@ -28,14 +30,14 @@ namespace YouZhiWenJiao.Web.Manage
 			if (!IsPostBack)
 			{
 				sqlCmd.CommandText = @"
-		select type.id, type.description 
-		from type 
-		inner join category on category.id = type.categoryid
-		where category.description = '公司简介';";
+select type.id, type.description 
+from type 
+inner join category on category.id = type.categoryid
+where category.description = '公司简介';";
 				var rd = sqlCmd.ExecuteReader();
 				while (rd.Read())
 				{
-					ddlList.Items.Add(new ListItem(rd[1].ToString(), rd[0].ToString()));
+					ddlListType.Items.Add(new ListItem(rd[1].ToString(), rd[0].ToString()));
 				}
 				rd.Close();
 
@@ -47,7 +49,7 @@ namespace YouZhiWenJiao.Web.Manage
 					var dr = sqlCmd.ExecuteReader();
 					if (dr.Read())
 					{
-						txtName.Text = dr[0].ToString();
+						txtTitle.Text = dr[0].ToString();
 						ftbContent.Text = dr[1].ToString();
 						datetime.DValue = dr[2];
 						InputFile.Value = dr[3].ToString();
@@ -56,7 +58,7 @@ namespace YouZhiWenJiao.Web.Manage
 				}
 			}
 
-			if (ToInt(ddlList.SelectedValue) == 1)
+			if (ToInt(ddlListType.SelectedValue) == 1)
 			{
 				videoTr.Style.Add(HtmlTextWriterStyle.Display, "block");
 			}
@@ -68,7 +70,7 @@ namespace YouZhiWenJiao.Web.Manage
 
 		protected void btnOK_Click(object sender, System.EventArgs e)
 		{
-			string lx_id = ddlList.SelectedValue;
+			string lx_id = ddlListType.SelectedValue;
 
 			string uploadName = InputFile.Value;//获取待上传图片的完整路径，包括文件名  
 			//string uploadName = InputFile.PostedFile.FileName;         
@@ -140,7 +142,7 @@ datetime=@date,
 picture=@picture,
 updatedatetime=@updatedatetime
 updateuser=@updateuser
-where id=@id";
+where id=@id;";
 			}
 			else
 			{
@@ -166,30 +168,31 @@ values(
 @createdatetime,
 @createuser,
 @updatedatetime,
-@updateuser)";
+@updateuser);";
 			}
 
-			sqlCmd.Parameters.Add("@typeid", DbType.String);
-			sqlCmd.Parameters["@typeid"].Value = ftbContent.Text;
-			sqlCmd.Parameters.Add("@categoryid", DbType.DateTime);
-			sqlCmd.Parameters["@categoryid"].Value = datetime.DValue;
+			sqlCmd.Parameters.Add("@typeid", DbType.Int16);
+			sqlCmd.Parameters["@typeid"].Value = ddlListType.SelectedIndex;
+			sqlCmd.Parameters.Add("@categoryid", DbType.Int16);
+			sqlCmd.Parameters["@categoryid"].Value = category.公司简介;
+
 			sqlCmd.Parameters.Add("@title", DbType.String);
-			sqlCmd.Parameters["@title"].Value = txtName.Text;
-			sqlCmd.Parameters.Add("@datetime", DbType.Int16);
-			sqlCmd.Parameters["@datetime"].Value = intID;
+			sqlCmd.Parameters["@title"].Value = txtTitle.Text;
+			sqlCmd.Parameters.Add("@datetime", DbType.DateTime);
+			sqlCmd.Parameters["@datetime"].Value = datetime;
 			sqlCmd.Parameters.Add("@content", DbType.String);
 			sqlCmd.Parameters["@content"].Value = ftbContent.Text;
-			sqlCmd.Parameters.Add("@picture", DbType.DateTime);
-			sqlCmd.Parameters["@picture"].Value = datetime.DValue;
+			sqlCmd.Parameters.Add("@picture", DbType.String);
+			sqlCmd.Parameters["@picture"].Value = imgURL;
 
-			sqlCmd.Parameters.Add("@createdatetime", DbType.String);
-			sqlCmd.Parameters["@createdatetime"].Value = txtName.Text;
-			sqlCmd.Parameters.Add("@createuser", DbType.Int16);
-			sqlCmd.Parameters["@createuser"].Value = intID;
-			sqlCmd.Parameters.Add("@createdatetime", DbType.String);
-			sqlCmd.Parameters["@createdatetime"].Value = txtName.Text;
-			sqlCmd.Parameters.Add("@createuser", DbType.Int16);
-			sqlCmd.Parameters["@createuser"].Value = intID;
+			sqlCmd.Parameters.Add("@createdatetime", DbType.DateTime);
+			sqlCmd.Parameters["@createdatetime"].Value = DateTime.Now;
+			sqlCmd.Parameters.Add("@createuser", DbType.String);
+			sqlCmd.Parameters["@createuser"].Value = user;
+			sqlCmd.Parameters.Add("@createdatetime", DbType.DateTime);
+			sqlCmd.Parameters["@createdatetime"].Value = DateTime.Now;
+			sqlCmd.Parameters.Add("@createuser", DbType.String);
+			sqlCmd.Parameters["@createuser"].Value = user;
 			sqlCmd.ExecuteNonQuery();
 
 			if (intID == 0)
@@ -201,10 +204,10 @@ values(
 			Alert("保存成功!");
 		}
 
-		protected void btnPrewiew_Click(object sender, System.EventArgs e)
-		{
-			Response.Redirect("href_string", false);
-		}
+		//protected void btnPrewiew_Click(object sender, System.EventArgs e)
+		//{
+		//    Response.Redirect("href_string", false);
+		//}
 
 		protected void btnBack_Click(object sender, System.EventArgs e)
 		{

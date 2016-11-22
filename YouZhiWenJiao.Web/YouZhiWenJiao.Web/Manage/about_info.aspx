@@ -38,7 +38,7 @@
 				</tr>
 				<tr>
 					<td width="80" align="center" >标题：</td>
-					<td height="45" style=" padding:10px;" align="left"><asp:TextBox id="txtName" runat="server" Width="332px"></asp:TextBox></td>
+					<td height="45" style=" padding:10px;" align="left"><asp:TextBox id="txtTitle" runat="server" Width="332px"></asp:TextBox></td>
 				</tr>
 				<tr>
 					<td align="center">日期：</td>
@@ -48,7 +48,7 @@
 				<tr>
 					<td  width="80" align="center"  height="45">类型：</td>
 					<td width='45' style=" padding:10px;" align="left">
-					<asp:DropDownList Width="124px" ID="ddlList" runat="server" onblur="ddlList_change()"></asp:DropDownList></td>
+					<asp:DropDownList Width="124px" ID="ddlListType" runat="server" onblur="ddlList_change()"></asp:DropDownList></td>
 				</tr>
 				
 				<tr>

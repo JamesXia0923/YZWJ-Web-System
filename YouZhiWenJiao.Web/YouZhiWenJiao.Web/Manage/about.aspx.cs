@@ -56,7 +56,13 @@ where category.description = '公司简介';";
 			IList li = new ArrayList();
 
 			sqlCmd.CommandText = @"
-select product.id,product.title,product.datetime,type.description
+select
+product.id,
+product.title,
+product.datetime,
+type.description,
+product.showpicture,
+product.showinhomepage
 from product
 inner join category on category.id = product.categoryid
 inner join type on type.id = product.typeid
@@ -72,7 +78,7 @@ where category.description = '公司简介' and product.title like '@search'";
 			{
 				sqlCmd.CommandText += " and type.id=" + ddlList.SelectedValue + "";
 			}
-			sqlCmd.CommandText += " order by product.updatedatetime desc";
+			sqlCmd.CommandText += " order by product.updatedatetime desc;";
 
 			DataSet ds = new DataSet();
 			SQLiteDataAdapter da = new SQLiteDataAdapter(sqlCmd);
@@ -87,7 +93,9 @@ where category.description = '公司简介' and product.title like '@search'";
 				info.ID = dt.Rows[i]["id"].ToString();
 				info.Name = dt.Rows[i]["title"].ToString();
 				info.DateTime = DateTime.Parse(dt.Rows[i]["Datetime"].ToString()).ToShortDateString();
-
+				info.Type = DateTime.Parse(dt.Rows[i]["description"].ToString()).ToShortDateString();
+				info.ShowPic = DateTime.Parse(dt.Rows[i]["showpicture"].ToString()).ToShortDateString();
+				info.ShowInHomePage = DateTime.Parse(dt.Rows[i]["showinhomepage"].ToString()).ToShortDateString();
 				li.Add(info);
 			}
 
