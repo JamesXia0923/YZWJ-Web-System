@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CorporateProductDetail.aspx.cs" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CorporateProductDetail.aspx.cs" Inherits="YouZhiWenJiao.Web.CorporateProductDetail"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -30,26 +30,27 @@
 	    <div class="container">
 	        <div class="products">
 		        <div class="products-grids">
-		    	    <div class="col-md-2 products-single"></div>
-			        <div class="col-md-4 grid-single">		
-				        <div class="flexslider3">
-					      <ul class="slides">
-						    <li>
-							    <div class="thumb-image"> <img src="images/pic1.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
-					      </ul>
-					    </div>
-				    </div>	
-			        <div class="col-md-6 single-text">
-				        <div class="details-left-info simpleCart_shelfItem">
-					        <h3>Accessories Latest</h3>
-					        <p class="availability">Availability: <span class="color">In stock</span></p>
-		                </div>
+		    	    <div class="col-md-8 products-single">
+			            <div class="col-md-5 grid-single">		
+				            <div class="flexslider3">
+					          <ul class="slides">
+						        <li>
+							        <div <img src="images/pic1.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+					          </ul>
+					        </div>
+				        </div>	
+			            <div class="col-md-7 single-text">
+				            <div class="details-left-info simpleCart_shelfItem">
+					            <h3>Accessories Latest</h3>
+					            <p class="availability">Availability: <span class="color">In stock</span></p>
+		                    </div>
+	                    </div>
 	                </div>
                 </div>
             </div>
         </div>
     </div>
+<!--底部--> 
 	<div><iframe frameborder="0" scrolling="no" width="100%" height="410px" src="footer.aspx"></iframe></div>
-	<script src="js/all.js" type="text/javascript"></script>
 </body>
 </html>
