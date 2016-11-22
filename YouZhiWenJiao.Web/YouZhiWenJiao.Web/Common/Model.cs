@@ -5,14 +5,14 @@ using System.Web;
 
 namespace YouZhiWenJiao.Web.Common
 {
-    public class CompanyProfileTypeModel
+    public class CommonTypeModel
     {
         public int id { get; set; }
         public int categoryid { get; set; }
         public string description { get; set; }
     }
 
-    public class CompanyProfileModel
+    public class CommonModel
     {
         public int id { get; set; }
         public int typeid { get; set; }

@@ -26,7 +26,7 @@
 <!--产品信息-->    
     <!--单个产品-->
     <div class="block">
-        <div class="navmenu"><span>您现在的位置: <a href="#">户外用品</a> > 产品1</span> 产品1</div>
+        <div class="navmenu"><span>您现在的位置: <a href="#"><%=ModuleType %>></a> > <%=ProductType %>></span> <%=ProductType %>></div>
 	    <div class="container">
 	        <div class="products">
 		        <div class="products-grids">
@@ -35,14 +35,14 @@
 				            <div class="flexslider3">
 					          <ul class="slides">
 						        <li>
-							        <div <img src="images/pic1.jpg" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+							        <div> <img src=<%=Product.picture %>> data-imagezoom="true" class="img-responsive" alt=""/> </div>
 					          </ul>
 					        </div>
 				        </div>	
 			            <div class="col-md-7 single-text">
 				            <div class="details-left-info simpleCart_shelfItem">
-					            <h3>Accessories Latest</h3>
-					            <p class="availability">Availability: <span class="color">In stock</span></p>
+					            <h3><%=Product.title %></h3>
+					            <p class="availability"><span class="color"><%=Product.content %></span></p>
 		                    </div>
 	                    </div>
 	                </div>
