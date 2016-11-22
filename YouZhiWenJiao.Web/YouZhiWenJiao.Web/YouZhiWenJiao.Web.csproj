@@ -128,6 +128,8 @@
     <Content Include="Manage\CQEdit\ImageGallery.css" />
     <Content Include="Manage\CQEdit\说明.txt" />
     <Content Include="Manage\css\admin.css" />
+    <Content Include="Manage\download.aspx" />
+    <Content Include="Manage\download_edit.aspx" />
     <Content Include="Manage\images\admin.css" />
     <Content Include="Manage\images\admin_p.gif" />
     <Content Include="Manage\images\bt_login.gif" />
@@ -151,6 +153,12 @@
     <Content Include="Manage\login.aspx" />
     <Content Include="Manage\news.aspx" />
     <Content Include="Manage\news_edit.aspx" />
+    <Content Include="Manage\principalBS.aspx" />
+    <Content Include="Manage\principalBS_edit.aspx" />
+    <Content Include="Manage\product.aspx" />
+    <Content Include="Manage\product_edit.aspx" />
+    <Content Include="Manage\teacherBS.aspx" />
+    <Content Include="Manage\teacherBS_edit.aspx" />
     <Content Include="Web.config" />
     <Content Include="xwnr.html" />
     <Content Include="xwzx.html" />
@@ -203,6 +211,20 @@
       <DependentUpon>ftb.imagegallery.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\css\ViewData.cs" />
+    <Compile Include="Manage\download.aspx.cs">
+      <DependentUpon>download.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\download.aspx.designer.cs">
+      <DependentUpon>download.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\download_edit.aspx.cs">
+      <DependentUpon>download_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\download_edit.aspx.designer.cs">
+      <DependentUpon>download_edit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manage\Entity\Information.cs" />
     <Compile Include="Manage\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
@@ -231,6 +253,48 @@
     </Compile>
     <Compile Include="Manage\news_edit.aspx.designer.cs">
       <DependentUpon>news_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\principalBS.aspx.cs">
+      <DependentUpon>principalBS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\principalBS.aspx.designer.cs">
+      <DependentUpon>principalBS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\principalBS_edit.aspx.cs">
+      <DependentUpon>principalBS_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\principalBS_edit.aspx.designer.cs">
+      <DependentUpon>principalBS_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\product.aspx.cs">
+      <DependentUpon>product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\product.aspx.designer.cs">
+      <DependentUpon>product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\product_edit.aspx.cs">
+      <DependentUpon>product_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\product_edit.aspx.designer.cs">
+      <DependentUpon>product_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\teacherBS.aspx.cs">
+      <DependentUpon>teacherBS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\teacherBS.aspx.designer.cs">
+      <DependentUpon>teacherBS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\teacherBS_edit.aspx.cs">
+      <DependentUpon>teacherBS_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\teacherBS_edit.aspx.designer.cs">
+      <DependentUpon>teacherBS_edit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\SqLiteHelper.cs" />

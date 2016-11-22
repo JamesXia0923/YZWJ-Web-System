@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="news.aspx.cs" Inherits="YouZhiWenJiao.Web.Manage.news" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="download.aspx.cs" Inherits="YouZhiWenJiao.Web.Manage.download" %>
 <%@ Register TagPrefix="Control" Namespace="YouZhiWenJiao.Web.Manage.css" Assembly="YouZhiWenJiao.Web" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -34,7 +34,7 @@
 					PageTrCss="PageTrCss" OnPageIndexChange="PageChanged" OnItemDataBound="DataBindings">
 					<HEADERTEMPLATE>
 						<tr>
-							<td colspan="6" style=" font-weight:bold;font-size:14px; text-align:left; color:#002779; height:37px;">&nbsp;&nbsp;公&nbsp;&nbsp;司&nbsp;&nbsp;新&nbsp;&nbsp;闻</td >
+							<td colspan="6" style=" font-weight:bold;font-size:14px; text-align:left; color:#002779; height:37px;">&nbsp;&nbsp;园&nbsp;&nbsp;长&nbsp;&nbsp;书&nbsp;&nbsp;库</td >
 						</tr>
 						<tr>
 							<th></th>

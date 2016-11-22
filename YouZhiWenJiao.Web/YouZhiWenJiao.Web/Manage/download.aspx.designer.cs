@@ -11,7 +11,7 @@
 namespace YouZhiWenJiao.Web.Manage {
     
     
-    public partial class news {
+    public partial class download {
         
         /// <summary>
         /// Head1 控件。

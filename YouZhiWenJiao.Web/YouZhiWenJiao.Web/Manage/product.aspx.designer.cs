@@ -11,8 +11,8 @@
 namespace YouZhiWenJiao.Web.Manage {
     
     
-    public partial class news {
-        
+    public partial class product {
+
         /// <summary>
         /// Head1 控件。
         /// </summary>
@@ -21,7 +21,7 @@ namespace YouZhiWenJiao.Web.Manage {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
-        
+
         /// <summary>
         /// form1 控件。
         /// </summary>
@@ -30,7 +30,7 @@ namespace YouZhiWenJiao.Web.Manage {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// txtserarch 控件。
         /// </summary>
@@ -39,7 +39,7 @@ namespace YouZhiWenJiao.Web.Manage {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtserarch;
-        
+
         /// <summary>
         /// rptDate 控件。
         /// </summary>
@@ -48,7 +48,7 @@ namespace YouZhiWenJiao.Web.Manage {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::YouZhiWenJiao.Web.Manage.css.ViewData rptDate;
-        
+
         /// <summary>
         /// BtnDel 控件。
         /// </summary>
@@ -57,7 +57,7 @@ namespace YouZhiWenJiao.Web.Manage {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputButton BtnDel;
-        
+
         /// <summary>
         /// BtnCre 控件。
         /// </summary>
