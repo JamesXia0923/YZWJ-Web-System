@@ -160,6 +160,7 @@
     <Compile Include="Common\CommonPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Common\Model.cs" />
     <Compile Include="CompanyProfile.aspx.cs">
       <DependentUpon>CompanyProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
