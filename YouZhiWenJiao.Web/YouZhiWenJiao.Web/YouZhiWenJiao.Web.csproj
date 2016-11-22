@@ -59,6 +59,7 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Manage\about_info.aspx" />
     <Content Include="CompanyProfile.aspx" />
     <Content Include="CorporateMuiltipleProduct.aspx" />
     <Content Include="CorporateProductDetail.aspx" />
@@ -123,7 +124,6 @@
     <Content Include="Lib\SailingWebControl.dll" />
     <Content Include="Lib\System.Data.SQLite.dll" />
     <Content Include="Manage\about.aspx" />
-    <Content Include="Manage\about_info.aspx" />
     <Content Include="Manage\CQEdit\ftb.colorpicker.aspx" />
     <Content Include="Manage\CQEdit\ftb.imagegallery.aspx" />
     <Content Include="Manage\CQEdit\ftb.inserttable.aspx" />
@@ -160,10 +160,18 @@
     <Compile Include="Common\CommonPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Manage\about_info.aspx.cs">
+      <DependentUpon>about_info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\about_info.aspx.designer.cs">
+      <DependentUpon>about_info.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CompanyProfile.aspx.cs">
       <DependentUpon>CompanyProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Common\Model.cs" />
     <Compile Include="CompanyProfile.aspx.designer.cs">
       <DependentUpon>CompanyProfile.aspx</DependentUpon>
     </Compile>
@@ -208,13 +216,6 @@
     </Compile>
     <Compile Include="Manage\about.aspx.designer.cs">
       <DependentUpon>about.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Manage\about_info.aspx.cs">
-      <DependentUpon>about_info.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Manage\about_info.aspx.designer.cs">
-      <DependentUpon>about_info.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\CQEdit\ftb.imagegallery.aspx.cs">
       <DependentUpon>ftb.imagegallery.aspx</DependentUpon>

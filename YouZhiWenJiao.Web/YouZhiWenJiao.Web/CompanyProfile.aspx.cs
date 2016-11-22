@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SQLite;
 using System.Data;
+using YouZhiWenJiao.Web.Common;
+
 namespace YouZhiWenJiao.Web
 {
     public partial class CompanyProfile : CommonPage
@@ -38,27 +40,5 @@ namespace YouZhiWenJiao.Web
             }
             rdr.Close();
         }        
-    }
-
-    public class CompanyProfileTypeModel
-    {
-        public int id { get; set; }
-        public int categoryid { get; set; }
-        public string description { get; set; }
-    }
-
-    public class CompanyProfileModel
-    {
-        public int id{get;set;}
-        public int typeid { get; set; }
-        public int categoryid { get; set; }
-        public string title { get; set; }
-        public string content { get; set; }
-        public string picture { get; set; }
-        public string contentpicture1 { get; set; }
-        public string contentpicture2 { get; set; }
-        public string contentpicture3 { get; set; }
-        public bool showpicture { get; set; }
-        public bool showinhomepage { get; set; }
     }
 }

@@ -24,6 +24,7 @@
 				<tr>
 					<td width='70px' align='center'  style=" white-space:normal">搜索条件：</td >
 					<td style=' width:80px;'><input type='text' name='keyword' value='' id="txtserarch" runat="server" style='width:150px' /></td >
+					<td width='50'><asp:DropDownList Width="120" ID="ddlList" runat="server"></asp:DropDownList></td>
 					<td width="466" align="left"><input name="imageField" type="image" src="images/search.gif" width="45" height="20" border="0" class="np" /></td >
 				</tr>
 			</table>
