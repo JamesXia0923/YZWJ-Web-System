@@ -24,10 +24,12 @@ namespace YouZhiWenJiao.Web.Manage
 				ddlList.Items.Clear();
 				ddlList.Items.Add(new ListItem("所有", "0"));
 				sqlCmd.CommandText = @"
-select type.id, type.description 
+select 
+type.id, 
+type.description 
 from type 
-inner join category on category.id = type.categoryid
-where category.description = '公司简介';";
+inner join category on category.id = type.categoryid 
+where type.categoryid = " + (int)category.公司简介 + ";";
 				var rd = sqlCmd.ExecuteReader();
 				while (rd.Read())
 				{
@@ -61,12 +63,22 @@ product.id,
 product.title,
 product.datetime,
 type.description,
-product.showpicture,
-product.showinhomepage
+case when product.showpicture=1 
+then '<INPUT type=checkbox id=showPic checked value='+ product.Id +' name=chkEleIdShowPic>' 
+else '<INPUT type=checkbox id=showPic value='+ product.Id +' name=chkEleIdShowPic>' end as showpicture,
+case when product.showinhomepage=1 
+then '<INPUT type=checkbox id=showInHomePage checked value='+ product.Id +' name=chkEleIdShowInHomePage>' 
+else '<INPUT type=checkbox id=showInHomePage value='+ product.Id +' name=chkEleIdShowInHomePage>' end as showinhomepage
 from product
 inner join category on category.id = product.categoryid
 inner join type on type.id = product.typeid
-where category.description = '公司简介' and product.title like '@search'";
+where product.categoryid = @categotyid and product.title like '@search'";
+
+			if (!sqlCmd.Parameters.Contains("@categotyid"))
+			{
+				sqlCmd.Parameters.Add("@categotyid", DbType.Int16);
+			}
+			sqlCmd.Parameters["@categotyid"].Value = (int)category.公司简介;
 
 			if (!sqlCmd.Parameters.Contains("@search"))
 			{
@@ -92,7 +104,7 @@ where category.description = '公司简介' and product.title like '@search'";
 				info.ID = dt.Rows[i]["id"].ToString();
 				info.Title = dt.Rows[i]["title"].ToString();
 				info.DateTime = DateTime.Parse(dt.Rows[i]["Datetime"].ToString()).ToShortDateString();
-				info.Type = DateTime.Parse(dt.Rows[i]["description"].ToString()).ToShortDateString();
+				info.Type = dt.Rows[i]["description"].ToString();
 				info.ShowPic = DateTime.Parse(dt.Rows[i]["showpicture"].ToString()).ToShortDateString();
 				info.ShowInHomePage = DateTime.Parse(dt.Rows[i]["showinhomepage"].ToString()).ToShortDateString();
 				li.Add(info);
@@ -103,8 +115,7 @@ where category.description = '公司简介' and product.title like '@search'";
 
 		protected void SubDelClick(object sender, System.EventArgs e)
 		{
-			string strDocumentSortIds = null;
-			strDocumentSortIds = Request.Form["chkEleId"];
+			string strDocumentSortIds = Request.Form["chkEleId"];
 			if (strDocumentSortIds != "" && strDocumentSortIds != null)
 			{
 				sqlCmd.CommandText = "update product set delect = 1 where id in(" + strDocumentSortIds + ")";
@@ -116,7 +127,42 @@ where category.description = '公司简介' and product.title like '@search'";
 
 		protected void SubCreClick(object sender, System.EventArgs e)
 		{
-			Response.Redirect("about_info.aspx", false); 
+			Response.Redirect("about_edit.aspx", false); 
+		}
+
+		protected void SubSaveClick(object sender, System.EventArgs e)
+		{
+			string showPicIdList = Request.Form["chkEleIdShowPic"];
+			string showInHomePageIdList = Request.Form["chkEleIdShowInHomePage"];
+
+			sqlCmd.CommandText = @"
+update product set showpicture=0 
+from product
+inner join category on category.id = product.categoryid
+inner join type on type.id = product.typeid
+where product.categoryid = " + (int)category.公司简介 + ";";
+			sqlCmd.ExecuteNonQuery();
+			sqlCmd.CommandText = @"
+update product set showinhomepage=0 
+from product
+inner join category on category.id = product.categoryid
+inner join type on type.id = product.typeid
+where product.categoryid = " + (int)category.公司简介 + ";";
+			sqlCmd.ExecuteNonQuery();
+
+			if (showPicIdList != null)
+			{
+				sqlCmd.CommandText = "update product set showpicture=1 where id in(" + showPicIdList + ")";
+				sqlCmd.ExecuteNonQuery();
+			}
+
+			if (showInHomePageIdList != null)
+			{
+				sqlCmd.CommandText = "update product set showinhomepage=1 where id in(" + showInHomePageIdList + ")";
+				sqlCmd.ExecuteNonQuery();
+			}
+			Alert("保存成功!");
+			PageChanged(null, null);
 		}
 	}
 }
