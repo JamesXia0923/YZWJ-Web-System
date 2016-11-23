@@ -10,11 +10,18 @@ namespace YouZhiWenJiao.Web.Manage
 	public partial class news : CommonPage
 	{
 		public int UniqueId = 0;
-		//protected void Page_Load(object sender, EventArgs e)
-		//{
-		//    rptDate.DataSource = GetNewList();
-		//    rptDate.DataBind();
-		//}
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Session["user"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
+
+            rptDate.DataSource = GetNewList();
+            rptDate.DataBind();
+        }
+
 		protected void PageChanged(object sender, System.Web.UI.WebControls.DataGridPageChangedEventArgs e)
 		{
 			rptDate.DataSource = GetNewList();
@@ -29,26 +36,13 @@ namespace YouZhiWenJiao.Web.Manage
 		{
 			IList li = new ArrayList();
 
-			sqlCmd.CommandText = @"select id,title,updatedatetime from product where title like '@search' order by updatedatetime desc";
+            var sql = @"select id,title,datetime from product where title like '@search' and categoryid = " + ((int)category.公司新闻).ToString() + " and (deleted <> 1 or deleted is null) order by updatedatetime desc";
 
-			if (!sqlCmd.Parameters.Contains("@search"))
-			{
-				sqlCmd.Parameters.Add("@search", DbType.String);
-			}
-			sqlCmd.Parameters["@search"].Value = "%" + txtserarch.Value + "%";
+            sqlCmd.CommandText = sql.Replace("@search", "%" + txtserarch.Value + "%");
 
-			//SQLiteParameter[] parameters = 
-			//{
-			//    new SQLiteParameter("@search", DbType.String)
-			//};
-			//parameters[0].Value = "%" + txtserarch.Value + "%";
-
-			//var ds = SQLiteHelper.ExecuteDataSet(sqlConn, sqlCmd.CommandText, parameters);
-
-			DataSet ds = new DataSet();
+			DataTable dt = new DataTable();
 			SQLiteDataAdapter da = new SQLiteDataAdapter(sqlCmd);
-			da.Fill(ds);
-			DataTable dt = ds.Tables[0];
+			da.Fill(dt);
 			Information info = null;
 
 			for (int i = 0; i < dt.Rows.Count; i++)
@@ -57,7 +51,7 @@ namespace YouZhiWenJiao.Web.Manage
 				info.Number = (i + 1).ToString();
 				info.ID = dt.Rows[i]["id"].ToString();
 				info.Title = dt.Rows[i]["title"].ToString();
-				info.DateTime = DateTime.Parse(dt.Rows[i]["Datetime"].ToString()).ToShortDateString();
+				info.DateTime = DateTime.Parse(dt.Rows[i]["datetime"].ToString()).ToShortDateString();
 
 				li.Add(info);
 			}
@@ -69,9 +63,10 @@ namespace YouZhiWenJiao.Web.Manage
 		{
 			string strDocumentSortIds = null;
 			strDocumentSortIds = Request.Form["chkEleId"];
+            strDocumentSortIds = strDocumentSortIds.Replace(",", "','");
 			if (strDocumentSortIds != "" && strDocumentSortIds != null)
 			{
-				sqlCmd.CommandText = "update product set delect = 1 where id in(" + strDocumentSortIds + ")";
+				sqlCmd.CommandText = "update product set deleted = 1 where id in('" + strDocumentSortIds + "')";
 				sqlCmd.ExecuteNonQuery();
 				Alert("删除成功!");
 				PageChanged(null, null);
@@ -80,7 +75,7 @@ namespace YouZhiWenJiao.Web.Manage
 
 		protected void SubCreClick(object sender, System.EventArgs e)
 		{
-			Response.Redirect("about_info.aspx", false);
+			Response.Redirect("news_edit.aspx", false);
 		}
 	}
 }
