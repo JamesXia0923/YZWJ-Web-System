@@ -47,7 +47,7 @@ namespace YouZhiWenJiao.Web.Manage {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::SailingWebControl.Tq_Calendar datetime;
+        protected global::System.Web.UI.WebControls.Calendar datetime;
         
         /// <summary>
         /// ddlListType control.
@@ -77,24 +77,6 @@ namespace YouZhiWenJiao.Web.Manage {
         protected global::System.Web.UI.WebControls.Label Lb_Info;
         
         /// <summary>
-        /// videoTr control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow videoTr;
-        
-        /// <summary>
-        /// InputVideo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload InputVideo;
-        
-        /// <summary>
         /// ftbContent control.
         /// </summary>
         /// <remarks>
@@ -111,6 +93,15 @@ namespace YouZhiWenJiao.Web.Manage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnOK;
+        
+        /// <summary>
+        /// btnPreview control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPreview;
         
         /// <summary>
         /// btnBack control.

@@ -62,7 +62,7 @@ select
 product.id,
 product.title,
 product.datetime,
-type.description,
+newtype.description,
 case when product.showpicture=1 
 then '<INPUT type=checkbox id=showPic checked value='+ product.Id +' name=chkEleIdShowPic>' 
 else '<INPUT type=checkbox id=showPic value='+ product.Id +' name=chkEleIdShowPic>' end as showpicture,
@@ -70,9 +70,10 @@ case when product.showinhomepage=1
 then '<INPUT type=checkbox id=showInHomePage checked value='+ product.Id +' name=chkEleIdShowInHomePage>' 
 else '<INPUT type=checkbox id=showInHomePage value='+ product.Id +' name=chkEleIdShowInHomePage>' end as showinhomepage
 from product
-inner join category on category.id = product.categoryid
-inner join type on type.id = product.typeid
-where product.categoryid = @categotyid and product.title like '@search'";
+left join
+(select * from type left join category on category.id = type.categoryid where category.id = @categotyid) 
+newtype on newtype.id = product.typeid
+where product.title like '@search' ";
 
 			if (!sqlCmd.Parameters.Contains("@categotyid"))
 			{

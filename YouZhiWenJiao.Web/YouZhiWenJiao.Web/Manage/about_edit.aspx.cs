@@ -8,32 +8,41 @@ namespace YouZhiWenJiao.Web.Manage
 {
 	public partial class about_edit : CommonPage
 	{
-		protected int intID = 0;
+		protected string productId = "";
 
 		string user = @"";
-		string imgURL = @"";
-		//string videoURL = @"";
+		string imgUrl= @"";
+		string imgPath = @"";
 		string href_string = @"../about.aspx?";
 		protected string href_value = "";
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			#region Session User
 			if (Session["user"] == null)
 			{
 				Response.Redirect("login.aspx");
 			}
 			user = Session["user"].ToString();
+			#endregion
 
-			intID = ToInt(Request["ID"]);
+			productId = Request["id"] != null ? Request["id"].ToString() : "";
+			href_value = href_string + "id=" + productId;
 
-			href_value = href_string + "id=" + intID;
-
+			#region Page refresh
 			if (!IsPostBack)
 			{
 				sqlCmd.CommandText = @"
 select type.id, type.description 
 from type 
 inner join category on category.id = type.categoryid
-where category.description = '公司简介';";
+where categoryid = @categotyid";
+
+				if (!sqlCmd.Parameters.Contains("@categotyid"))
+				{
+					sqlCmd.Parameters.Add("@categotyid", DbType.Int16);
+				}
+				sqlCmd.Parameters["@categotyid"].Value = (int)category.公司简介;
+
 				var rd = sqlCmd.ExecuteReader();
 				while (rd.Read())
 				{
@@ -41,31 +50,23 @@ where category.description = '公司简介';";
 				}
 				rd.Close();
 
-				if (intID > 0)
+				if (productId != "")
 				{
-					sqlCmd.CommandText = "select title,content,datetime,picture from product where Id=@id";
+					sqlCmd.CommandText = "select title,content,datetime,picture from product where id=@id";
 					sqlCmd.Parameters.Add("@id", DbType.Int16);
-					sqlCmd.Parameters["@id"].Value = intID;
+					sqlCmd.Parameters["@id"].Value = productId;
 					var dr = sqlCmd.ExecuteReader();
 					if (dr.Read())
 					{
 						txtTitle.Text = dr[0].ToString();
 						ftbContent.Text = dr[1].ToString();
-						datetime.DValue = dr[2];
-						InputFile.Value = dr[3].ToString();
+						datetime.SelectedDate = DateTime.Parse(dr[2].ToString());
+						imgPath = dr[3].ToString();
 					}
 					dr.Close();
 				}
 			}
-
-			if (ToInt(ddlListType.SelectedValue) == 1)
-			{
-				videoTr.Style.Add(HtmlTextWriterStyle.Display, "block");
-			}
-			else
-			{
-				videoTr.Style.Add(HtmlTextWriterStyle.Display, "none");
-			}
+			#endregion
 		}
 
 		protected void btnOK_Click(object sender, System.EventArgs e)
@@ -73,9 +74,8 @@ where category.description = '公司简介';";
 			string lx_id = ddlListType.SelectedValue;
 
 			string uploadName = InputFile.Value;//获取待上传图片的完整路径，包括文件名  
-			//string uploadName = InputFile.PostedFile.FileName;         
 			string pictureName = "";//上传后的图片名，以当前时间为文件名，确保文件名没有重复 
-			imgURL = "";
+			imgUrl = "";
 			if (InputFile.Value != "")
 			{
 				int idx = uploadName.LastIndexOf(".");
@@ -93,7 +93,7 @@ where category.description = '公司简介';";
 							AppUrl = Request.ApplicationPath + "/";
 						string path = Server.MapPath(AppUrl + "img/" + pictureName);
 						InputFile.PostedFile.SaveAs(path);
-						imgURL = AppUrl + "img/" + pictureName;
+						imgUrl = AppUrl + "img/" + pictureName;
 					}
 				}
 				catch (Exception ex)
@@ -101,37 +101,12 @@ where category.description = '公司简介';";
 					Response.Write(ex);
 				}
 			}
+			else
+			{
+				imgUrl = imgPath;
+			}
 
-			//string uploadVideo = InputVideo.Value;
-			//string videoName = "";
-
-			//videoURL = "";
-			//if (InputVideo.Value != "")
-			//{
-			//    int idx = uploadVideo.LastIndexOf(".");
-			//    string suffix = uploadVideo.Substring(idx);
-			//    videoName = DateTime.Now.Ticks.ToString() + suffix;
-			//    try
-			//    {
-			//        if (uploadVideo != "")
-			//        {
-			//            string AppUrl = "";
-			//            if (Request.ApplicationPath == "/")
-			//                AppUrl = Request.ApplicationPath;
-			//            else
-			//                AppUrl = Request.ApplicationPath + "/";
-			//            string path = Server.MapPath(AppUrl + "vedio/" + videoName);
-			//            InputVideo.PostedFile.SaveAs(path);
-			//            videoURL = AppUrl + "vedio/" + videoName;
-			//        }
-			//    }
-			//    catch (Exception ex)
-			//    {
-			//        Response.Write(ex);
-			//    }
-			//}
-
-			if (intID > 0)
+			if (productId != "")
 			{
 				sqlCmd.CommandText = @"
 update product 
@@ -148,6 +123,7 @@ where id=@id;";
 			{
 				sqlCmd.CommandText =@"
 insert into product(
+id,
 typeid,
 categoryid,
 title,
@@ -159,6 +135,7 @@ createuser,
 updatedatetime,
 updateuser)
 values(
+@id,
 @ypeid,
 @categoryid,
 @title,
@@ -171,6 +148,11 @@ values(
 @updateuser);";
 			}
 
+			sqlCmd.Parameters.Add("@id", DbType.Guid);
+			sqlCmd.Parameters["@id"].Value = Guid.NewGuid();
+
+			productId = sqlCmd.Parameters["@id"].Value.ToString();
+
 			sqlCmd.Parameters.Add("@typeid", DbType.Int16);
 			sqlCmd.Parameters["@typeid"].Value = ddlListType.SelectedIndex;
 			sqlCmd.Parameters.Add("@categoryid", DbType.Int16);
@@ -179,11 +161,11 @@ values(
 			sqlCmd.Parameters.Add("@title", DbType.String);
 			sqlCmd.Parameters["@title"].Value = txtTitle.Text;
 			sqlCmd.Parameters.Add("@datetime", DbType.DateTime);
-			sqlCmd.Parameters["@datetime"].Value = datetime;
+			sqlCmd.Parameters["@datetime"].Value = datetime.SelectedDate;
 			sqlCmd.Parameters.Add("@content", DbType.String);
 			sqlCmd.Parameters["@content"].Value = ftbContent.Text;
 			sqlCmd.Parameters.Add("@picture", DbType.String);
-			sqlCmd.Parameters["@picture"].Value = imgURL;
+			sqlCmd.Parameters["@picture"].Value = imgUrl;
 
 			sqlCmd.Parameters.Add("@createdatetime", DbType.DateTime);
 			sqlCmd.Parameters["@createdatetime"].Value = DateTime.Now;
@@ -195,19 +177,14 @@ values(
 			sqlCmd.Parameters["@updateuser"].Value = user;
 			sqlCmd.ExecuteNonQuery();
 
-			if (intID == 0)
-			{
-				sqlCmd.CommandText = "select @@IDENTITY";
-				intID = ToInt(sqlCmd.ExecuteScalar());
-			}
-			href_value = href_string + "id=" + intID;
+			href_value = href_string + "id=" + productId;
 			Alert("保存成功!");
 		}
 
-		//protected void btnPrewiew_Click(object sender, System.EventArgs e)
-		//{
-		//    Response.Redirect("href_string", false);
-		//}
+		protected void btnPrewiew_Click(object sender, System.EventArgs e)
+		{
+			Response.Redirect(href_value, false);
+		}
 
 		protected void btnBack_Click(object sender, System.EventArgs e)
 		{
