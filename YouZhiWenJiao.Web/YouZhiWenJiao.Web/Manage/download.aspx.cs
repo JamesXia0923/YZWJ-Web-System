@@ -7,80 +7,89 @@ using YouZhiWenJiao.Web.Manage.Entity;
 
 namespace YouZhiWenJiao.Web.Manage
 {
-    public partial class download : CommonPage
-    {
-        public int UniqueId = 0;
-        //protected void Page_Load(object sender, EventArgs e)
-        //{
-        //    rptDate.DataSource = GetNewList();
-        //    rptDate.DataBind();
-        //}
-        protected void PageChanged(object sender, System.Web.UI.WebControls.DataGridPageChangedEventArgs e)
-        {
-            rptDate.DataSource = GetNewList();
-            rptDate.DataBind();
-        }
+	public partial class download : CommonPage
+	{
+		public int UniqueId = 0;
+		protected void Page_Load(object sender, EventArgs e)
+		{
+			if (Session["user"] == null)
+			{
+				Response.Redirect("login.aspx");
+			}
+		}
 
-        protected void DataBindings(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)
-        {
-            UniqueId++;
-        }
-        public IList GetNewList()
-        {
-            IList li = new ArrayList();
+		protected void PageChanged(object sender, System.Web.UI.WebControls.DataGridPageChangedEventArgs e)
+		{
+			rptDate.DataSource = GetNewList();
+			rptDate.DataBind();
+		}
 
-            sqlCmd.CommandText = @"select id,title,updatedatetime from product where title like '@search' order by updatedatetime desc";
+		protected void DataBindings(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)
+		{
+			UniqueId++;
+		}
+		public IList GetNewList()
+		{
+			IList li = new ArrayList();
 
-            if (!sqlCmd.Parameters.Contains("@search"))
-            {
-                sqlCmd.Parameters.Add("@search", DbType.String);
-            }
-            sqlCmd.Parameters["@search"].Value = "%" + txtserarch.Value + "%";
+			sqlCmd.CommandText = @"
+select 
+id,
+title,
+datetime,
+case when product.showinhomepage=1 
+then '<INPUT type=checkbox id=showInHomePage checked value='+ product.Id +' name=chkEleIdShowInHomePage>' 
+else '<INPUT type=checkbox id=showInHomePage value='+ product.Id +' name=chkEleIdShowInHomePage>' end as showinhomepage
+from product 
+where categoryid = @category and title like '@search' order by updatedatetime desc";
 
-            //SQLiteParameter[] parameters = 
-            //{
-            //    new SQLiteParameter("@search", DbType.String)
-            //};
-            //parameters[0].Value = "%" + txtserarch.Value + "%";
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@category", "'" + ((int)category.资料下载).ToString() + "'");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@search", "%" + txtserarch.Value + "%");
 
-            //var ds = SQLiteHelper.ExecuteDataSet(sqlConn, sqlCmd.CommandText, parameters);
+			DataSet ds = new DataSet();
+			SQLiteDataAdapter da = new SQLiteDataAdapter(sqlCmd);
+			da.Fill(ds);
+			DataTable dt = ds.Tables[0];
+			Information info = null;
 
-            DataSet ds = new DataSet();
-            SQLiteDataAdapter da = new SQLiteDataAdapter(sqlCmd);
-            da.Fill(ds);
-            DataTable dt = ds.Tables[0];
-            Information info = null;
+			for (int i = 0; i < dt.Rows.Count; i++)
+			{
+				info = new Information();
+				info.Number = (i + 1).ToString();
+				info.ID = dt.Rows[i]["id"].ToString();
+				info.Title = dt.Rows[i]["title"].ToString();
+				info.DateTime = DateTime.Parse(dt.Rows[i]["Datetime"].ToString()).ToShortDateString();
+				info.ShowInHomePage = dt.Rows[i]["showinhomepage"].ToString();
+				li.Add(info);
+			}
 
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                info = new Information();
-                info.Number = (i + 1).ToString();
-                info.ID = dt.Rows[i]["id"].ToString();
-                info.Title = dt.Rows[i]["title"].ToString();
-                info.DateTime = DateTime.Parse(dt.Rows[i]["Datetime"].ToString()).ToShortDateString();
+			return li;
+		}
 
-                li.Add(info);
-            }
+		protected void SubDelClick(object sender, System.EventArgs e)
+		{
+			string showInHomePageIdList = Request.Form["chkEleIdShowInHomePage"];
+			showInHomePageIdList = showInHomePageIdList.Replace(",", "','");
 
-            return li;
-        }
+			sqlCmd.CommandText = @"
+update product set showinhomepage=0 
+from product
+inner join category on category.id = product.categoryid
+where product.categoryid = " + (int)category.资料下载 + ";";
+			sqlCmd.ExecuteNonQuery();
 
-        protected void SubDelClick(object sender, System.EventArgs e)
-        {
-            string strDocumentSortIds = null;
-            strDocumentSortIds = Request.Form["chkEleId"];
-            if (strDocumentSortIds != "" && strDocumentSortIds != null)
-            {
-                sqlCmd.CommandText = "update product set delect = 1 where id in(" + strDocumentSortIds + ")";
-                sqlCmd.ExecuteNonQuery();
-                Alert("删除成功!");
-                PageChanged(null, null);
-            }
-        }
+			if (showInHomePageIdList != null)
+			{
+				sqlCmd.CommandText = "update product set showinhomepage=1 where id in(" + "'" + showInHomePageIdList + "'" + ")";
+				sqlCmd.ExecuteNonQuery();
+			}
+			Alert("保存成功!");
+			PageChanged(null, null);
+		}
 
-        protected void SubCreClick(object sender, System.EventArgs e)
-        {
-            Response.Redirect("about_info.aspx", false);
-        }
-    }
+		protected void SubCreClick(object sender, System.EventArgs e)
+		{
+			Response.Redirect("download_edit.aspx", false);
+		}
+	}
 }

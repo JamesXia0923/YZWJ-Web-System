@@ -75,21 +75,12 @@ left join
 newtype on newtype.id = product.typeid
 where product.title like '@search' ";
 
-			if (!sqlCmd.Parameters.Contains("@categotyid"))
-			{
-				sqlCmd.Parameters.Add("@categotyid", DbType.Int16);
-			}
-			sqlCmd.Parameters["@categotyid"].Value = (int)category.公司简介;
-
-			if (!sqlCmd.Parameters.Contains("@search"))
-			{
-				sqlCmd.Parameters.Add("@search", DbType.String);
-			}
-			sqlCmd.Parameters["@search"].Value = "%" + txtserarch.Value + "%";
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categotyid", "'" + ((int)category.公司简介).ToString() + "'");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@search", "%" + txtserarch.Value + "%");
 
 			if (ddlList.SelectedValue != "0")
 			{
-				sqlCmd.CommandText += " and type.id=" + ddlList.SelectedValue + "";
+				sqlCmd.CommandText += " and newtype.id=" + ddlList.SelectedValue + "";
 			}
 			sqlCmd.CommandText += " order by product.updatedatetime desc;";
 
@@ -104,10 +95,10 @@ where product.title like '@search' ";
 				info.Number = (i + 1).ToString();
 				info.ID = dt.Rows[i]["id"].ToString();
 				info.Title = dt.Rows[i]["title"].ToString();
-				info.DateTime = DateTime.Parse(dt.Rows[i]["Datetime"].ToString()).ToShortDateString();
+				info.DateTime = DateTime.Parse(dt.Rows[i]["datetime"].ToString()).ToShortDateString();
 				info.Type = dt.Rows[i]["description"].ToString();
-				info.ShowPic = DateTime.Parse(dt.Rows[i]["showpicture"].ToString()).ToShortDateString();
-				info.ShowInHomePage = DateTime.Parse(dt.Rows[i]["showinhomepage"].ToString()).ToShortDateString();
+				info.ShowPic = dt.Rows[i]["showpicture"].ToString();
+				info.ShowInHomePage = dt.Rows[i]["showinhomepage"].ToString();
 				li.Add(info);
 			}
 
@@ -117,9 +108,10 @@ where product.title like '@search' ";
 		protected void SubDelClick(object sender, System.EventArgs e)
 		{
 			string strDocumentSortIds = Request.Form["chkEleId"];
+			strDocumentSortIds = strDocumentSortIds.Replace(",", "','");
 			if (strDocumentSortIds != "" && strDocumentSortIds != null)
 			{
-				sqlCmd.CommandText = "update product set delect = 1 where id in(" + strDocumentSortIds + ")";
+				sqlCmd.CommandText = "update product set delect = 1 where id in(" + "'" + strDocumentSortIds + "'" + ")";
 				sqlCmd.ExecuteNonQuery();
 				Alert("删除成功!");
 				PageChanged(null, null);
@@ -136,30 +128,31 @@ where product.title like '@search' ";
 			string showPicIdList = Request.Form["chkEleIdShowPic"];
 			string showInHomePageIdList = Request.Form["chkEleIdShowInHomePage"];
 
+			showPicIdList = showPicIdList.Replace(",", "','");
+			showInHomePageIdList = showInHomePageIdList.Replace(",", "','");
+
 			sqlCmd.CommandText = @"
 update product set showpicture=0 
 from product
 inner join category on category.id = product.categoryid
-inner join type on type.id = product.typeid
 where product.categoryid = " + (int)category.公司简介 + ";";
 			sqlCmd.ExecuteNonQuery();
 			sqlCmd.CommandText = @"
 update product set showinhomepage=0 
 from product
 inner join category on category.id = product.categoryid
-inner join type on type.id = product.typeid
 where product.categoryid = " + (int)category.公司简介 + ";";
 			sqlCmd.ExecuteNonQuery();
 
 			if (showPicIdList != null)
 			{
-				sqlCmd.CommandText = "update product set showpicture=1 where id in(" + showPicIdList + ")";
+				sqlCmd.CommandText = "update product set showpicture=1 where id in(" + "'" + showPicIdList + "'" + ")";
 				sqlCmd.ExecuteNonQuery();
 			}
 
 			if (showInHomePageIdList != null)
 			{
-				sqlCmd.CommandText = "update product set showinhomepage=1 where id in(" + showInHomePageIdList + ")";
+				sqlCmd.CommandText = "update product set showinhomepage=1 where id in(" + "'" + showInHomePageIdList + "'" + ")";
 				sqlCmd.ExecuteNonQuery();
 			}
 			Alert("保存成功!");

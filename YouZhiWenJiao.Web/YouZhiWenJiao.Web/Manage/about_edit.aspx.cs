@@ -37,12 +37,7 @@ from type
 inner join category on category.id = type.categoryid
 where categoryid = @categotyid";
 
-				if (!sqlCmd.Parameters.Contains("@categotyid"))
-				{
-					sqlCmd.Parameters.Add("@categotyid", DbType.Int16);
-				}
-				sqlCmd.Parameters["@categotyid"].Value = (int)category.公司简介;
-
+				sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categotyid", "'" + ((int)category.公司简介).ToString() + "'");
 				var rd = sqlCmd.ExecuteReader();
 				while (rd.Read())
 				{
@@ -52,9 +47,7 @@ where categoryid = @categotyid";
 
 				if (productId != "")
 				{
-					sqlCmd.CommandText = "select title,content,datetime,picture from product where id=@id";
-					sqlCmd.Parameters.Add("@id", DbType.Int16);
-					sqlCmd.Parameters["@id"].Value = productId;
+					sqlCmd.CommandText = "select title,content,datetime,picture from product where id='" + productId + "'";
 					var dr = sqlCmd.ExecuteReader();
 					if (dr.Read())
 					{
@@ -121,7 +114,7 @@ where id=@id;";
 			}
 			else
 			{
-				sqlCmd.CommandText =@"
+				sqlCmd.CommandText = @"
 insert into product(
 id,
 typeid,
@@ -136,7 +129,7 @@ updatedatetime,
 updateuser)
 values(
 @id,
-@ypeid,
+@typeid,
 @categoryid,
 @title,
 @datetime,
@@ -148,37 +141,25 @@ values(
 @updateuser);";
 			}
 
-			sqlCmd.Parameters.Add("@id", DbType.Guid);
-			sqlCmd.Parameters["@id"].Value = Guid.NewGuid();
+			var newGuid = Guid.NewGuid().ToString();
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@id", "'" + newGuid + "'");
+			productId = newGuid;
 
-			productId = sqlCmd.Parameters["@id"].Value.ToString();
-
-			sqlCmd.Parameters.Add("@typeid", DbType.Int16);
-			sqlCmd.Parameters["@typeid"].Value = ddlListType.SelectedIndex;
-			sqlCmd.Parameters.Add("@categoryid", DbType.Int16);
-			sqlCmd.Parameters["@categoryid"].Value = (int)category.公司简介;
-
-			sqlCmd.Parameters.Add("@title", DbType.String);
-			sqlCmd.Parameters["@title"].Value = txtTitle.Text;
-			sqlCmd.Parameters.Add("@datetime", DbType.DateTime);
-			sqlCmd.Parameters["@datetime"].Value = datetime.SelectedDate;
-			sqlCmd.Parameters.Add("@content", DbType.String);
-			sqlCmd.Parameters["@content"].Value = ftbContent.Text;
-			sqlCmd.Parameters.Add("@picture", DbType.String);
-			sqlCmd.Parameters["@picture"].Value = imgUrl;
-
-			sqlCmd.Parameters.Add("@createdatetime", DbType.DateTime);
-			sqlCmd.Parameters["@createdatetime"].Value = DateTime.Now;
-			sqlCmd.Parameters.Add("@createuser", DbType.String);
-			sqlCmd.Parameters["@createuser"].Value = user;
-			sqlCmd.Parameters.Add("@updatedatetime", DbType.DateTime);
-			sqlCmd.Parameters["@updatedatetime"].Value = DateTime.Now;
-			sqlCmd.Parameters.Add("@updateuser", DbType.String);
-			sqlCmd.Parameters["@updateuser"].Value = user;
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@typeid", "'" + ddlListType.SelectedIndex.ToString() + "'");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categoryid", "'" + ((int)category.公司简介).ToString() + "'");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@title", "'" + txtTitle.Text + "'");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@datetime", "'" + datetime.SelectedDate.ToString("yyyy-MM-dd HH:mm:ss.ffff") + "'");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@content", "'" + ftbContent.Text + "'");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@picture", "'" + imgUrl.ToString() + "'");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@createdatetime", "'" + DateTime.Now.ToString() + "'");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@createuser", "'" + user + "'");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@updatedatetime", "'" + DateTime.Now.ToString() + "'");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@updateuser", "'" + user + "'");
 			sqlCmd.ExecuteNonQuery();
 
 			href_value = href_string + "id=" + productId;
 			Alert("保存成功!");
+			Response.Redirect("about.aspx", false);
 		}
 
 		protected void btnPrewiew_Click(object sender, System.EventArgs e)
