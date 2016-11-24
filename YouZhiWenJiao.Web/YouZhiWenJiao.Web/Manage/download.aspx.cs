@@ -38,10 +38,10 @@ id,
 title,
 datetime,
 case when product.showinhomepage=1 
-then '<INPUT type=checkbox id=showInHomePage checked value='+ product.Id +' name=chkEleIdShowInHomePage>' 
-else '<INPUT type=checkbox id=showInHomePage value='+ product.Id +' name=chkEleIdShowInHomePage>' end as showinhomepage
+then '<INPUT type=checkbox id=showInHomePage checked value='|| product.Id ||' name=chkEleIdShowInHomePage>' 
+else '<INPUT type=checkbox id=showInHomePage value='|| product.Id ||' name=chkEleIdShowInHomePage>' end as showinhomepage
 from product 
-where categoryid = @category and title like '@search' order by updatedatetime desc";
+where (product.deleted <> 1 or product.deleted is null) and categoryid = @category and title like '@search' order by updatedatetime desc";
 
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@category", "'" + ((int)category.资料下载).ToString() + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@search", "%" + txtserarch.Value + "%");

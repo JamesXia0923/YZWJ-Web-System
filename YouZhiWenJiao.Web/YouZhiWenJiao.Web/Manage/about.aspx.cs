@@ -64,16 +64,16 @@ product.title,
 product.datetime,
 newtype.description,
 case when product.showpicture=1 
-then '<INPUT type=checkbox id=showPic checked value='+ product.Id +' name=chkEleIdShowPic>' 
-else '<INPUT type=checkbox id=showPic value='+ product.Id +' name=chkEleIdShowPic>' end as showpicture,
+then '<INPUT type=checkbox id=showPic checked value='|| product.Id ||' name=chkEleIdShowPic>' 
+else '<INPUT type=checkbox id=showPic value='|| product.Id ||' name=chkEleIdShowPic>' end as showpicture,
 case when product.showinhomepage=1 
-then '<INPUT type=checkbox id=showInHomePage checked value='+ product.Id +' name=chkEleIdShowInHomePage>' 
-else '<INPUT type=checkbox id=showInHomePage value='+ product.Id +' name=chkEleIdShowInHomePage>' end as showinhomepage
+then '<INPUT type=checkbox id=showInHomePage checked value='|| product.Id ||' name=chkEleIdShowInHomePage>' 
+else '<INPUT type=checkbox id=showInHomePage value='|| product.Id ||' name=chkEleIdShowInHomePage>' end as showinhomepage
 from product
 left join
 (select * from type left join category on category.id = type.categoryid where category.id = @categotyid) 
 newtype on newtype.id = product.typeid
-where product.title like '@search' ";
+where (product.deleted <> 1 or product.deleted is null) and product.title like '@search' ";
 
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categotyid", "'" + ((int)category.公司简介).ToString() + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@search", "%" + txtserarch.Value + "%");
@@ -88,10 +88,11 @@ where product.title like '@search' ";
 			SQLiteDataAdapter da = new SQLiteDataAdapter(sqlCmd);
 			da.Fill(ds);
 			DataTable dt = ds.Tables[0];
-			Information info = new Information();
+			Information info = null;
 
 			for (int i = 0; i < dt.Rows.Count; i++)
 			{
+				info = new Information();
 				info.Number = (i + 1).ToString();
 				info.ID = dt.Rows[i]["id"].ToString();
 				info.Title = dt.Rows[i]["title"].ToString();
