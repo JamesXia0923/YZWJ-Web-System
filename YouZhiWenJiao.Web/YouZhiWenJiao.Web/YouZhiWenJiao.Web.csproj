@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CorporateNews.aspx" />
+    <Content Include="CorporateNewsDetail.aspx" />
     <Content Include="Manage\about_info.aspx" />
     <Content Include="CompanyProfile.aspx" />
     <Content Include="CorporateMuiltipleProduct.aspx" />
@@ -168,6 +169,13 @@
     </Compile>
     <Compile Include="CorporateNews.aspx.designer.cs">
       <DependentUpon>CorporateNews.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CorporateNewsDetail.aspx.cs">
+      <DependentUpon>CorporateNewsDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CorporateNewsDetail.aspx.designer.cs">
+      <DependentUpon>CorporateNewsDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\about_info.aspx.cs">
       <DependentUpon>about_info.aspx</DependentUpon>

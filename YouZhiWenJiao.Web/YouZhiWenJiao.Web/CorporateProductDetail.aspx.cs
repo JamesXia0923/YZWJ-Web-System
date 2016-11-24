@@ -25,6 +25,7 @@ namespace YouZhiWenJiao.Web
             }
 
             Product = new CommonModel();
+            ProductList = new List<CommonModel>();
             var productId = Session["id"].ToString();
 
             //根据id查询出产品信息
