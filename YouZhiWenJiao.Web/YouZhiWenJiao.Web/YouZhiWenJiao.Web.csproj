@@ -59,6 +59,7 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CorporateNews.aspx" />
     <Content Include="Manage\about_info.aspx" />
     <Content Include="CompanyProfile.aspx" />
     <Content Include="CorporateMuiltipleProduct.aspx" />
@@ -151,6 +152,7 @@
     <Content Include="Manage\images\title_bg2.jpg" />
     <Content Include="Manage\index.aspx" />
     <Content Include="Manage\login.aspx" />
+    <Content Include="ProductList.aspx" />
     <Content Include="Web.config" />
     <Content Include="xwnr.html" />
     <Content Include="xwzx.html" />
@@ -159,6 +161,13 @@
   <ItemGroup>
     <Compile Include="Common\CommonPage.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CorporateNews.aspx.cs">
+      <DependentUpon>CorporateNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CorporateNews.aspx.designer.cs">
+      <DependentUpon>CorporateNews.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\about_info.aspx.cs">
       <DependentUpon>about_info.aspx</DependentUpon>
@@ -239,6 +248,13 @@
     </Compile>
     <Compile Include="Manage\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductList.aspx.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductList.aspx.designer.cs">
+      <DependentUpon>ProductList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\SqLiteHelper.cs" />
