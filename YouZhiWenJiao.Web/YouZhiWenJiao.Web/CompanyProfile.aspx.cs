@@ -36,7 +36,7 @@ namespace YouZhiWenJiao.Web
 
             while (rdr.Read())
             {
-                CompanyProfileList.Add(new CommonModel() { id = ToInt(rdr["id"]), typeid = ToInt(rdr["typeid"]), title = rdr["title"].ToString(), content = rdr["content"].ToString() });
+                CompanyProfileList.Add(new CommonModel() { id = rdr["id"].ToString(), typeid = ToInt(rdr["typeid"]), title = rdr["title"].ToString(), content = rdr["content"].ToString() });
             }
             rdr.Close();
         }        

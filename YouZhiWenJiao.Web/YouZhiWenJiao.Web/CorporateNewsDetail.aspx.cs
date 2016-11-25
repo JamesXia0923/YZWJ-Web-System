@@ -24,24 +24,23 @@ namespace YouZhiWenJiao.Web
             CorporateNewsDetails = new CommonModel();
             CorporateNewsType = new CommonTypeModel();
 
-            CorporateNewsDetails.id = ToInt(Session["id"]);
+            CorporateNewsDetails.id = Session["id"].ToString();
+            //CorporateNewsDetails.id = "52fbf2be-c75b-47dc-8aee-bdbe9c265e98";
 
             //根据id查询出新闻内容
             sqlCmd.CommandText = @"select * from product where id = @DetailId";
-            sqlCmd.Parameters["DetailId"].Value = ToInt(CorporateNewsDetails.id);
+            sqlCmd.Parameters.Add("@DetailId", DbType.String);
+            sqlCmd.Parameters["@DetailId"].Value = CorporateNewsDetails.id;
             IDataReader reader = sqlCmd.ExecuteReader();
             if (reader.Read())
             {
-                CorporateNewsDetails.typeid = ToInt(reader["typeid"]);
-                CorporateNewsDetails.categoryid = ToInt(reader["categoryid"]);
-                CorporateNewsDetails.title = reader["title"].ToString();
-                CorporateNewsDetails.content = reader["content"].ToString();
-                CorporateNewsDetails.datetime = Convert.ToDateTime(reader["datetime"]);
+                CorporateNewsDetails = GenerateModel(reader)[0];
             }
             reader.Close();
 
             //查询出category
             sqlCmd.CommandText = @"select * from category where id = @CategoryId";
+            sqlCmd.Parameters.Add("@CategoryId", DbType.Int16);
             sqlCmd.Parameters["@CategoryId"].Value = ToInt(CorporateNewsDetails.categoryid);
             reader = sqlCmd.ExecuteReader();
             if (reader.Read())

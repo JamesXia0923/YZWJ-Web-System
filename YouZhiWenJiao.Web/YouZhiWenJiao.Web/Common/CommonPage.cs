@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Data.SQLite;
+using System.Collections.Generic;
+using YouZhiWenJiao.Web.Common;
 
 namespace YouZhiWenJiao.Web
 {
@@ -172,5 +175,24 @@ namespace YouZhiWenJiao.Web
 			}
 			return filtered.ToString();
 		}
+
+        public List<CommonModel> GenerateModel(IDataReader reader)
+        {
+            List<CommonModel> results = new List<CommonModel>();
+            results.Add(new CommonModel()
+            {
+                id = reader["id"].ToString(),
+                typeid = ToInt(reader["typeid"]),
+                categoryid = ToInt(reader["categoryid"]),
+                title = reader["title"].ToString(),
+                content = reader["content"].ToString(),
+                picture = reader["picture"].ToString(),
+                contentpicture1 = reader["contentpicture1"].ToString(),
+                contentpicture2 = reader["contentpicture2"].ToString(),
+                contentpicture3 = reader["contentpicture3"].ToString(),
+                datetime = Convert.ToDateTime(reader["datetime"])
+            });
+            return results;
+        }
 	}
 }

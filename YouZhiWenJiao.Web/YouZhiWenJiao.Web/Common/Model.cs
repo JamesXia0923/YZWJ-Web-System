@@ -14,7 +14,7 @@ namespace YouZhiWenJiao.Web.Common
 
     public class CommonModel
     {
-        public int id { get; set; }
+        public string id { get; set; }
         public int typeid { get; set; }
         public int categoryid { get; set; }
         public string title { get; set; }

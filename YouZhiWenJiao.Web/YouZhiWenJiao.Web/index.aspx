@@ -20,7 +20,6 @@
     <!--头部-->
     <div><iframe frameborder="0" scrolling="no" width="100%" height="405px" src="header.aspx"></iframe></div>
     <!--首页主体--> 
-    <script src="js/all.js" type="text/javascript"></script>
     <div class="xc_pic ofHidden clearfix">
         <div class="block clearfix ofHidden">
             <b></b>
@@ -52,7 +51,7 @@
     	<div class="index_right fright">
         	<div class="t1">音频中心 <span class="f14 c_666">Video Center</span></div>
             <ul class="alzs clearfix ofHidden">
-            	<li><a href="">小兔子的故事</a></li>
+            	<li><a href="ProductList.aspx">小兔子的故事</a></li>
                 <li><a href="">猫和老鼠</a></li>
                 <li><a href="">幸福人家</a></li>
                 <li><a href="">天天向上</a></li>
@@ -78,5 +77,6 @@
     </div>
     <!--底部--> 
 	<div><iframe frameborder="0" scrolling="no" width="100%" height="410px" src="footer.aspx"></iframe></div>
+	<script src="js/all.js" type="text/javascript"></script>
 </body>
 </html>

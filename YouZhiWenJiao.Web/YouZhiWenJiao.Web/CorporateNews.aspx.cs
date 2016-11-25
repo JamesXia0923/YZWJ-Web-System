@@ -26,6 +26,7 @@ namespace YouZhiWenJiao.Web
 
             //根据categoryid查询出description
             sqlCmd.CommandText = @"select * from category where id = @CategoryId";
+            sqlCmd.Parameters.Add("@CategoryId",DbType.Int16);
             sqlCmd.Parameters["@CategoryId"].Value = ToInt(CorporateNewsType.categoryid);
             IDataReader reader = sqlCmd.ExecuteReader();
             if (reader.Read())
@@ -35,25 +36,21 @@ namespace YouZhiWenJiao.Web
             reader.Close();
 
             //查询出新闻列表
-            sqlCmd.CommandText = @"select p.* from product p 
-                                   inner join type t on t.id = p.typeid
+            sqlCmd.CommandText = @"select * from product p                                   
                                    where p.categoryid = @CategoryId 
                                    order by datetime desc";
+            sqlCmd.Parameters.Add("@CategoryId", DbType.Int16);
             sqlCmd.Parameters["@CategoryId"].Value = ToInt(CorporateNewsType.categoryid);
             reader = sqlCmd.ExecuteReader();
-            if (reader.Read())
+            while(reader.Read())
             {
-                CorporateNewsList.Add(new CommonModel() { 
-                    id = ToInt(reader["id"]),
-                    typeid = ToInt(reader["typeid"]),
-                    categoryid = ToInt(reader["categoryid"]),
-                    title = reader["title"].ToString(),
-                    content = reader["content"].ToString().Substring(0,100),
-                    picture = reader["picture"].ToString(),
-                    datetime = Convert.ToDateTime(reader["datetime"])
-                });
+                CorporateNewsList.AddRange(GenerateModel(reader));
             }
             reader.Close();
+            foreach (var corporateNews in CorporateNewsList)
+            {
+                corporateNews.content = corporateNews.content.Substring(0, 100);
+            }
 		}
 	}
 }

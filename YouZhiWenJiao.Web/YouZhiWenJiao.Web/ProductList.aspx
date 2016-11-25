@@ -23,234 +23,24 @@
         <div class="block">
             <div class="pic_list">
                 <ul class="clearfix">
+                    <% foreach(var product in ProductCollection)%>
+                    <%{%>
                     <li>
                         <div class="photo yh">
-                            <img src="images/pic1.jpg" />
-                            <p>
-                                黄金海岸设计图</p>
+                            <img src="<%=product.picture %>" />
+                            <p><%=product.title %></p>
                         </div>
                         <div class="rsp">
                         </div>
                         <div class="text">
                             <a href="">
-                                <h3>
-                                    黄金海岸设计图</h3>
-                                <p>
-                                    这里是具体的简介这里是具体的简介这里是具体的简介这里是具体的简介...</p>
-                                <div>
-                                    TIME :2014.02.21</div>
+                                <h3><%=product.title %></h3>
+                                <p><%=product.content %>...</p>
+                                <div>TIME :<%=product.datetime %></div>
                             </a>
                         </div>
                     </li>
-                    <li>
-                        <div class="photo yh">
-                            <img src="images/pic2.jpg" />
-                            <p>
-                                黄金海岸设计图</p>
-                        </div>
-                        <div class="rsp">
-                        </div>
-                        <div class="text">
-                            <a href="">
-                                <h3>
-                                    黄金海岸设计图</h3>
-                                <p>
-                                    这里是具体的简介这里是具体的简介这里是具体的简介这里是具体的简介...</p>
-                                <div>
-                                    TIME :2014.02.21</div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="photo yh">
-                            <img src="images/pic4.jpg" />
-                            <p>
-                                黄金海岸设计图</p>
-                        </div>
-                        <div class="rsp">
-                        </div>
-                        <div class="text">
-                            <a href="">
-                                <h3>
-                                    黄金海岸设计图</h3>
-                                <p>
-                                    这里是具体的简介这里是具体的简介这里是具体的简介这里是具体的简介...</p>
-                                <div>
-                                    TIME :2014.02.21</div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="photo yh">
-                            <img src="images/pic5.jpg" />
-                            <p>
-                                黄金海岸设计图</p>
-                        </div>
-                        <div class="rsp">
-                        </div>
-                        <div class="text">
-                            <a href="">
-                                <h3>
-                                    黄金海岸设计图</h3>
-                                <p>
-                                    这里是具体的简介这里是具体的简介这里是具体的简介这里是具体的简介...</p>
-                                <div>
-                                    TIME :2014.02.21</div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="photo yh">
-                            <img src="images/pic6.jpg" />
-                            <p>
-                                黄金海岸设计图</p>
-                        </div>
-                        <div class="rsp">
-                        </div>
-                        <div class="text">
-                            <a href="">
-                                <h3>
-                                    黄金海岸设计图</h3>
-                                <p>
-                                    这里是具体的简介这里是具体的简介这里是具体的简介这里是具体的简介...</p>
-                                <div>
-                                    TIME :2014.02.21</div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="photo yh">
-                            <img src="images/pic7.jpg" />
-                            <p>
-                                黄金海岸设计图</p>
-                        </div>
-                        <div class="rsp">
-                        </div>
-                        <div class="text">
-                            <a href="">
-                                <h3>
-                                    黄金海岸设计图</h3>
-                                <p>
-                                    这里是具体的简介这里是具体的简介这里是具体的简介这里是具体的简介...</p>
-                                <div>
-                                    TIME :2014.02.21</div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="photo yh">
-                            <img src="images/pic8.jpg" />
-                            <p>
-                                黄金海岸设计图</p>
-                        </div>
-                        <div class="rsp">
-                        </div>
-                        <div class="text">
-                            <a href="">
-                                <h3>
-                                    黄金海岸设计图</h3>
-                                <p>
-                                    这里是具体的简介这里是具体的简介这里是具体的简介这里是具体的简介...</p>
-                                <div>
-                                    TIME :2014.02.21</div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="photo yh">
-                            <img src="images/pic1.jpg" />
-                            <p>
-                                黄金海岸设计图</p>
-                        </div>
-                        <div class="rsp">
-                        </div>
-                        <div class="text">
-                            <a href="">
-                                <h3>
-                                    黄金海岸设计图</h3>
-                                <p>
-                                    这里是具体的简介这里是具体的简介这里是具体的简介这里是具体的简介...</p>
-                                <div>
-                                    TIME :2014.02.21</div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="photo yh">
-                            <img src="images/pic2.jpg" />
-                            <p>
-                                黄金海岸设计图</p>
-                        </div>
-                        <div class="rsp">
-                        </div>
-                        <div class="text">
-                            <a href="">
-                                <h3>
-                                    黄金海岸设计图</h3>
-                                <p>
-                                    这里是具体的简介这里是具体的简介这里是具体的简介这里是具体的简介...</p>
-                                <div>
-                                    TIME :2014.02.21</div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="photo yh">
-                            <img src="images/pic3.jpg" />
-                            <p>
-                                黄金海岸设计图</p>
-                        </div>
-                        <div class="rsp">
-                        </div>
-                        <div class="text">
-                            <a href="">
-                                <h3>
-                                    黄金海岸设计图</h3>
-                                <p>
-                                    这里是具体的简介这里是具体的简介这里是具体的简介这里是具体的简介...</p>
-                                <div>
-                                    TIME :2014.02.21</div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="photo yh">
-                            <img src="images/pic4.jpg" />
-                            <p>
-                                黄金海岸设计图</p>
-                        </div>
-                        <div class="rsp">
-                        </div>
-                        <div class="text">
-                            <a href="">
-                                <h3>
-                                    黄金海岸设计图</h3>
-                                <p>
-                                    这里是具体的简介这里是具体的简介这里是具体的简介这里是具体的简介...</p>
-                                <div>
-                                    TIME :2014.02.21</div>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="photo yh">
-                            <img src="images/pic5.jpg" />
-                            <p>
-                                黄金海岸设计图</p>
-                        </div>
-                        <div class="rsp">
-                        </div>
-                        <div class="text">
-                            <a href="">
-                                <h3>
-                                    黄金海岸设计图</h3>
-                                <p>
-                                    这里是具体的简介这里是具体的简介这里是具体的简介这里是具体的简介...</p>
-                                <div>
-                                    TIME :2014.02.21</div>
-                            </a>
-                        </div>
-                    </li>
+                    <%} %>
                 </ul>
                 <div class="page clearfix">
                     <a href="" class="on">1</a><a href="">2</a><a href="">3</a><a href="">>></a></div>

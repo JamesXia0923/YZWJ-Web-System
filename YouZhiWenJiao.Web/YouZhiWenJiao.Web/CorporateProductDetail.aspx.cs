@@ -35,7 +35,7 @@ namespace YouZhiWenJiao.Web
             IDataReader reader = sqlCmd.ExecuteReader();
             if (reader.Read())
             {
-                Product.id = ToInt(reader["id"]);
+                Product.id = reader["id"].ToString();
                 Product.categoryid = ToInt(reader["categoryid"]);
                 Product.typeid = ToInt(reader["typeid"]);
                 Product.title = reader["title"].ToString();
@@ -54,7 +54,7 @@ namespace YouZhiWenJiao.Web
                 ProductList.Add(new CommonModel() 
                 { 
                     picture= reader["picture"].ToString(), 
-                    id = ToInt(reader["id"]), 
+                    id = reader["id"].ToString(), 
                     typeid = ToInt(reader["typeid"]), 
                     categoryid = ToInt(reader["categoryid"]) });
             }
