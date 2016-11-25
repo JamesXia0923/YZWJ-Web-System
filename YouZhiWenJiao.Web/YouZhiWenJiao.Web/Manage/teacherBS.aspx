@@ -34,7 +34,7 @@
 					PageTrCss="PageTrCss" OnPageIndexChange="PageChanged" OnItemDataBound="DataBindings">
 					<HEADERTEMPLATE>
 						<tr>
-							<td colspan="6" style=" font-weight:bold;font-size:14px; text-align:left; color:#002779; height:37px;">&nbsp;&nbsp;园&nbsp;&nbsp;长&nbsp;&nbsp;书&nbsp;&nbsp;库</td >
+							<td colspan="6" style=" font-weight:bold;font-size:14px; text-align:left; color:#002779; height:37px;">&nbsp;&nbsp;教&nbsp;&nbsp;师&nbsp;&nbsp;书&nbsp;&nbsp;库</td >
 						</tr>
 						<tr>
 							<th></th>
@@ -47,7 +47,7 @@
 						<tr align="center">
 						<td><input type="checkbox" value='<%#DataBinder.Eval(Container.DataItem,"ID")%>' name="chkEleId"/></td >
 							<td ><%# DataBinder.Eval(Container.DataItem,"Number")%></td >
-							<td height="25" style="text-align:center"><a href='about_info.aspx?id=<%# DataBinder.Eval(Container.DataItem,"ID")%>'><%# DataBinder.Eval(Container.DataItem, "Title")%></a></td>
+							<td height="25" style="text-align:center"><a href='teacherBS_edit.aspx?id=<%# DataBinder.Eval(Container.DataItem,"ID")%>'><%# DataBinder.Eval(Container.DataItem, "Title")%></a></td>
 							<td height="25"><%# DataBinder.Eval(Container.DataItem, "DateTime")%></td >
 						</tr>
 					</ITEMTEMPLATE>
@@ -59,7 +59,6 @@
 					<td colspan="6" />&nbsp;&nbsp;
 					<input type="button" value="删除" class="coolbg" runat="server" ID="BtnDel" name="BtnDel" onserverclick="SubDelClick" />
 					<input type="button" value="新增" class="coolbg" runat="server" ID="BtnCre" name="BtnCre" onserverclick="SubCreClick" />
-					<!--<a target="_self" href='about_info.aspx' class="coolbg" >新增</a> -->
 				</tr>
 			</table>
 		</form>
