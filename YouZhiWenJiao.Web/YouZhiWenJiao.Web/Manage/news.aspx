@@ -41,7 +41,6 @@
 							<th>序号</th>
 							<th>标题</th>
 							<th>日期</th>
-							<th>首页显示</th>
 						</tr>
 					</HEADERTEMPLATE>
 					<ITEMTEMPLATE>
@@ -50,7 +49,6 @@
 							<td ><%# DataBinder.Eval(Container.DataItem,"Number")%></td >
 							<td height="25" style="text-align:center"><a href='news_edit.aspx?id=<%# DataBinder.Eval(Container.DataItem,"ID")%>'><%# DataBinder.Eval(Container.DataItem, "Title")%></a></td>
 							<td height="25"><%# DataBinder.Eval(Container.DataItem, "DateTime")%></td >
-							<td></td>
 						</tr>
 					</ITEMTEMPLATE>
 				</CONTROL:VIEWDATA>

@@ -129,7 +129,7 @@ values(
             productId = Guid.NewGuid().ToString();
             sqlCmd.CommandText = sqlCmd.CommandText.Replace("@id", productId);
 
-            sqlCmd.CommandText = sqlCmd.CommandText.Replace("@typeid", ((int)category.公司新闻).ToString());
+            sqlCmd.CommandText = sqlCmd.CommandText.Replace("@typeid", "1");
             sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categoryid", ((int)category.公司新闻).ToString());
 
             sqlCmd.CommandText = sqlCmd.CommandText.Replace("@title", txtTitle.Text);

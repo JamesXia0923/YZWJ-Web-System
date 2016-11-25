@@ -24,7 +24,7 @@
 			<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" class="tab3">
 				<tr>
 					<td align="center" colspan="2" style="font-size:15px;font-weight: bold;height:35px;width:100%; background:#edf4fc; color:black; border-right:1px solid #edf4fc; border-bottom:1px solid #edf4fc;" >
-					公&nbsp;&nbsp;新&nbsp;&nbsp;闻&nbsp;&nbsp;介</td>
+					公&nbsp;&nbsp;司&nbsp;&nbsp;新&nbsp;&nbsp;闻</td>
 				</tr>
 				<tr>
 					<td width="80" align="center" >标题：</td>
