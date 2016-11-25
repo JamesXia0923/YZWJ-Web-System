@@ -124,7 +124,7 @@ text-shadow : rgba(0,0,0,0.5) 0 5px 6px, rgba(0,0,0,0.5) 1px 3px 3px;
 .pic_list ul{width:1235px;}
 .pic_list ul li{float:left;margin-right:35px;margin-bottom:20px;display:inline;width:360px;height:275px;overflow:hidden;position:relative;}
 .pic_list ul li .photo{width:360px;height:275px;overflow:hidden; position:relative;}
-.pic_list ul li .photo img{width:360px;height:275px;}
+.pic_list ul li .photo img{width:200px;height:175px;}
 .pic_list ul li .photo p{ position:absolute; bottom:0; left:0; width:100%; height:40px; line-height:40px; text-align:center; background:rgba(0, 0, 0, 0.6)!important;filter:Alpha(opacity=60); color:#FFF; font-size:15px;}
 .pic_list .rsp{width:360px;height:275px;overflow:hidden;position: absolute;background:#000;bottom:0px;left:0px;}
 .pic_list .text{position:absolute;width:360px;height:275px;left:0px;bottom:-275px;overflow:hidden;}
@@ -168,7 +168,7 @@ overflow:hidden; }
 .newsnr .content .fenxiang { display:block; height:25px; margin:10px 0; }
 
 /*单页面*/
-.leftmenu { width:250px; background:#F4F4F4; height:auto!important; height:650px; min-height:650px; }
+.leftmenu { width:250px; background:#F4F4F4; height:auto!important;}
 .leftmenu li a { line-height:40px; font-size:14px; padding-left:30px; display:block; background:url(ico.gif) 18px center no-repeat; }
 .leftmenu li a.select { background-color:#FDAF40 !important; color:#fff !important }
 .leftmenu li a:hover { background-color:#eee; text-decoration:none; color:#FDAF40 }

@@ -154,6 +154,7 @@
     <Content Include="Manage\index.aspx" />
     <Content Include="Manage\login.aspx" />
     <Content Include="ProductList.aspx" />
+    <Content Include="ProductTypeList.aspx" />
     <Content Include="Web.config" />
     <Content Include="xwnr.html" />
     <Content Include="xwzx.html" />
@@ -263,6 +264,13 @@
     </Compile>
     <Compile Include="ProductList.aspx.designer.cs">
       <DependentUpon>ProductList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTypeList.aspx.cs">
+      <DependentUpon>ProductTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductTypeList.aspx.designer.cs">
+      <DependentUpon>ProductTypeList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\SqLiteHelper.cs" />
