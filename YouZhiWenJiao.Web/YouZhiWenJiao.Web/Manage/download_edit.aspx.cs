@@ -88,9 +88,9 @@ namespace YouZhiWenJiao.Web.Manage
 update product 
 set 
 title=@title,
-datetime=@date,
+datetime=@datetime,
 video=@video,
-updatedatetime=@updatedatetime
+updatedatetime=@updatedatetime,
 updateuser=@updateuser
 where id=@id;";
 			}

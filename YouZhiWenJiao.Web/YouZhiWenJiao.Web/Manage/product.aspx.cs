@@ -4,83 +4,141 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Data.SQLite;
 using YouZhiWenJiao.Web.Manage.Entity;
+using System.Web.UI.WebControls;
 
 namespace YouZhiWenJiao.Web.Manage
 {
-    public partial class product : CommonPage
-    {
-        public int UniqueId = 0;
-        //protected void Page_Load(object sender, EventArgs e)
-        //{
-        //    rptDate.DataSource = GetNewList();
-        //    rptDate.DataBind();
-        //}
-        protected void PageChanged(object sender, System.Web.UI.WebControls.DataGridPageChangedEventArgs e)
-        {
-            rptDate.DataSource = GetNewList();
-            rptDate.DataBind();
-        }
+	public partial class product : CommonPage
+	{
+		public int UniqueId = 0;
+		protected void Page_Load(object sender, EventArgs e)
+		{
+			if (Session["user"] == null)
+			{
+				Response.Redirect("login.aspx");
+			}
 
-        protected void DataBindings(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)
-        {
-            UniqueId++;
-        }
-        public IList GetNewList()
-        {
-            IList li = new ArrayList();
+			if (!this.IsPostBack)
+			{
+				string oldvar = ddlList.SelectedValue;
+				ddlList.Items.Clear();
+				ddlList.Items.Add(new ListItem("所有", "0"));
+				sqlCmd.CommandText = @"
+select 
+type.id, 
+type.description 
+from type 
+inner join category on category.id = type.categoryid 
+where type.categoryid = " + (int)category.园所装备 + ";";
+				var rd = sqlCmd.ExecuteReader();
+				while (rd.Read())
+				{
+					ddlList.Items.Add(new ListItem(rd[1].ToString(), rd[0].ToString()));
+				}
+				rd.Close();
+				if (oldvar != "")
+				{
+					ddlList.SelectedValue = oldvar;
+				}
+			}
+		}
 
-            sqlCmd.CommandText = @"select id,title,updatedatetime from product where title like '@search' order by updatedatetime desc";
+		protected void PageChanged(object sender, System.Web.UI.WebControls.DataGridPageChangedEventArgs e)
+		{
+			rptDate.DataSource = GetNewList();
+			rptDate.DataBind();
+		}
 
-            if (!sqlCmd.Parameters.Contains("@search"))
-            {
-                sqlCmd.Parameters.Add("@search", DbType.String);
-            }
-            sqlCmd.Parameters["@search"].Value = "%" + txtserarch.Value + "%";
+		protected void DataBindings(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)
+		{
+			UniqueId++;
+		}
+		public IList GetNewList()
+		{
+			IList li = new ArrayList();
 
-            //SQLiteParameter[] parameters = 
-            //{
-            //    new SQLiteParameter("@search", DbType.String)
-            //};
-            //parameters[0].Value = "%" + txtserarch.Value + "%";
+			sqlCmd.CommandText = @"
+select
+product.id,
+product.title,
+product.datetime,
+newtype.description,
+case when product.showinhomepage=1 
+then '<INPUT type=checkbox id=showInHomePage checked value='|| product.Id ||' name=chkEleIdShowInHomePage>' 
+else '<INPUT type=checkbox id=showInHomePage value='|| product.Id ||' name=chkEleIdShowInHomePage>' end as showinhomepage
+from product
+left join
+(select * from type left join category on category.id = type.categoryid where category.id = @categotyid) 
+newtype on newtype.id = product.typeid
+where (product.deleted <> 1 or product.deleted is null) and product.title like '@search' ";
 
-            //var ds = SQLiteHelper.ExecuteDataSet(sqlConn, sqlCmd.CommandText, parameters);
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categotyid", "'" + ((int)category.园所装备).ToString() + "'");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@search", "%" + txtserarch.Value + "%");
 
-            DataSet ds = new DataSet();
-            SQLiteDataAdapter da = new SQLiteDataAdapter(sqlCmd);
-            da.Fill(ds);
-            DataTable dt = ds.Tables[0];
-            Information info = null;
+			if (ddlList.SelectedValue != "0")
+			{
+				sqlCmd.CommandText += " and newtype.id=" + ddlList.SelectedValue + "";
+			}
+			sqlCmd.CommandText += " order by product.updatedatetime desc;";
 
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                info = new Information();
-                info.Number = (i + 1).ToString();
-                info.ID = dt.Rows[i]["id"].ToString();
-                info.Title = dt.Rows[i]["title"].ToString();
-                info.DateTime = DateTime.Parse(dt.Rows[i]["Datetime"].ToString()).ToShortDateString();
+			DataSet ds = new DataSet();
+			SQLiteDataAdapter da = new SQLiteDataAdapter(sqlCmd);
+			da.Fill(ds);
+			DataTable dt = ds.Tables[0];
+			Information info = null;
 
-                li.Add(info);
-            }
+			for (int i = 0; i < dt.Rows.Count; i++)
+			{
+				info = new Information();
+				info.Number = (i + 1).ToString();
+				info.ID = dt.Rows[i]["id"].ToString();
+				info.Title = dt.Rows[i]["title"].ToString();
+				info.DateTime = DateTime.Parse(dt.Rows[i]["datetime"].ToString()).ToShortDateString();
+				info.Type = dt.Rows[i]["description"].ToString();
+				info.ShowInHomePage = dt.Rows[i]["showinhomepage"].ToString();
+				li.Add(info);
+			}
 
-            return li;
-        }
+			return li;
+		}
 
-        protected void SubDelClick(object sender, System.EventArgs e)
-        {
-            string strDocumentSortIds = null;
-            strDocumentSortIds = Request.Form["chkEleId"];
-            if (strDocumentSortIds != "" && strDocumentSortIds != null)
-            {
-                sqlCmd.CommandText = "update product set delect = 1 where id in(" + strDocumentSortIds + ")";
-                sqlCmd.ExecuteNonQuery();
-                Alert("删除成功!");
-                PageChanged(null, null);
-            }
-        }
+		protected void SubDelClick(object sender, System.EventArgs e)
+		{
+			string strDocumentSortIds = Request.Form["chkEleId"];
+			strDocumentSortIds = strDocumentSortIds.Replace(",", "','");
+			if (strDocumentSortIds != "" && strDocumentSortIds != null)
+			{
+				sqlCmd.CommandText = "update product set delect = 1 where id in(" + "'" + strDocumentSortIds + "'" + ")";
+				sqlCmd.ExecuteNonQuery();
+				Alert("删除成功!");
+				PageChanged(null, null);
+			}
+		}
 
-        protected void SubCreClick(object sender, System.EventArgs e)
-        {
-            Response.Redirect("about_info.aspx", false);
-        }
-    }
+		protected void SubCreClick(object sender, System.EventArgs e)
+		{
+			Response.Redirect("product_edit.aspx", false);
+		}
+
+		protected void SubSaveClick(object sender, System.EventArgs e)
+		{
+			string showInHomePageIdList = Request.Form["chkEleIdShowInHomePage"];
+			showInHomePageIdList = showInHomePageIdList.Replace(",", "','");
+
+			sqlCmd.CommandText = @"
+update product set showinhomepage=0 
+from product
+inner join category on category.id = product.categoryid
+where product.categoryid = " + (int)category.园所装备 + ";";
+			sqlCmd.ExecuteNonQuery();
+
+			if (showInHomePageIdList != null)
+			{
+				sqlCmd.CommandText = "update product set showinhomepage=1 where id in(" + "'" + showInHomePageIdList + "'" + ")";
+				sqlCmd.ExecuteNonQuery();
+			}
+			Alert("保存成功!");
+			PageChanged(null, null);
+		}
+	}
 }

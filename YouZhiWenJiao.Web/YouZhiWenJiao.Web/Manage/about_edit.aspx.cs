@@ -64,8 +64,6 @@ where categoryid = @categotyid";
 
 		protected void btnOK_Click(object sender, System.EventArgs e)
 		{
-			string lx_id = ddlListType.SelectedValue;
-
 			string uploadName = InputFile.Value;//获取待上传图片的完整路径，包括文件名  
 			string pictureName = "";//上传后的图片名，以当前时间为文件名，确保文件名没有重复 
 			imgUrl = "";
@@ -106,9 +104,9 @@ update product
 set 
 title=@title,
 content=@content,
-datetime=@date,
+datetime=@datetime,
 picture=@picture,
-updatedatetime=@updatedatetime
+updatedatetime=@updatedatetime,
 updateuser=@updateuser
 where id=@id;";
 			}
