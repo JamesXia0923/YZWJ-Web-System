@@ -32,19 +32,6 @@ namespace YouZhiWenJiao.Web.Manage
             #region Page refresh
             if (!IsPostBack)
             {
-//                sqlCmd.CommandText = @"
-//select type.id, type.description 
-//from type 
-//inner join category on category.id = type.categoryid
-//where categoryid = " + ((int)category.公司新闻).ToString();
-
-//                var rd = sqlCmd.ExecuteReader();
-                //while (rd.Read())
-                //{
-                //    ddlListType.Items.Add(new ListItem(rd[1].ToString(), rd[0].ToString()));
-                //}
-                //rd.Close();
-
                 if (productId != "")
                 {
                     sqlCmd.CommandText = "select title,content,datetime,picture from product where id='@id'";
@@ -105,9 +92,9 @@ update product
 set 
 title=@title,
 content=@content,
-datetime=@date,
+datetime=@datetime,
 picture=@picture,
-updatedatetime=@updatedatetime
+updatedatetime=@updatedatetime,
 updateuser=@updateuser
 where id=@id;";
             }

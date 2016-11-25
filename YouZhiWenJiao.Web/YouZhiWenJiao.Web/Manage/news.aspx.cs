@@ -17,15 +17,12 @@ namespace YouZhiWenJiao.Web.Manage
             {
                 Response.Redirect("login.aspx");
             }
-
-            rptDate.DataSource = GetNewList();
-            rptDate.DataBind();
         }
 
 		protected void PageChanged(object sender, System.Web.UI.WebControls.DataGridPageChangedEventArgs e)
 		{
-			rptDate.DataSource = GetNewList();
-			rptDate.DataBind();
+            rptDate.DataSource = GetNewList();
+            rptDate.DataBind();
 		}
 
 		protected void DataBindings(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)

@@ -81,9 +81,9 @@ update product
 set 
 title=@title,
 content=@content,
-datetime=@date,
+datetime=@datetime,
 picture=@picture,
-updatedatetime=@updatedatetime
+updatedatetime=@updatedatetime,
 updateuser=@updateuser
 where id=@id;";
 			}
