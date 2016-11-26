@@ -28,19 +28,39 @@ namespace YouZhiWenJiao.Web.Manage
 			productId = Request["id"] != null ? Request["id"].ToString() : "";
 			href_value = href_string + "id=" + productId;
 
-			if(productId != "")
+			#region Page refresh
+			if (!IsPostBack)
 			{
-				sqlCmd.CommandText = "select title,content,datetime,picture from product where id='" + productId + "'";
-				var dr = sqlCmd.ExecuteReader();
-				if(dr.Read())
+				sqlCmd.CommandText = @"
+select type.id, type.description 
+from type 
+inner join category on category.id = type.categoryid
+where categoryid = @categotyid";
+
+				sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categotyid", "'" + ((int)category.教师书库).ToString() + "'");
+				var rd = sqlCmd.ExecuteReader();
+				while (rd.Read())
 				{
-					txtTitle.Text = dr[0].ToString();
-					ftbContent.Text = dr[1].ToString();
-					datetime.SelectedDate = DateTime.Parse(dr[2].ToString());
-					imgPath = dr[3].ToString();
+					ddlListType.Items.Add(new ListItem(rd[1].ToString(), rd[0].ToString()));
 				}
-				dr.Close();
+				rd.Close();
+
+				if (productId != "")
+				{
+					sqlCmd.CommandText = "select title,content,datetime,picture,typeid from product where id='" + productId + "'";
+					var dr = sqlCmd.ExecuteReader();
+					if (dr.Read())
+					{
+						txtTitle.Text = dr[0].ToString();
+						ftbContent.Text = dr[1].ToString();
+						datetime.SelectedDate = DateTime.Parse(dr[2].ToString());
+						imgPath = dr[3].ToString();
+						ddlListType.SelectedValue = dr[4].ToString();
+					}
+					dr.Close();
+				}
 			}
+			#endregion
 		}
 
 		protected void btnOK_Click(object sender, System.EventArgs e)
@@ -73,12 +93,17 @@ namespace YouZhiWenJiao.Web.Manage
 					Response.Write(ex);
 				}
 			}
+			else
+			{
+				imgUrl = imgPath;
+			}
 
-			if(productId != "")
+			if (productId != "")
 			{
 				sqlCmd.CommandText = @"
 update product 
 set 
+typeid=@typeid, 
 title=@title,
 content=@content,
 datetime=@datetime,
@@ -116,9 +141,8 @@ values(
 @updateuser);";
 			}
 
-			var newGuid = Guid.NewGuid().ToString();
-			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@id", "'" + newGuid + "'");
-			productId = newGuid;
+			productId = productId == "" ? Guid.NewGuid().ToString() : productId;
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@id", "'" + productId + "'");
 
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@typeid", "'1'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categoryid", "'" + ((int)category.教师书库).ToString() + "'");

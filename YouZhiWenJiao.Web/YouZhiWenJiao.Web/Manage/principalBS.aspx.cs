@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Data.SQLite;
 using YouZhiWenJiao.Web.Manage.Entity;
+using System.Web.UI.WebControls;
 
 
 namespace YouZhiWenJiao.Web.Manage
@@ -17,6 +18,30 @@ namespace YouZhiWenJiao.Web.Manage
 			if (Session["user"] == null)
 			{
 				Response.Redirect("login.aspx");
+			}
+
+			if (!this.IsPostBack)
+			{
+				string oldvar = ddlList.SelectedValue;
+				ddlList.Items.Clear();
+				ddlList.Items.Add(new ListItem("所有", "0"));
+				sqlCmd.CommandText = @"
+select 
+type.id, 
+type.description 
+from type 
+inner join category on category.id = type.categoryid 
+where type.categoryid = " + (int)category.园长书库 + ";";
+				var rd = sqlCmd.ExecuteReader();
+				while (rd.Read())
+				{
+					ddlList.Items.Add(new ListItem(rd[1].ToString(), rd[0].ToString()));
+				}
+				rd.Close();
+				if (oldvar != "")
+				{
+					ddlList.SelectedValue = oldvar;
+				}
 			}
 		}
 
@@ -34,9 +59,26 @@ namespace YouZhiWenJiao.Web.Manage
 		{
 			IList li = new ArrayList();
 
-			var sql = @"select id,title,datetime from product where title like '@search' and categoryid = " + ((int)category.园长书库).ToString() + " and (deleted <> 1 or deleted is null) order by updatedatetime desc";
+			sqlCmd.CommandText = @"
+select
+product.id as id,
+product.title as title,
+product.datetime as datetime,
+newtype.description as description
+from product
+inner join
+(select type.id,type.categoryid,type.description from type left join category on category.id = type.categoryid where category.id = @categotyid) 
+newtype on newtype.id = product.typeid and newtype.categoryid = product.categoryid
+where (product.deleted <> 1 or product.deleted is null) and product.title like '@search' ";
 
-			sqlCmd.CommandText = sql.Replace("@search", "%" + txtserarch.Value + "%");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categotyid", "'" + ((int)category.园长书库).ToString() + "'");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@search", "%" + txtserarch.Value + "%");
+
+			if (ddlList.SelectedValue != "0")
+			{
+				sqlCmd.CommandText += " and newtype.id=" + ddlList.SelectedValue + "";
+			}
+			sqlCmd.CommandText += " order by product.updatedatetime desc;";
 
 			DataTable dt = new DataTable();
 			SQLiteDataAdapter da = new SQLiteDataAdapter(sqlCmd);
@@ -50,6 +92,7 @@ namespace YouZhiWenJiao.Web.Manage
 				info.ID = dt.Rows[i]["id"].ToString();
 				info.Title = dt.Rows[i]["title"].ToString();
 				info.DateTime = DateTime.Parse(dt.Rows[i]["datetime"].ToString()).ToShortDateString();
+				info.Type = dt.Rows[i]["description"].ToString();
 
 				li.Add(info);
 			}

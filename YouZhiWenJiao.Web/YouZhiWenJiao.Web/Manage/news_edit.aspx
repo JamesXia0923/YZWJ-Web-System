@@ -35,7 +35,13 @@
 					<td style=" padding:10px;">
 					<asp:Calendar id="datetime" runat="server" Width="100px"></asp:Calendar></td>
 				</tr>
-							
+				
+				<tr>
+					<td  width="80" align="center"  height="45">类型：</td>
+					<td width='45' style=" padding:10px;" align="left">
+					<asp:DropDownList Width="124px" ID="ddlListType" runat="server" ></asp:DropDownList></td>
+				</tr>
+				
 				<tr>
 					<td height="45" align="center">上传图片</td>
 					<td height="45" style=" padding:10px;" align="left">

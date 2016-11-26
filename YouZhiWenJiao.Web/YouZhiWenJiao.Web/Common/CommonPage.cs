@@ -176,26 +176,26 @@ namespace YouZhiWenJiao.Web
 			return filtered.ToString();
 		}
 
-        	public List<CommonModel> GenerateModel(IDataReader reader)
-        	{
-            		List<CommonModel> results = new List<CommonModel>();
-            		results.Add(new CommonModel()
-            		{
-                		id = reader["id"].ToString(),
-                		typeid = ToInt(reader["typeid"]),
-                		categoryid = ToInt(reader["categoryid"]),
-                		title = reader["title"].ToString(),
-                		content = reader["content"].ToString(),
-                		picture = reader["picture"].ToString(),
-                		contentpicture1 = reader["contentpicture1"].ToString(),
-                		contentpicture2 = reader["contentpicture2"].ToString(),
-                		contentpicture3 = reader["contentpicture3"].ToString(),
-                		datetime = Convert.ToDateTime(reader["datetime"])
-            		});
-            		return results;
-        	}
-        	
-        	public enum category
+		public List<CommonModel> GenerateModel(IDataReader reader)
+		{
+			List<CommonModel> results = new List<CommonModel>();
+			results.Add(new CommonModel()
+			{
+				id = reader["id"].ToString(),
+				typeid = ToInt(reader["typeid"]),
+				categoryid = ToInt(reader["categoryid"]),
+				title = reader["title"].ToString(),
+				content = reader["content"].ToString(),
+				picture = reader["picture"].ToString(),
+				contentpicture1 = reader["contentpicture1"].ToString(),
+				contentpicture2 = reader["contentpicture2"].ToString(),
+				contentpicture3 = reader["contentpicture3"].ToString(),
+				datetime = Convert.ToDateTime(reader["datetime"])
+			});
+			return results;
+		}
+
+		public enum category
 		{
 			公司简介 = 1,
 			公司新闻 = 2,
@@ -204,7 +204,8 @@ namespace YouZhiWenJiao.Web
 			教师书库 = 5,
 			资料下载 = 6,
 			在线留言 = 7,
-			联系我们 = 8
-		}        	
+			联系我们 = 8,
+			首页视频 = 10
+		}
 	}
 }

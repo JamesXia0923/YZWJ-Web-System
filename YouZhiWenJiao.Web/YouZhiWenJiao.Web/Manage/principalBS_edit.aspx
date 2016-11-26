@@ -34,11 +34,11 @@
 					<td style=" padding:10px;"><asp:Calendar id="datetime" runat="server" Width="100px"></asp:Calendar></td>
 				</tr>
 				
-<%--				<tr>
+				<tr>
 					<td  width="80" align="center"  height="45">类型：</td>
 					<td width='45' style=" padding:10px;" align="left">
-					<asp:DropDownList Width="124px" ID="ddlListType" runat="server" onblur="ddlList_change()"></asp:DropDownList></td>
-				</tr>--%>
+					<asp:DropDownList Width="124px" ID="ddlListType" runat="server"></asp:DropDownList></td>
+				</tr>
 				
 				<tr>
 					<td height="45" align="center">上传图片</td>
@@ -66,7 +66,6 @@
 						<asp:Button id="btnOK" OnClick="btnOK_Click" runat="server" text="确 定" class="coolbg"></asp:Button>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<asp:Button id="btnPreview" OnClick="btnPrewiew_Click" runat="server" text="预 览" class="coolbg"></asp:Button>
-						<%--<a href="<%=href_value%> " target="_blank" class="coolbg">预览</a>--%>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<asp:Button id="btnBack" OnClick="btnBack_Click" runat="server" text="返回列表" class="coolbg"></asp:Button>
 					</td>

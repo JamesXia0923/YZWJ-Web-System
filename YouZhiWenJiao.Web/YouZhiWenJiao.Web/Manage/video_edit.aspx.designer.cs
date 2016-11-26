@@ -11,7 +11,7 @@
 namespace YouZhiWenJiao.Web.Manage {
     
     
-    public partial class principalBS_edit {
+    public partial class video_edit {
         
         /// <summary>
         /// Head1 control.
@@ -50,15 +50,6 @@ namespace YouZhiWenJiao.Web.Manage {
         protected global::System.Web.UI.WebControls.Calendar datetime;
         
         /// <summary>
-        /// ddlListType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlListType;
-        
-        /// <summary>
         /// InputFile control.
         /// </summary>
         /// <remarks>
@@ -77,13 +68,22 @@ namespace YouZhiWenJiao.Web.Manage {
         protected global::System.Web.UI.WebControls.Label Lb_Info;
         
         /// <summary>
-        /// ftbContent control.
+        /// videoTr control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FreeTextBoxControls.FreeTextBox ftbContent;
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow videoTr;
+        
+        /// <summary>
+        /// InputVideo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload InputVideo;
         
         /// <summary>
         /// btnOK control.

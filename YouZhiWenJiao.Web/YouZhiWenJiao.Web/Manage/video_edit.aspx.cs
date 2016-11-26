@@ -6,15 +6,16 @@ using System.Web.UI;
 
 namespace YouZhiWenJiao.Web.Manage
 {
-	public partial class principalBS_edit : CommonPage
+	public partial class video_edit : CommonPage
 	{
 		protected string productId = "";
 
 		string user = @"";
 		string imgUrl = @"";
 		string imgPath = @"";
-		string href_string = @"../principalBS.aspx?";
-		protected string href_value = "";
+		string videoUrl = @"";
+		string videoPath = @"";
+		string href_string = @"../index.aspx";
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			#region Session User
@@ -26,41 +27,20 @@ namespace YouZhiWenJiao.Web.Manage
 			#endregion
 
 			productId = Request["id"] != null ? Request["id"].ToString() : "";
-			href_value = href_string + "id=" + productId;
 
-			#region Page refresh
-			if (!IsPostBack)
+			if (productId != "")
 			{
-				sqlCmd.CommandText = @"
-select type.id, type.description 
-from type 
-inner join category on category.id = type.categoryid
-where categoryid = @categotyid";
-
-				sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categotyid", "'" + ((int)category.园长书库).ToString() + "'");
-				var rd = sqlCmd.ExecuteReader();
-				while (rd.Read())
+				sqlCmd.CommandText = "select title,datetime,picture,video from product where id='" + productId + "'";
+				var dr = sqlCmd.ExecuteReader();
+				if (dr.Read())
 				{
-					ddlListType.Items.Add(new ListItem(rd[1].ToString(), rd[0].ToString()));
+					txtTitle.Text = dr[0].ToString();
+					datetime.SelectedDate = DateTime.Parse(dr[1].ToString());
+					imgPath = dr[2].ToString();
+					videoPath = dr[3].ToString();
 				}
-				rd.Close();
-
-				if (productId != "")
-				{
-					sqlCmd.CommandText = "select title,content,datetime,picture,typeid from product where id='" + productId + "'";
-					var dr = sqlCmd.ExecuteReader();
-					if (dr.Read())
-					{
-						txtTitle.Text = dr[0].ToString();
-						ftbContent.Text = dr[1].ToString();
-						datetime.SelectedDate = DateTime.Parse(dr[2].ToString());
-						imgPath = dr[3].ToString();
-						ddlListType.SelectedValue = dr[4].ToString();
-					}
-					dr.Close();
-				}
+				dr.Close();
 			}
-			#endregion
 		}
 
 		protected void btnOK_Click(object sender, System.EventArgs e)
@@ -98,16 +78,48 @@ where categoryid = @categotyid";
 				imgUrl = imgPath;
 			}
 
+			string uploadVideo = InputVideo.FileName;
+			string videoName = "";
+
+			videoUrl = "";
+			if (InputVideo.FileName != "")
+			{
+				int idx = uploadVideo.LastIndexOf(".");
+				string suffix = uploadVideo.Substring(idx);
+				videoName = DateTime.Now.Ticks.ToString() + suffix;
+				try
+				{
+					if (uploadVideo != "")
+					{
+						string AppUrl = "";
+						if (Request.ApplicationPath == "/")
+							AppUrl = Request.ApplicationPath;
+						else
+							AppUrl = Request.ApplicationPath + "/";
+						string path = Server.MapPath(AppUrl + "video/" + videoName);
+						InputVideo.PostedFile.SaveAs(path);
+						videoUrl = AppUrl + "video/" + videoName;
+					}
+				}
+				catch (Exception ex)
+				{
+					Response.Write(ex);
+				}
+			}
+			else
+			{
+				videoUrl = videoPath;
+			}
+
 			if (productId != "")
 			{
 				sqlCmd.CommandText = @"
 update product 
 set 
-typeid=@typeid, 
 title=@title,
-content=@content,
 datetime=@datetime,
 picture=@picture,
+video=@video,
 updatedatetime=@updatedatetime,
 updateuser=@updateuser
 where id=@id;";
@@ -121,8 +133,8 @@ typeid,
 categoryid,
 title,
 datetime,
-content,
 picture,
+video,
 createdatetime,
 createuser,
 updatedatetime,
@@ -133,8 +145,8 @@ values(
 @categoryid,
 @title,
 @datetime,
-@content,
 @picture,
+@video,
 @createdatetime,
 @createuser,
 @updatedatetime,
@@ -145,20 +157,19 @@ values(
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@id", "'" + productId + "'");
 
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@typeid", "'1'");
-			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categoryid", "'" + ((int)category.园长书库).ToString() + "'");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categoryid", "'" + ((int)category.首页视频).ToString() + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@title", "'" + txtTitle.Text + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@datetime", "'" + datetime.SelectedDate.ToString("yyyy-MM-dd HH:mm:ss.ffff") + "'");
-			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@content", "'" + ftbContent.Text + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@picture", "'" + imgUrl.ToString() + "'");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@video", "'" + videoUrl.ToString() + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@createdatetime", "'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffff") + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@createuser", "'" + user + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@updatedatetime", "'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffff") + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@updateuser", "'" + user + "'");
 			sqlCmd.ExecuteNonQuery();
 
-			href_value = href_string + "id=" + productId;
 			Alert("保存成功!");
-			Response.Redirect("principalBS.aspx", false);
+			Response.Redirect("video.aspx", false);
 		}
 
 		protected void btnPrewiew_Click(object sender, System.EventArgs e)
@@ -168,7 +179,7 @@ values(
 
 		protected void btnBack_Click(object sender, System.EventArgs e)
 		{
-			Response.Redirect("principalBS.aspx", false);
+			Response.Redirect("video.aspx", false);
 		}
 	}
 }

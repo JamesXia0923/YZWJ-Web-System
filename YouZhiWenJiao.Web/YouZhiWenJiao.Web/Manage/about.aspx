@@ -67,7 +67,6 @@
 					<input type="button" value="删除" class="coolbg" runat="server" ID="BtnDel" name="BtnDel" onserverclick="SubDelClick" />
 					<input type="button" value="保存" class="coolbg" runat="server" ID="BtnSave" name="BtnSave" onserverclick="SubSaveClick" />
 					<input type="button" value="新增" class="coolbg" runat="server" ID="BtnCre" name="BtnCre" onserverclick="SubCreClick" />
-					<!--<a target="_self" href='about_info.aspx' class="coolbg" >新增</a> -->
 				</tr>
 			</table>
 		</form>

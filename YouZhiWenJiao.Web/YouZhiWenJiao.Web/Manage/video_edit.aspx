@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="download_edit.aspx.cs" Inherits="YouZhiWenJiao.Web.Manage.download_edit" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="video_edit.aspx.cs" Inherits="YouZhiWenJiao.Web.Manage.video_edit" %>
 <%@ Register assembly="FreeTextBox" namespace="FreeTextBoxControls" tagprefix="FTB" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -23,7 +23,7 @@
 			<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" class="tab3">
 				<tr>
 					<td align="center" colspan="2" style="font-size:15px;font-weight: bold;height:35px;width:100%; background:#edf4fc; color:black; border-right:1px solid #edf4fc; border-bottom:1px solid #edf4fc;" >
-					资&nbsp;&nbsp;料&nbsp;&nbsp;下&nbsp;&nbsp;载</td>
+					首&nbsp;&nbsp;页&nbsp;&nbsp;视&nbsp;&nbsp;频</td>
 				</tr>
 				<tr>
 					<td width="80" align="center" >标题：</td>
@@ -35,40 +35,26 @@
 				</tr>
 				
 				<tr>
-					<td  width="80" align="center"  height="45">类型：</td>
-					<td width='45' style=" padding:10px;" align="left">
-					<asp:DropDownList Width="124px" ID="ddlListType" runat="server"></asp:DropDownList></td>
-				</tr>
-				
-<%--				<tr>
 					<td height="45" align="center">上传图片</td>
 					<td height="45" style=" padding:10px;" align="left">
 						<input id="InputFile" style="width: 399px" type="file" runat="server" />
 						<asp:Label ID="Lb_Info" runat="server" ForeColor="Red"></asp:Label>
 					</td>
-				</tr>--%>
+				</tr>
 				
 				<tr id="videoTr" runat="server">
-					<td height="45" align="center">上传文件：</td>
+					<td height="45" align="center">上传视频：</td>
 					<td height="45" style=" padding:10px;" align="left">
 						<Asp:FileUpload id="InputVideo" runat="server" name="InputVideo"/>
 					</td>
 				</tr>
 				
-<%--				<tr>
-					<td align="center">内容</td><td valign="top" style=" padding:10px;">
-						<FTB:FreeTextBox ID="ftbContent" HelperFilesPath="CQEdit"  BackColor="224,224,224" ToolbarType="office2003" GutterBackColor="224,224,224" ImageGalleryPath="/CQEdit/privateimage" HelperFilesParameters='PublicImageGalleryPath=/CQEdit/publicImage'  runat="server" Width="650" height="400" ToolbarLayout="FontFacesMenu,save,FontSizesMenu, FontForeColorsMenu, FontBackColorsMenu,justifyleft,JustifyCenter,justifyfull,justifyright,InsertImageFromGallery,inserttable,Bold, Italic, Underline, Strikethrough, Center,Superscript, Subscript, CreateLink, Unlink, Remove" ></FTB:FreeTextBox>
-					</td>
-				</tr>
-				--%>
 				<tr>
 					<td height="60" colspan="2" align="left" valign="middle" style="border-bottom:none; padding-left:80px;">
 						<asp:Button id="btnOK" OnClick="btnOK_Click" runat="server" text="确 定" class="coolbg"></asp:Button>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<asp:Button id="btnPreview" OnClick="btnPrewiew_Click" runat="server" text="预 览" class="coolbg"></asp:Button>
-						<%--<a href="<%=href_value%> " target="_blank" class="coolbg">预览</a>--%>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<%--<a href="about.aspx" class="coolbg" >返回列表</a>--%>
 						<asp:Button id="btnBack" OnClick="btnBack_Click" runat="server" text="返回列表" class="coolbg"></asp:Button>
 					</td>
 				</tr>

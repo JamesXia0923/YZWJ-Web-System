@@ -6,15 +6,17 @@ using System.Data.SQLite;
 using YouZhiWenJiao.Web.Manage.Entity;
 using System.Web.UI.WebControls;
 
+
 namespace YouZhiWenJiao.Web.Manage
 {
-	public partial class teacherBS : CommonPage
+	public partial class type : CommonPage
 	{
 		public int UniqueId = 0;
+		private string categorylist = ((int)category.公司简介).ToString() + ',' + ((int)category.公司新闻).ToString() + ',' + ((int)category.教师书库).ToString() + ',' + ((int)category.园所装备).ToString() + ',' + ((int)category.园长书库).ToString() + ',' + ((int)category.资料下载).ToString();
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			if(Session["user"] == null)
+			if (Session["user"] == null)
 			{
 				Response.Redirect("login.aspx");
 			}
@@ -26,11 +28,10 @@ namespace YouZhiWenJiao.Web.Manage
 				ddlList.Items.Add(new ListItem("所有", "0"));
 				sqlCmd.CommandText = @"
 select 
-type.id, 
-type.description 
-from type 
-inner join category on category.id = type.categoryid 
-where type.categoryid = " + (int)category.教师书库 + ";";
+id, 
+description 
+from category 
+where id in (" + categorylist + ");";
 				var rd = sqlCmd.ExecuteReader();
 				while (rd.Read())
 				{
@@ -59,39 +60,33 @@ where type.categoryid = " + (int)category.教师书库 + ";";
 			IList li = new ArrayList();
 
 			sqlCmd.CommandText = @"
-select
-product.id as id,
-product.title as title,
-product.datetime as datetime,
-newtype.description as description
-from product
-inner join
-(select type.id,type.categoryid,type.description from type left join category on category.id = type.categoryid where category.id = @categotyid) 
-newtype on newtype.id = product.typeid and newtype.categoryid = product.categoryid
-where (product.deleted <> 1 or product.deleted is null) and product.title like '@search' ";
-
-			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categotyid", "'" + ((int)category.教师书库).ToString() + "'");
-			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@search", "%" + txtserarch.Value + "%");
+select 
+type.id as typeid,
+type.categoryid as categoryid,
+category.description as categorydescription,
+type.description as typedescription
+from
+type
+left join category on type.categoryid = category.id
+where categoryid in (" + categorylist + ")";
 
 			if (ddlList.SelectedValue != "0")
 			{
-				sqlCmd.CommandText += " and newtype.id=" + ddlList.SelectedValue + "";
+				sqlCmd.CommandText += " and categoryid=" + ddlList.SelectedValue + ";";
 			}
-			sqlCmd.CommandText += " order by product.updatedatetime desc;";
 
 			DataTable dt = new DataTable();
 			SQLiteDataAdapter da = new SQLiteDataAdapter(sqlCmd);
 			da.Fill(dt);
 			Information info = null;
 
-			for(int i = 0; i < dt.Rows.Count; i++)
+			for (int i = 0; i < dt.Rows.Count; i++)
 			{
 				info = new Information();
 				info.Number = (i + 1).ToString();
-				info.ID = dt.Rows[i]["id"].ToString();
-				info.Title = dt.Rows[i]["title"].ToString();
-				info.DateTime = DateTime.Parse(dt.Rows[i]["datetime"].ToString()).ToShortDateString();
-				info.Type = dt.Rows[i]["description"].ToString();
+				info.ID = dt.Rows[i]["typeid"].ToString() + "|" + dt.Rows[i]["categoryid"].ToString();
+				info.Type = dt.Rows[i]["typedescription"].ToString();
+				info.Category = dt.Rows[i]["categorydescription"].ToString();
 
 				li.Add(info);
 			}
@@ -103,19 +98,24 @@ where (product.deleted <> 1 or product.deleted is null) and product.title like '
 		{
 			string strDocumentSortIds = null;
 			strDocumentSortIds = Request.Form["chkEleId"];
-			strDocumentSortIds = strDocumentSortIds.Replace(",", "','");
-			if(strDocumentSortIds != "" && strDocumentSortIds != null)
+			if(strDocumentSortIds!= null)
 			{
-				sqlCmd.CommandText = "update product set delect = 1 where id in(" + strDocumentSortIds + ")";
+			string[] idlist = strDocumentSortIds.Split(',');
+
+			foreach(var value in idlist)
+			{
+				string[] id = value.Split('|');
+				sqlCmd.CommandText = "delete type where id = " + id[0] + " and categoryid = " + id[1] + ";";
 				sqlCmd.ExecuteNonQuery();
 				Alert("删除成功!");
 				PageChanged(null, null);
+			}
 			}
 		}
 
 		protected void SubCreClick(object sender, System.EventArgs e)
 		{
-			Response.Redirect("teacherBS_edit.aspx", false);
+			Response.Redirect("type_edit.aspx", false);
 		}
 	}
 }

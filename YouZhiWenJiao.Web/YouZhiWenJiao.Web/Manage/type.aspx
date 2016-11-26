@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="product.aspx.cs" Inherits="YouZhiWenJiao.Web.Manage.product" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="type.aspx.cs" Inherits="YouZhiWenJiao.Web.Manage.type" %>
 <%@ Register TagPrefix="Control" Namespace="YouZhiWenJiao.Web.Manage.css" Assembly="YouZhiWenJiao.Web" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -23,7 +23,7 @@
 			<table width='99%' cellpadding='1' cellspacing='1' align="center" style="margin-bottom:20px; background:#edf4fc; height:35px; border:1px solid #4293e6" border=0>
 				<tr>
 					<td width='70px' align='center'  style=" white-space:normal">搜索条件：</td >
-					<td style=' width:80px;'><input type='text' name='keyword' value='' id="txtserarch" runat="server" style='width:150px' /></td >
+					<%--<td style=' width:80px;'><input type='text' name='keyword' value='' id="txtserarch" runat="server" style='width:150px' /></td >--%>
 					<td width='50'><asp:DropDownList Width="120" ID="ddlList" runat="server"></asp:DropDownList></td>
 					<td width="466" align="left"><input name="imageField" type="image" src="images/search.gif" width="45" height="20" border="0" class="np" /></td >
 				</tr>
@@ -35,25 +35,21 @@
 					PageTrCss="PageTrCss" OnPageIndexChange="PageChanged" OnItemDataBound="DataBindings">
 					<HEADERTEMPLATE>
 						<tr>
-							<td colspan="6" style=" font-weight:bold;font-size:14px; text-align:left; color:#002779; height:37px;">&nbsp;&nbsp;园&nbsp;&nbsp;所&nbsp;&nbsp;装&nbsp;&nbsp;备</td >
+							<td colspan="6" style=" font-weight:bold;font-size:14px; text-align:left; color:#002779; height:37px;">&nbsp;&nbsp;类&nbsp;&nbsp;型&nbsp;&nbsp;编&nbsp;&nbsp;辑</td >
 						</tr>
 						<tr>
 							<th></th>
 							<th>序号</th>
-							<th>标题</th>
-							<th>日期</th>
 							<th>类型</th>
-							<th>首页显示</th>
+							<th>模块</th>
 						</tr>
 					</HEADERTEMPLATE>
 					<ITEMTEMPLATE>
 						<tr align="center">
 						<td><input type="checkbox" value='<%#DataBinder.Eval(Container.DataItem,"ID")%>' name="chkEleId"/></td >
 							<td ><%# DataBinder.Eval(Container.DataItem,"Number")%></td >
-							<td height="25" style="text-align:center"><a href='product_edit.aspx?id=<%# DataBinder.Eval(Container.DataItem,"ID")%>'><%# DataBinder.Eval(Container.DataItem, "Title")%></a></td>
-							<td height="25"><%# DataBinder.Eval(Container.DataItem, "DateTime")%></td>
-							<td height="25"><%# DataBinder.Eval(Container.DataItem, "Type")%></td >
-							<td height="25"><%# DataBinder.Eval(Container.DataItem, "ShowInHomePage")%></td >
+							<td height="25" style="text-align:center"><a href='type_edit.aspx?id=<%# DataBinder.Eval(Container.DataItem,"ID")%>'><%# DataBinder.Eval(Container.DataItem, "Type")%></a></td>
+							<td height="25"><%# DataBinder.Eval(Container.DataItem, "Category")%></td >
 						</tr>
 					</ITEMTEMPLATE>
 				</CONTROL:VIEWDATA>
@@ -63,7 +59,6 @@
 				<tr>
 					<td colspan="6" />&nbsp;&nbsp;
 					<input type="button" value="删除" class="coolbg" runat="server" ID="BtnDel" name="BtnDel" onserverclick="SubDelClick" />
-					<input type="button" value="保存" class="coolbg" runat="server" ID="BtnSave" name="BtnSave" onserverclick="SubSaveClick" />
 					<input type="button" value="新增" class="coolbg" runat="server" ID="BtnCre" name="BtnCre" onserverclick="SubCreClick" />
 				</tr>
 			</table>

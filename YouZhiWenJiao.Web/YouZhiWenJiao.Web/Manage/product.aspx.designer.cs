@@ -68,6 +68,15 @@ namespace YouZhiWenJiao.Web.Manage {
         protected global::System.Web.UI.HtmlControls.HtmlInputButton BtnDel;
         
         /// <summary>
+        /// BtnSave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton BtnSave;
+        
+        /// <summary>
         /// BtnCre control.
         /// </summary>
         /// <remarks>

@@ -48,7 +48,7 @@
 				<tr>
 					<td  width="80" align="center"  height="45">类型：</td>
 					<td width='45' style=" padding:10px;" align="left">
-					<asp:DropDownList Width="124px" ID="ddlListType" runat="server" onblur="ddlList_change()"></asp:DropDownList></td>
+					<asp:DropDownList Width="124px" ID="ddlListType" runat="server" ></asp:DropDownList></td>
 				</tr>
 				
 				<tr>

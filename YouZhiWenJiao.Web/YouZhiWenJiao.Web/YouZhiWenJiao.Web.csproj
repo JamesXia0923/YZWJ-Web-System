@@ -329,6 +329,10 @@
     <Content Include="Lib\SailingWebDLL.dll" />
     <Content Include="Lib\System.Data.SQLite.dll" />
     <Content Include="Manage\about.aspx" />
+    <Content Include="Manage\type.aspx" />
+    <Content Include="Manage\type_edit.aspx" />
+    <Content Include="Manage\video.aspx" />
+    <Content Include="Manage\video_edit.aspx" />
     <Content Include="Manage\CQEdit\ftb.colorpicker.aspx" />
     <Content Include="Manage\CQEdit\ftb.imagegallery.aspx" />
     <Content Include="Manage\CQEdit\ftb.inserttable.aspx" />
@@ -448,6 +452,34 @@
     </Compile>
     <Compile Include="Manage\about.aspx.designer.cs">
       <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\type.aspx.cs">
+      <DependentUpon>type.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\type.aspx.designer.cs">
+      <DependentUpon>type.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\type_edit.aspx.cs">
+      <DependentUpon>type_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\type_edit.aspx.designer.cs">
+      <DependentUpon>type_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\video.aspx.cs">
+      <DependentUpon>video.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\video.aspx.designer.cs">
+      <DependentUpon>video.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\video_edit.aspx.cs">
+      <DependentUpon>video_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\video_edit.aspx.designer.cs">
+      <DependentUpon>video_edit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\CQEdit\ftb.imagegallery.aspx.cs">
       <DependentUpon>ftb.imagegallery.aspx</DependentUpon>

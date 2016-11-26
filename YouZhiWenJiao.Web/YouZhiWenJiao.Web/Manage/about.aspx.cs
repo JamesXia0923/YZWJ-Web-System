@@ -59,10 +59,10 @@ where type.categoryid = " + (int)category.公司简介 + ";";
 
 			sqlCmd.CommandText = @"
 select
-product.id,
-product.title,
-product.datetime,
-newtype.description,
+product.id as id,
+product.title as title,
+product.datetime as datetime,
+newtype.description as description,
 case when product.showpicture=1 
 then '<INPUT type=checkbox id=showPic checked value='|| product.Id ||' name=chkEleIdShowPic>' 
 else '<INPUT type=checkbox id=showPic value='|| product.Id ||' name=chkEleIdShowPic>' end as showpicture,
@@ -70,9 +70,9 @@ case when product.showinhomepage=1
 then '<INPUT type=checkbox id=showInHomePage checked value='|| product.Id ||' name=chkEleIdShowInHomePage>' 
 else '<INPUT type=checkbox id=showInHomePage value='|| product.Id ||' name=chkEleIdShowInHomePage>' end as showinhomepage
 from product
-left join
-(select * from type left join category on category.id = type.categoryid where category.id = @categotyid) 
-newtype on newtype.id = product.typeid
+inner join
+(select type.id,type.categoryid,type.description from type left join category on category.id = type.categoryid where category.id = @categotyid) 
+newtype on newtype.id = product.typeid and newtype.categoryid = product.categoryid
 where (product.deleted <> 1 or product.deleted is null) and product.title like '@search' ";
 
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categotyid", "'" + ((int)category.公司简介).ToString() + "'");

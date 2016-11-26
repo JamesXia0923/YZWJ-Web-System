@@ -51,7 +51,7 @@ where categoryid = @categotyid";
 
 				if (productId != "")
 				{
-					sqlCmd.CommandText = "select title,content,datetime,contentpicture1,contentpicture2,contentpicture3 from product where id='" + productId + "'";
+					sqlCmd.CommandText = "select title,content,datetime,contentpicture1,contentpicture2,contentpicture3,typeid from product where id='" + productId + "'";
 					var dr = sqlCmd.ExecuteReader();
 					if (dr.Read())
 					{
@@ -61,6 +61,7 @@ where categoryid = @categotyid";
 						imgPath1 = dr[3].ToString();
 						imgPath2 = dr[4].ToString();
 						imgPath3 = dr[5].ToString();
+						ddlListType.SelectedValue = dr[6].ToString();
 					}
 					dr.Close();
 				}
@@ -174,6 +175,7 @@ where categoryid = @categotyid";
 				sqlCmd.CommandText = @"
 update product 
 set 
+typeid=@typeid,
 title=@title,
 content=@content,
 datetime=@datetime,
@@ -214,9 +216,8 @@ values(
 @updatedatetime,
 @updateuser);";
 			}
-			var newGuid = Guid.NewGuid().ToString();
-			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@id", "'" + newGuid + "'");
-			productId = newGuid;
+			productId = productId == "" ? Guid.NewGuid().ToString() : productId;
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@id", "'" + productId + "'");
 
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@typeid", "'" + ddlListType.SelectedIndex.ToString() + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categoryid", "'" + ((int)category.园所装备).ToString() + "'");
