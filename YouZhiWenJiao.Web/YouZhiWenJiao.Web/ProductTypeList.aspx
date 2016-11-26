@@ -21,23 +21,31 @@
 <body>
     <!--头部-->
     <div>
-        <iframe frameborder="0" scrolling="no" width="100%" height="405px" src="header.aspx"></iframe>
+        <iframe frameborder="0" scrolling="no" width="100%" height="405px" src="header.aspx">
+        </iframe>
     </div>
     <!--产品类型列表（左边框）-->
     <div class="block">
         <div class="navmenu">
-            <span>您现在的位置: <a href="#">设计工程</a> > 园所装备</span>园所装备</div>
+            <span>您现在的位置: <a href="#">首页</a> >
+                <%=ProductType.description %></span><%=ProductType.description %></div>
         <div>
             <div class="fleft leftmenu yh">
                 <ul>
-                    <li><a href="">关于我们</a> </li>
-                    <li><a href="Javascript:onclick('bb');" id="abb">bbbbb</a></li>
-                    <li><a href="">ccccc</a></li>
+                    <% foreach (var productType in ProductTypeCollection) %>
+                    <%{ %>
+                    <li><a href="Javascript:onclick('<%=productType.id %>')" id="a<%=productType.id %>">
+                        <%=productType.description %></a></li>
+                    <%} %>
                 </ul>
             </div>
-            <div class="content yh fright" id="bb" style="width: 850px;">
-                <iframe id="iframe" src="ProductList.aspx" width="100%" height="1275px" frameborder="0" scrolling="no">dddddd</iframe>
+            <% foreach (var productType in ProductTypeCollection) %>
+            <%{ %>
+            <div class="content yh fright" id="<%=productType.id %>" style="width: 850px;">
+                <iframe src="ProductList.aspx?<%=productType.id %>" width="100%" height="1275px"
+                    frameborder="0" scrolling="no"></iframe>
             </div>
+            <%} %>
 
             <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=375347"></script>
 
@@ -47,6 +55,7 @@
                 document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date() / 3600000)
                 $(function() {
                     $(".content").hide();
+                    $("#<%=ProductTypeCollection[0].id %>").show();
                     $(".leftmenu>ul>li>:first").addClass("select");
                 });
                 function onclick(obj) {
@@ -61,7 +70,8 @@
     </div>
     <!--底部-->
     <div>
-        <iframe frameborder="0" scrolling="no" width="100%" height="410px" src="footer.aspx"></iframe>
+        <iframe frameborder="0" scrolling="no" width="100%" height="410px" src="footer.aspx">
+        </iframe>
     </div>
 </body>
 </html>

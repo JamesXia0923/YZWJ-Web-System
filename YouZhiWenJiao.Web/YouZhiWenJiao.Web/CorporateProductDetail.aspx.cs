@@ -51,12 +51,7 @@ namespace YouZhiWenJiao.Web
             reader = sqlCmd.ExecuteReader();
             while (reader.Read())
             {
-                ProductList.Add(new CommonModel() 
-                { 
-                    picture= reader["picture"].ToString(), 
-                    id = reader["id"].ToString(), 
-                    typeid = ToInt(reader["typeid"]), 
-                    categoryid = ToInt(reader["categoryid"]) });
+                ProductList.AddRange(GenerateModel(reader));
             }
             reader.Close();
 
