@@ -31,15 +31,15 @@ namespace YouZhiWenJiao.Web
 		protected void ShowMenu(int iMenu)
 		{
 			Response.Write(@"
-				<li><a href=""index.aspx""  " + (iMenu == 1 ? " class='cur' " : "") + @">首&nbsp;页</a></li>
-				<li><a href=""news.aspx""  " + (iMenu == 2 ? " class='cur' " : " ") + @">公司简介</a></li>
-				<li><a href=""notice.aspx""  " + (iMenu == 3 ? " class='cur' " : "  ") + @">公司新闻</a></li>
-				<li><a href=""project.aspx"" " + (iMenu == 4 ? " class='cur' " : " ") + @">园所装备</a></li>
-				<li><a href=""regula.aspx""  " + (iMenu == 5 ? " class='cur' " : "  ") + @">园长书库</a></li>
-				<li><a href=""law.aspx""  " + (iMenu == 6 ? " class='cur' " : "  ") + @">教师书库</a></li>
-				<li><a href=""case.aspx""  " + (iMenu == 7 ? " class='cur' " : "  ") + @">资料下载</a></li>
-				<li><a href=""about.aspx""  " + (iMenu == 8 ? " class='cur' " : "  ") + @">在线留言</a></li>
-				<li><a href=""petition.aspx""  " + (iMenu == 9 ? " class='cur' " : "  ") + @">联系我们</a></li>");
+				<li><a href=""index.aspx""  " + (iMenu == 1 ? " class='cur' " : "") + @"target=""_parent"">首&nbsp;页</a></li>
+				<li><a href=""CompanyProfile.aspx""  " + (iMenu == 2 ? " class='cur' " : " ") + @"target=""_parent"">公司简介</a></li>
+				<li><a href=""CorporateNews.aspx""  " + (iMenu == 3 ? " class='cur' " : "  ") + @"target=""_parent"">公司新闻</a></li>
+				<li><a href=""ProductTypeList.aspx?id=3"" " + (iMenu == 4 ? " class='cur' " : " ") + @" target=""_parent"">园所装备</a></li>
+				<li><a href=""ProductTypeList.aspx?id=4""  " + (iMenu == 5 ? " class='cur' " : "  ") + @"target=""_parent"">园长书库</a></li>
+				<li><a href=""ProductTypeList.aspx?id=5""  " + (iMenu == 6 ? " class='cur' " : "  ") + @"target=""_parent"">教师书库</a></li>
+				<li><a href=""case.aspx""  " + (iMenu == 7 ? " class='cur' " : "  ") + @"target=""_parent"">资料下载</a></li>
+				<li><a href=""about.aspx""  " + (iMenu == 8 ? " class='cur' " : "  ") + @"target=""_parent"">在线留言</a></li>
+				<li><a href=""petition.aspx""  " + (iMenu == 9 ? " class='cur' " : "  ") + @"target=""_parent"">联系我们</a></li>");
 		}
 
 		override protected void OnUnload(EventArgs e)
