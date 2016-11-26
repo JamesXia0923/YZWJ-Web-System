@@ -24,8 +24,7 @@ namespace YouZhiWenJiao.Web
             CorporateNewsDetails = new CommonModel();
             CorporateNewsType = new CommonTypeModel();
 
-            CorporateNewsDetails.id = Session["id"].ToString();
-            //CorporateNewsDetails.id = "52fbf2be-c75b-47dc-8aee-bdbe9c265e98";
+            CorporateNewsDetails.id = Request["id"] != null ? Request["id"].ToString() : "";
 
             //根据id查询出新闻内容
             sqlCmd.CommandText = @"select * from product where id = @DetailId";

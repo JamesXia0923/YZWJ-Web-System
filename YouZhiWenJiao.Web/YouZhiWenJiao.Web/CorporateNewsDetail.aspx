@@ -18,7 +18,7 @@
     <!--文字列表页主体-->
     <div class="newsbox">
     	<div class="block">
-        	<div class="navmenu yh"><span>您现在的位置: <a href="#">首页</a> > <%=CorporateNewsType.description %></span><%=CorporateNewsType.description %></div>
+        	<div class="navmenu yh"><span>您现在的位置: <a href="CorporateNews.aspx?id=<%=CorporateNewsType.id %>"><%=CorporateNewsType.description %></a> > <%=CorporateNewsDetails.title%></span><%=CorporateNewsDetails.title%></div>
             <div class="newsnr">
            	  <h1 class="newstitle"><%=CorporateNewsDetails.title %></h1>
                 <span class="newsxx">发布时间: <%=CorporateNewsDetails.datetime %>&nbsp;&nbsp;&nbsp;&nbsp;来源: 优智文教&nbsp;&nbsp;&nbsp;&nbsp;浏览数: 10000</span>

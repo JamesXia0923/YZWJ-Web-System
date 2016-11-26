@@ -22,7 +22,8 @@ namespace YouZhiWenJiao.Web
             }
             CorporateNewsType = new CommonTypeModel();
             CorporateNewsList = new List<CommonModel>();
-            CorporateNewsType.categoryid = ToInt(Session["id"]);
+            //CorporateNewsType.categoryid = Request["id"] != null ? ToInt(Request["id"]) : 0;
+            CorporateNewsType.categoryid = 2;
 
             //根据categoryid查询出description
             sqlCmd.CommandText = @"select * from category where id = @CategoryId";

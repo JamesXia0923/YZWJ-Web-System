@@ -26,12 +26,13 @@ namespace YouZhiWenJiao.Web
 
             Product = new CommonModel();
             ProductList = new List<CommonModel>();
-            var productId = Session["id"].ToString();
+            Product.id = Request["id"] != null ? Request["id"].ToString() : "";
 
             //根据id查询出产品信息
             var queryProduct = "select * from product where id = @productId";
             sqlCmd.CommandText = queryProduct;
-            sqlCmd.Parameters["@productId"].Value = ToInt(productId);
+            sqlCmd.Parameters.Add("@productId", DbType.String);
+            sqlCmd.Parameters["@productId"].Value = Product.id;
             IDataReader reader = sqlCmd.ExecuteReader();
             if (reader.Read())
             {
@@ -47,7 +48,8 @@ namespace YouZhiWenJiao.Web
             //根据此页面的产品，得到该类型下的所有产品
             var queryProductList = "select * from product where typeid = @typeId";
             sqlCmd.CommandText = queryProductList;
-            sqlCmd.Parameters["@typeId"].Value = ToInt(Product.typeid);
+            sqlCmd.Parameters.Add("@typeId", DbType.Int16);
+            sqlCmd.Parameters["@typeId"].Value = Product.typeid;
             reader = sqlCmd.ExecuteReader();
             while (reader.Read())
             {
@@ -58,10 +60,12 @@ namespace YouZhiWenJiao.Web
             //根据typeid 和 categoryid 得到类型的description
             var queryDescription = @"select t.description as productType, c.description as moduleType from type t, category c 
                                     where t.categoryid = c.id 
-                                    and t.id=@typeId and t.categoryid = @cagegoryId";
+                                    and t.id=@typeId and t.categoryid = @categoryId";
             sqlCmd.CommandText = queryDescription;
-            sqlCmd.Parameters["typeId"].Value = ToInt(Product.typeid);
-            sqlCmd.Parameters["categoryId"].Value = ToInt(Product.categoryid);
+            sqlCmd.Parameters.Add("@typeId", DbType.Int16);
+            sqlCmd.Parameters.Add("@categoryId", DbType.Int16);
+            sqlCmd.Parameters["@typeId"].Value = Product.typeid;
+            sqlCmd.Parameters["@categoryId"].Value = Product.categoryid;
             reader = sqlCmd.ExecuteReader();
             if (reader.Read())
             {

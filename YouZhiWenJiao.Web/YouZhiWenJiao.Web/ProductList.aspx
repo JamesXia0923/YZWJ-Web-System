@@ -33,7 +33,7 @@
                         <div class="rsp">
                         </div>
                         <div class="text">
-                            <a href="">
+                            <a href="CorporateProductDetail.aspx?id=<%=product.id %>" target="_parent">
                                 <h3><%=product.title %></h3>
                                 <p><%=product.content %>...</p>
                                 <div>TIME :<%=product.datetime %></div>

@@ -30,42 +30,44 @@
             <span>您现在的位置: <a href="#">首页</a> >
                 <%=ProductType.description %></span><%=ProductType.description %></div>
         <div>
-            <div class="fleft leftmenu yh">
-                <ul>
-                    <% foreach (var productType in ProductTypeCollection) %>
-                    <%{ %>
-                    <li><a href="Javascript:onclick('<%=productType.id %>')" id="a<%=productType.id %>">
-                        <%=productType.description %></a></li>
-                    <%} %>
-                </ul>
-            </div>
-            <% foreach (var productType in ProductTypeCollection) %>
+            <% if (ProductTypeCollection.Count != 0) %>
             <%{ %>
-            <div class="content yh fright" id="<%=productType.id %>" style="width: 850px;">
-                <iframe src="ProductList.aspx?<%=productType.id %>" width="100%" height="1275px"
-                    frameborder="0" scrolling="no"></iframe>
-            </div>
+                <div class="fleft leftmenu yh">
+                    <ul>
+                        <% foreach (var productType in ProductTypeCollection) %>
+                        <%{ %>
+                        <li><a href="Javascript:onclick('<%=productType.id %>')" id="a<%=productType.id %>">
+                            <%=productType.description%></a></li>
+                        <%} %>
+                    </ul>
+                </div>
+                <% foreach (var productType in ProductTypeCollection) %>
+                <%{ %>
+                <div class="content yh fright" id="<%=productType.id %>" style="width: 850px;">
+                    <iframe src="ProductList.aspx?id=<%=productType.id %>&cid=<%=productType.categoryid %>" width="100%" height="1275px"
+                        frameborder="0" scrolling="no"></iframe>
+                </div>
+                <%} %>
+
+                <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=375347"></script>
+
+                <script type="text/javascript" id="bdshell_js"></script>
+
+                <script type="text/javascript">
+                    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date() / 3600000)
+                    $(function() {
+                        $(".content").hide();
+                        $("#<%=ProductTypeCollection[0].id %>").show();
+                        $(".leftmenu>ul>li>:first").addClass("select");
+                    });
+                    function onclick(obj) {
+                        $(".content").hide();
+                        $("#" + obj).show();
+                        $(".leftmenu>ul>li>a").removeClass();
+                        $("#a" + obj).addClass("select");
+                    }
+                </script>
             <%} %>
-
-            <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=375347"></script>
-
-            <script type="text/javascript" id="bdshell_js"></script>
-
-            <script type="text/javascript">
-                document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date() / 3600000)
-                $(function() {
-                    $(".content").hide();
-                    $("#<%=ProductTypeCollection[0].id %>").show();
-                    $(".leftmenu>ul>li>:first").addClass("select");
-                });
-                function onclick(obj) {
-                    $(".content").hide();
-                    $("#" + obj).show();
-                    $(".leftmenu>ul>li>a").removeClass();
-                    $("#a" + obj).addClass("select");
-                }
-            </script>
-
         </div>
     </div>
     <!--底部-->

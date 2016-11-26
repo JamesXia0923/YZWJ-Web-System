@@ -25,9 +25,8 @@ namespace YouZhiWenJiao.Web
             }
             ProductCollection = new List<CommonModel>();
             ProductType = new CommonTypeModel();
-            //ProductType.id = ToInt(Session["id"]);
-            ProductType.id = 1;
-            ProductType.categoryid = 3;
+            ProductType.id = Request["id"] != null ? ToInt(Request["id"]) : 0; ;
+            ProductType.categoryid = Request["cid"] != null ? ToInt(Request["cid"]) : 0;
 
             //查询出该type下的所有产品
             sqlCmd.CommandText = @"select * from product where typeid=@TypeId and categoryid=@CategoryId";
@@ -46,5 +45,10 @@ namespace YouZhiWenJiao.Web
                 product.content = product.content.Substring(0, 20);
             }
 		}
+
+        protected void ViewProductDetail(object sender, EventArgs e)
+        {
+            Response.Redirect("http://www.baidu.com");
+        }
 	}
 }
