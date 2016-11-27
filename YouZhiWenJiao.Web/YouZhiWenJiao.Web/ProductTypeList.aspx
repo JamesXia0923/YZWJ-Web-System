@@ -26,13 +26,13 @@
     </div>
     <!--产品类型列表（左边框）-->
     <div class="block">
-        <div class="navmenu">
+        <div class="navmenu" id="navMenu">
             <span>您现在的位置: <a href="#">首页</a> >
                 <%=ProductType.description %></span><%=ProductType.description %></div>
         <div>
             <% if (ProductTypeCollection.Count != 0) %>
             <%{ %>
-                <div class="fleft leftmenu yh">
+                <div class="fleft leftmenu yh" id="leftMenu">
                     <ul>
                         <% foreach (var productType in ProductTypeCollection) %>
                         <%{ %>
@@ -59,6 +59,19 @@
                         $(".content").hide();
                         $("#<%=ProductTypeCollection[0].id %>").show();
                         $(".leftmenu>ul>li>:first").addClass("select");
+
+                        var h3_height = 405;
+                        $(window).scroll(function() {
+                            var this_scrollTop = $(this).scrollTop();
+                            if (this_scrollTop > h3_height) {
+                                $("#leftMenu").attr("style", "z-index: -1; transform: translateZ(0px); position: fixed; transition: margin-top 0.3s ease; will-change: margin-top, top; top: 46px;");
+                                $("#navMenu").attr("style", "background-color:#fff;z-index: 10;position: fixed; top: 0px;width:1135px;");
+                            }
+                            else {
+                                $("#leftMenu").attr("style", "");
+                                $("#navMenu").attr("style", "");
+                            }
+                        });
                     });
                     function onclick(obj) {
                         $(".content").hide();
