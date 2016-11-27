@@ -144,7 +144,7 @@ values(
 			productId = productId == "" ? Guid.NewGuid().ToString() : productId;
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@id", "'" + productId + "'");
 
-            sqlCmd.CommandText = sqlCmd.CommandText.Replace("@typeid", ddlListType.SelectedIndex.ToString());
+            sqlCmd.CommandText = sqlCmd.CommandText.Replace("@typeid", ddlListType.SelectedValue.ToString());
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categoryid", ((int)category.公司新闻).ToString());
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@title", txtTitle.Text);
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@datetime", datetime.SelectedDate.ToString("yyyy-MM-dd HH:mm:ss.ffff"));

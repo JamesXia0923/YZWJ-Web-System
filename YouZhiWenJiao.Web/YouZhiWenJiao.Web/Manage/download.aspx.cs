@@ -104,23 +104,15 @@ where (product.deleted <> 1 or product.deleted is null) and title like '@search'
 
 		protected void SubDelClick(object sender, System.EventArgs e)
 		{
-			string showInHomePageIdList = Request.Form["chkEleIdShowInHomePage"];
-			showInHomePageIdList = showInHomePageIdList.Replace(",", "','");
-
-			sqlCmd.CommandText = @"
-update product set showinhomepage=0 
-from product
-inner join category on category.id = product.categoryid
-where product.categoryid = " + (int)category.资料下载 + ";";
-			sqlCmd.ExecuteNonQuery();
-
-			if (showInHomePageIdList != null)
-			{
-				sqlCmd.CommandText = "update product set showinhomepage=1 where id in(" + "'" + showInHomePageIdList + "'" + ")";
-				sqlCmd.ExecuteNonQuery();
-			}
-			Alert("保存成功!");
-			PageChanged(null, null);
+            string strDocumentSortIds = Request.Form["chkEleId"];
+            strDocumentSortIds = strDocumentSortIds.Replace(",", "','");
+            if (strDocumentSortIds != "" && strDocumentSortIds != null)
+            {
+                sqlCmd.CommandText = "update product set deleted = 1 where id in('" + strDocumentSortIds + "')";
+                sqlCmd.ExecuteNonQuery();
+                Alert("删除成功!");
+                PageChanged(null, null);
+            }
 		}
 
 		protected void SubCreClick(object sender, System.EventArgs e)

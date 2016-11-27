@@ -106,7 +106,7 @@ where (product.deleted <> 1 or product.deleted is null) and product.title like '
 			strDocumentSortIds = strDocumentSortIds.Replace(",", "','");
 			if(strDocumentSortIds != "" && strDocumentSortIds != null)
 			{
-				sqlCmd.CommandText = "update product set delect = 1 where id in(" + strDocumentSortIds + ")";
+                sqlCmd.CommandText = "update product set deleted = 1 where id in('" + strDocumentSortIds + "')";
 				sqlCmd.ExecuteNonQuery();
 				Alert("删除成功!");
 				PageChanged(null, null);

@@ -70,12 +70,11 @@ where title like '@search' and categoryid = " + ((int)category.首页视频).ToS
 
 		protected void SubDelClick(object sender, System.EventArgs e)
 		{
-			string strDocumentSortIds = null;
-			strDocumentSortIds = Request.Form["chkEleId"];
+			string strDocumentSortIds = Request.Form["chkEleId"];
 			strDocumentSortIds = strDocumentSortIds.Replace(",", "','");
 			if (strDocumentSortIds != "" && strDocumentSortIds != null)
 			{
-				sqlCmd.CommandText = "update product set delect = 1 where id in(" + strDocumentSortIds + ")";
+				sqlCmd.CommandText = "update product set deleted = 1 where id in('" + strDocumentSortIds + "')";
 				sqlCmd.ExecuteNonQuery();
 				Alert("删除成功!");
 				PageChanged(null, null);
