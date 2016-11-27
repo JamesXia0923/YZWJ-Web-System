@@ -31,15 +31,30 @@ namespace YouZhiWenJiao.Web.Manage
 			#region Page refresh
 			if (!IsPostBack)
 			{
+				sqlCmd.CommandText = @"
+select type.id, type.description 
+from type 
+inner join category on category.id = type.categoryid
+where categoryid = @categotyid";
+
+				sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categotyid", "'" + ((int)category.资料下载).ToString() + "'");
+				var rd = sqlCmd.ExecuteReader();
+				while (rd.Read())
+				{
+					ddlListType.Items.Add(new ListItem(rd[1].ToString(), rd[0].ToString()));
+				}
+				rd.Close();
+
 				if (productId != "")
 				{
-					sqlCmd.CommandText = "select title,datetime,video from product where id=" + "'" + productId + "'";
+					sqlCmd.CommandText = "select title,datetime,video,typeid from product where id=" + "'" + productId + "'";
 					var dr = sqlCmd.ExecuteReader();
 					if (dr.Read())
 					{
 						txtTitle.Text = dr[0].ToString();
 						datetime.SelectedDate = DateTime.Parse(dr[1].ToString());
 						videoPath = dr[2].ToString();
+						ddlListType.SelectedValue = dr[3].ToString();
 					}
 					dr.Close();
 				}
@@ -87,6 +102,7 @@ namespace YouZhiWenJiao.Web.Manage
 				sqlCmd.CommandText = @"
 update product 
 set 
+typeid=@typeid,
 title=@title,
 datetime=@datetime,
 video=@video,
@@ -107,7 +123,9 @@ video,
 createdatetime,
 createuser,
 updatedatetime,
-updateuser)
+updateuser,
+showinhomepage
+)
 values(
 @id,
 @typeid,
@@ -118,18 +136,18 @@ values(
 @createdatetime,
 @createuser,
 @updatedatetime,
-@updateuser);";
+@updateuser,
+1);";
 			}
 
-			var newGuid = Guid.NewGuid().ToString();
-			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@id", "'" + newGuid + "'");
-			productId = newGuid;
+			productId = productId == "" ? Guid.NewGuid().ToString() : productId;
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@id", "'" + productId + "'");
 
-			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@typeid", "1");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@typeid", "'" + ddlListType.SelectedValue.ToString() + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categoryid", "'" + ((int)category.资料下载).ToString() + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@title", "'" + txtTitle.Text + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@datetime", "'" + datetime.SelectedDate.ToString("yyyy-MM-dd HH:mm:ss.ffff") + "'");
-			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@picture", "'" + videoUrl + "'");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@video", "'" + videoUrl + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@createdatetime", "'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffff") + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@createuser", "'" + user + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@updatedatetime", "'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffff") + "'");

@@ -29,7 +29,7 @@ type.id,
 type.description 
 from type 
 inner join category on category.id = type.categoryid 
-where type.categoryid = " + (int)category.园所装备 + ";";
+where type.categoryid = " + (int)category.园所装备 + " order by type.id";
 				var rd = sqlCmd.ExecuteReader();
 				while (rd.Read())
 				{
@@ -59,17 +59,17 @@ where type.categoryid = " + (int)category.园所装备 + ";";
 
 			sqlCmd.CommandText = @"
 select
-product.id,
-product.title,
-product.datetime,
-newtype.description,
+product.id as id,
+product.title as title,
+product.datetime as datetime,
+newtype.description as description,
 case when product.showinhomepage=1 
-then '<INPUT type=checkbox id=showInHomePage checked value='|| product.Id ||' name=chkEleIdShowInHomePage>' 
-else '<INPUT type=checkbox id=showInHomePage value='|| product.Id ||' name=chkEleIdShowInHomePage>' end as showinhomepage
+then '√' 
+else '' end as showinhomepage
 from product
-left join
-(select * from type left join category on category.id = type.categoryid where category.id = @categotyid) 
-newtype on newtype.id = product.typeid
+inner join
+(select type.id,type.categoryid,type.description from type left join category on category.id = type.categoryid where category.id = @categotyid) 
+newtype on newtype.id = product.typeid and newtype.categoryid = product.categoryid
 where (product.deleted <> 1 or product.deleted is null) and product.title like '@search' ";
 
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categotyid", "'" + ((int)category.园所装备).ToString() + "'");
@@ -108,7 +108,7 @@ where (product.deleted <> 1 or product.deleted is null) and product.title like '
 			strDocumentSortIds = strDocumentSortIds.Replace(",", "','");
 			if (strDocumentSortIds != "" && strDocumentSortIds != null)
 			{
-				sqlCmd.CommandText = "update product set delect = 1 where id in(" + "'" + strDocumentSortIds + "'" + ")";
+                sqlCmd.CommandText = "update product set deleted = 1 where id in('" + strDocumentSortIds + "')";
 				sqlCmd.ExecuteNonQuery();
 				Alert("删除成功!");
 				PageChanged(null, null);
@@ -120,25 +120,32 @@ where (product.deleted <> 1 or product.deleted is null) and product.title like '
 			Response.Redirect("product_edit.aspx", false);
 		}
 
-		protected void SubSaveClick(object sender, System.EventArgs e)
+        protected void SubShowClick(object sender, System.EventArgs e)
 		{
-			string showInHomePageIdList = Request.Form["chkEleIdShowInHomePage"];
+            string showInHomePageIdList = Request.Form["chkEleId"];
 			showInHomePageIdList = showInHomePageIdList.Replace(",", "','");
-
-			sqlCmd.CommandText = @"
-update product set showinhomepage=0 
-from product
-inner join category on category.id = product.categoryid
-where product.categoryid = " + (int)category.园所装备 + ";";
-			sqlCmd.ExecuteNonQuery();
 
 			if (showInHomePageIdList != null)
 			{
 				sqlCmd.CommandText = "update product set showinhomepage=1 where id in(" + "'" + showInHomePageIdList + "'" + ")";
 				sqlCmd.ExecuteNonQuery();
+                Alert("修改成功!");
+                PageChanged(null, null);
 			}
-			Alert("保存成功!");
-			PageChanged(null, null);
 		}
+
+        protected void SubUnShowClick(object sender, System.EventArgs e)
+        {
+            string showInHomePageIdList = Request.Form["chkEleId"];
+            showInHomePageIdList = showInHomePageIdList.Replace(",", "','");
+
+            if (showInHomePageIdList != null)
+            {
+                sqlCmd.CommandText = "update product set showinhomepage=0 where id in(" + "'" + showInHomePageIdList + "'" + ")";
+                sqlCmd.ExecuteNonQuery();
+                Alert("修改成功!");
+                PageChanged(null, null);
+            }
+        }
 	}
 }

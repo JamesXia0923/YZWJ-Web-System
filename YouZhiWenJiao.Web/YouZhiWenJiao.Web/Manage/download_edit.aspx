@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="download_edit.aspx.cs" Inherits="YouZhiWenJiao.Web.Manage.download_edit" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="download_edit.aspx.cs" Inherits="YouZhiWenJiao.Web.Manage.download_edit" ValidateRequest="false"%>
 <%@ Register assembly="FreeTextBox" namespace="FreeTextBoxControls" tagprefix="FTB" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -34,11 +34,11 @@
 					<td style=" padding:10px;"><asp:Calendar id="datetime" runat="server" Width="100px"></asp:Calendar></td>
 				</tr>
 				
-<%--				<tr>
+				<tr>
 					<td  width="80" align="center"  height="45">类型：</td>
 					<td width='45' style=" padding:10px;" align="left">
-					<asp:DropDownList Width="124px" ID="ddlListType" runat="server" onblur="ddlList_change()"></asp:DropDownList></td>
-				</tr>--%>
+					<asp:DropDownList Width="124px" ID="ddlListType" runat="server"></asp:DropDownList></td>
+				</tr>
 				
 <%--				<tr>
 					<td height="45" align="center">上传图片</td>

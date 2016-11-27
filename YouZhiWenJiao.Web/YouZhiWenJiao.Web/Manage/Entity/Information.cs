@@ -41,6 +41,13 @@ namespace YouZhiWenJiao.Web.Manage.Entity
 			set { this._dateTime = value; }
 		}
 
+		private string _category = "";
+		public string Category
+		{
+			get { return this._category; }
+			set { this._category = value; }
+		}
+
 		private string _type = "";
 		public string Type
 		{

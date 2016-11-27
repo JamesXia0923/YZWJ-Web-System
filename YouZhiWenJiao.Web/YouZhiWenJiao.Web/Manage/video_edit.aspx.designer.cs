@@ -11,7 +11,7 @@
 namespace YouZhiWenJiao.Web.Manage {
     
     
-    public partial class download {
+    public partial class video_edit {
         
         /// <summary>
         /// Head1 控件。
@@ -32,66 +32,93 @@ namespace YouZhiWenJiao.Web.Manage {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtserarch 控件。
+        /// txtTitle 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtserarch;
+        protected global::System.Web.UI.WebControls.TextBox txtTitle;
         
         /// <summary>
-        /// ddlList 控件。
+        /// datetime 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlList;
+        protected global::System.Web.UI.WebControls.Calendar datetime;
         
         /// <summary>
-        /// rptDate 控件。
+        /// InputFile 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::YouZhiWenJiao.Web.Manage.css.ViewData rptDate;
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile InputFile;
         
         /// <summary>
-        /// BtnDel 控件。
+        /// Lb_Info 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputButton BtnDel;
+        protected global::System.Web.UI.WebControls.Label Lb_Info;
         
         /// <summary>
-        /// BtnCre 控件。
+        /// videoTr 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputButton BtnCre;
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow videoTr;
         
         /// <summary>
-        /// BtnShow 控件。
+        /// InputVideo 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputButton BtnShow;
+        protected global::System.Web.UI.WebControls.FileUpload InputVideo;
         
         /// <summary>
-        /// BtnUnShow 控件。
+        /// btnOK 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputButton BtnUnShow;
+        protected global::System.Web.UI.WebControls.Button btnOK;
+        
+        /// <summary>
+        /// btnPreview 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPreview;
+        
+        /// <summary>
+        /// btnBack 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBack;
+        
+        /// <summary>
+        /// txtcontent 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden txtcontent;
     }
 }

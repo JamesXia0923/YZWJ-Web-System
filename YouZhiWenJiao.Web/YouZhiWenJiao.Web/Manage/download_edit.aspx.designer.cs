@@ -50,6 +50,15 @@ namespace YouZhiWenJiao.Web.Manage {
         protected global::System.Web.UI.WebControls.Calendar datetime;
         
         /// <summary>
+        /// ddlListType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlListType;
+        
+        /// <summary>
         /// videoTr control.
         /// </summary>
         /// <remarks>

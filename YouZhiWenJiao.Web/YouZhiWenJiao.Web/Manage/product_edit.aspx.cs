@@ -51,7 +51,7 @@ where categoryid = @categotyid";
 
 				if (productId != "")
 				{
-					sqlCmd.CommandText = "select title,content,datetime,contentpicture1,contentpicture2,contentpicture3 from product where id='" + productId + "'";
+					sqlCmd.CommandText = "select title,content,datetime,contentpicture1,contentpicture2,contentpicture3,typeid from product where id='" + productId + "'";
 					var dr = sqlCmd.ExecuteReader();
 					if (dr.Read())
 					{
@@ -61,6 +61,7 @@ where categoryid = @categotyid";
 						imgPath1 = dr[3].ToString();
 						imgPath2 = dr[4].ToString();
 						imgPath3 = dr[5].ToString();
+						ddlListType.SelectedValue = dr[6].ToString();
 					}
 					dr.Close();
 				}
@@ -174,6 +175,7 @@ where categoryid = @categotyid";
 				sqlCmd.CommandText = @"
 update product 
 set 
+typeid=@typeid,
 title=@title,
 content=@content,
 datetime=@datetime,
@@ -188,6 +190,7 @@ where id=@id;";
 			{
 				sqlCmd.CommandText = @"
 insert into product (
+id,
 typeid,
 categoryid,
 title,
@@ -199,9 +202,12 @@ contentpicture3,
 createdatetime,
 createuser,
 updatedatetime,
-updateuser)
+updateuser,
+showinhomepage
+)
 values(
-@ypeid,
+@id,
+@typeid,
 @categoryid,
 @title,
 @datetime,
@@ -212,20 +218,20 @@ values(
 @createdatetime,
 @createuser,
 @updatedatetime,
-@updateuser);";
+@updateuser,
+1);";
 			}
-			var newGuid = Guid.NewGuid().ToString();
-			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@id", "'" + newGuid + "'");
-			productId = newGuid;
+			productId = productId == "" ? Guid.NewGuid().ToString() : productId;
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@id", "'" + productId + "'");
 
-			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@typeid", "'" + ddlListType.SelectedIndex.ToString() + "'");
+            sqlCmd.CommandText = sqlCmd.CommandText.Replace("@typeid", "'" + ddlListType.SelectedValue.ToString() + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categoryid", "'" + ((int)category.园所装备).ToString() + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@title", "'" + txtTitle.Text + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@datetime", "'" + datetime.SelectedDate.ToString("yyyy-MM-dd HH:mm:ss.ffff") + "'");
-			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@content", "'" + ftbContent.Text + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@contentpicture1", "'" + imgUrl1.ToString() + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@contentpicture2", "'" + imgUrl2.ToString() + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@contentpicture3", "'" + imgUrl3.ToString() + "'");
+            sqlCmd.CommandText = sqlCmd.CommandText.Replace("@content", "'" + ftbContent.Text + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@createdatetime", "'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffff") + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@createuser", "'" + user + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@updatedatetime", "'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffff") + "'");
@@ -234,7 +240,7 @@ values(
 
 			href_value = href_string + "id=" + productId;
 			Alert("保存成功!");
-			Response.Redirect("about.aspx", false);
+            Response.Redirect("product.aspx", false);
 		}
 
 		protected void btnPrewiew_Click(object sender, System.EventArgs e)
