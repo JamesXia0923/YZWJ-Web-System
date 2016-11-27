@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Data.SQLite;
 using YouZhiWenJiao.Web.Manage.Entity;
+using System.Web.UI.WebControls;
 
 namespace YouZhiWenJiao.Web.Manage
 {
@@ -16,6 +17,30 @@ namespace YouZhiWenJiao.Web.Manage
 			if (Session["user"] == null)
 			{
 				Response.Redirect("login.aspx");
+			}
+
+			if (!this.IsPostBack)
+			{
+				string oldvar = ddlList.SelectedValue;
+				ddlList.Items.Clear();
+				ddlList.Items.Add(new ListItem("所有", "0"));
+				sqlCmd.CommandText = @"
+select 
+type.id, 
+type.description 
+from type 
+inner join category on category.id = type.categoryid 
+where type.categoryid = " + (int)category.公司新闻 + ";";
+				var rd = sqlCmd.ExecuteReader();
+				while (rd.Read())
+				{
+					ddlList.Items.Add(new ListItem(rd[1].ToString(), rd[0].ToString()));
+				}
+				rd.Close();
+				if (oldvar != "")
+				{
+					ddlList.SelectedValue = oldvar;
+				}
 			}
 		}
 
@@ -91,6 +116,28 @@ where (product.deleted <> 1 or product.deleted is null) and product.title like '
 		protected void SubCreClick(object sender, System.EventArgs e)
 		{
 			Response.Redirect("news_edit.aspx", false);
+		}
+
+		protected void SubSaveClick(object sender, System.EventArgs e)
+		{
+			string showInHomePageIdList = Request.Form["chkEleIdShowInHomePage"];
+
+			showInHomePageIdList = showInHomePageIdList.Replace(",", "','");
+
+			sqlCmd.CommandText = @"
+update product set showinhomepage=0 
+from product
+inner join category on category.id = product.categoryid
+where product.categoryid = " + (int)category.公司新闻 + ";";
+			sqlCmd.ExecuteNonQuery();
+
+			if (showInHomePageIdList != null)
+			{
+				sqlCmd.CommandText = "update product set showinhomepage=1 where id in(" + "'" + showInHomePageIdList + "'" + ")";
+				sqlCmd.ExecuteNonQuery();
+			}
+			Alert("保存成功!");
+			PageChanged(null, null);
 		}
 	}
 }
