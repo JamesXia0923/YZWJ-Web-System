@@ -13,7 +13,7 @@ namespace YouZhiWenJiao.Web
         protected void Page_Load(object sender, EventArgs e)
         {
             SQLiteConnection connection = new SQLiteConnection(string.Format(@"Data Source={0}\Database\sqlite.db;Version=3;", System.AppDomain.CurrentDomain.BaseDirectory));
-            var sql = "select * from jaffer";
+            var sql = "select * from product";
             var dt = SQLiteHelper.ExecuteDataSet(connection, sql, null);
         }
     }

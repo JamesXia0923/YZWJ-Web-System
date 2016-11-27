@@ -76,7 +76,7 @@
         </div>
     </div>
     <!--底部--> 
-	<div><iframe frameborder="0" scrolling="no" width="100%" height="410px" src="footer.aspx"></iframe></div>
+	<div><iframe frameborder="0" scrolling="no" width="100%" class="h390" src="footer.aspx"></iframe></div>
 	<script src="js/all.js" type="text/javascript"></script>
 </body>
 </html>
