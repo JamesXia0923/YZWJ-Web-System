@@ -25,10 +25,10 @@
     <!--文字列表页主体-->
     <div class="newsbox yh">
         <div class="block">
-            <div class="navmenu">
+            <div class="navmenu" id= "navMenu">
                 <span>您现在的位置: <a href="#">公司简介</a> > 公司简介</span>公司简介</div>
             <div class="newsnr">
-                <div class="fleft leftmenu yh">
+                <div class="fleft leftmenu yh" id = "leftMenu">
                     <ul>
                         <% foreach(var CompanyProfileType in CompanyProfileTypeList) %>
                         <%{ %>
@@ -57,6 +57,19 @@
                         $(".content").hide();
                         $("#<%=CompanyProfileList[0].typeid %>").show();
                         $(".leftmenu>ul>li>:first").addClass("select");
+
+                        var h3_height = 405;
+                        $(window).scroll(function() {
+                            var this_scrollTop = $(this).scrollTop();
+                            if (this_scrollTop > h3_height) {
+                                $("#leftMenu").attr("style", "z-index: -1; transform: translateZ(0px); position: fixed; transition: margin-top 0.3s ease; will-change: margin-top, top; top: 46px;");
+                                $("#navMenu").attr("style", "background-color:#fff;z-index: 10;position: fixed; top: 0px;width:1135px;");
+                            }
+                            else {
+                                $("#leftMenu").attr("style", "");
+                                $("#navMenu").attr("style", "");
+                            }
+                        });
                     });
                     function onclick(obj) {
                         $(".content").hide();
@@ -73,7 +86,7 @@
         </div>
     </div>
     <div>
-        <iframe frameborder="0" scrolling="no" width="100%" height="410px" src="footer.aspx"></iframe>
+        <iframe frameborder="0" scrolling="no" width="100%" height="390px" src="footer.aspx"></iframe>
     </div>
 
     <script src="js/all.js" type="text/javascript"></script>

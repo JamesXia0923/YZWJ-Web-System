@@ -11,7 +11,7 @@
 <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
 </head>
 <body>
-<div class="team clearfix yh mt20">
+<div class="team clearfix yh">
 		<div class="block">
 			<div class="t1">产品欣赏 <span class="f14 c_666">Product</span></div>			
 			<div class="bd">
