@@ -59,8 +59,12 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CheckCode.aspx" />
     <Content Include="CorporateNews.aspx" />
     <Content Include="CorporateNewsDetail.aspx" />
+    <Content Include="images\log_3.jpg" />
+    <Content Include="images\log_bg.jpg" />
+    <Content Include="images\log_btn2.png" />
     <Content Include="images\ftb\folder.big.gif" />
     <Content Include="images\ftb\folder.small.gif" />
     <Content Include="images\ftb\folder.up.gif" />
@@ -264,6 +268,7 @@
     <Content Include="images\ftb\officeXP\wordcount.over.gif" />
     <Content Include="images\ftb\tmp.jpg" />
     <Content Include="images\xc_video.jpg" />
+    <Content Include="login.aspx" />
     <Content Include="Manage\about_edit.aspx" />
     <Content Include="CompanyProfile.aspx" />
     <Content Include="CorporateMuiltipleProduct.aspx" />
@@ -374,6 +379,13 @@
     <Content Include="zxly.html" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckCode.aspx.cs">
+      <DependentUpon>CheckCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckCode.aspx.designer.cs">
+      <DependentUpon>CheckCode.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CorporateNews.aspx.cs">
       <DependentUpon>CorporateNews.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -387,6 +399,13 @@
     </Compile>
     <Compile Include="CorporateNewsDetail.aspx.designer.cs">
       <DependentUpon>CorporateNewsDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\about_edit.aspx.cs">
       <DependentUpon>about_edit.aspx</DependentUpon>
