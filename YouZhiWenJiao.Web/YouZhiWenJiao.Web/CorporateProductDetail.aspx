@@ -30,8 +30,8 @@
 	    <div class="container">
 	        <div class="products">
 		        <div class="products-grids">
-		    	    <div class="col-md-8 products-single">
-			            <div class="col-md-5 grid-single">		
+		    	    <div class="col-md-12 products-single">
+			            <div class="col-md-4 grid-single">		
 				            <div class="flexslider3">
 					          <ul class="slides">
 						        <li>
@@ -39,7 +39,7 @@
 					          </ul>
 					        </div>
 				        </div>	
-			            <div class="col-md-7 single-text">
+			            <div class="col-md-8 single-text">
 				            <div class="details-left-info simpleCart_shelfItem">
 					            <h3><%=Product.title %></h3>
 					            <p class="availability"><span class="color"><%=Product.content %></span></p>

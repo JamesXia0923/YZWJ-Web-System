@@ -122,21 +122,21 @@ text-shadow : rgba(0,0,0,0.5) 0 5px 6px, rgba(0,0,0,0.5) 1px 3px 3px;
 .snav span{ display:block;float:left; width:120px; text-align:center;  background:#fdd900; color:#000; margin-right:10px;}
 /* pic_list */
 .pic_list{ width:100%;overflow:hidden; padding:20px 0;}
-.pic_list ul{width:1235px;}
-.pic_list ul li{float:left;margin-right:35px;margin-bottom:20px;display:inline;width:360px;height:275px;overflow:hidden;position:relative;}
-.pic_list ul li .photo{width:360px;height:275px;overflow:hidden; position:relative;}
+.pic_list ul{width:850px;}
+.pic_list ul li{float:left;margin-right:20px;margin-bottom:20px;display:inline;width:263px;height:188px;overflow:hidden;position:relative;}
+.pic_list ul li .photo{width:263px;height:188px;overflow:hidden; position:relative;}
 .pic_list ul li .photo img{width:200px;height:175px;}
 .pic_list ul li .photo p{ position:absolute; bottom:0; left:0; width:100%; height:40px; line-height:40px; text-align:center; background:rgba(0, 0, 0, 0.6)!important;filter:Alpha(opacity=60); color:#FFF; font-size:15px;}
-.pic_list .rsp{width:360px;height:275px;overflow:hidden;position: absolute;background:#000;bottom:0px;left:0px;}
-.pic_list .text{position:absolute;width:360px;height:275px;left:0px;bottom:-275px;overflow:hidden;}
-.pic_list .text h3{width:360px;margin-top:60px;height:50px;line-height:50px;text-align:center;color:#FFF;font-size:20px;}
+.pic_list .rsp{width:263px;height:188px;overflow:hidden;position: absolute;background:#000;bottom:0px;left:0px;}
+.pic_list .text{position:absolute;width:263px;height:188px;left:0px;bottom:-188px;overflow:hidden;}
+.pic_list .text h3{width:263px;margin-top:30px;height:50px;line-height:50px;text-align:center;color:#FFF;font-size:20px;}
 .pic_list .text p{ width:90%; text-indent:1em; margin:5px auto; font-size:13px; color:#00ada7}
 .pic_list .text a{text-decoration:none}
 .pic_list .text div{text-align:center;color:#FFF;font-size:13px;}
 .pic_list ul li a:hover{ text-decoration:none}
 
 /* 页码 */
-.page { font-size: 16px; text-align: center;height: 10px; line-height: 10px; overflow: hidden; padding: 30px 0;}
+.page { font-size: 16px; text-align: center;height: 10px; line-height: 10px; overflow: hidden; padding: 30px 0;width:850px;}
 .page a { border: 1px solid lightGrey; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; padding: 8px 15px; margin: 0 3px; cursor: pointer; color: #919191; font-size: 16px; box-shadow: 0 1px 0 white inset, 0 1px 0px #DFDFDF; -webkit-box-shadow: 0 1px 0 white inset, 0 1px 0px #DFDFDF; -moz-box-shadow: 0 1px 0 #fff inset, 0 1px 0px #dfdfdf; text-decoration: none; background-color: #F2F2F2; }
 .page a:hover { background: #00ada7; background: -moz-linear-gradient(top, #f6f6f6 0%, #e8e8e8 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f6f6f6), color-stop(100%, #e8e8e8)); background: -webkit-linear-gradient(top, #f6f6f6 0%, #e8e8e8 100%); background: -o-linear-gradient(top, #f6f6f6 0%, #e8e8e8 100%); background: -ms-linear-gradient(top, #f6f6f6 0%, #e8e8e8 100%); background: linear-gradient(top, #f6f6f6 0%, #e8e8e8 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#e8e8e8', GradientType=0 );
 border: 1px solid #757575; text-decoration:none }

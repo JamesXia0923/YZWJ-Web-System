@@ -44,8 +44,8 @@
                 <% foreach (var productType in ProductTypeCollection) %>
                 <%{ %>
                 <div class="content yh fright" id="<%=productType.id %>" style="width: 850px;">
-                    <iframe src="ProductList.aspx?id=<%=productType.id %>&cid=<%=productType.categoryid %>" width="100%" height="1275px"
-                        frameborder="0" scrolling="no"></iframe>
+                    <iframe src="ProductList.aspx?id=<%=productType.id %>&cid=<%=productType.categoryid %>" width="100%" height="700px"
+                        frameborder="0" scrolling="no" style="margin-bottom:20px"></iframe>
                 </div>
                 <%} %>
 

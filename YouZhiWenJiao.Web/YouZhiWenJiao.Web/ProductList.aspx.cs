@@ -40,10 +40,6 @@ namespace YouZhiWenJiao.Web
                 ProductCollection.AddRange(GenerateModel(reader));
             }
             reader.Close();
-            foreach (CommonModel product in ProductCollection)
-            {
-                product.content = product.content.Substring(0, 20);
-            }
 		}
 
         protected void ViewProductDetail(object sender, EventArgs e)

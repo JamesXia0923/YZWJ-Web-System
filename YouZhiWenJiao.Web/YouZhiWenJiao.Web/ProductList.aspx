@@ -27,7 +27,14 @@
                     <%{%>
                     <li>
                         <div class="photo yh">
-                            <img src="<%=product.picture %>" />
+                            <%if (string.IsNullOrEmpty(product.picture)) %>
+                            <%{ %>
+                                <img src=".\images\product3.jpg" style="height: 100%; width: 100%;"/>
+                            <%} %>
+                            <%else %>
+                            <%{ %>
+                                <img src="<%=product.picture %>" style="height: 100%; width: 100%;"/>
+                            <%} %>
                             <p><%=product.title %></p>
                         </div>
                         <div class="rsp">
@@ -35,7 +42,7 @@
                         <div class="text">
                             <a href="CorporateProductDetail.aspx?id=<%=product.id %>" target="_parent">
                                 <h3><%=product.title %></h3>
-                                <p><%=product.content %>...</p>
+                                <p style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;"><%=product.content %></p>
                                 <div>TIME :<%=product.datetime %></div>
                             </a>
                         </div>
