@@ -35,7 +35,8 @@ namespace YouZhiWenJiao.Web.Manage
 select type.id, type.description 
 from type 
 inner join category on category.id = type.categoryid
-where categoryid = @categotyid";
+where categoryid = @categotyid
+order by type.id";
 
 				sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categotyid", "'" + ((int)category.公司简介).ToString() + "'");
 				var rd = sqlCmd.ExecuteReader();
@@ -144,7 +145,7 @@ values(
 			productId = productId == "" ? Guid.NewGuid().ToString() : productId;
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@id", "'" + productId + "'");
 
-			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@typeid", "'" + ddlListType.SelectedIndex.ToString() + "'");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@typeid", "'" + ddlListType.SelectedValue.ToString() + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categoryid", "'" + ((int)category.公司简介).ToString() + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@title", "'" + txtTitle.Text + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@datetime", "'" + datetime.SelectedDate.ToString("yyyy-MM-dd HH:mm:ss.ffff") + "'");

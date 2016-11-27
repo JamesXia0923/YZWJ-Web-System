@@ -29,7 +29,7 @@ type.id,
 type.description 
 from type 
 inner join category on category.id = type.categoryid 
-where type.categoryid = " + (int)category.园所装备 + ";";
+where type.categoryid = " + (int)category.园所装备 + " order by type.id";
 				var rd = sqlCmd.ExecuteReader();
 				while (rd.Read())
 				{
@@ -127,9 +127,7 @@ where (product.deleted <> 1 or product.deleted is null) and product.title like '
 
 			sqlCmd.CommandText = @"
 update product set showinhomepage=0 
-from product
-inner join category on category.id = product.categoryid
-where product.categoryid = " + (int)category.园所装备 + ";";
+where typeid in (select id from type where categoryid = " + (int)category.园所装备 + ");";
 			sqlCmd.ExecuteNonQuery();
 
 			if (showInHomePageIdList != null)

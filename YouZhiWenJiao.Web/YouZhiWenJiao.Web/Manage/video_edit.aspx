@@ -23,7 +23,7 @@
 			<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" class="tab3">
 				<tr>
 					<td align="center" colspan="2" style="font-size:15px;font-weight: bold;height:35px;width:100%; background:#edf4fc; color:black; border-right:1px solid #edf4fc; border-bottom:1px solid #edf4fc;" >
-					首&nbsp;&nbsp;页&nbsp;&nbsp;视&nbsp;&nbsp;频</td>
+					企&nbsp;&nbsp;业&nbsp;&nbsp;宣&nbsp;&nbsp;传&nbsp;&nbsp;片</td>
 				</tr>
 				<tr>
 					<td width="80" align="center" >标题：</td>

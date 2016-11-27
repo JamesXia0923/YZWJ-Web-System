@@ -190,6 +190,7 @@ where id=@id;";
 			{
 				sqlCmd.CommandText = @"
 insert into product (
+id,
 typeid,
 categoryid,
 title,
@@ -201,9 +202,12 @@ contentpicture3,
 createdatetime,
 createuser,
 updatedatetime,
-updateuser)
+updateuser,
+showinhomepage
+)
 values(
-@ypeid,
+@id,
+@typeid,
 @categoryid,
 @title,
 @datetime,
@@ -214,7 +218,8 @@ values(
 @createdatetime,
 @createuser,
 @updatedatetime,
-@updateuser);";
+@updateuser,
+1);";
 			}
 			productId = productId == "" ? Guid.NewGuid().ToString() : productId;
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@id", "'" + productId + "'");
@@ -223,10 +228,10 @@ values(
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categoryid", "'" + ((int)category.园所装备).ToString() + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@title", "'" + txtTitle.Text + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@datetime", "'" + datetime.SelectedDate.ToString("yyyy-MM-dd HH:mm:ss.ffff") + "'");
-			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@content", "'" + ftbContent.Text + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@contentpicture1", "'" + imgUrl1.ToString() + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@contentpicture2", "'" + imgUrl2.ToString() + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@contentpicture3", "'" + imgUrl3.ToString() + "'");
+            sqlCmd.CommandText = sqlCmd.CommandText.Replace("@content", "'" + ftbContent.Text + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@createdatetime", "'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffff") + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@createuser", "'" + user + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@updatedatetime", "'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffff") + "'");
@@ -235,7 +240,7 @@ values(
 
 			href_value = href_string + "id=" + productId;
 			Alert("保存成功!");
-			Response.Redirect("about.aspx", false);
+            Response.Redirect("product.aspx", false);
 		}
 
 		protected void btnPrewiew_Click(object sender, System.EventArgs e)

@@ -34,7 +34,7 @@
 					PageTrCss="PageTrCss" OnPageIndexChange="PageChanged" OnItemDataBound="DataBindings">
 					<HEADERTEMPLATE>
 						<tr>
-							<td colspan="6" style=" font-weight:bold;font-size:14px; text-align:left; color:#002779; height:37px;">&nbsp;&nbsp;首&nbsp;&nbsp;页&nbsp;&nbsp;视&nbsp;&nbsp;频</td >
+							<td colspan="6" style=" font-weight:bold;font-size:14px; text-align:left; color:#002779; height:37px;">&nbsp;&nbsp;企&nbsp;&nbsp;业&nbsp;&nbsp;宣&nbsp;&nbsp;传&nbsp;&nbsp;片</td >
 						</tr>
 						<tr>
 							<th></th>

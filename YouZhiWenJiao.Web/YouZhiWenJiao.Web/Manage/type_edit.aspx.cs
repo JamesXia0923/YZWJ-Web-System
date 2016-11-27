@@ -31,7 +31,7 @@ namespace YouZhiWenJiao.Web.Manage
 				sqlCmd.CommandText = @"
 select id, description 
 from category 
-where id in (" + categorylist + ";";
+where id in (" + categorylist + ");";
 				var rd = sqlCmd.ExecuteReader();
 				while (rd.Read())
 				{

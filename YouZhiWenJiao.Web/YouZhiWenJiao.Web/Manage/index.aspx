@@ -58,7 +58,7 @@
 										<tr><td height="5"></td></tr>
 										<tr>
 											<td style="text-align:center; background:url(images/menu_bt.jpg) no-repeat; height:32px;">
-											<a target="main" href="video.aspx">首页视频</a></td>
+											<a target="main" href="video.aspx">企业宣传片</a></td>
 										</tr>
 										<tr><td height="5"></td></tr>
 										<tr>

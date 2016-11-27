@@ -142,7 +142,7 @@ values(
 '@updateuser');";
 			}
 			productId = productId == "" ? Guid.NewGuid().ToString() : productId;
-			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@id", "'" + productId + "'");
+            sqlCmd.CommandText = sqlCmd.CommandText.Replace("@id", productId);
 
             sqlCmd.CommandText = sqlCmd.CommandText.Replace("@typeid", ddlListType.SelectedValue.ToString());
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categoryid", ((int)category.公司新闻).ToString());
@@ -158,6 +158,7 @@ values(
 
 			href_value = href_string + "id=" + productId;
 			Alert("保存成功!");
+            Response.Redirect("news.aspx", false);
 		}
 
 		protected void btnPrewiew_Click(object sender, System.EventArgs e)

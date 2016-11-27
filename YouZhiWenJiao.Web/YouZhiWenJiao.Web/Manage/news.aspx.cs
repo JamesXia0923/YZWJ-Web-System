@@ -30,7 +30,7 @@ type.id,
 type.description 
 from type 
 inner join category on category.id = type.categoryid 
-where type.categoryid = " + (int)category.公司新闻 + ";";
+where type.categoryid = " + (int)category.公司新闻 + " order by type.id";
 				var rd = sqlCmd.ExecuteReader();
 				while (rd.Read())
 				{
@@ -77,7 +77,7 @@ where (product.deleted <> 1 or product.deleted is null) and product.title like '
 			{
 				sqlCmd.CommandText += " and newtype.id=" + ddlList.SelectedValue + "";
 			}
-			sqlCmd.CommandText += " order by product.updatedatetime desc;";
+            sqlCmd.CommandText += " order by product.datetime desc;";
 
 			DataSet ds = new DataSet();
 			SQLiteDataAdapter da = new SQLiteDataAdapter(sqlCmd);
