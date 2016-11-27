@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="teacherBS_edit.aspx.cs" Inherits="YouZhiWenJiao.Web.Manage.teacherBS_edit" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="teacherBS_edit.aspx.cs" Inherits="YouZhiWenJiao.Web.Manage.teacherBS_edit" ValidateRequest="false"%>
 <%@ Register assembly="FreeTextBox" namespace="FreeTextBoxControls" tagprefix="FTB" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 

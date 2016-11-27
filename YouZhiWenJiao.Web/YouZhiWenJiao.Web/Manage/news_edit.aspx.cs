@@ -104,14 +104,14 @@ where categoryid = @categotyid";
 				sqlCmd.CommandText = @"
 update product 
 set 
-typeid=@typeid, 
-title=@title,
-content=@content,
-datetime=@datetime,
-picture=@picture,
-updatedatetime=@updatedatetime,
-updateuser=@updateuser
-where id=@id;";
+typeid='@typeid', 
+title='@title',
+content='@content',
+datetime='@datetime',
+picture='@picture',
+updatedatetime='@updatedatetime',
+updateuser='@updateuser'
+where id='@id';";
 			}
 			else
 			{
@@ -130,8 +130,8 @@ updatedatetime,
 updateuser)
 values(
 '@id',
-@typeid,
-@categoryid,
+'@typeid',
+'@categoryid',
 '@title',
 '@datetime',
 '@content',
@@ -144,7 +144,7 @@ values(
 			productId = productId == "" ? Guid.NewGuid().ToString() : productId;
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@id", "'" + productId + "'");
 
-			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@typeid", "'" + ddlListType.SelectedIndex.ToString() + "'");
+            sqlCmd.CommandText = sqlCmd.CommandText.Replace("@typeid", ddlListType.SelectedIndex.ToString());
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categoryid", ((int)category.公司新闻).ToString());
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@title", txtTitle.Text);
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@datetime", datetime.SelectedDate.ToString("yyyy-MM-dd HH:mm:ss.ffff"));

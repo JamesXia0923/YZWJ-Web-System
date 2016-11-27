@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="video_edit.aspx.cs" Inherits="YouZhiWenJiao.Web.Manage.video_edit" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="video_edit.aspx.cs" Inherits="YouZhiWenJiao.Web.Manage.video_edit" ValidateRequest="false"%>
 <%@ Register assembly="FreeTextBox" namespace="FreeTextBoxControls" tagprefix="FTB" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
