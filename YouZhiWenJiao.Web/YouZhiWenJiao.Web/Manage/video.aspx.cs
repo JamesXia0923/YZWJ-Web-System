@@ -40,8 +40,8 @@ id,
 title,
 datetime,
 case when product.showinhomepage=1 
-then '<INPUT type=checkbox id=showInHomePage checked value='|| product.Id ||' name=chkEleIdShowInHomePage>' 
-else '<INPUT type=checkbox id=showInHomePage value='|| product.Id ||' name=chkEleIdShowInHomePage>' end as showinhomepage
+then '√' 
+else '' end as showinhomepage
 from 
 product 
 where title like '@search' and categoryid = " + ((int)category.首页视频).ToString() + " and (deleted <> 1 or deleted is null) order by updatedatetime desc";
@@ -85,5 +85,32 @@ where title like '@search' and categoryid = " + ((int)category.首页视频).ToS
 		{
 			Response.Redirect("video_edit.aspx", false);
 		}
+
+        protected void SubShowClick(object sender, System.EventArgs e)
+        {
+            string showInHomePageIdList = Request.Form["chkEleId"];
+            showInHomePageIdList = showInHomePageIdList.Replace(",", "','");
+
+            if (showInHomePageIdList != null)
+            {
+                sqlCmd.CommandText = "update product set showinhomepage=1 where id in(" + "'" + showInHomePageIdList + "'" + ")";
+                sqlCmd.ExecuteNonQuery();
+                Alert("修改成功!");
+                PageChanged(null, null);
+            }
+        }
+
+        protected void SubUnShowClick(object sender, System.EventArgs e)
+        {
+            string showInHomePageIdList = Request.Form["chkEleId"];
+            showInHomePageIdList = showInHomePageIdList.Replace(",", "','");
+            if (showInHomePageIdList != null)
+            {
+                sqlCmd.CommandText = "update product set showinhomepage=0 where id in(" + "'" + showInHomePageIdList + "'" + ")";
+                sqlCmd.ExecuteNonQuery();
+                Alert("修改成功!");
+                PageChanged(null, null);
+            }
+        }
 	}
 }

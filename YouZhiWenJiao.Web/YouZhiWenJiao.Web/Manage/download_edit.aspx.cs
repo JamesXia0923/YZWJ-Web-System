@@ -123,7 +123,9 @@ video,
 createdatetime,
 createuser,
 updatedatetime,
-updateuser)
+updateuser,
+showinhomepage
+)
 values(
 @id,
 @typeid,
@@ -134,7 +136,8 @@ values(
 @createdatetime,
 @createuser,
 @updatedatetime,
-@updateuser);";
+@updateuser,
+1);";
 			}
 
 			productId = productId == "" ? Guid.NewGuid().ToString() : productId;

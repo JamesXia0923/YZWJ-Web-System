@@ -105,7 +105,7 @@ where categoryid in (" + categorylist + ")";
 			foreach(var value in idlist)
 			{
 				string[] id = value.Split('|');
-				sqlCmd.CommandText = "delete type where id = " + id[0] + " and categoryid = " + id[1] + ";";
+				sqlCmd.CommandText = "delete from type where id = " + id[0] + " and categoryid = " + id[1] + ";";
 				sqlCmd.ExecuteNonQuery();
 				Alert("删除成功!");
 				PageChanged(null, null);

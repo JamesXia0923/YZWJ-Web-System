@@ -64,8 +64,8 @@ product.title as title,
 product.datetime as datetime,
 newtype.description as description,
 case when product.showinhomepage=1 
-then '<INPUT type=checkbox id=showInHomePage checked value='|| product.Id ||' name=chkEleIdShowInHomePage>' 
-else '<INPUT type=checkbox id=showInHomePage value='|| product.Id ||' name=chkEleIdShowInHomePage>' end as showinhomepage
+then '√' 
+else '' end as showinhomepage
 from product
 inner join
 (select type.id,type.categoryid,type.description from type left join category on category.id = type.categoryid where category.id = @categotyid) 
@@ -120,23 +120,32 @@ where (product.deleted <> 1 or product.deleted is null) and product.title like '
 			Response.Redirect("product_edit.aspx", false);
 		}
 
-		protected void SubSaveClick(object sender, System.EventArgs e)
+        protected void SubShowClick(object sender, System.EventArgs e)
 		{
-			string showInHomePageIdList = Request.Form["chkEleIdShowInHomePage"];
+            string showInHomePageIdList = Request.Form["chkEleId"];
 			showInHomePageIdList = showInHomePageIdList.Replace(",", "','");
-
-			sqlCmd.CommandText = @"
-update product set showinhomepage=0 
-where typeid in (select id from type where categoryid = " + (int)category.园所装备 + ");";
-			sqlCmd.ExecuteNonQuery();
 
 			if (showInHomePageIdList != null)
 			{
 				sqlCmd.CommandText = "update product set showinhomepage=1 where id in(" + "'" + showInHomePageIdList + "'" + ")";
 				sqlCmd.ExecuteNonQuery();
+                Alert("修改成功!");
+                PageChanged(null, null);
 			}
-			Alert("保存成功!");
-			PageChanged(null, null);
 		}
+
+        protected void SubUnShowClick(object sender, System.EventArgs e)
+        {
+            string showInHomePageIdList = Request.Form["chkEleId"];
+            showInHomePageIdList = showInHomePageIdList.Replace(",", "','");
+
+            if (showInHomePageIdList != null)
+            {
+                sqlCmd.CommandText = "update product set showinhomepage=0 where id in(" + "'" + showInHomePageIdList + "'" + ")";
+                sqlCmd.ExecuteNonQuery();
+                Alert("修改成功!");
+                PageChanged(null, null);
+            }
+        }
 	}
 }
