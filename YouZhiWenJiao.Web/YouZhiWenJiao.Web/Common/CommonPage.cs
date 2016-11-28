@@ -190,7 +190,7 @@ namespace YouZhiWenJiao.Web
 				contentpicture1 = reader["contentpicture1"].ToString(),
 				contentpicture2 = reader["contentpicture2"].ToString(),
 				contentpicture3 = reader["contentpicture3"].ToString(),
-				datetime = Convert.ToDateTime(reader["datetime"])
+                datetime = Convert.ToDateTime(reader["datetime"]).ToString("yyyy-MM-dd")
 			});
 			return results;
 		}

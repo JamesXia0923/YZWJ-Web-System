@@ -41,10 +41,5 @@ namespace YouZhiWenJiao.Web
             }
             reader.Close();
 		}
-
-        protected void ViewProductDetail(object sender, EventArgs e)
-        {
-            Response.Redirect("http://www.baidu.com");
-        }
 	}
 }
