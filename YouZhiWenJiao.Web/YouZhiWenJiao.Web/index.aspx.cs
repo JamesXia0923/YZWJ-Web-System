@@ -26,7 +26,14 @@ namespace YouZhiWenJiao.Web
                 Product.categoryid = ToInt(reader["categoryid"]);
                 Product.typeid = ToInt(reader["typeid"]);
                 Product.title = reader["title"].ToString();
-                Product.picture = reader["video"].ToString();
+                if (Session["user"] == null)
+                {
+                    Product.picture = "login.aspx";
+                }
+                else
+                {
+                    Product.picture = reader["video"].ToString();
+                }
                 downloadList.Add(Product);
             }
             reader.Close();
