@@ -11,6 +11,6 @@
 namespace YouZhiWenJiao.Web {
     
     
-    public partial class CorporateNewsDetail {
+    public partial class news {
     }
 }

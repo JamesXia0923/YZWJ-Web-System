@@ -10,7 +10,7 @@ using YouZhiWenJiao.Web.Common;
 
 namespace YouZhiWenJiao.Web
 {
-    public partial class CorporateNewsDetail : CommonPage
+    public partial class newsdetail : CommonPage
     {
         protected CommonModel CorporateNewsDetails;
         protected CommonTypeModel CorporateNewsType;

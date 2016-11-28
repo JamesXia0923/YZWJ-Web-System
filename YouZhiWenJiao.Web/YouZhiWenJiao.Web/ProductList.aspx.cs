@@ -11,7 +11,7 @@ using YouZhiWenJiao.Web.Common;
 
 namespace YouZhiWenJiao.Web
 {
-	public partial class ProductList : CommonPage
+	public partial class productlist : CommonPage
 	{
         protected List<CommonModel> ProductCollection;
         protected CommonModel Product;

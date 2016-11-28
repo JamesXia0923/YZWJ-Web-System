@@ -60,8 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CheckCode.aspx" />
-    <Content Include="CorporateNews.aspx" />
-    <Content Include="CorporateNewsDetail.aspx" />
+    <Content Include="news.aspx" />
+    <Content Include="newsdetail.aspx" />
     <Content Include="images\log_3.jpg" />
     <Content Include="images\log_bg.jpg" />
     <Content Include="images\log_btn2.png" />
@@ -270,9 +270,9 @@
     <Content Include="images\xc_video.jpg" />
     <Content Include="login.aspx" />
     <Content Include="Manage\about_edit.aspx" />
-    <Content Include="CompanyProfile.aspx" />
-    <Content Include="CorporateMuiltipleProduct.aspx" />
-    <Content Include="CorporateProductDetail.aspx" />
+    <Content Include="profile.aspx" />
+    <Content Include="muiltipleproduct.aspx" />
+    <Content Include="productdetail.aspx" />
     <Content Include="cpzs.html" />
     <Content Include="css\base.css" />
     <Content Include="css\bootstrap.css" />
@@ -367,8 +367,8 @@
     <Content Include="Manage\images\title_bg2.jpg" />
     <Content Include="Manage\index.aspx" />
     <Content Include="Manage\login.aspx" />
-    <Content Include="ProductList.aspx" />
-    <Content Include="ProductTypeList.aspx" />
+    <Content Include="productlist.aspx" />
+    <Content Include="producttypelist.aspx" />
     <Content Include="Manage\news.aspx" />
     <Content Include="Manage\news_edit.aspx" />
     <Content Include="Manage\principalBS.aspx" />
@@ -390,19 +390,19 @@
     <Compile Include="CheckCode.aspx.designer.cs">
       <DependentUpon>CheckCode.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CorporateNews.aspx.cs">
-      <DependentUpon>CorporateNews.aspx</DependentUpon>
+    <Compile Include="news.aspx.cs">
+      <DependentUpon>news.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CorporateNews.aspx.designer.cs">
-      <DependentUpon>CorporateNews.aspx</DependentUpon>
+    <Compile Include="news.aspx.designer.cs">
+      <DependentUpon>news.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CorporateNewsDetail.aspx.cs">
-      <DependentUpon>CorporateNewsDetail.aspx</DependentUpon>
+    <Compile Include="newsdetail.aspx.cs">
+      <DependentUpon>newsdetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CorporateNewsDetail.aspx.designer.cs">
-      <DependentUpon>CorporateNewsDetail.aspx</DependentUpon>
+    <Compile Include="newsdetail.aspx.designer.cs">
+      <DependentUpon>newsdetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
@@ -418,31 +418,31 @@
     <Compile Include="Manage\about_edit.aspx.designer.cs">
       <DependentUpon>about_edit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CompanyProfile.aspx.cs">
-      <DependentUpon>CompanyProfile.aspx</DependentUpon>
+    <Compile Include="profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Common\CommonPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Common\Model.cs" />
-    <Compile Include="CompanyProfile.aspx.designer.cs">
-      <DependentUpon>CompanyProfile.aspx</DependentUpon>
+    <Compile Include="profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CorporateMuiltipleProduct.aspx.cs">
-      <DependentUpon>CorporateMuiltipleProduct.aspx</DependentUpon>
+    <Compile Include="muiltipleproduct.aspx.cs">
+      <DependentUpon>muiltipleproduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CorporateMuiltipleProduct.aspx.designer.cs">
-      <DependentUpon>CorporateMuiltipleProduct.aspx</DependentUpon>
+    <Compile Include="muiltipleproduct.aspx.designer.cs">
+      <DependentUpon>muiltipleproduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CorporateProductDetail.aspx.cs">
-      <DependentUpon>CorporateProductDetail.aspx</DependentUpon>
+    <Compile Include="productdetail.aspx.cs">
+      <DependentUpon>productdetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CorporateProductDetail.aspx.designer.cs">
-      <DependentUpon>CorporateProductDetail.aspx</DependentUpon>
+    <Compile Include="productdetail.aspx.designer.cs">
+      <DependentUpon>productdetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="footer.aspx.cs">
       <DependentUpon>footer.aspx</DependentUpon>
@@ -537,19 +537,19 @@
     <Compile Include="Manage\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProductList.aspx.cs">
-      <DependentUpon>ProductList.aspx</DependentUpon>
+    <Compile Include="productlist.aspx.cs">
+      <DependentUpon>productlist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProductList.aspx.designer.cs">
-      <DependentUpon>ProductList.aspx</DependentUpon>
+    <Compile Include="productlist.aspx.designer.cs">
+      <DependentUpon>productlist.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProductTypeList.aspx.cs">
-      <DependentUpon>ProductTypeList.aspx</DependentUpon>
+    <Compile Include="producttypelist.aspx.cs">
+      <DependentUpon>producttypelist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProductTypeList.aspx.designer.cs">
-      <DependentUpon>ProductTypeList.aspx</DependentUpon>
+    <Compile Include="producttypelist.aspx.designer.cs">
+      <DependentUpon>producttypelist.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\news.aspx.cs">
       <DependentUpon>news.aspx</DependentUpon>

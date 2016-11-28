@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProductList.aspx.cs" Inherits="YouZhiWenJiao.Web.ProductList" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="productlist.aspx.cs" Inherits="YouZhiWenJiao.Web.productlist" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -40,7 +40,7 @@
                         <div class="rsp">
                         </div>
                         <div class="text">
-                            <a href="CorporateProductDetail.aspx?id=<%=product.id %>" target="_parent">
+                            <a href="productdetail.aspx?id=<%=product.id %>" target="_parent">
                                 <h3><%=product.title %></h3>
                                 <p style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;"><%=product.content %></p>
                                 <div>TIME :<%=product.datetime %></div>

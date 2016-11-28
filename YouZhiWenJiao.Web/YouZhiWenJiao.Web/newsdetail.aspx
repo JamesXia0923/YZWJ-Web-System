@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CorporateNewsDetail.aspx.cs" Inherits="YouZhiWenJiao.Web.CorporateNewsDetail" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="newsdetail.aspx.cs" Inherits="YouZhiWenJiao.Web.newsdetail" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 

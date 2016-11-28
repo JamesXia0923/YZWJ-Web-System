@@ -10,7 +10,7 @@ using YouZhiWenJiao.Web.Common;
 
 namespace YouZhiWenJiao.Web
 {
-	public partial class ProductTypeList : CommonPage
+	public partial class producttypelist : CommonPage
 	{
         protected List<CommonTypeModel> ProductTypeCollection;
         protected CommonTypeModel ProductType;

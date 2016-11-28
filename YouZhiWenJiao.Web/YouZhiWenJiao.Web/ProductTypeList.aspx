@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ProductTypeList.aspx.cs"
-    Inherits="YouZhiWenJiao.Web.ProductTypeList" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="producttypelist.aspx.cs"
+    Inherits="YouZhiWenJiao.Web.producttypelist" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -44,7 +44,7 @@
                 <% foreach (var productType in ProductTypeCollection) %>
                 <%{ %>
                 <div class="content yh fright" id="<%=productType.id %>" style="width: 850px;">
-                    <iframe src="ProductList.aspx?id=<%=productType.id %>&cid=<%=productType.categoryid %>" width="100%" height="700px"
+                    <iframe src="productlist.aspx?id=<%=productType.id %>&cid=<%=productType.categoryid %>" width="100%" height="700px"
                         frameborder="0" scrolling="no" style="margin-bottom:20px"></iframe>
                 </div>
                 <%} %>

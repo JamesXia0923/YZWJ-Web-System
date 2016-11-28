@@ -11,6 +11,6 @@
 namespace YouZhiWenJiao.Web {
     
     
-    public partial class ProductTypeList {
+    public partial class producttypelist {
     }
 }

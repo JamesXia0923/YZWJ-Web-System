@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CorporateNews.aspx.cs" Inherits="YouZhiWenJiao.Web.CorporateNews" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="news.aspx.cs" Inherits="YouZhiWenJiao.Web.news" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -27,8 +27,8 @@
 				        <li class="clearfix">
 				            <div class="fleft"><img src="<%=corporateNews.picture %>" width="200" height="150" /></div>
 				            <div class="fright">
-				                <p class="bt"><a href="CorporateNewsDetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.title %></a></p>
-				                <p class="jj"><a href="CorporateNewsDetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.content %></a></p>
+				                <p class="bt"><a href="newsdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.title %></a></p>
+				                <p class="jj"><a href="newsdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.content %></a></p>
 				                <p class="ck"><span class="eye">10</span><span class="time"><%=corporateNews.datetime %></span></p>
 				            </div>
 				        </li>

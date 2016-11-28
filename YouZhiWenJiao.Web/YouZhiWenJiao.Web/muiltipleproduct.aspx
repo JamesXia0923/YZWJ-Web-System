@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CorporateMuiltipleProduct.aspx.cs" Inherits="YouZhiWenJiao.Web.CorporateMuiltipleProduct" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="muiltipleproduct.aspx.cs" Inherits="YouZhiWenJiao.Web.muiltipleproduct" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
