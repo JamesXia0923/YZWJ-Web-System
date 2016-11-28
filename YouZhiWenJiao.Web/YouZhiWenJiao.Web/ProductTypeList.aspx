@@ -85,7 +85,7 @@
     </div>
     <!--底部-->
     <div>
-        <iframe frameborder="0" scrolling="no" width="100%" class="h390" src="footer.aspx">
+        <iframe frameborder="0" scrolling="no" width="100%" class="h390" src="footer.aspx?categoryid=<%=ProductType.categoryid %>">
         </iframe>
     </div>
 </body>

@@ -52,7 +52,7 @@
     </div>
 
 <!--底部--> 
-	<div><iframe frameborder="0" scrolling="no" width="100%" class="h390" src="footer.aspx"></iframe></div>   
+	<div><iframe frameborder="0" scrolling="no" width="100%" class="h390" src="footer.aspx?categoryid=<%=Product.categoryid %>&typeid=<%=Product.typeid %>"></iframe></div>   
 
 <script src="js/all.js" type="text/javascript"></script>
 </body>
