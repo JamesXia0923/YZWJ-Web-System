@@ -51,24 +51,19 @@
     	<div class="index_right fright">
         	<div class="t1">音频中心 <span class="f14 c_666">Video Center</span></div>
             <ul class="alzs clearfix ofHidden">
-            	<li><a href="ProductList.aspx">小兔子的故事</a></li>
-                <li><a href="">猫和老鼠</a></li>
-                <li><a href="">幸福人家</a></li>
-                <li><a href="">天天向上</a></li>
-                <li><a href="">好好学习</a></li>
-				<li><a href="">猫和老鼠</a></li>
-                <li><a href="">幸福人家</a></li>
-                <li><a href="">天天向上</a></li>
-                <li><a href="">好好学习</a></li>
-                <li><a href="">报效祖国</a></li>
-                <li><a href="">热爱人民献石油的</a></li>
-				<li><a href="">我为祖国献石油的</a></li>
-				<li><a href="">天天向上</a></li>
-                <li><a href="">好好学习</a></li>
-				<li><a href="">天天向上</a></li>
-                <li><a href="">好好学习</a></li>
-				<li><a href="">天天向上</a></li>
-                <li><a href="">好好学习</a></li>
+            <%int i = 0; %>
+            <%foreach (var product in downloadList) %>
+            <%{ %>
+            	<li><a href="<%=product.picture %>"><%=product.title %></a></li>
+            <%i++; %>
+            <%} %>
+            <%if (i < 18) %>
+            <%{ %>
+                <%for (int j = 0; j < 18 - i; j++) %>
+                <%{ %>
+                    <li><a></a></li>
+                <%} %>
+            <%} %>
             </ul>
             
             <div class="t1 mt20">企业宣传片 <span class="f14 c_666">Trailer</span></div>
