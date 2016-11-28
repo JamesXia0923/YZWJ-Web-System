@@ -17,19 +17,20 @@ namespace YouZhiWenJiao.Web
 
             if (categoryid < 0)
             {
-                sql = sql + "where picture is not null and picture != '';";
+                sql = sql + "where picture is not null and picture != '' ";
             }
             else
             {
                 if (typeid < 0)
                 {
-                    sql = sql + "where picture is not null and picture != '' and categoryid = " + categoryid.ToString() + ";";
+                    sql = sql + "where picture is not null and picture != '' and categoryid = " + categoryid.ToString() + " ";
                 }
                 else
                 {
-                    sql = sql + "where picture is not null and picture != '' and categoryid = " + categoryid.ToString() + " and typeid = " + typeid.ToString() + ";";
+                    sql = sql + "where picture is not null and picture != '' and categoryid = " + categoryid.ToString() + " and typeid = " + typeid.ToString() + " ";
                 }
             }
+            sql = sql + "  and categoryid not in (" + (int)category.公司简介 + "," + (int)category.公司新闻 + "," + (int)category.首页视频 + "," + (int)category.资料下载 + ")";
 
             sqlCmd.CommandText = sql;
             ProductCollection = new List<CommonModel>();
