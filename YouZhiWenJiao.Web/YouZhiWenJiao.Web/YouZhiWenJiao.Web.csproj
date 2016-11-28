@@ -273,7 +273,6 @@
     <Content Include="profile.aspx" />
     <Content Include="muiltipleproduct.aspx" />
     <Content Include="productdetail.aspx" />
-    <Content Include="cpzs.html" />
     <Content Include="css\base.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\flexslider.css" />
@@ -322,7 +321,6 @@
     <Content Include="images\t_line.jpg" />
     <Content Include="images\xc_pic.jpg" />
     <Content Include="index.aspx" />
-    <Content Include="index.html" />
     <Content Include="js\all.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\imagezoom.js" />
@@ -378,9 +376,8 @@
     <Content Include="Manage\teacherBS.aspx" />
     <Content Include="Manage\teacherBS_edit.aspx" />
     <Content Include="Web.config" />
-    <Content Include="xwnr.html" />
-    <Content Include="xwzx.html" />
     <Content Include="zxly.html" />
+    <Content Include="aboutMe.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CheckCode.aspx.cs">

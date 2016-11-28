@@ -40,7 +40,7 @@
 <div class="fullSlide">
 	<div class="bd">
 		<ul>
-		<li style="background:url(images/banner.jpg) #FFF center 0 no-repeat;"><a target="_blank" href="#"></a></li>
+		<li style="background:url(images/banner.jpg) #FFF center 0 no-repeat;"></li>
 		</ul>
 	</div>
 	<div class='db'>				

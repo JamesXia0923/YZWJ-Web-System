@@ -38,8 +38,8 @@ namespace YouZhiWenJiao.Web
 				<li><a href=""producttypelist.aspx?id=4""  " + (iMenu == 5 ? " class='cur' " : "  ") + @"target=""_parent"">园长书库</a></li>
 				<li><a href=""producttypelist.aspx?id=5""  " + (iMenu == 6 ? " class='cur' " : "  ") + @"target=""_parent"">教师书库</a></li>
 				<li><a href=""case.aspx""  " + (iMenu == 7 ? " class='cur' " : "  ") + @"target=""_parent"">资料下载</a></li>
-				<li><a href=""about.aspx""  " + (iMenu == 8 ? " class='cur' " : "  ") + @"target=""_parent"">在线留言</a></li>
-				<li><a href=""petition.aspx""  " + (iMenu == 9 ? " class='cur' " : "  ") + @"target=""_parent"">联系我们</a></li>");
+				<li><a href=""zxly.html""  " + (iMenu == 8 ? " class='cur' " : "  ") + @"target=""_parent"">在线留言</a></li>
+				<li><a href=""aboutMe.html""  " + (iMenu == 9 ? " class='cur' " : "  ") + @"target=""_parent"">联系我们</a></li>");
 		}
 
 		override protected void OnUnload(EventArgs e)
