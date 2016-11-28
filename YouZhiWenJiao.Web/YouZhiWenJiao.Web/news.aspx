@@ -27,9 +27,18 @@
 				        <li class="clearfix">
 				            <div class="fleft"><img src="<%=corporateNews.picture %>" width="200" height="150" /></div>
 				            <div class="fright">
-				                <p class="bt"><a href="newsdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.title %></a></p>
-				                <p class="jj"><a href="newsdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.content %></a></p>
-				                <p class="ck"><span class="eye">10</span><span class="time"><%=corporateNews.datetime %></span></p>
+				                <% if (CorporateNewsType.categoryid == 2) %>
+				                <%{ %>
+				                    <p class="bt"><a href="newsdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.title%></a></p>
+				                    <p class="jj"><a href="newsdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.content%></a></p>
+				                    <p class="ck"><span class="eye">10</span><span class="time"><%=corporateNews.datetime%></span></p>
+				                <%} %>
+				                <% else %>
+				                <%{ %>
+				                    <p class="bt"><a href="<%=corporateNews.video %>" target="_parent"><%=corporateNews.title%></a></p>
+				                    <p class="jj"><a href="<%=corporateNews.video %>" target="_parent"><%=corporateNews.content%></a></p>
+				                    <p class="ck"><span class="eye">10</span><span class="time"><%=corporateNews.datetime%></span></p>
+				                <%} %>
 				            </div>
 				        </li>
 				    <%} %>

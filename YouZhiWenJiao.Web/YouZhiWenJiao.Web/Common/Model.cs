@@ -26,5 +26,6 @@ namespace YouZhiWenJiao.Web.Common
         public bool showpicture { get; set; }
         public bool showinhomepage { get; set; }
         public string datetime { get; set; }
+        public string video { get; set; }
     }
 }
