@@ -16,13 +16,14 @@ namespace YouZhiWenJiao.Web
         protected CommonTypeModel CorporateNewsType;
 		protected void Page_Load(object sender, EventArgs e)
 		{
-            if (!IsPostBack)
-            {
-                Session["id"] = null;
-            }
             CorporateNewsType = new CommonTypeModel();
             CorporateNewsList = new List<CommonModel>();
             CorporateNewsType.categoryid = Request["id"] != null ? ToInt(Request["id"]) : 0;
+
+            if (CorporateNewsType.categoryid == 6 && Session["user"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
 
             //根据categoryid查询出description
             sqlCmd.CommandText = @"select * from category where id = @CategoryId";
@@ -49,7 +50,7 @@ namespace YouZhiWenJiao.Web
             reader.Close();
             foreach (var corporateNews in CorporateNewsList)
             {
-                if (corporateNews.content.Length == 0)
+                if (corporateNews.content.Length >= 100)
                 {
                     corporateNews.content = corporateNews.content.Substring(0, 100);
                 }
