@@ -65,6 +65,11 @@
 											<td style="text-align:center; background:url(images/menu_bt.jpg) no-repeat; height:32px;">
 											<a target="main" href="type.aspx">类型编辑</a></td>
 										</tr>
+										<tr><td height="5"></td></tr>
+										<tr>
+											<td style="text-align:center; background:url(images/menu_bt.jpg) no-repeat; height:32px;">
+											<a target="main" href="productimages.aspx">产品首页图</a></td>
+										</tr>
 									</table>
 								</td>
 								<td height="800" valign="top" style="background:#fff;">

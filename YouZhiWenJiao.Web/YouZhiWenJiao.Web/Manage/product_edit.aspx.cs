@@ -12,11 +12,8 @@ namespace YouZhiWenJiao.Web.Manage
 
 		string user = @"";
 		string imgUrl1 = @"";
-		string imgPath1 = @"";
 		string imgUrl2 = @"";
-		string imgPath2 = @"";
 		string imgUrl3 = @"";
-		string imgPath3 = @"";
 		string href_string = @"../product.aspx?";
 		protected string href_value = "";
 		protected void Page_Load(object sender, EventArgs e)
@@ -58,12 +55,17 @@ where categoryid = @categotyid";
 						txtTitle.Text = dr[0].ToString();
 						ftbContent.Text = dr[1].ToString();
 						datetime.SelectedDate = DateTime.Parse(dr[2].ToString());
-						imgPath1 = dr[3].ToString();
-						imgPath2 = dr[4].ToString();
-						imgPath3 = dr[5].ToString();
+
+						Session["imgPath1"] = dr[3].ToString();
+						//Session["imgPath2"] = dr[4].ToString();
+						//Session["imgPath3"] = dr[5].ToString();
+
+						image1.ImageUrl = Session["imgPath1"].ToString();
+						//image2.ImageUrl = Session["imgPath2"].ToString();
+						//image3.ImageUrl = Session["imgPath3"].ToString();
+
 						ddlListType.SelectedValue = dr[6].ToString();
 					}
-					dr.Close();
 				}
 			}
 			#endregion
@@ -101,74 +103,74 @@ where categoryid = @categotyid";
 			}
 			else
 			{
-				imgUrl1 = imgPath1;
+				imgUrl1 = Session["imgPath1"].ToString();
 			}
 
-			uploadName = InputFile2.Value;//获取待上传图片的完整路径，包括文件名  
-			pictureName = "";//上传后的图片名，以当前时间为文件名，确保文件名没有重复 
-			imgUrl2 = "";
-			if (InputFile2.Value != "")
-			{
-				int idx = uploadName.LastIndexOf(".");
-				string suffix = uploadName.Substring(idx);//获得上传的图片的后缀名         
+			//uploadName = InputFile2.Value;//获取待上传图片的完整路径，包括文件名  
+			//pictureName = "";//上传后的图片名，以当前时间为文件名，确保文件名没有重复 
+			//imgUrl2 = "";
+			//if (InputFile2.Value != "")
+			//{
+			//    int idx = uploadName.LastIndexOf(".");
+			//    string suffix = uploadName.Substring(idx);//获得上传的图片的后缀名         
 
-				pictureName = DateTime.Now.Ticks.ToString() + suffix;
-				try
-				{
-					if (uploadName != "")
-					{
-						string AppUrl = "";
-						if (Request.ApplicationPath == "/")
-							AppUrl = Request.ApplicationPath;
-						else
-							AppUrl = Request.ApplicationPath + "/";
-						string path = Server.MapPath(AppUrl + "img/" + pictureName);
-						InputFile2.PostedFile.SaveAs(path);
-						imgUrl2 = AppUrl + "img/" + pictureName;
-					}
-				}
-				catch (Exception ex)
-				{
-					Response.Write(ex);
-				}
-			}
-			else
-			{
-				imgUrl2 = imgPath2;
-			}
+			//    pictureName = DateTime.Now.Ticks.ToString() + suffix;
+			//    try
+			//    {
+			//        if (uploadName != "")
+			//        {
+			//            string AppUrl = "";
+			//            if (Request.ApplicationPath == "/")
+			//                AppUrl = Request.ApplicationPath;
+			//            else
+			//                AppUrl = Request.ApplicationPath + "/";
+			//            string path = Server.MapPath(AppUrl + "img/" + pictureName);
+			//            InputFile2.PostedFile.SaveAs(path);
+			//            imgUrl2 = AppUrl + "img/" + pictureName;
+			//        }
+			//    }
+			//    catch (Exception ex)
+			//    {
+			//        Response.Write(ex);
+			//    }
+			//}
+			//else
+			//{
+			//    imgUrl2 = Session["imgPath2"].ToString();
+			//}
 
-			uploadName = InputFile3.Value;//获取待上传图片的完整路径，包括文件名  
-			pictureName = "";//上传后的图片名，以当前时间为文件名，确保文件名没有重复 
-			imgUrl3 = "";
-			if (InputFile3.Value != "")
-			{
-				int idx = uploadName.LastIndexOf(".");
-				string suffix = uploadName.Substring(idx);//获得上传的图片的后缀名         
+			//uploadName = InputFile3.Value;//获取待上传图片的完整路径，包括文件名  
+			//pictureName = "";//上传后的图片名，以当前时间为文件名，确保文件名没有重复 
+			//imgUrl3 = "";
+			//if (InputFile3.Value != "")
+			//{
+			//    int idx = uploadName.LastIndexOf(".");
+			//    string suffix = uploadName.Substring(idx);//获得上传的图片的后缀名         
 
-				pictureName = DateTime.Now.Ticks.ToString() + suffix;
-				try
-				{
-					if (uploadName != "")
-					{
-						string AppUrl = "";
-						if (Request.ApplicationPath == "/")
-							AppUrl = Request.ApplicationPath;
-						else
-							AppUrl = Request.ApplicationPath + "/";
-						string path = Server.MapPath(AppUrl + "img/" + pictureName);
-						InputFile3.PostedFile.SaveAs(path);
-						imgUrl3 = AppUrl + "img/" + pictureName;
-					}
-				}
-				catch (Exception ex)
-				{
-					Response.Write(ex);
-				}
-			}
-			else
-			{
-				imgUrl3 = imgPath3;
-			}
+			//    pictureName = DateTime.Now.Ticks.ToString() + suffix;
+			//    try
+			//    {
+			//        if (uploadName != "")
+			//        {
+			//            string AppUrl = "";
+			//            if (Request.ApplicationPath == "/")
+			//                AppUrl = Request.ApplicationPath;
+			//            else
+			//                AppUrl = Request.ApplicationPath + "/";
+			//            string path = Server.MapPath(AppUrl + "img/" + pictureName);
+			//            InputFile3.PostedFile.SaveAs(path);
+			//            imgUrl3 = AppUrl + "img/" + pictureName;
+			//        }
+			//    }
+			//    catch (Exception ex)
+			//    {
+			//        Response.Write(ex);
+			//    }
+			//}
+			//else
+			//{
+			//    imgUrl3 = Session["imgPath3"].ToString();
+			//}
 
 			if (productId != "")
 			{
@@ -179,6 +181,7 @@ typeid=@typeid,
 title=@title,
 content=@content,
 datetime=@datetime,
+picture=@picture,
 contentpicture1=@contentpicture1,
 contentpicture2=@contentpicture2,
 contentpicture3=@contentpicture3,
@@ -196,6 +199,7 @@ categoryid,
 title,
 datetime,
 content,
+picture,
 contentpicture1,
 contentpicture2,
 contentpicture3,
@@ -212,6 +216,7 @@ values(
 @title,
 @datetime,
 @content,
+@picture,
 @contentpicture1,
 @contentpicture2,
 @contentpicture3,
@@ -224,28 +229,23 @@ values(
 			productId = productId == "" ? Guid.NewGuid().ToString() : productId;
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@id", "'" + productId + "'");
 
-            sqlCmd.CommandText = sqlCmd.CommandText.Replace("@typeid", "'" + ddlListType.SelectedValue.ToString() + "'");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@typeid", "'" + ddlListType.SelectedValue.ToString() + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categoryid", "'" + ((int)category.园所装备).ToString() + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@title", "'" + txtTitle.Text + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@datetime", "'" + datetime.SelectedDate.ToString("yyyy-MM-dd HH:mm:ss.ffff") + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@contentpicture1", "'" + imgUrl1.ToString() + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@contentpicture2", "'" + imgUrl2.ToString() + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@contentpicture3", "'" + imgUrl3.ToString() + "'");
-            sqlCmd.CommandText = sqlCmd.CommandText.Replace("@content", "'" + ftbContent.Text + "'");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@picture", "'" + imgUrl1.ToString() + "'");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@content", "'" + ftbContent.Text + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@createdatetime", "'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffff") + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@createuser", "'" + user + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@updatedatetime", "'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffff") + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@updateuser", "'" + user + "'");
 			sqlCmd.ExecuteNonQuery();
 
-			href_value = href_string + "id=" + productId;
 			Alert("保存成功!");
-            Response.Redirect("product.aspx", false);
-		}
-
-		protected void btnPrewiew_Click(object sender, System.EventArgs e)
-		{
-			Response.Redirect(href_string, false);
+			Response.Redirect("product.aspx", false);
 		}
 
 		protected void btnBack_Click(object sender, System.EventArgs e)

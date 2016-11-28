@@ -77,6 +77,15 @@ namespace YouZhiWenJiao.Web.Manage {
         protected global::System.Web.UI.WebControls.Label Lb_Info;
         
         /// <summary>
+        /// image control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image image;
+        
+        /// <summary>
         /// ftbContent control.
         /// </summary>
         /// <remarks>
@@ -93,15 +102,6 @@ namespace YouZhiWenJiao.Web.Manage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnOK;
-        
-        /// <summary>
-        /// btnPreview control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPreview;
         
         /// <summary>
         /// btnBack control.
