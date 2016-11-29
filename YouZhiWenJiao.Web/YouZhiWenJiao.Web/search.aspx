@@ -25,40 +25,50 @@
 				<ul>
 				    <% foreach (var corporateNews in CorporateNewsList){%>
 				        <li class="clearfix">
-				            <div class="fleft"><img src="<%=corporateNews.picture %>" width="200" height="150" /></div>
-				            <div class="fright">
 				                <%if (corporateNews.categoryid == 1) %>
 				                <%{ %>
+				            <div class="fleft"><img src="<%=corporateNews.picture %>" width="200" height="150" /></div>
+				            <div class="fright">
 				                    <p class="bt"><a href="profile.aspx" target="_parent"><%=corporateNews.title%></a></p>
 				                    <p class="jj"><a href="profile.aspx" target="_parent"><%=corporateNews.content%></a></p>
 				                    <p class="ck"><span>分类 : 公司简介</span><span class="time"><%=corporateNews.datetime%></span></p>
 				                <%} %>
 				                <%if (corporateNews.categoryid == 2) %>
 				                <%{ %>
+				            <div class="fleft"><img src="<%=corporateNews.picture %>" width="200" height="150" /></div>
+				            <div class="fright">
 				                    <p class="bt"><a href="newsdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.title%></a></p>
 				                    <p class="jj"><a href="newsdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.content%></a></p>
 				                    <p class="ck"><span>分类 : 公司新闻</span><span class="time"><%=corporateNews.datetime%></span></p>
 				                <%} %>
 				                <%if (corporateNews.categoryid == 3) %>
 				                <%{ %>
+				            <div class="fleft"><img src="<%=corporateNews.picture %>" width="200" height="150" /></div>
+				            <div class="fright">
 				                    <p class="bt"><a href="productdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.title%></a></p>
 				                    <p class="jj"><a href="productdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.content%></a></p>
 				                    <p class="ck"><span>分类 : 园所装备</span><span class="time"><%=corporateNews.datetime%></span></p>
 				                <%} %>
 				                <%if (corporateNews.categoryid == 4) %>
 				                <%{ %>
+				            <div class="fleft"><img src="<%=corporateNews.picture %>" width="200" height="150" /></div>
+				            <div class="fright">
 				                    <p class="bt"><a href="productdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.title%></a></p>
 				                    <p class="jj"><a href="productdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.content%></a></p>
 				                    <p class="ck"><span>分类 : 园长书库</span><span class="time"><%=corporateNews.datetime%></span></p>
 				                <%} %>
 				                <%if (corporateNews.categoryid == 5) %>
 				                <%{ %>
+				            <div class="fleft"><img src="<%=corporateNews.picture %>" width="200" height="150" /></div>
+				            <div class="fright">
 				                    <p class="bt"><a href="productdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.title%></a></p>
 				                    <p class="jj"><a href="productdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.content%></a></p>
 				                    <p class="ck"><span>分类 : 教师书库</span><span class="time"><%=corporateNews.datetime%></span></p>
 				                <%} %>
 				                <%if (corporateNews.categoryid == 6) %>
 				                <%{ %>
+				            <div></div>
+				            <div class="fright">
 				                    <p class="bt"><a href="<%=corporateNews.video %>" target="_parent"><%=corporateNews.title%></a></p>
 				                    <p class="jj"><a href="<%=corporateNews.video %>" target="_parent"><%=corporateNews.content%></a></p>
 				                    <p class="ck"><span>分类 : 资料下载</span><span class="time"><%=corporateNews.datetime%></span></p>
@@ -69,8 +79,6 @@
 				</ul>
 				
 			</div>
-            
-            <div class="page clearfix"><a href="" class="on">1</a><a href="">2</a><a href="">3</a><a href="">>></a></div>
         </div>
     </div>	
     <!--底部--> 

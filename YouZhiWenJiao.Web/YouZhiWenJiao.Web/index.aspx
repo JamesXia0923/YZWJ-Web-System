@@ -36,11 +36,11 @@
         	<div class="t1">产品展示 <span class="f14 c_666">Product</span></div>            
             <!--九宫格-->
             <div class="ge ofHidden">
-            	<div class="w410 fleft h280 ofHidden"><a href="" class="h280"><img src="images/product1.jpg" width="410" height="280"><p class="f16">户外用品</p><b class="h45"></b></a></div>
-                <div class="w410 fright h140 ofHidden"><a href="" class="h140"><img src="images/product2.jpg" width="410" height="140"><p class="f14">室内用品</p><b class="h30"></b></a></div>
+            	<div class="w410 fleft h280 ofHidden"><a href="" class="h280"><img src="productimages/product1.jpg" width="410" height="280"><p class="f16">户外用品</p><b class="h45"></b></a></div>
+                <div class="w410 fright h140 ofHidden"><a href="" class="h140"><img src="productimages/product2.jpg" width="410" height="140"><p class="f14">室内用品</p><b class="h30"></b></a></div>
                 <div class="w410 fright mt10">
-                	<span class="w200 fleft h130 ofHidden"><a href="" class="h130"><img src="images/product3.jpg" width="200" height="130"><p class="f14">学习用品</p><b class="h30"></b></a></span>
-                    <span class="w200 fright h130 ofHidden"><a href="" class="h130"><img src="images/product4.jpg" width="200" height="130"><p class="f14">寓教于乐</p><b class="h30"></b></a></span>
+                	<span class="w200 fleft h130 ofHidden"><a href="" class="h130"><img src="productimages/product3.jpg" width="200" height="130"><p class="f14">学习用品</p><b class="h30"></b></a></span>
+                    <span class="w200 fright h130 ofHidden"><a href="" class="h130"><img src="productimages/product4.jpg" width="200" height="130"><p class="f14">寓教于乐</p><b class="h30"></b></a></span>
                 </div>
             </div>
             
