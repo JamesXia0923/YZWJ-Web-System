@@ -12,5 +12,14 @@ namespace YouZhiWenJiao.Web
 		{
 			//Response.Redirect("xxxx.aspx?search=" + input_value.Value.Trim());
 		}
+
+        protected void btnSearch_Click(object sender, System.EventArgs e)
+		{
+            if (!string.IsNullOrEmpty(txtSearch.Text))
+            {
+                var searchTxt = "search.aspx?wd=" + txtSearch.Text;
+                Response.Write("<script>window.open('" + searchTxt + "','_parent')</script>");
+            }
+		}
 	}
 }

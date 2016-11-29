@@ -27,11 +27,12 @@
 				</div>
 			
 				<!--ËÑË÷-->
-				<form name="searchform" method="post" action="/e/search/index.php" class="ss ofHidden">
+				<form name="searchform" runat="server" class="ss ofHidden">
 					<input name='ecmsfrom' type='hidden' value='9'>
 					<input type="hidden" name="show" value="title,newstext">
-					<input class="index_srh" name="input_value" id="input_value" type="text" runat="server" placeholder="ÇëÊäÈë¹Ø¼ü×Ö" >
-					<input class="search" type="submit" name="submit" value="ËÑË÷">
+					<asp:TextBox class="input_value" id="txtSearch" runat="server" placeholder="ÇëÊäÈë¹Ø¼ü×Ö" width="150"></asp:TextBox>
+					<%--<input  name="input_value" id="input_value" type="text" runat="server" placeholder="ÇëÊäÈë¹Ø¼ü×Ö" >--%>
+					<asp:Button id="btnBack" OnClick="btnSearch_Click" runat="server" text="ËÑË÷" class="search"></asp:Button>
 				</form>
 			</div>
 		</div>
