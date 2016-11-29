@@ -59,11 +59,220 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Manage\about_info.aspx" />
-    <Content Include="CompanyProfile.aspx" />
-    <Content Include="CorporateMuiltipleProduct.aspx" />
-    <Content Include="CorporateProductDetail.aspx" />
-    <Content Include="cpzs.html" />
+    <Content Include="CheckCode.aspx" />
+    <Content Include="news.aspx" />
+    <Content Include="newsdetail.aspx" />
+    <Content Include="images\log_3.jpg" />
+    <Content Include="images\log_bg.jpg" />
+    <Content Include="images\log_btn2.png" />
+    <Content Include="images\ftb\folder.big.gif" />
+    <Content Include="images\ftb\folder.small.gif" />
+    <Content Include="images\ftb\folder.up.gif" />
+    <Content Include="images\ftb\office2000\bold.gif" />
+    <Content Include="images\ftb\office2000\bullets.gif" />
+    <Content Include="images\ftb\office2000\center.gif" />
+    <Content Include="images\ftb\office2000\copy.gif" />
+    <Content Include="images\ftb\office2000\createlink.gif" />
+    <Content Include="images\ftb\office2000\cut.gif" />
+    <Content Include="images\ftb\office2000\deletetablecolumn.gif" />
+    <Content Include="images\ftb\office2000\deletetablerow.gif" />
+    <Content Include="images\ftb\office2000\fontbackcolorpicker.gif" />
+    <Content Include="images\ftb\office2000\fontforecolorpicker.gif" />
+    <Content Include="images\ftb\office2000\indent.gif" />
+    <Content Include="images\ftb\office2000\insertdate.gif" />
+    <Content Include="images\ftb\office2000\insertimage.gif" />
+    <Content Include="images\ftb\office2000\insertimagefromgallery.gif" />
+    <Content Include="images\ftb\office2000\insertrule.gif" />
+    <Content Include="images\ftb\office2000\inserttable.gif" />
+    <Content Include="images\ftb\office2000\inserttablecolumn.gif" />
+    <Content Include="images\ftb\office2000\inserttablerow.gif" />
+    <Content Include="images\ftb\office2000\inserttime.gif" />
+    <Content Include="images\ftb\office2000\italic.gif" />
+    <Content Include="images\ftb\office2000\justifycenter.gif" />
+    <Content Include="images\ftb\office2000\justifyfull.gif" />
+    <Content Include="images\ftb\office2000\justifyleft.gif" />
+    <Content Include="images\ftb\office2000\justifyright.gif" />
+    <Content Include="images\ftb\office2000\link.gif" />
+    <Content Include="images\ftb\office2000\mode.design.gif" />
+    <Content Include="images\ftb\office2000\mode.html.gif" />
+    <Content Include="images\ftb\office2000\numberedlist.gif" />
+    <Content Include="images\ftb\office2000\numbers.gif" />
+    <Content Include="images\ftb\office2000\outdent.gif" />
+    <Content Include="images\ftb\office2000\paste.gif" />
+    <Content Include="images\ftb\office2000\print.gif" />
+    <Content Include="images\ftb\office2000\redo.gif" />
+    <Content Include="images\ftb\office2000\removeformat.gif" />
+    <Content Include="images\ftb\office2000\save.gif" />
+    <Content Include="images\ftb\office2000\separator.gif" />
+    <Content Include="images\ftb\office2000\spellcheck.gif" />
+    <Content Include="images\ftb\office2000\strikethrough.gif" />
+    <Content Include="images\ftb\office2000\subscript.gif" />
+    <Content Include="images\ftb\office2000\superscript.gif" />
+    <Content Include="images\ftb\office2000\table.gif" />
+    <Content Include="images\ftb\office2000\toolbar.end.gif" />
+    <Content Include="images\ftb\office2000\toolbar.gif" />
+    <Content Include="images\ftb\office2000\toolbar.start.gif" />
+    <Content Include="images\ftb\office2000\underline.gif" />
+    <Content Include="images\ftb\office2000\undo.gif" />
+    <Content Include="images\ftb\office2000\unlink.gif" />
+    <Content Include="images\ftb\office2000\wordclean.gif" />
+    <Content Include="images\ftb\office2000\wordcount.gif" />
+    <Content Include="images\ftb\office2003\bold.gif" />
+    <Content Include="images\ftb\office2003\bullets.gif" />
+    <Content Include="images\ftb\office2003\copy.gif" />
+    <Content Include="images\ftb\office2003\createlink.gif" />
+    <Content Include="images\ftb\office2003\cut.gif" />
+    <Content Include="images\ftb\office2003\delete.gif" />
+    <Content Include="images\ftb\office2003\deletetablecolumn.gif" />
+    <Content Include="images\ftb\office2003\deletetablerow.gif" />
+    <Content Include="images\ftb\office2003\fontbackcolorpicker.gif" />
+    <Content Include="images\ftb\office2003\fontforecolorpicker.gif" />
+    <Content Include="images\ftb\office2003\indent.gif" />
+    <Content Include="images\ftb\office2003\insertdate.gif" />
+    <Content Include="images\ftb\office2003\insertimage.gif" />
+    <Content Include="images\ftb\office2003\insertimagefromgallery.gif" />
+    <Content Include="images\ftb\office2003\insertrule.gif" />
+    <Content Include="images\ftb\office2003\inserttable.gif" />
+    <Content Include="images\ftb\office2003\inserttablecolumn.gif" />
+    <Content Include="images\ftb\office2003\inserttablerow.gif" />
+    <Content Include="images\ftb\office2003\inserttime.gif" />
+    <Content Include="images\ftb\office2003\italic.gif" />
+    <Content Include="images\ftb\office2003\justifycenter.gif" />
+    <Content Include="images\ftb\office2003\justifyfull.gif" />
+    <Content Include="images\ftb\office2003\justifyleft.gif" />
+    <Content Include="images\ftb\office2003\justifyright.gif" />
+    <Content Include="images\ftb\office2003\mode.design.gif" />
+    <Content Include="images\ftb\office2003\mode.html.gif" />
+    <Content Include="images\ftb\office2003\numberedlist.gif" />
+    <Content Include="images\ftb\office2003\outdent.gif" />
+    <Content Include="images\ftb\office2003\paste.gif" />
+    <Content Include="images\ftb\office2003\print.gif" />
+    <Content Include="images\ftb\office2003\redo.gif" />
+    <Content Include="images\ftb\office2003\removeformat.gif" />
+    <Content Include="images\ftb\office2003\save.gif" />
+    <Content Include="images\ftb\office2003\separator.gif" />
+    <Content Include="images\ftb\office2003\spellcheck.gif" />
+    <Content Include="images\ftb\office2003\strikethrough.gif" />
+    <Content Include="images\ftb\office2003\subscript.gif" />
+    <Content Include="images\ftb\office2003\superscript.gif" />
+    <Content Include="images\ftb\office2003\toolbar.background.gif" />
+    <Content Include="images\ftb\office2003\toolbar.end.gif" />
+    <Content Include="images\ftb\office2003\toolbar.start.gif" />
+    <Content Include="images\ftb\office2003\toolbarbutton.down.gif" />
+    <Content Include="images\ftb\office2003\toolbarbutton.over.gif" />
+    <Content Include="images\ftb\office2003\underline.gif" />
+    <Content Include="images\ftb\office2003\undo.gif" />
+    <Content Include="images\ftb\office2003\unlink.gif" />
+    <Content Include="images\ftb\office2003\wordclean.gif" />
+    <Content Include="images\ftb\office2003\wordcount.gif" />
+    <Content Include="images\ftb\officeXP\bgcolor.gif" />
+    <Content Include="images\ftb\officeXP\bold.gif" />
+    <Content Include="images\ftb\officeXP\bold.over.gif" />
+    <Content Include="images\ftb\officeXP\borders.gif" />
+    <Content Include="images\ftb\officeXP\bullets.gif" />
+    <Content Include="images\ftb\officeXP\bullets.over.gif" />
+    <Content Include="images\ftb\officeXP\changecase.gif" />
+    <Content Include="images\ftb\officeXP\changecase.over.gif" />
+    <Content Include="images\ftb\officeXP\copy.gif" />
+    <Content Include="images\ftb\officeXP\copy.over.gif" />
+    <Content Include="images\ftb\officeXP\createlink.gif" />
+    <Content Include="images\ftb\officeXP\createlink.over.gif" />
+    <Content Include="images\ftb\officeXP\cut.gif" />
+    <Content Include="images\ftb\officeXP\cut.over.gif" />
+    <Content Include="images\ftb\officeXP\delete.gif" />
+    <Content Include="images\ftb\officeXP\delete.over.gif" />
+    <Content Include="images\ftb\officeXP\deletetablecolumn.gif" />
+    <Content Include="images\ftb\officeXP\deletetablecolumn.over.gif" />
+    <Content Include="images\ftb\officeXP\deletetablerow.gif" />
+    <Content Include="images\ftb\officeXP\deletetablerow.over.gif" />
+    <Content Include="images\ftb\officeXP\details.gif" />
+    <Content Include="images\ftb\officeXP\find.gif" />
+    <Content Include="images\ftb\officeXP\find.over.gif" />
+    <Content Include="images\ftb\officeXP\fontbackcolorpicker.gif" />
+    <Content Include="images\ftb\officeXP\fontbackcolorpicker.over.gif" />
+    <Content Include="images\ftb\officeXP\fontforecolorpicker.gif" />
+    <Content Include="images\ftb\officeXP\fontforecolorpicker.over.gif" />
+    <Content Include="images\ftb\officeXP\help.gif" />
+    <Content Include="images\ftb\officeXP\help.over.gif" />
+    <Content Include="images\ftb\officeXP\indent.gif" />
+    <Content Include="images\ftb\officeXP\indent.over.gif" />
+    <Content Include="images\ftb\officeXP\insertdate.gif" />
+    <Content Include="images\ftb\officeXP\insertdate.over.gif" />
+    <Content Include="images\ftb\officeXP\insertemail.gif" />
+    <Content Include="images\ftb\officeXP\insertemail.over.gif" />
+    <Content Include="images\ftb\officeXP\insertimage.gif" />
+    <Content Include="images\ftb\officeXP\insertimage.over.gif" />
+    <Content Include="images\ftb\officeXP\insertimagefromgallery.gif" />
+    <Content Include="images\ftb\officeXP\insertimagefromgallery.over.gif" />
+    <Content Include="images\ftb\officeXP\insertrule.gif" />
+    <Content Include="images\ftb\officeXP\insertrule.over.gif" />
+    <Content Include="images\ftb\officeXP\inserttable.gif" />
+    <Content Include="images\ftb\officeXP\inserttable.over.gif" />
+    <Content Include="images\ftb\officeXP\inserttablecolumn.gif" />
+    <Content Include="images\ftb\officeXP\inserttablecolumn.over.gif" />
+    <Content Include="images\ftb\officeXP\inserttablerow.gif" />
+    <Content Include="images\ftb\officeXP\inserttablerow.over.gif" />
+    <Content Include="images\ftb\officeXP\inserttime.gif" />
+    <Content Include="images\ftb\officeXP\inserttime.over.gif" />
+    <Content Include="images\ftb\officeXP\italic.gif" />
+    <Content Include="images\ftb\officeXP\italic.over.gif" />
+    <Content Include="images\ftb\officeXP\justifycenter.gif" />
+    <Content Include="images\ftb\officeXP\justifycenter.over.gif" />
+    <Content Include="images\ftb\officeXP\justifyfull.gif" />
+    <Content Include="images\ftb\officeXP\justifyfull.over.gif" />
+    <Content Include="images\ftb\officeXP\justifyleft.gif" />
+    <Content Include="images\ftb\officeXP\justifyleft.over.gif" />
+    <Content Include="images\ftb\officeXP\justifyright.gif" />
+    <Content Include="images\ftb\officeXP\justifyright.over.gif" />
+    <Content Include="images\ftb\officeXP\mode.design.gif" />
+    <Content Include="images\ftb\officeXP\mode.html.gif" />
+    <Content Include="images\ftb\officeXP\numberedlist.gif" />
+    <Content Include="images\ftb\officeXP\numberedlist.over.gif" />
+    <Content Include="images\ftb\officeXP\outdent.gif" />
+    <Content Include="images\ftb\officeXP\outdent.over.gif" />
+    <Content Include="images\ftb\officeXP\paste.gif" />
+    <Content Include="images\ftb\officeXP\paste.over.gif" />
+    <Content Include="images\ftb\officeXP\print.gif" />
+    <Content Include="images\ftb\officeXP\print.over.gif" />
+    <Content Include="images\ftb\officeXP\redo.gif" />
+    <Content Include="images\ftb\officeXP\redo.over.gif" />
+    <Content Include="images\ftb\officeXP\removeformat.gif" />
+    <Content Include="images\ftb\officeXP\removeformat.over.gif" />
+    <Content Include="images\ftb\officeXP\save.gif" />
+    <Content Include="images\ftb\officeXP\save.over.gif" />
+    <Content Include="images\ftb\officeXP\separator.gif" />
+    <Content Include="images\ftb\officeXP\spellcheck.gif" />
+    <Content Include="images\ftb\officeXP\spellcheck.over.gif" />
+    <Content Include="images\ftb\officeXP\strikethrough.gif" />
+    <Content Include="images\ftb\officeXP\strikethrough.over.gif" />
+    <Content Include="images\ftb\officeXP\subscript.gif" />
+    <Content Include="images\ftb\officeXP\subscript.over.gif" />
+    <Content Include="images\ftb\officeXP\superscript.gif" />
+    <Content Include="images\ftb\officeXP\superscript.over.gif" />
+    <Content Include="images\ftb\officeXP\toggleborders.gif" />
+    <Content Include="images\ftb\officeXP\toggledetails.gif" />
+    <Content Include="images\ftb\officeXP\toggledetails.over.gif" />
+    <Content Include="images\ftb\officeXP\toolbar.end.gif" />
+    <Content Include="images\ftb\officeXP\toolbar.start.gif" />
+    <Content Include="images\ftb\officeXP\underline.gif" />
+    <Content Include="images\ftb\officeXP\underline.over.gif" />
+    <Content Include="images\ftb\officeXP\undo.gif" />
+    <Content Include="images\ftb\officeXP\undo.over.gif" />
+    <Content Include="images\ftb\officeXP\unlink.gif" />
+    <Content Include="images\ftb\officeXP\unlink.over.gif" />
+    <Content Include="images\ftb\officeXP\verse.gif" />
+    <Content Include="images\ftb\officeXP\verse.over.gif" />
+    <Content Include="images\ftb\officeXP\wordclean.gif" />
+    <Content Include="images\ftb\officeXP\wordclean.over.gif" />
+    <Content Include="images\ftb\officeXP\wordcount.gif" />
+    <Content Include="images\ftb\officeXP\wordcount.over.gif" />
+    <Content Include="images\ftb\tmp.jpg" />
+    <Content Include="images\xc_video.jpg" />
+    <Content Include="login.aspx" />
+    <Content Include="Manage\about_edit.aspx" />
+    <Content Include="profile.aspx" />
+    <Content Include="muiltipleproduct.aspx" />
+    <Content Include="productdetail.aspx" />
     <Content Include="css\base.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\flexslider.css" />
@@ -111,9 +320,7 @@
     <Content Include="images\team_bg.jpg" />
     <Content Include="images\t_line.jpg" />
     <Content Include="images\xc_pic.jpg" />
-    <Content Include="images\xc_video.jpg" />
     <Content Include="index.aspx" />
-    <Content Include="index.html" />
     <Content Include="js\all.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\imagezoom.js" />
@@ -122,14 +329,21 @@
     <Content Include="js\jquery.SuperSlide.2.1.1.js" />
     <Content Include="Lib\FreeTextBox.dll" />
     <Content Include="Lib\SailingWebControl.dll" />
+    <Content Include="Lib\SailingWebDLL.dll" />
     <Content Include="Lib\System.Data.SQLite.dll" />
     <Content Include="Manage\about.aspx" />
+    <Content Include="Manage\type.aspx" />
+    <Content Include="Manage\type_edit.aspx" />
+    <Content Include="Manage\video.aspx" />
+    <Content Include="Manage\video_edit.aspx" />
     <Content Include="Manage\CQEdit\ftb.colorpicker.aspx" />
     <Content Include="Manage\CQEdit\ftb.imagegallery.aspx" />
     <Content Include="Manage\CQEdit\ftb.inserttable.aspx" />
     <Content Include="Manage\CQEdit\ImageGallery.css" />
     <Content Include="Manage\CQEdit\说明.txt" />
     <Content Include="Manage\css\admin.css" />
+    <Content Include="Manage\download.aspx" />
+    <Content Include="Manage\download_edit.aspx" />
     <Content Include="Manage\images\admin.css" />
     <Content Include="Manage\images\admin_p.gif" />
     <Content Include="Manage\images\bt_login.gif" />
@@ -151,43 +365,81 @@
     <Content Include="Manage\images\title_bg2.jpg" />
     <Content Include="Manage\index.aspx" />
     <Content Include="Manage\login.aspx" />
+    <Content Include="productlist.aspx" />
+    <Content Include="producttypelist.aspx" />
+    <Content Include="Manage\news.aspx" />
+    <Content Include="Manage\news_edit.aspx" />
+    <Content Include="Manage\principalBS.aspx" />
+    <Content Include="Manage\principalBS_edit.aspx" />
+    <Content Include="Manage\product.aspx" />
+    <Content Include="Manage\product_edit.aspx" />
+    <Content Include="Manage\teacherBS.aspx" />
+    <Content Include="Manage\teacherBS_edit.aspx" />
     <Content Include="Web.config" />
-    <Content Include="xwnr.html" />
-    <Content Include="xwzx.html" />
     <Content Include="zxly.html" />
+    <Content Include="aboutMe.html" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckCode.aspx.cs">
+      <DependentUpon>CheckCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckCode.aspx.designer.cs">
+      <DependentUpon>CheckCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="news.aspx.cs">
+      <DependentUpon>news.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="news.aspx.designer.cs">
+      <DependentUpon>news.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="newsdetail.aspx.cs">
+      <DependentUpon>newsdetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="newsdetail.aspx.designer.cs">
+      <DependentUpon>newsdetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\about_edit.aspx.cs">
+      <DependentUpon>about_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\about_edit.aspx.designer.cs">
+      <DependentUpon>about_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Common\CommonPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Manage\about_info.aspx.cs">
-      <DependentUpon>about_info.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Manage\about_info.aspx.designer.cs">
-      <DependentUpon>about_info.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CompanyProfile.aspx.cs">
-      <DependentUpon>CompanyProfile.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="Common\Model.cs" />
-    <Compile Include="CompanyProfile.aspx.designer.cs">
-      <DependentUpon>CompanyProfile.aspx</DependentUpon>
+    <Compile Include="profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CorporateMuiltipleProduct.aspx.cs">
-      <DependentUpon>CorporateMuiltipleProduct.aspx</DependentUpon>
+    <Compile Include="muiltipleproduct.aspx.cs">
+      <DependentUpon>muiltipleproduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CorporateMuiltipleProduct.aspx.designer.cs">
-      <DependentUpon>CorporateMuiltipleProduct.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CorporateProductDetail.aspx.cs">
-      <DependentUpon>CorporateProductDetail.aspx</DependentUpon>
+    <Compile Include="muiltipleproduct.aspx.designer.cs">
+      <DependentUpon>muiltipleproduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CorporateProductDetail.aspx.designer.cs">
-      <DependentUpon>CorporateProductDetail.aspx</DependentUpon>
+    <Compile Include="productdetail.aspx.cs">
+      <DependentUpon>productdetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="productdetail.aspx.designer.cs">
+      <DependentUpon>productdetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="footer.aspx.cs">
       <DependentUpon>footer.aspx</DependentUpon>
@@ -217,6 +469,34 @@
     <Compile Include="Manage\about.aspx.designer.cs">
       <DependentUpon>about.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Manage\type.aspx.cs">
+      <DependentUpon>type.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\type.aspx.designer.cs">
+      <DependentUpon>type.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\type_edit.aspx.cs">
+      <DependentUpon>type_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\type_edit.aspx.designer.cs">
+      <DependentUpon>type_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\video.aspx.cs">
+      <DependentUpon>video.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\video.aspx.designer.cs">
+      <DependentUpon>video.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\video_edit.aspx.cs">
+      <DependentUpon>video_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\video_edit.aspx.designer.cs">
+      <DependentUpon>video_edit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Manage\CQEdit\ftb.imagegallery.aspx.cs">
       <DependentUpon>ftb.imagegallery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -225,7 +505,21 @@
       <DependentUpon>ftb.imagegallery.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\css\ViewData.cs" />
-    <Compile Include="Manage\Entity\Info.cs" />
+    <Compile Include="Manage\download.aspx.cs">
+      <DependentUpon>download.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\download.aspx.designer.cs">
+      <DependentUpon>download.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\download_edit.aspx.cs">
+      <DependentUpon>download_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\download_edit.aspx.designer.cs">
+      <DependentUpon>download_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Entity\Information.cs" />
     <Compile Include="Manage\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -240,15 +534,86 @@
     <Compile Include="Manage\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="productlist.aspx.cs">
+      <DependentUpon>productlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="productlist.aspx.designer.cs">
+      <DependentUpon>productlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="producttypelist.aspx.cs">
+      <DependentUpon>producttypelist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="producttypelist.aspx.designer.cs">
+      <DependentUpon>producttypelist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\news.aspx.cs">
+      <DependentUpon>news.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\news.aspx.designer.cs">
+      <DependentUpon>news.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\news_edit.aspx.cs">
+      <DependentUpon>news_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\news_edit.aspx.designer.cs">
+      <DependentUpon>news_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\principalBS.aspx.cs">
+      <DependentUpon>principalBS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\principalBS.aspx.designer.cs">
+      <DependentUpon>principalBS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\principalBS_edit.aspx.cs">
+      <DependentUpon>principalBS_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\principalBS_edit.aspx.designer.cs">
+      <DependentUpon>principalBS_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\product.aspx.cs">
+      <DependentUpon>product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\product.aspx.designer.cs">
+      <DependentUpon>product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\product_edit.aspx.cs">
+      <DependentUpon>product_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\product_edit.aspx.designer.cs">
+      <DependentUpon>product_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\teacherBS.aspx.cs">
+      <DependentUpon>teacherBS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\teacherBS.aspx.designer.cs">
+      <DependentUpon>teacherBS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\teacherBS_edit.aspx.cs">
+      <DependentUpon>teacherBS_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\teacherBS_edit.aspx.designer.cs">
+      <DependentUpon>teacherBS_edit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\SqLiteHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Database\sqlite.db" />
-    <None Include="images\Thumbs.db" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="img\" />
+    <Folder Include="video\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />

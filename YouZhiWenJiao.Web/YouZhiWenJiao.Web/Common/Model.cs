@@ -5,16 +5,16 @@ using System.Web;
 
 namespace YouZhiWenJiao.Web.Common
 {
-    public class CompanyProfileTypeModel
+    public class CommonTypeModel
     {
         public int id { get; set; }
         public int categoryid { get; set; }
         public string description { get; set; }
     }
 
-    public class CompanyProfileModel
+    public class CommonModel
     {
-        public int id { get; set; }
+        public string id { get; set; }
         public int typeid { get; set; }
         public int categoryid { get; set; }
         public string title { get; set; }
@@ -25,5 +25,7 @@ namespace YouZhiWenJiao.Web.Common
         public string contentpicture3 { get; set; }
         public bool showpicture { get; set; }
         public bool showinhomepage { get; set; }
+        public string datetime { get; set; }
+        public string video { get; set; }
     }
 }

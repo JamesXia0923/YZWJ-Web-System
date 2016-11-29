@@ -30,6 +30,41 @@
 											<td style="text-align:center; background:url(images/menu_bt.jpg) no-repeat; height:32px;" >
 											<a target="main" href="about.aspx">公司简介</a></td>
 										</tr>
+										<tr><td height="5"></td></tr>
+										<tr>
+											<td style="text-align:center; background:url(images/menu_bt.jpg) no-repeat; height:32px;">
+											<a target="main" href="news.aspx">公司新闻</a></td>
+										</tr>
+										<tr><td height="5"></td></tr>
+										<tr>
+											<td style="text-align:center; background:url(images/menu_bt.jpg) no-repeat; height:32px;">
+											<a target="main" href="product.aspx">园所装备</a></td>
+										</tr>
+										<tr><td height="5"></td></tr>
+										<tr>
+											<td style="text-align:center; background:url(images/menu_bt.jpg) no-repeat; height:32px;">
+											<a target="main" href="principalBS.aspx">园长书库</a></td>
+										</tr>
+										<tr><td height="5"></td></tr>
+										<tr>
+											<td style="text-align:center; background:url(images/menu_bt.jpg) no-repeat; height:32px;">
+											<a target="main" href="teacherBS.aspx">教师书库</a></td>
+										</tr>
+										<tr><td height="5"></td></tr>
+										<tr>
+											<td style="text-align:center; background:url(images/menu_bt.jpg) no-repeat; height:32px;">
+											<a target="main" href="download.aspx">资料下载</a></td>
+										</tr>
+										<tr><td height="5"></td></tr>
+										<tr>
+											<td style="text-align:center; background:url(images/menu_bt.jpg) no-repeat; height:32px;">
+											<a target="main" href="video.aspx">企业宣传片</a></td>
+										</tr>
+										<tr><td height="5"></td></tr>
+										<tr>
+											<td style="text-align:center; background:url(images/menu_bt.jpg) no-repeat; height:32px;">
+											<a target="main" href="type.aspx">类型编辑</a></td>
+										</tr>
 									</table>
 								</td>
 								<td height="800" valign="top" style="background:#fff;">

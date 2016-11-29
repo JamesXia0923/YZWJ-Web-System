@@ -24,6 +24,7 @@
 				<tr>
 					<td width='70px' align='center'  style=" white-space:normal">搜索条件：</td >
 					<td style=' width:80px;'><input type='text' name='keyword' value='' id="txtserarch" runat="server" style='width:150px' /></td >
+					<td width='50'><asp:DropDownList Width="120" ID="ddlList" runat="server"></asp:DropDownList></td>
 					<td width="466" align="left"><input name="imageField" type="image" src="images/search.gif" width="45" height="20" border="0" class="np" /></td >
 				</tr>
 			</table>
@@ -41,15 +42,16 @@
 							<th>序号</th>
 							<th>标题</th>
 							<th>日期</th>
+							<th>类型</th>
 						</tr>
 					</HEADERTEMPLATE>
 					<ITEMTEMPLATE>
 						<tr align="center">
 						<td><input type="checkbox" value='<%#DataBinder.Eval(Container.DataItem,"ID")%>' name="chkEleId"/></td >
-							<td ><%# DataBinder.Eval(Container.DataItem,"Num")%></td >
-							<td height="25" style="text-align:center"><a href='about_info.aspx?id=<%# DataBinder.Eval(Container.DataItem,"ID")%>'><%# DataBinder.Eval(Container.DataItem, "Name")%></a>
-							</td>
-							<td height="25"><%# DataBinder.Eval(Container.DataItem, "DateTime")%></td >						
+							<td ><%# DataBinder.Eval(Container.DataItem,"Number")%></td >
+							<td height="25" style="text-align:center"><a href='news_edit.aspx?id=<%# DataBinder.Eval(Container.DataItem,"ID")%>'><%# DataBinder.Eval(Container.DataItem, "Title")%></a></td>
+							<td height="25"><%# DataBinder.Eval(Container.DataItem, "DateTime")%></td >
+							<td height="25"><%# DataBinder.Eval(Container.DataItem, "Type")%></td >
 						</tr>
 					</ITEMTEMPLATE>
 				</CONTROL:VIEWDATA>
@@ -60,7 +62,6 @@
 					<td colspan="6" />&nbsp;&nbsp;
 					<input type="button" value="删除" class="coolbg" runat="server" ID="BtnDel" name="BtnDel" onserverclick="SubDelClick" />
 					<input type="button" value="新增" class="coolbg" runat="server" ID="BtnCre" name="BtnCre" onserverclick="SubCreClick" />
-					<!--<a target="_self" href='about_info.aspx' class="coolbg" >新增</a> -->
 				</tr>
 			</table>
 		</form>

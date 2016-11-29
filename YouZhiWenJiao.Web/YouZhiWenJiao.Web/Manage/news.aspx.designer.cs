@@ -41,6 +41,15 @@ namespace YouZhiWenJiao.Web.Manage {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtserarch;
         
         /// <summary>
+        /// ddlList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlList;
+        
+        /// <summary>
         /// rptDate control.
         /// </summary>
         /// <remarks>

@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Data.SQLite;
+using System.Collections.Generic;
+using YouZhiWenJiao.Web.Common;
 
 namespace YouZhiWenJiao.Web
 {
@@ -28,15 +31,15 @@ namespace YouZhiWenJiao.Web
 		protected void ShowMenu(int iMenu)
 		{
 			Response.Write(@"
-				<li><a href=""index.aspx""  " + (iMenu == 1 ? " class='cur' " : "") + @">首&nbsp;页</a></li>
-				<li><a href=""news.aspx""  " + (iMenu == 2 ? " class='cur' " : " ") + @">公司简介</a></li>
-				<li><a href=""notice.aspx""  " + (iMenu == 3 ? " class='cur' " : "  ") + @">公司新闻</a></li>
-				<li><a href=""project.aspx"" " + (iMenu == 4 ? " class='cur' " : " ") + @">园所装备</a></li>
-				<li><a href=""regula.aspx""  " + (iMenu == 5 ? " class='cur' " : "  ") + @">园长书库</a></li>
-				<li><a href=""law.aspx""  " + (iMenu == 6 ? " class='cur' " : "  ") + @">教师书库</a></li>
-				<li><a href=""case.aspx""  " + (iMenu == 7 ? " class='cur' " : "  ") + @">资料下载</a></li>
-				<li><a href=""about.aspx""  " + (iMenu == 8 ? " class='cur' " : "  ") + @">在线留言</a></li>
-				<li><a href=""petition.aspx""  " + (iMenu == 9 ? " class='cur' " : "  ") + @">联系我们</a></li>");
+				<li><a href=""index.aspx""  " + (iMenu == 1 ? " class='cur' " : "") + @"target=""_parent"">首&nbsp;页</a></li>
+				<li><a href=""profile.aspx?id=1""  " + (iMenu == 2 ? " class='cur' " : " ") + @"target=""_parent"">公司简介</a></li>
+				<li><a href=""news.aspx?id=2""  " + (iMenu == 3 ? " class='cur' " : "  ") + @"target=""_parent"">公司新闻</a></li>
+				<li><a href=""producttypelist.aspx?id=3"" " + (iMenu == 4 ? " class='cur' " : " ") + @" target=""_parent"">园所装备</a></li>
+				<li><a href=""producttypelist.aspx?id=4""  " + (iMenu == 5 ? " class='cur' " : "  ") + @"target=""_parent"">园长书库</a></li>
+				<li><a href=""producttypelist.aspx?id=5""  " + (iMenu == 6 ? " class='cur' " : "  ") + @"target=""_parent"">教师书库</a></li>
+				<li><a href=""news.aspx?id=6""  " + (iMenu == 7 ? " class='cur' " : "  ") + @"target=""_parent"">资料下载</a></li>
+				<li><a href=""zxly.html""  " + (iMenu == 8 ? " class='cur' " : "  ") + @"target=""_parent"">在线留言</a></li>
+				<li><a href=""aboutMe.html""  " + (iMenu == 9 ? " class='cur' " : "  ") + @"target=""_parent"">联系我们</a></li>");
 		}
 
 		override protected void OnUnload(EventArgs e)
@@ -171,6 +174,39 @@ namespace YouZhiWenJiao.Web
 				prevChar = c;
 			}
 			return filtered.ToString();
+		}
+
+		public List<CommonModel> GenerateModel(IDataReader reader)
+		{
+			List<CommonModel> results = new List<CommonModel>();
+			results.Add(new CommonModel()
+			{
+				id = reader["id"].ToString(),
+				typeid = ToInt(reader["typeid"]),
+				categoryid = ToInt(reader["categoryid"]),
+				title = reader["title"].ToString(),
+				content = reader["content"].ToString(),
+				picture = reader["picture"].ToString(),
+				contentpicture1 = reader["contentpicture1"].ToString(),
+				contentpicture2 = reader["contentpicture2"].ToString(),
+				contentpicture3 = reader["contentpicture3"].ToString(),
+                datetime = Convert.ToDateTime(reader["datetime"]).ToString("yyyy-MM-dd"),
+                video = reader["video"].ToString()
+			});
+			return results;
+		}
+
+		public enum category
+		{
+			公司简介 = 1,
+			公司新闻 = 2,
+			园所装备 = 3,
+			园长书库 = 4,
+			教师书库 = 5,
+			资料下载 = 6,
+			在线留言 = 7,
+			联系我们 = 8,
+			首页视频 = 10
 		}
 	}
 }

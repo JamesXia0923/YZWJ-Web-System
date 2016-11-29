@@ -11,35 +11,18 @@
 <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
 </head>
 <body>
-<div class="team clearfix yh mt20">
+<div class="team clearfix yh">
 		<div class="block">
 			<div class="t1">产品欣赏 <span class="f14 c_666">Product</span></div>			
 			<div class="bd">
 				<ul class="picList">
+				    <%foreach (var product in ProductCollection) %>
+				    <%{ %>
 					<li>
-						<div class="pic"><a href="#" target="_blank"><img src="images/pic7.jpg" /></a></div>
-						<div class="title"><a href="#" target="_blank">产品1</a></div>
+						<div class="pic"><a href="productdetail.aspx?id=<%=product.id %>" target="_blank"><img src="<%=product.picture %>" /></a></div>
+						<div class="title"><a href="productdetail.aspx?id=<%=product.id %>" target="_blank"><%=product.title%></a></div>
 					</li>
-					<li>
-						<div class="pic"><a href="#" target="_blank"><img src="images/pic8.jpg" /></a></div>
-						<div class="title"><a href="#" target="_blank">产品2</a></div>
-					</li>
-					<li>
-						<div class="pic"><a href="#" target="_blank"><img src="images/pic3.jpg" /></a></div>
-						<div class="title"><a href="#" target="_blank">产品3</a></div>
-					</li>
-					<li>
-						<div class="pic"><a href="#" target="_blank"><img src="images/pic4.jpg" /></a></div>
-						<div class="title"><a href="#" target="_blank">产品4</a></div>
-					</li>
-					<li>
-						<div class="pic"><a href="#" target="_blank"><img src="images/pic5.jpg" /></a></div>
-						<div class="title"><a href="#" target="_blank">产品5</a></div>
-					</li>
-					<li>
-						<div class="pic"><a href="#" target="_blank"><img src="images/pic6.jpg" /></a></div>
-						<div class="title"><a href="#" target="_blank">产品6</a></div>
-					</li>
+					<%} %>
 				</ul>
 			</div>
 		</div>
