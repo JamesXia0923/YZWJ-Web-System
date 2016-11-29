@@ -45,15 +45,10 @@
 					<td height="45" style=" padding:10px;" align="left">
 						<input id="InputFile" style="width: 399px" type="file" runat="server" />
 						<asp:Label ID="Lb_Info" runat="server" ForeColor="Red"></asp:Label>
+						<asp:Image ID="image" width="130" height="90" runat="server" AlternateText="Image text" ImageAlign="left" />
 					</td>
+					
 				</tr>
-				
-<%--				<tr id="videoTr" runat="server">
-					<td height="45" align="center">上传视频：</td>
-					<td height="45" style=" padding:10px;" align="left">
-						<Asp:FileUpload id="InputVideo" runat="server" name="InputVideo"/>
-					</td>
-				</tr>--%>
 				
 				<tr>
 					<td align="center">内容</td><td valign="top" style=" padding:10px;">

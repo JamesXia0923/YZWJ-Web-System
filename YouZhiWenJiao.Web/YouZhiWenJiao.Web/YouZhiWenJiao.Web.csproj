@@ -332,6 +332,7 @@
     <Content Include="Lib\SailingWebDLL.dll" />
     <Content Include="Lib\System.Data.SQLite.dll" />
     <Content Include="Manage\about.aspx" />
+    <Content Include="Manage\productimages.aspx" />
     <Content Include="Manage\type.aspx" />
     <Content Include="Manage\type_edit.aspx" />
     <Content Include="Manage\video.aspx" />
@@ -367,6 +368,10 @@
     <Content Include="Manage\login.aspx" />
     <Content Include="productlist.aspx" />
     <Content Include="producttypelist.aspx" />
+    <Content Include="productimages\product1.jpg" />
+    <Content Include="productimages\product2.jpg" />
+    <Content Include="productimages\product3.jpg" />
+    <Content Include="productimages\product4.jpg" />
     <Content Include="Manage\news.aspx" />
     <Content Include="Manage\news_edit.aspx" />
     <Content Include="Manage\principalBS.aspx" />
@@ -469,6 +474,13 @@
     </Compile>
     <Compile Include="Manage\about.aspx.designer.cs">
       <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\productimages.aspx.cs">
+      <DependentUpon>productimages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\productimages.aspx.designer.cs">
+      <DependentUpon>productimages.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manage\type.aspx.cs">
       <DependentUpon>type.aspx</DependentUpon>

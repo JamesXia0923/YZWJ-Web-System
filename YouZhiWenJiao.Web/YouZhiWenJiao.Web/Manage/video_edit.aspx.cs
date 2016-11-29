@@ -12,9 +12,7 @@ namespace YouZhiWenJiao.Web.Manage
 
 		string user = @"";
 		string imgUrl = @"";
-		string imgPath = @"";
 		string videoUrl = @"";
-		string videoPath = @"";
 		string href_string = @"../index.aspx";
 		protected void Page_Load(object sender, EventArgs e)
 		{
@@ -36,8 +34,9 @@ namespace YouZhiWenJiao.Web.Manage
 				{
 					txtTitle.Text = dr[0].ToString();
 					datetime.SelectedDate = DateTime.Parse(dr[1].ToString());
-					imgPath = dr[2].ToString();
-					videoPath = dr[3].ToString();
+					Session["image"] = dr[2].ToString();
+					image.ImageUrl = Session["image"].ToString();
+					Session["video"] = dr[3].ToString();
 				}
 				dr.Close();
 			}
@@ -75,7 +74,7 @@ namespace YouZhiWenJiao.Web.Manage
 			}
 			else
 			{
-				imgUrl = imgPath;
+				imgUrl = Session["image"].ToString();
 			}
 
 			string uploadVideo = InputVideo.FileName;
@@ -108,7 +107,7 @@ namespace YouZhiWenJiao.Web.Manage
 			}
 			else
 			{
-				videoUrl = videoPath;
+				videoUrl = Session["video"].ToString();
 			}
 
 			if (productId != "")
@@ -174,10 +173,10 @@ values(
 			Response.Redirect("video.aspx", false);
 		}
 
-		protected void btnPrewiew_Click(object sender, System.EventArgs e)
-		{
-			Response.Redirect(href_string, false);
-		}
+		//protected void btnPrewiew_Click(object sender, System.EventArgs e)
+		//{
+		//    Response.Redirect(href_string, false);
+		//}
 
 		protected void btnBack_Click(object sender, System.EventArgs e)
 		{

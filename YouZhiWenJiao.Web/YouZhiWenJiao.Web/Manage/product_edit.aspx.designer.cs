@@ -77,40 +77,13 @@ namespace YouZhiWenJiao.Web.Manage {
         protected global::System.Web.UI.WebControls.Label Lb_Info1;
         
         /// <summary>
-        /// InputFile2 control.
+        /// image1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputFile InputFile2;
-        
-        /// <summary>
-        /// Lb_Info2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lb_Info2;
-        
-        /// <summary>
-        /// InputFile3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputFile InputFile3;
-        
-        /// <summary>
-        /// Lb_Info3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lb_Info3;
+        protected global::System.Web.UI.WebControls.Image image1;
         
         /// <summary>
         /// ftbContent control.
@@ -129,15 +102,6 @@ namespace YouZhiWenJiao.Web.Manage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnOK;
-        
-        /// <summary>
-        /// btnPreview control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPreview;
         
         /// <summary>
         /// btnBack control.

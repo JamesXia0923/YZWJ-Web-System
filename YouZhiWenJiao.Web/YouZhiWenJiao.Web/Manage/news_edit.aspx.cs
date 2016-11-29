@@ -13,7 +13,6 @@ namespace YouZhiWenJiao.Web.Manage
 
 		string user = @"";
 		string imgUrl = @"";
-		string imgPath = @"";
 		string href_string = @"../news.aspx?";
 		protected string href_value = "";
 		protected void Page_Load(object sender, EventArgs e)
@@ -55,7 +54,8 @@ where categoryid = @categotyid";
 						txtTitle.Text = dr[0].ToString();
 						datetime.SelectedDate = DateTime.Parse(dr[1].ToString());
 						ftbContent.Text = dr[2].ToString();
-						imgPath = dr[3].ToString();
+						Session["image"] = dr[3].ToString();
+						image.ImageUrl = Session["image"].ToString();
 						ddlListType.SelectedValue = dr[4].ToString();
 					}
 					dr.Close();
@@ -96,7 +96,7 @@ where categoryid = @categotyid";
 			}
 			else
 			{
-				imgUrl = imgPath;
+				imgUrl = Session["image"].ToString();
 			}
 
 			if (productId != "")

@@ -63,7 +63,6 @@
 				<tr>
 					<td colspan="6" />&nbsp;&nbsp;
 					<input type="button" value="删除" class="coolbg" runat="server" ID="BtnDel" name="BtnDel" onserverclick="SubDelClick" />
-					<input type="button" value="保存" class="coolbg" runat="server" ID="BtnSave" name="BtnSave" onserverclick="SubSaveClick" />
 					<input type="button" value="新增" class="coolbg" runat="server" ID="BtnCre" name="BtnCre" onserverclick="SubCreClick" />
 				</tr>
 			</table>

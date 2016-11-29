@@ -39,6 +39,7 @@
 					<td height="45" style=" padding:10px;" align="left">
 						<input id="InputFile" style="width: 399px" type="file" runat="server" />
 						<asp:Label ID="Lb_Info" runat="server" ForeColor="Red"></asp:Label>
+						<asp:Image ID="image" width="130" height="90" runat="server" AlternateText="Image text" ImageAlign="left" />
 					</td>
 				</tr>
 				
@@ -53,15 +54,13 @@
 					<td height="60" colspan="2" align="left" valign="middle" style="border-bottom:none; padding-left:80px;">
 						<asp:Button id="btnOK" OnClick="btnOK_Click" runat="server" text="确 定" class="coolbg"></asp:Button>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<asp:Button id="btnPreview" OnClick="btnPrewiew_Click" runat="server" text="预 览" class="coolbg"></asp:Button>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%--						<asp:Button id="btnPreview" OnClick="btnPrewiew_Click" runat="server" text="预 览" class="coolbg"></asp:Button>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--%>
 						<asp:Button id="btnBack" OnClick="btnBack_Click" runat="server" text="返回列表" class="coolbg"></asp:Button>
 					</td>
 				</tr>
 
 			</table>
-
-			<input id="txtcontent" type="hidden" name="txtcontent" runat="server">
 		</form>
 	</body>
 </html>
