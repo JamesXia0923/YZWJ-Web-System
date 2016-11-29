@@ -26,7 +26,7 @@
     <div class="newsbox yh">
         <div class="block">
             <div class="navmenu" id= "navMenu">
-                <span>您现在的位置: <a href="#">公司简介</a> > 公司简介</span>公司简介</div>
+                <span>您现在的位置: <a href="index.aspx">首页</a> > 公司简介</span>公司简介</div>
             <div class="newsnr">
                 <div class="fleft leftmenu yh" id = "leftMenu">
                     <ul>
