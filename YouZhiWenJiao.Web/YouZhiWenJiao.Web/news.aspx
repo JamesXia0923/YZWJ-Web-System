@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="news.aspx.cs" Inherits="YouZhiWenJiao.Web.news" %>
+<%@ Register TagPrefix="Control" Namespace="YouZhiWenJiao.Web.Manage.css" Assembly="YouZhiWenJiao.Web" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -14,42 +15,36 @@
 <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
 </head>
 <body>
-    <!--头部-->
-    <div><iframe frameborder="0" scrolling="no" width="100%" height="405px" src="header.aspx"></iframe></div>
-    <!--文字列表页主体-->
-    <div class="newsbox yh">
-    	<div class="block">
-        	<div class="navmenu"><span>您现在的位置: <a href="#">首页</a> > <%=CorporateNewsType.description %></span><%=CorporateNewsType.description %></div>
-            
-            <div class="text-list yh">
+	<!--头部-->
+	<div><iframe frameborder="0" scrolling="no" width="100%" height="405px" src="header.aspx"></iframe></div>
+	<!--文字列表页主体-->
+	<div class="newsbox yh">
+		<div class="block">
+			<div class="navmenu"><span>您现在的位置: <a href="#">首页</a> > 公司新闻</span>公司新闻</div>
+			<div class="text-list yh">
 				<ul>
-				    <% foreach (var corporateNews in CorporateNewsList){%>
-				        <li class="clearfix">
-				            <div class="fleft"><img src="<%=corporateNews.picture %>" width="200" height="150" /></div>
-				            <div class="fright">
-				                <% if (CorporateNewsType.categoryid == 2) %>
-				                <%{ %>
-				                    <p class="bt"><a href="newsdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.title%></a></p>
-				                    <p class="jj"><a href="newsdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.content%></a></p>
-				                    <p class="ck"><span class="eye">10</span><span class="time"><%=corporateNews.datetime%></span></p>
-				                <%} %>
-				                <% else %>
-				                <%{ %>
-				                    <p class="bt"><a href="<%=corporateNews.video %>" target="_parent"><%=corporateNews.title%></a></p>
-				                    <p class="jj"><a href="<%=corporateNews.video %>" target="_parent"><%=corporateNews.content%></a></p>
-				                    <p class="ck"><span class="eye">10</span><span class="time"><%=corporateNews.datetime%></span></p>
-				                <%} %>
-				            </div>
-				        </li>
-				    <%} %>
+					<table class="talist">
+						<CONTROL:VIEWDATA id="rptDate1" runat="Server" Select="false" Col="12" PageSize="6" AllowPage="true" OnPageIndexChange="PageChanged"  OnItemDataBound="DataBindings">
+							<ITEMTEMPLATE>
+								<tr>
+									<td style=" text-align:left;">
+									<li class="clearfix"><div class="fleft"><img src="<%# DataBinder.Eval(Container.DataItem, "picture")%>" width="200" height="150" /></div>
+										<div class="fright">
+											<p class="bt"><a href="newsdetail.aspx?id=<%# DataBinder.Eval(Container.DataItem, "id")%>" target="_parent"><%# DataBinder.Eval(Container.DataItem, "title")%></a></p>
+											<p class="jj"><a href="newsdetail.aspx?id=<%# DataBinder.Eval(Container.DataItem, "id")%>" target="_parent"><%# DataBinder.Eval(Container.DataItem, "id")%></a></p>
+											<p class="ck"><!--<span class="eye">10</span>--><span class="time"><%# DataBinder.Eval(Container.DataItem, "datetime")%></span></p>
+										</div>
+									</li>
+									</td>
+								</tr>
+							</ITEMTEMPLATE>
+						</CONTROL:VIEWDATA>  
+					</table>
 				</ul>
-				
 			</div>
-            
-            <div class="page clearfix"><a href="" class="on">1</a><a href="">2</a><a href="">3</a><a href="">>></a></div>
-        </div>
-    </div>	
-    <!--底部--> 
+		</div>
+	</div>
+	<!--底部--> 
 	<div><iframe frameborder="0" scrolling="no" width="100%" class="h390" src="footer.aspx"></iframe></div>
 </body>
 </html>

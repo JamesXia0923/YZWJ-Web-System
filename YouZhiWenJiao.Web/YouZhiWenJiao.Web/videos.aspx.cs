@@ -10,12 +10,17 @@ using YouZhiWenJiao.Web.Common;
 
 namespace YouZhiWenJiao.Web
 {
-	public partial class news : CommonPage
+	public partial class videos : CommonPage
 	{
 		public int UniqueId = 0;
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			//header.meauIndex = 2;
+			if (Session["user"] == null)
+			{
+				Response.Redirect("login.aspx");
+			}
+
 			PageChanged(null, null);
 		}
 
@@ -25,31 +30,23 @@ namespace YouZhiWenJiao.Web
 select 
 id,
 title,
-content,
-picture,
+video,
 date(datetime) as datetime
 from product
 where categoryid = @CategoryId order by datetime desc";
 			sqlCmd.Parameters.Add("@CategoryId", DbType.Int16);
-			sqlCmd.Parameters["@CategoryId"].Value = (int)category.公司新闻;
+			sqlCmd.Parameters["@CategoryId"].Value = (int)category.资料下载;
 
 			DataSet ds = new DataSet();
 			SQLiteDataAdapter da = new SQLiteDataAdapter(sqlCmd);
 			var dt = new DataTable();
 			da.Fill(dt);
-
-			for (int rowIndex = 0; rowIndex < dt.Rows.Count; rowIndex++)
-			{
-				dt.Rows[rowIndex]["content"] = NoHtml(dt.Rows[rowIndex]["content"].ToString()).Substring(0, 100);
-			}
 			int iAllCount = dt.Rows.Count;
-			int iPageSize = rptDate1.PageSize;
+			int iPageSize = rptDate2.PageSize;
 			int iNum = iAllCount % iPageSize;
-			
-			rptDate1.DataSource = dt.DefaultView;
-			rptDate1.DataBind();
+			rptDate2.DataSource = dt.DefaultView;
+			rptDate2.DataBind();
 		}
-
 		protected void DataBindings(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)
 		{
 			UniqueId++;

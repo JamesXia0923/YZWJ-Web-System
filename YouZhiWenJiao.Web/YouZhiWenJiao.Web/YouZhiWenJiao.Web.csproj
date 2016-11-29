@@ -380,6 +380,7 @@
     <Content Include="Manage\product_edit.aspx" />
     <Content Include="Manage\teacherBS.aspx" />
     <Content Include="Manage\teacherBS_edit.aspx" />
+    <Content Include="videos.aspx" />
     <Content Include="Web.config" />
     <Content Include="zxly.html" />
     <Content Include="aboutMe.html" />
@@ -625,6 +626,13 @@
     </Compile>
     <Compile Include="search.aspx.designer.cs">
       <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="videos.aspx.cs">
+      <DependentUpon>videos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="videos.aspx.designer.cs">
+      <DependentUpon>videos.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

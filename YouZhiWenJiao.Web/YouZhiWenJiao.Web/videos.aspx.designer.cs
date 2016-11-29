@@ -11,15 +11,15 @@
 namespace YouZhiWenJiao.Web {
     
     
-    public partial class news {
+    public partial class videos {
         
         /// <summary>
-        /// rptDate1 control.
+        /// rptDate2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::YouZhiWenJiao.Web.Manage.css.ViewData rptDate1;
+        protected global::YouZhiWenJiao.Web.Manage.css.ViewData rptDate2;
     }
 }
