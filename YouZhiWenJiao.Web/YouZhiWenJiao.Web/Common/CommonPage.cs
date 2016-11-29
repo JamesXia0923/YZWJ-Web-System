@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Data.SQLite;
 using System.Collections.Generic;
 using YouZhiWenJiao.Web.Common;
+using System.Text.RegularExpressions;
 
 namespace YouZhiWenJiao.Web
 {
@@ -208,5 +209,11 @@ namespace YouZhiWenJiao.Web
 			联系我们 = 8,
 			首页视频 = 10
 		}
+
+        public string NoHtml(string withHtml)
+        {
+            var result = Regex.Replace(withHtml, "<[^>]*>", " ");
+            return result;
+        }
 	}
 }

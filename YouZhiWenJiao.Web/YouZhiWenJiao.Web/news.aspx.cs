@@ -20,7 +20,7 @@ namespace YouZhiWenJiao.Web
             CorporateNewsList = new List<CommonModel>();
             CorporateNewsType.categoryid = Request["id"] != null ? ToInt(Request["id"]) : 0;
 
-            if (CorporateNewsType.categoryid == 6 && Session["user"] == null)
+            if (CorporateNewsType.categoryid == (int)category.资料下载 && Session["user"] == null)
             {
                 Response.Redirect("login.aspx");
             }
@@ -48,11 +48,15 @@ namespace YouZhiWenJiao.Web
                 CorporateNewsList.AddRange(GenerateModel(reader));
             }
             reader.Close();
+
+            string newsContent; 
             foreach (var corporateNews in CorporateNewsList)
             {
-                if (corporateNews.content.Length >= 100)
+                newsContent = NoHtml(corporateNews.content);
+
+                if (newsContent.Length >= 100)
                 {
-                    corporateNews.content = corporateNews.content.Substring(0, 100);
+                    corporateNews.content = newsContent.Substring(0, 100);
                 }
             }
 		}
