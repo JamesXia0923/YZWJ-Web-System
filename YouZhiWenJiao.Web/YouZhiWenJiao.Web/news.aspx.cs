@@ -28,7 +28,7 @@ content,
 picture,
 date(datetime) as datetime
 from product
-where (product.deleted <> 1 or product.deleted is null) and showinhomepage = 1 and categoryid = @CategoryId order by datetime desc";
+where (deleted <> 1 or deleted is null) and showinhomepage = 1 and categoryid = @CategoryId order by datetime desc";
 			sqlCmd.Parameters.Add("@CategoryId", DbType.Int16);
 			sqlCmd.Parameters["@CategoryId"].Value = (int)category.公司新闻;
 
