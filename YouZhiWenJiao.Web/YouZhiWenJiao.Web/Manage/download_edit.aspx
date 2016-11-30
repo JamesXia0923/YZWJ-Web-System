@@ -48,6 +48,12 @@
 				</tr>
 				
 				<tr>
+					<td align="center">文字内容</td><td valign="top" style=" padding:10px;">
+						<FTB:FreeTextBox ID="ftbContent" HelperFilesPath="CQEdit"  BackColor="224,224,224" ToolbarType="office2003" GutterBackColor="224,224,224" ImageGalleryPath="/CQEdit/privateimage" HelperFilesParameters='PublicImageGalleryPath=/CQEdit/publicImage'  runat="server" width="650" height="400" ToolbarLayout="FontFacesMenu,save,FontSizesMenu, FontForeColorsMenu, FontBackColorsMenu,justifyleft,JustifyCenter,justifyfull,justifyright,InsertImageFromGallery,inserttable,Bold, Italic, Underline, Strikethrough, Center,Superscript, Subscript, CreateLink, Unlink, Remove" ></FTB:FreeTextBox>
+					</td>
+				</tr>
+				
+				<tr>
 					<td height="60" colspan="2" align="left" valign="middle" style="border-bottom:none; padding-left:80px;">
 						<asp:Button id="btnOK" OnClick="btnOK_Click" runat="server" text="确 定" class="coolbg"></asp:Button>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

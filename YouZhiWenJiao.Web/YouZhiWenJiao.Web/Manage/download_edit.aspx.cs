@@ -47,7 +47,7 @@ where categoryid = @categotyid";
 
 				if (productId != "")
 				{
-					sqlCmd.CommandText = "select title,datetime,video,typeid from product where id=" + "'" + productId + "'";
+					sqlCmd.CommandText = "select title,datetime,video,typeid,content from product where id=" + "'" + productId + "'";
 					var dr = sqlCmd.ExecuteReader();
 					if (dr.Read())
 					{
@@ -55,6 +55,7 @@ where categoryid = @categotyid";
 						datetime.SelectedDate = DateTime.Parse(dr[1].ToString());
 						videoPath = dr[2].ToString();
 						ddlListType.SelectedValue = dr[3].ToString();
+						ftbContent.Text = dr[4].ToString();
 					}
 					dr.Close();
 				}
@@ -106,6 +107,7 @@ typeid=@typeid,
 title=@title,
 datetime=@datetime,
 video=@video,
+content=@content,
 updatedatetime=@updatedatetime,
 updateuser=@updateuser
 where id=@id;";
@@ -120,6 +122,7 @@ categoryid,
 title,
 datetime,
 video,
+content,
 createdatetime,
 createuser,
 updatedatetime,
@@ -133,6 +136,7 @@ values(
 @title,
 @datetime,
 @video,
+@content,
 @createdatetime,
 @createuser,
 @updatedatetime,
@@ -148,6 +152,7 @@ values(
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@title", "'" + txtTitle.Text + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@datetime", "'" + datetime.SelectedDate.ToString("yyyy-MM-dd HH:mm:ss.ffff") + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@video", "'" + videoUrl + "'");
+			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@content", "'" + ftbContent.Text + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@createdatetime", "'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffff") + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@createuser", "'" + user + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@updatedatetime", "'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffff") + "'");

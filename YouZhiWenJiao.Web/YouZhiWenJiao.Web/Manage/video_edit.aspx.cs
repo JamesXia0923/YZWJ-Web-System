@@ -173,11 +173,6 @@ values(
 			Response.Redirect("video.aspx", false);
 		}
 
-		//protected void btnPrewiew_Click(object sender, System.EventArgs e)
-		//{
-		//    Response.Redirect(href_string, false);
-		//}
-
 		protected void btnBack_Click(object sender, System.EventArgs e)
 		{
 			Response.Redirect("video.aspx", false);

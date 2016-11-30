@@ -63,7 +63,10 @@ select
 product.id as id,
 product.title as title,
 product.datetime as datetime,
-newtype.description as description
+newtype.description as description,
+case when product.showinhomepage=1 
+then '√' 
+else '' end as showinhomepage
 from product
 inner join
 (select type.id,type.categoryid,type.description from type left join category on category.id = type.categoryid where category.id = @categotyid) 
@@ -92,7 +95,7 @@ where (product.deleted <> 1 or product.deleted is null) and product.title like '
 				info.Title = dt.Rows[i]["title"].ToString();
 				info.DateTime = DateTime.Parse(dt.Rows[i]["datetime"].ToString()).ToShortDateString();
 				info.Type = dt.Rows[i]["description"].ToString();
-
+				info.ShowInHomePage = dt.Rows[i]["showinhomepage"].ToString();
 				li.Add(info);
 			}
 
@@ -116,6 +119,34 @@ where (product.deleted <> 1 or product.deleted is null) and product.title like '
 		protected void SubCreClick(object sender, System.EventArgs e)
 		{
 			Response.Redirect("teacherBS_edit.aspx", false);
+		}
+
+		protected void SubShowClick(object sender, System.EventArgs e)
+		{
+			string showInHomePageIdList = Request.Form["chkEleId"];
+			showInHomePageIdList = showInHomePageIdList.Replace(",", "','");
+
+			if(showInHomePageIdList != null)
+			{
+				sqlCmd.CommandText = "update product set showinhomepage=1 where id in(" + "'" + showInHomePageIdList + "'" + ")";
+				sqlCmd.ExecuteNonQuery();
+				Alert("修改成功!");
+				PageChanged(null, null);
+			}
+		}
+
+		protected void SubUnShowClick(object sender, System.EventArgs e)
+		{
+			string showInHomePageIdList = Request.Form["chkEleId"];
+			showInHomePageIdList = showInHomePageIdList.Replace(",", "','");
+
+			if(showInHomePageIdList != null)
+			{
+				sqlCmd.CommandText = "update product set showinhomepage=0 where id in(" + "'" + showInHomePageIdList + "'" + ")";
+				sqlCmd.ExecuteNonQuery();
+				Alert("修改成功!");
+				PageChanged(null, null);
+			}
 		}
 	}
 }

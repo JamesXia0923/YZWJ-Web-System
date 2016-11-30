@@ -63,12 +63,9 @@ product.id as id,
 product.title as title,
 product.datetime as datetime,
 newtype.description as description,
-case when product.showpicture=1 
-then '<INPUT type=checkbox id=showPic checked value='|| product.Id ||' name=chkEleIdShowPic>' 
-else '<INPUT type=checkbox id=showPic value='|| product.Id ||' name=chkEleIdShowPic>' end as showpicture,
 case when product.showinhomepage=1 
-then '<INPUT type=checkbox id=showInHomePage checked value='|| product.Id ||' name=chkEleIdShowInHomePage>' 
-else '<INPUT type=checkbox id=showInHomePage value='|| product.Id ||' name=chkEleIdShowInHomePage>' end as showinhomepage
+then '√' 
+else '' end as showinhomepage
 from product
 inner join
 (select type.id,type.categoryid,type.description from type left join category on category.id = type.categoryid where category.id = @categotyid) 
@@ -82,7 +79,7 @@ where (product.deleted <> 1 or product.deleted is null) and product.title like '
 			{
 				sqlCmd.CommandText += " and newtype.id=" + ddlList.SelectedValue + "";
 			}
-            sqlCmd.CommandText += " order by product.typeid;";
+			sqlCmd.CommandText += " order by product.typeid;";
 
 			DataSet ds = new DataSet();
 			SQLiteDataAdapter da = new SQLiteDataAdapter(sqlCmd);
@@ -98,7 +95,6 @@ where (product.deleted <> 1 or product.deleted is null) and product.title like '
 				info.Title = dt.Rows[i]["title"].ToString();
 				info.DateTime = DateTime.Parse(dt.Rows[i]["datetime"].ToString()).ToShortDateString();
 				info.Type = dt.Rows[i]["description"].ToString();
-				info.ShowPic = dt.Rows[i]["showpicture"].ToString();
 				info.ShowInHomePage = dt.Rows[i]["showinhomepage"].ToString();
 				li.Add(info);
 			}
@@ -112,7 +108,7 @@ where (product.deleted <> 1 or product.deleted is null) and product.title like '
 			strDocumentSortIds = strDocumentSortIds.Replace(",", "','");
 			if (strDocumentSortIds != "" && strDocumentSortIds != null)
 			{
-                sqlCmd.CommandText = "update product set deleted = 1 where id in('" + strDocumentSortIds + "')";
+				sqlCmd.CommandText = "update product set deleted = 1 where id in('" + strDocumentSortIds + "')";
 				sqlCmd.ExecuteNonQuery();
 				Alert("删除成功!");
 				PageChanged(null, null);
@@ -124,40 +120,32 @@ where (product.deleted <> 1 or product.deleted is null) and product.title like '
 			Response.Redirect("about_edit.aspx", false); 
 		}
 
-		protected void SubSaveClick(object sender, System.EventArgs e)
+		protected void SubShowClick(object sender, System.EventArgs e)
 		{
-			string showPicIdList = Request.Form["chkEleIdShowPic"];
-			string showInHomePageIdList = Request.Form["chkEleIdShowInHomePage"];
-
-			showPicIdList = showPicIdList.Replace(",", "','");
+			string showInHomePageIdList = Request.Form["chkEleId"];
 			showInHomePageIdList = showInHomePageIdList.Replace(",", "','");
 
-			sqlCmd.CommandText = @"
-update product set showpicture=0 
-from product
-inner join category on category.id = product.categoryid
-where product.categoryid = " + (int)category.公司简介 + ";";
-			sqlCmd.ExecuteNonQuery();
-			sqlCmd.CommandText = @"
-update product set showinhomepage=0 
-from product
-inner join category on category.id = product.categoryid
-where product.categoryid = " + (int)category.公司简介 + ";";
-			sqlCmd.ExecuteNonQuery();
-
-			if (showPicIdList != null)
-			{
-				sqlCmd.CommandText = "update product set showpicture=1 where id in(" + "'" + showPicIdList + "'" + ")";
-				sqlCmd.ExecuteNonQuery();
-			}
-
-			if (showInHomePageIdList != null)
+			if(showInHomePageIdList != null)
 			{
 				sqlCmd.CommandText = "update product set showinhomepage=1 where id in(" + "'" + showInHomePageIdList + "'" + ")";
 				sqlCmd.ExecuteNonQuery();
+				Alert("修改成功!");
+				PageChanged(null, null);
 			}
-			Alert("保存成功!");
-			PageChanged(null, null);
+		}
+
+		protected void SubUnShowClick(object sender, System.EventArgs e)
+		{
+			string showInHomePageIdList = Request.Form["chkEleId"];
+			showInHomePageIdList = showInHomePageIdList.Replace(",", "','");
+
+			if(showInHomePageIdList != null)
+			{
+				sqlCmd.CommandText = "update product set showinhomepage=0 where id in(" + "'" + showInHomePageIdList + "'" + ")";
+				sqlCmd.ExecuteNonQuery();
+				Alert("修改成功!");
+				PageChanged(null, null);
+			}
 		}
 	}
 }

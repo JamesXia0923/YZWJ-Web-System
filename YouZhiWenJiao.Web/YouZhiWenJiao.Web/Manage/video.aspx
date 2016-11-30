@@ -41,7 +41,7 @@
 							<th>序号</th>
 							<th>标题</th>
 							<th>日期</th>
-							<th>首页显示</th>
+							<th>显示</th>
 						</tr>
 					</HEADERTEMPLATE>
 					<ITEMTEMPLATE>
