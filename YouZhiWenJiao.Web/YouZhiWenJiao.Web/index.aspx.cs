@@ -10,33 +10,56 @@ using YouZhiWenJiao.Web.Common;
 
 namespace YouZhiWenJiao.Web
 {
-    public partial class index : CommonPage
-    {
-        protected List<CommonModel> downloadList;
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            var sql = "select * from product where showinhomepage = 1 and categoryid = " + ((int)category.资料下载).ToString() + "  limit 0,18;";
-            sqlCmd.CommandText = sql;
-            IDataReader reader = sqlCmd.ExecuteReader();
-            downloadList = new List<CommonModel>();
-            if (reader.Read())
-            {
-                var Product = new CommonModel();
-                Product.id = reader["id"].ToString();
-                Product.categoryid = ToInt(reader["categoryid"]);
-                Product.typeid = ToInt(reader["typeid"]);
-                Product.title = reader["title"].ToString();
-                if (Session["user"] == null)
-                {
-                    Product.picture = "login.aspx";
-                }
-                else
-                {
-                    Product.picture = reader["video"].ToString();
-                }
-                downloadList.Add(Product);
-            }
-            reader.Close();
-        }
-    }
+	public partial class index : CommonPage
+	{
+		protected List<CommonModel> downloadList;
+		protected CommonModel myVideo;
+
+		protected void Page_Load(object sender, EventArgs e)
+		{
+			var sql = "select * from product where showinhomepage = 1 and categoryid = " + ((int)category.资料下载).ToString() + " and (deleted <> 1 or deleted is null) and showinhomepage = 1 limit 0,18;";
+			sqlCmd.CommandText = sql;
+			IDataReader reader = sqlCmd.ExecuteReader();
+			downloadList = new List<CommonModel>();
+			if(reader.Read())
+			{
+				var Product = new CommonModel();
+				Product.id = reader["id"].ToString();
+				Product.categoryid = ToInt(reader["categoryid"]);
+				Product.typeid = ToInt(reader["typeid"]);
+				Product.title = reader["title"].ToString();
+				if(Session["user"] == null)
+				{
+					Product.video = "login.aspx";
+				}
+				else
+				{
+					Product.video = reader["video"].ToString();
+				}
+				downloadList.Add(Product);
+			}
+			reader.Close();
+
+
+			sql = "select * from product where showinhomepage = 1 and categoryid = " + ((int)category.首页视频).ToString() + " and (deleted <> 1 or deleted is null) and showinhomepage = 1 order by datetime desc limit 0,1;";
+			sqlCmd.CommandText = sql;
+			reader = sqlCmd.ExecuteReader();
+			downloadList = new List<CommonModel>();
+			myVideo = new CommonModel();
+			if(reader.Read())
+			{
+				myVideo.id = reader["id"].ToString();
+				myVideo.categoryid = ToInt(reader["categoryid"]);
+				myVideo.typeid = ToInt(reader["typeid"]);
+				myVideo.title = reader["title"].ToString();
+				myVideo.picture = reader["picture"].ToString();
+				myVideo.video = reader["video"].ToString();
+			}
+			else
+			{
+				myVideo.picture = "images/xc_video.jpg";
+			}
+			reader.Close();
+		}
+	}
 }

@@ -54,20 +54,26 @@
             <%int i = 0; %>
             <%foreach (var product in downloadList) %>
             <%{ %>
-            	<li><a href="<%=product.picture %>"><%=product.title %></a></li>
+            	<li><a href="<%=product.video %>"><%=product.title %></a></li>
             <%i++; %>
             <%} %>
             <%if (i < 18) %>
             <%{ %>
                 <%for (int j = 0; j < 18 - i; j++) %>
                 <%{ %>
-                    <li><a></a></li>
+                    <li><a>&nbsp;</a></li>
                 <%} %>
             <%} %>
             </ul>
             
             <div class="t1 mt20">企业宣传片 <span class="f14 c_666">Trailer</span></div>
-            <p class="mt20"><img src="images/xc_video.jpg" width="270" height="168"></p>
+            <p class="mt20">
+            <video src="<%=myVideo.video %>" controls="controls" poster="<%=myVideo.picture %>" style = "width:270px;height:168px;background-color:#000;">
+            <embed src="<%=myVideo.video %>" width="270" height="168" /> 
+            </object> 
+            </video>
+            
+            </p>
         </div>
     </div>
     <!--底部--> 
