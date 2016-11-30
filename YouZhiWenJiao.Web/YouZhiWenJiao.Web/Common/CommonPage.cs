@@ -207,6 +207,7 @@ namespace YouZhiWenJiao.Web
 			资料下载 = 6,
 			在线留言 = 7,
 			联系我们 = 8,
+			系统用户 = 9,
 			首页视频 = 10
 		}
 
