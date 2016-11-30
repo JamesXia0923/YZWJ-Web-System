@@ -15,27 +15,28 @@
 <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
 </head>
 <body>
+<form id="form1" runat="server">
 	<!--头部-->
 	<div><iframe frameborder="0" scrolling="no" width="100%" height="405px" src="header.aspx"></iframe></div>
 	<!--文字列表页主体-->
 	<div class="newsbox yh">
 		<div class="block">
-			<div class="navmenu"><span>您现在的位置: <a href="#">首页</a> > 资料下载</span>资料下载</div>
+			<div class="navmenu"><span>您现在的位置: <a href="index.aspx">首页</a> > 资料下载</span>资料下载</div>
 			<div class="text-list yh">
 				<ul>
 					<table class="talist">
-						<CONTROL:VIEWDATA id="rptDate2" runat="Server" Select="false" Col="12" PageSize="20" AllowPage="true" OnPageIndexChange="PageChanged"  OnItemDataBound="DataBindings">
+						<CONTROL:VIEWDATA id="rptDate" runat="Server" Select="false" Col="12" PageSize="20" AllowPage="true" OnPageIndexChange="PageChanged"  OnItemDataBound="DataBindings">
 							<ITEMTEMPLATE>
-							<tr>
-								<td style=" text-align:left;">
-								<li class="clearfix">
-									<div class="fright">
-										<p class="bt"><a href="<%# DataBinder.Eval(Container.DataItem, "video")%>" target="_parent"><%# DataBinder.Eval(Container.DataItem, "title")%></a></p>
-										<p class="ck"><!--<span class="eye">10</span>--><span class="time"><%# DataBinder.Eval(Container.DataItem, "datetime")%></span></p>
-									</div>
-								</li>
-								</td>
-							</tr>
+								<tr>
+									<td style=" text-align:left;">
+									<li class="clearfix">
+										<div class="fright">
+											<p class="bt"><a href="<%# DataBinder.Eval(Container.DataItem, "video")%>" target="_parent"><%# DataBinder.Eval(Container.DataItem, "title")%></a></p>
+											<p class="ck"><span class="time"><%# DataBinder.Eval(Container.DataItem, "datetime")%></span></p>
+										</div>
+									</li>
+									</td>
+								</tr>
 							</ITEMTEMPLATE>
 						</CONTROL:VIEWDATA>
 					</table>
@@ -45,5 +46,6 @@
 	</div>
 	<!--底部--> 
 	<div><iframe frameborder="0" scrolling="no" width="100%" class="h390" src="footer.aspx"></iframe></div>
+</form>
 </body>
 </html>

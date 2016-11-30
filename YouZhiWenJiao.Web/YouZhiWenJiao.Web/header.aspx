@@ -44,8 +44,8 @@
 		<li style="background:url(images/banner.jpg) #FFF center 0 no-repeat;"></li>
 		</ul>
 	</div>
-	<div class='db'>				
-    </div>
+	<div class='db'>
+</div>
 </div>  
 </body>
 </html>

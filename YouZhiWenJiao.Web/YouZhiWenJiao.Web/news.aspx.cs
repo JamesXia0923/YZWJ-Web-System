@@ -15,7 +15,6 @@ namespace YouZhiWenJiao.Web
 		public int UniqueId = 0;
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			//header.meauIndex = 2;
 			PageChanged(null, null);
 		}
 
@@ -29,7 +28,7 @@ content,
 picture,
 date(datetime) as datetime
 from product
-where categoryid = @CategoryId order by datetime desc";
+where (product.deleted <> 1 or product.deleted is null) and showinhomepage = 1 and categoryid = @CategoryId order by datetime desc";
 			sqlCmd.Parameters.Add("@CategoryId", DbType.Int16);
 			sqlCmd.Parameters["@CategoryId"].Value = (int)category.公司新闻;
 
@@ -43,11 +42,11 @@ where categoryid = @CategoryId order by datetime desc";
 				dt.Rows[rowIndex]["content"] = NoHtml(dt.Rows[rowIndex]["content"].ToString()).Substring(0, 100);
 			}
 			int iAllCount = dt.Rows.Count;
-			int iPageSize = rptDate1.PageSize;
+			int iPageSize = rptDate.PageSize;
 			int iNum = iAllCount % iPageSize;
 			
-			rptDate1.DataSource = dt.DefaultView;
-			rptDate1.DataBind();
+			rptDate.DataSource = dt.DefaultView;
+			rptDate.DataBind();
 		}
 
 		protected void DataBindings(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)

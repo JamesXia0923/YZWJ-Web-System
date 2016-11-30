@@ -33,12 +33,12 @@ namespace YouZhiWenJiao.Web
 		{
 			Response.Write(@"
 				<li><a href=""index.aspx""  " + (iMenu == 1 ? " class='cur' " : "") + @"target=""_parent"">首&nbsp;页</a></li>
-				<li><a href=""profile.aspx?id=1""  " + (iMenu == 2 ? " class='cur' " : " ") + @"target=""_parent"">公司简介</a></li>
-				<li><a href=""news.aspx?id=2""  " + (iMenu == 3 ? " class='cur' " : "  ") + @"target=""_parent"">公司新闻</a></li>
+				<li><a href=""profile.aspx""  " + (iMenu == 2 ? " class='cur' " : " ") + @"target=""_parent"">公司简介</a></li>
+				<li><a href=""news.aspx""  " + (iMenu == 3 ? " class='cur' " : "  ") + @"target=""_parent"">公司新闻</a></li>
 				<li><a href=""producttypelist.aspx?id=3"" " + (iMenu == 4 ? " class='cur' " : " ") + @" target=""_parent"">园所装备</a></li>
 				<li><a href=""producttypelist.aspx?id=4""  " + (iMenu == 5 ? " class='cur' " : "  ") + @"target=""_parent"">园长书库</a></li>
 				<li><a href=""producttypelist.aspx?id=5""  " + (iMenu == 6 ? " class='cur' " : "  ") + @"target=""_parent"">教师书库</a></li>
-				<li><a href=""news.aspx?id=6""  " + (iMenu == 7 ? " class='cur' " : "  ") + @"target=""_parent"">资料下载</a></li>
+				<li><a href=""videos.aspx""  " + (iMenu == 7 ? " class='cur' " : "  ") + @"target=""_parent"">资料下载</a></li>
 				<li><a href=""zxly.html""  " + (iMenu == 8 ? " class='cur' " : "  ") + @"target=""_parent"">在线留言</a></li>
 				<li><a href=""aboutMe.html""  " + (iMenu == 9 ? " class='cur' " : "  ") + @"target=""_parent"">联系我们</a></li>");
 		}

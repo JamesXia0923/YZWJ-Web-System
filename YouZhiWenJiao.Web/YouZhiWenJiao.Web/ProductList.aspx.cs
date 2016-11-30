@@ -13,33 +13,55 @@ namespace YouZhiWenJiao.Web
 {
 	public partial class productlist : CommonPage
 	{
-        protected List<CommonModel> ProductCollection;
-        protected CommonModel Product;
-        protected CommonTypeModel ProductType;
+		public int UniqueId = 0;
+		protected CommonModel Product;
+		protected CommonTypeModel ProductType;
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
-            if (!IsPostBack)
-            {
-                Session["id"] = null;
-            }
-            ProductCollection = new List<CommonModel>();
-            ProductType = new CommonTypeModel();
-            ProductType.id = Request["id"] != null ? ToInt(Request["id"]) : 0; ;
-            ProductType.categoryid = Request["cid"] != null ? ToInt(Request["cid"]) : 0;
+			ProductType = new CommonTypeModel();
+			ProductType.id = Request["id"] != null ? ToInt(Request["id"]) : 0; ;
+			ProductType.categoryid = Request["cid"] != null ? ToInt(Request["cid"]) : 0;
 
-            //查询出该type下的所有产品
-            sqlCmd.CommandText = @"select * from product where typeid=@TypeId and categoryid=@CategoryId";
-            sqlCmd.Parameters.Add("@TypeId", DbType.Int16);
-            sqlCmd.Parameters.Add("@CategoryId", DbType.Int16); 
-            sqlCmd.Parameters["@TypeId"].Value = ToInt(ProductType.id);
-            sqlCmd.Parameters["@CategoryId"].Value = ProductType.categoryid;
-            IDataReader reader = sqlCmd.ExecuteReader();
-            while(reader.Read())
-            {
-                ProductCollection.AddRange(GenerateModel(reader));
-            }
-            reader.Close();
+			PageChanged(null, null);
+		}
+
+		protected void PageChanged(object sender, System.Web.UI.WebControls.DataGridPageChangedEventArgs e)
+		{
+			sqlCmd.CommandText = @"
+select 
+id,
+title,
+content,
+picture,
+date(datetime) as datetime
+from product
+where (product.deleted <> 1 or product.deleted is null) and showinhomepage = 1 and typeid=@TypeId and categoryid=@CategoryId order by datetime desc";
+			sqlCmd.Parameters.Add("@TypeId", DbType.Int16);
+			sqlCmd.Parameters.Add("@CategoryId", DbType.Int16);
+			sqlCmd.Parameters["@TypeId"].Value = ToInt(ProductType.id);
+			sqlCmd.Parameters["@CategoryId"].Value = ProductType.categoryid;
+
+			DataSet ds = new DataSet();
+			SQLiteDataAdapter da = new SQLiteDataAdapter(sqlCmd);
+			var dt = new DataTable();
+			da.Fill(dt);
+
+			for(int rowIndex = 0; rowIndex < dt.Rows.Count; rowIndex++)
+			{
+				dt.Rows[rowIndex]["content"] = NoHtml(dt.Rows[rowIndex]["content"].ToString()).Substring(0, 100);
+			}
+			int iAllCount = dt.Rows.Count;
+			int iPageSize = rptDate.PageSize;
+			int iNum = iAllCount % iPageSize;
+
+			rptDate.DataSource = dt.DefaultView;
+			rptDate.DataBind();
+		}
+
+		protected void DataBindings(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)
+		{
+			UniqueId++;
 		}
 	}
 }

@@ -20,13 +20,13 @@
 
 
 <body>
-
+<form id="form1" runat="server">
 <!--头部-->
 <div><iframe frameborder="0" scrolling="no" width="100%" height="405px" src="header.aspx"></iframe></div>
 <!--产品信息-->    
     <!--单个产品-->
     <div class="block">
-        <div class="navmenu"><span>您现在的位置: <a href="#"><%=ModuleType %>></a> > <%=ProductType %>></span> <%=ProductType %>></div>
+        <div class="navmenu"><span>您现在的位置: <a href="producttypelist.aspx?id=<%=Product.categoryid %>" ><%=ModuleType %>></a> > <%=ProductType %>></span> <%=ProductType %>></div>
 	    <div class="container">
 	        <div class="products">
 		        <div class="products-grids">
@@ -54,6 +54,7 @@
 <!--底部--> 
 	<div><iframe frameborder="0" scrolling="no" width="100%" class="h390" src="footer.aspx?categoryid=<%=Product.categoryid %>&typeid=<%=Product.typeid %>"></iframe></div>   
 
-<script src="js/all.js" type="text/javascript"></script>
+	<script src="js/all.js" type="text/javascript"></script>
+</form>
 </body>
 </html>

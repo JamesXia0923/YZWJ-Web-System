@@ -19,6 +19,7 @@
 
 </head>
 <body>
+<form id="form1" runat="server">
     <!--头部-->
     <div>
         <iframe frameborder="0" scrolling="no" width="100%" height="405px" src="header.aspx">
@@ -27,7 +28,7 @@
     <!--产品类型列表（左边框）-->
     <div class="block">
         <div class="navmenu" id="navMenu">
-            <span>您现在的位置: <a href="#">首页</a> >
+            <span>您现在的位置: <a href="index.aspx">首页</a> >
                 <%=ProductType.description %></span><%=ProductType.description %></div>
         <div>
             <% if (ProductTypeCollection.Count != 0) %>
@@ -88,5 +89,6 @@
         <iframe frameborder="0" scrolling="no" width="100%" class="h390" src="footer.aspx?categoryid=<%=ProductType.categoryid %>">
         </iframe>
     </div>
+</form>
 </body>
 </html>

@@ -14,6 +14,7 @@
 <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
 </head>
 <body>
+<form id="form1" runat="server">
     <!--头部-->
     <div><iframe frameborder="0" scrolling="no" width="100%" height="405px" src="header.aspx"></iframe></div>
     <!--文字列表页主体-->
@@ -83,5 +84,6 @@
     </div>	
     <!--底部--> 
 	<div><iframe frameborder="0" scrolling="no" width="100%" class="h390" src="footer.aspx"></iframe></div>
+</form>
 </body>
 </html>

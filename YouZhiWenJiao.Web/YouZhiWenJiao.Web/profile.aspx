@@ -18,6 +18,7 @@
 
 </head>
 <body>
+<form id="form1" runat="server">
     <!--头部-->
     <div>
         <iframe frameborder="0" scrolling="no" width="100%" height="405px" src="header.aspx"></iframe>
@@ -90,6 +91,6 @@
     </div>
 
     <script src="js/all.js" type="text/javascript"></script>
-
+</form>
 </body>
 </html>

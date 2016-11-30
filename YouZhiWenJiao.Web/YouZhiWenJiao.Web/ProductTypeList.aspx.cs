@@ -24,7 +24,7 @@ namespace YouZhiWenJiao.Web
             ProductTypeCollection = new List<CommonTypeModel>();
             ProductType = new CommonTypeModel();
             //ProductType.categoryid = ToInt(Session["categoryid"]);
-            ProductType.categoryid = Request["id"] != null ? ToInt(Request["id"]) : 0;
+            ProductType.categoryid = Request["id"] != null ? ToInt(Request["id"]) : 3;
 
             sqlCmd.CommandText = @"select * from type where categoryid = @CategoryId";
             sqlCmd.Parameters.Add("@CategoryId",DbType.Int16);

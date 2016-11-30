@@ -15,7 +15,6 @@ namespace YouZhiWenJiao.Web
 		public int UniqueId = 0;
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			//header.meauIndex = 2;
 			if (Session["user"] == null)
 			{
 				Response.Redirect("login.aspx");
@@ -42,10 +41,10 @@ where categoryid = @CategoryId order by datetime desc";
 			var dt = new DataTable();
 			da.Fill(dt);
 			int iAllCount = dt.Rows.Count;
-			int iPageSize = rptDate2.PageSize;
+			int iPageSize = rptDate.PageSize;
 			int iNum = iAllCount % iPageSize;
-			rptDate2.DataSource = dt.DefaultView;
-			rptDate2.DataBind();
+			rptDate.DataSource = dt.DefaultView;
+			rptDate.DataBind();
 		}
 		protected void DataBindings(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)
 		{
