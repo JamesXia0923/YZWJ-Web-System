@@ -37,8 +37,9 @@
 				        </div>	
 			            <div class="col-md-8 single-text">
 				            <div class="details-left-info simpleCart_shelfItem">
-					            <h3><%=Product.title %></h3>
+					            <P style="font-size:24px"><%=Product.title %></p>
 					            <p class="availability"><span class="color"><%=Product.content %></span></p>
+					            <p class="datetime" style="text-align:center"><%=Product.datetime %></p>
 		                    </div>
 	                    </div>
 	                </div>

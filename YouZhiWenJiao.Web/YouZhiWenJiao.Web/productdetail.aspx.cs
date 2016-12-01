@@ -42,6 +42,7 @@ namespace YouZhiWenJiao.Web
                 Product.title = reader["title"].ToString();
                 Product.content = reader["content"].ToString();
                 Product.picture = reader["picture"].ToString();
+                Product.datetime = Convert.ToDateTime(reader["datetime"]).ToString("yyyy-MM-dd");
             }
             reader.Close();
 
