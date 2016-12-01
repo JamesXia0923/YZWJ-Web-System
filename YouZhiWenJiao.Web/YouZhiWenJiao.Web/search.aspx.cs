@@ -29,7 +29,7 @@ namespace YouZhiWenJiao.Web
             //查询出列表
             sqlCmd.CommandText = @"select * from product                           
                                    where title like '%@title%' or content like '%@title%'
-                                   order by datetime desc";
+                                   and (deleted <> 1 or deleted is null) and showinhomepage = 1 order by datetime desc";
 
             sqlCmd.CommandText = sqlCmd.CommandText.Replace("@title", SearchWD);
             IDataReader reader = sqlCmd.ExecuteReader();
@@ -37,8 +37,8 @@ namespace YouZhiWenJiao.Web
             {
                 var models = GenerateModel(reader);
                 var model = models.FirstOrDefault();
-                model.content = RemoveHtml(model.content);
-                if (model.content.Length >= 100)
+                model.content = NoHtml(model.content);
+                if (model.content.Length > 100)
                 {
                     model.content = model.content.Substring(0, 100);
                 }
@@ -51,14 +51,6 @@ namespace YouZhiWenJiao.Web
                 CorporateNewsList.Add(model);
             }
             reader.Close();
-
-
 		}
-
-        public string RemoveHtml(string strHtml)//取出html标签 
-        {
-            string strhtml = Regex.Replace(strHtml, "<[^>]*>", " ");
-            return strhtml;
-        } 
 	}
 }
