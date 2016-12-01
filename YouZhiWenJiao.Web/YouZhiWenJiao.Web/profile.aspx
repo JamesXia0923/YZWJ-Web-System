@@ -4,18 +4,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-    <title>公司简介</title>
-    <meta name="keywords" content="[!--pagekey--]" />
-    <meta name="description" content="[!--pagedes--]" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>上海优智文教</title>
     <link href="css/master.css" type="text/css" rel="stylesheet" />
     <link href="css/base.css" type="text/css" rel="stylesheet" />
-
     <script type="text/javascript" src="js/jquery.min.js"></script>
-
     <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
-
 </head>
 <body>
 <form id="form1" runat="server">

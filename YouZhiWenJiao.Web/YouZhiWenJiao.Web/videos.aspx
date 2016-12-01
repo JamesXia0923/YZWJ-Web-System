@@ -5,10 +5,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
-<meta charset="utf-8">
-<!--<title>[!--pagetitle--] - [!--class.name--] - <?=$public_r[sitename]?></title>-->
-<title>音频中心</title>
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>上海优智文教</title>
 <link href="css/master.css" type="text/css" rel="stylesheet" />
 <link href="css/base.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -28,11 +26,12 @@
 						<CONTROL:VIEWDATA id="rptDate" runat="Server" Select="false" Col="12" PageSize="20" AllowPage="true" OnPageIndexChange="PageChanged"  OnItemDataBound="DataBindings">
 							<ITEMTEMPLATE>
 								<tr>
-									<td style=" text-align:left;">
+									<td style="text-align:center;">
 									<li class="clearfix">
-										<div class="fright">
+										<div class="fright" style="float:none;margin-left:120px;width:900px">
 											<p class="bt"><a href="<%# DataBinder.Eval(Container.DataItem, "video")%>" target="_parent"><%# DataBinder.Eval(Container.DataItem, "title")%></a></p>
 											<p class="ck"><span class="time"><%# DataBinder.Eval(Container.DataItem, "datetime")%></span></p>
+											<p class="jj"><%# DataBinder.Eval(Container.DataItem, "Content")%></p>
 										</div>
 									</li>
 									</td>

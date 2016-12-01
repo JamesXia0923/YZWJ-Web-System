@@ -4,12 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
-<meta charset="utf-8">
-<!--<title>[!--pagetitle--] - [!--class.name--] - <?=$public_r[sitename]?></title>-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>上海优智文教</title>
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<meta name="keywords" content="[!--pagekey--]" />
-<meta name="description" content="[!--pagedes--]" />
 <link href="css/master.css" type="text/css" rel="stylesheet" />
 <link href="css/base.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -54,7 +50,7 @@
             <%int i = 0; %>
             <%foreach (var product in downloadList) %>
             <%{ %>
-            	<li><a href="<%=product.video %>"><%=product.title %></a></li>
+            	<li><div style="width:115px;overflow: hidden; text-overflow:ellipsis; white-space: nowrap;"><a href="<%=product.video %>"><%=product.title %></a></div></li>
             <%i++; %>
             <%} %>
             <%if (i < 18) %>

@@ -7,8 +7,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
     <title>¹«Ë¾¼ò½é</title>
-    <meta name="keywords" content="[!--pagekey--]" />
-    <meta name="description" content="[!--pagedes--]" />
     <link href="css/master.css" type="text/css" rel="stylesheet" />
     <link href="css/base.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="js/jquery.min.js"></script>

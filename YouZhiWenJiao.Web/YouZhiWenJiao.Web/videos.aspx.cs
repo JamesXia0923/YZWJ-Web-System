@@ -17,6 +17,7 @@ namespace YouZhiWenJiao.Web
 		{
 			if (Session["user"] == null)
 			{
+				Session["UrlReferrer"] = "videos.aspx";
 				Response.Redirect("login.aspx");
 			}
 
@@ -29,10 +30,11 @@ namespace YouZhiWenJiao.Web
 select 
 id,
 title,
+content,
 video,
 date(datetime) as datetime
 from product
-where categoryid = @CategoryId order by datetime desc";
+where (deleted <> 1 or deleted is null) and showinhomepage = 1 and categoryid = @CategoryId order by datetime desc";
 			sqlCmd.Parameters.Add("@CategoryId", DbType.Int16);
 			sqlCmd.Parameters["@CategoryId"].Value = (int)category.资料下载;
 
@@ -40,6 +42,10 @@ where categoryid = @CategoryId order by datetime desc";
 			SQLiteDataAdapter da = new SQLiteDataAdapter(sqlCmd);
 			var dt = new DataTable();
 			da.Fill(dt);
+			for(int rowIndex = 0; rowIndex < dt.Rows.Count; rowIndex++)
+			{
+				dt.Rows[rowIndex]["content"] = NoHtml(dt.Rows[rowIndex]["content"].ToString()).Substring(0, 200);
+			}
 			int iAllCount = dt.Rows.Count;
 			int iPageSize = rptDate.PageSize;
 			int iNum = iAllCount % iPageSize;

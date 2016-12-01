@@ -72,13 +72,13 @@ namespace YouZhiWenJiao.Web
 				//return;
 			}
 
-			if (ViewState["UrlReferrer"] == null)
+			if (Session["UrlReferrer"] == null)
 			{
 				Response.Redirect("index.aspx");
 			}
 			else
 			{
-				Response.Redirect(Page.Session["UrlReferrer"].ToString());
+				Response.Redirect(Session["UrlReferrer"].ToString());
 			}
 		}
 	}

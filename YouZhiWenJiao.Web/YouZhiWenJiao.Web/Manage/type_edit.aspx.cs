@@ -10,7 +10,7 @@ namespace YouZhiWenJiao.Web.Manage
 	{
 		protected string productId = "";
 		protected string[] ids = null;
-		private string categorylist = ((int)category.公司简介).ToString() + ',' + ((int)category.公司新闻).ToString() + ',' + ((int)category.教师书库).ToString() + ',' + ((int)category.园所装备).ToString() + ',' + ((int)category.园长书库).ToString() + ',' + ((int)category.资料下载).ToString();
+		private string categorylist = ((int)category.公司简介).ToString() + ',' + ((int)category.教师书库).ToString() + ',' + ((int)category.园所装备).ToString() + ',' + ((int)category.园长书库).ToString() + ',' + ((int)category.资料下载).ToString();
 
 		string user = @"";
 		protected void Page_Load(object sender, EventArgs e)

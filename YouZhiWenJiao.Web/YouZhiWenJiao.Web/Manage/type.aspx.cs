@@ -12,7 +12,7 @@ namespace YouZhiWenJiao.Web.Manage
 	public partial class type : CommonPage
 	{
 		public int UniqueId = 0;
-		private string categorylist = ((int)category.公司简介).ToString() + ',' + ((int)category.公司新闻).ToString() + ',' + ((int)category.教师书库).ToString() + ',' + ((int)category.园所装备).ToString() + ',' + ((int)category.园长书库).ToString() + ',' + ((int)category.资料下载).ToString();
+		private string categorylist = ((int)category.公司简介).ToString() + ',' + ((int)category.教师书库).ToString() + ',' + ((int)category.园所装备).ToString() + ',' + ((int)category.园长书库).ToString() + ',' + ((int)category.资料下载).ToString();
 
 		protected void Page_Load(object sender, EventArgs e)
 		{

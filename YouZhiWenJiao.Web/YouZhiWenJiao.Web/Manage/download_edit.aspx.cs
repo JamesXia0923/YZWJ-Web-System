@@ -12,7 +12,6 @@ namespace YouZhiWenJiao.Web.Manage
 
 		string user = @"";
 		string videoUrl = @"";
-		string videoPath = @"";
 		string href_string = @"../download.aspx?";
 		protected string href_value = "";
 		protected void Page_Load(object sender, EventArgs e)
@@ -53,7 +52,7 @@ where categoryid = @categotyid";
 					{
 						txtTitle.Text = dr[0].ToString();
 						datetime.SelectedDate = DateTime.Parse(dr[1].ToString());
-						videoPath = dr[2].ToString();
+						Session["video"] = dr[2].ToString();
 						ddlListType.SelectedValue = dr[3].ToString();
 						ftbContent.Text = dr[4].ToString();
 					}
@@ -95,7 +94,7 @@ where categoryid = @categotyid";
 			}
 			else
 			{
-				videoUrl = videoPath;
+				videoUrl = Session["video"].ToString();
 			}
 
 			if (productId !="")

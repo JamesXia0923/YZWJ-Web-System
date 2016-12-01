@@ -4,11 +4,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="[!--pagekey--]" />
-    <meta name="description" content="[!--pagedes--]" />
+    <title>上海优智文教</title>
     <link href="css/master.css" type="text/css" rel="stylesheet" />
     <link href="css/base.css" type="text/css" rel="stylesheet" />
-    <base target="_parent">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
 </head>
 <body>
     <form runat ="server" id="form1">
@@ -22,16 +22,16 @@
             <div class="login fleft">
                 <h1>
                     <img src="images/log_bg.jpg" /></h1>
-                <table border="0" cellpadding="0" cellspacing="0" with="600px">
+                <table border="0" cellpadding="0" cellspacing="0" width="620px">
                     <tr>
-                        <td>
+                        <td width="65px">
                             用户名：
                         </td>
-                        <td colspan="2">
+                        <td colspan="2" width="275px">
                             <input type="text" class="log_inp" id="txtLoginName" runat="server" tabindex="1" onclick="checkform()" />
                             <span runat="server" id="spanName" style=" color:red"></span>
                         </td>
-                        <td rowspan="3" align="center">
+                        <td rowspan="3" align="center" width="105px">
                             <input type="submit" class="log_btn1" value="登录" runat="server" id="loginBtn" onserverclick="loginClick"
                                 tabindex="4" />
                         </td>
@@ -51,11 +51,17 @@
                         </td>
                         <td width="110">
                             <input type="text" class="log_inp1" id="txtYzm" runat="server" tabindex="3" onclick="checkform()" />
-                            <span runat="server" id="spanYzm" style=" color:red"></span>
                         </td>
                         <td align="left">
                             <img style="width: 80px; height: 20px; cursor: pointer" id="image1" title="看不清楚?换一张"
                                 alt="验证码" src="CheckCode.aspx" onclick="src='CheckCode.aspx?s='+Math.random()" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td colspan="2">
+                            <span runat="server" id="spanYzm" style=" color:red"></span>
                         </td>
                     </tr>
                 </table>
