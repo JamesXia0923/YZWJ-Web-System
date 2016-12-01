@@ -50,21 +50,25 @@ where categoryid = @categotyid";
 				{
 					sqlCmd.CommandText = "select title,content,datetime,contentpicture1,contentpicture2,contentpicture3,typeid from product where id='" + productId + "'";
 					var dr = sqlCmd.ExecuteReader();
-					if (dr.Read())
+					if(dr.Read())
 					{
 						txtTitle.Text = dr[0].ToString();
 						ftbContent.Text = dr[1].ToString();
 						datetime.SelectedDate = DateTime.Parse(dr[2].ToString());
 
-						Session["imgPath1"] = dr[3].ToString();
-						//Session["imgPath2"] = dr[4].ToString();
-						//Session["imgPath3"] = dr[5].ToString();
+						ViewState["imgPath1"] = dr[3].ToString();
+						//ViewState["imgPath2"] = dr[4].ToString();
+						//ViewState["imgPath3"] = dr[5].ToString();
 
-						image1.ImageUrl = Session["imgPath1"].ToString();
-						//image2.ImageUrl = Session["imgPath2"].ToString();
-						//image3.ImageUrl = Session["imgPath3"].ToString();
+						image1.ImageUrl = ViewState["imgPath1"].ToString();
+						//image2.ImageUrl = ViewState["imgPath2"].ToString();
+						//image3.ImageUrl = ViewState["imgPath3"].ToString();
 
 						ddlListType.SelectedValue = dr[6].ToString();
+					}
+					else
+					{
+						datetime.SelectedDate = DateTime.Now;
 					}
 				}
 			}
@@ -103,7 +107,7 @@ where categoryid = @categotyid";
 			}
 			else
 			{
-				imgUrl1 = Session["imgPath1"].ToString();
+				imgUrl1 = ViewState["imgPath1"] == null ? "" : ViewState["imgPath1"].ToString();
 			}
 
 			//uploadName = InputFile2.Value;//获取待上传图片的完整路径，包括文件名  
@@ -136,7 +140,7 @@ where categoryid = @categotyid";
 			//}
 			//else
 			//{
-			//    imgUrl2 = Session["imgPath2"].ToString();
+			//    imgUrl2 = ViewState["imgPath2"] == null ? "" : ViewState["imgPath2"].ToString();
 			//}
 
 			//uploadName = InputFile3.Value;//获取待上传图片的完整路径，包括文件名  
@@ -169,7 +173,7 @@ where categoryid = @categotyid";
 			//}
 			//else
 			//{
-			//    imgUrl3 = Session["imgPath3"].ToString();
+			//    imgUrl3 = ViewState["imgPath3"] == null ? "" : ViewState["imgPath3"].ToString();
 			//}
 
 			if (productId != "")

@@ -45,20 +45,24 @@ order by type.id";
 				}
 				rd.Close();
 
-				if (productId != "")
+				if(productId != "")
 				{
 					sqlCmd.CommandText = "select title,content,datetime,picture,typeid from product where id='" + productId + "'";
 					var dr = sqlCmd.ExecuteReader();
-					if (dr.Read())
+					if(dr.Read())
 					{
 						txtTitle.Text = dr[0].ToString();
 						ftbContent.Text = dr[1].ToString();
 						datetime.SelectedDate = DateTime.Parse(dr[2].ToString());
-						Session["image"] = dr[3].ToString();
-						image.ImageUrl = Session["image"].ToString();
+						ViewState["image"] = dr[3].ToString();
+						image.ImageUrl = ViewState["image"].ToString();
 						ddlListType.SelectedValue = dr[4].ToString();
 					}
 					dr.Close();
+				}
+				else
+				{
+					datetime.SelectedDate = DateTime.Now;
 				}
 			}
 			#endregion
@@ -96,7 +100,7 @@ order by type.id";
 			}
 			else
 			{
-				imgUrl = Session["image"].ToString();
+				imgUrl = ViewState["image"] == null ? "" : ViewState["image"].ToString();
 			}
 
 			if (productId != "")

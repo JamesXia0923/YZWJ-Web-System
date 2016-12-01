@@ -23,7 +23,7 @@
                 <li><a href="producttypelist.aspx?id=3"><img src="images/case.png"></a></li>
 			    <li><a href="producttypelist.aspx?id=4"><img src="images/kefu.png"></a></li>
 			    <li><a href="producttypelist.aspx?id=5"><img src="images/dianzi.png"></a></li>
-                <li><a href=""><img src="images/team.png"></a></li>
+                <li><a href="videos.aspx"><img src="images/team.png"></a></li>
             </ul>
         </div>    
 	</div> 

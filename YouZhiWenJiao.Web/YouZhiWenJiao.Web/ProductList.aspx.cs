@@ -108,12 +108,17 @@ where (deleted <> 1 or deleted is null) and showinhomepage = 1 and typeid=@TypeI
 			}
 
 
-			int iAllCount = newData.Rows.Count;
-			int iPageSize = rptDate.PageSize;
-			int iNum = iAllCount % iPageSize;
+			//int iAllCount = newData.Rows.Count;
+			//int iPageSize = rptDate.PageSize;
+			//int iNum = iAllCount * 3 % iPageSize;
 
 			rptDate.DataSource = newData.DefaultView;
 			rptDate.DataBind();
+			rptDate.ItemCount = dt.Rows.Count;
+			if(newData.Rows.Count % rptDate.PageSize == 0)
+				rptDate.PageCount = rptDate.ItemCount / 3 / rptDate.PageSize;
+			else
+				rptDate.PageCount = rptDate.ItemCount / 3 / rptDate.PageSize + 1;
 		}
 
 		protected void DataBindings(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)

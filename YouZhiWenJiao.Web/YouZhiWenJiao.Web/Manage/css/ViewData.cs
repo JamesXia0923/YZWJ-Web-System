@@ -165,16 +165,28 @@ namespace YouZhiWenJiao.Web.Manage.css
 
         /// <summary>
         /// 总页数
-        /// </summary>	
+        /// </summary>
+		private int _PageCount;
         public int PageCount
         {
             get
             {
-                if (intItemCount % intPageSize == 0)
-                    return (intItemCount) / intPageSize;
-                else
-                    return (intItemCount) / intPageSize + 1;
+				if(_PageCount == 0)
+				{
+					if(intItemCount % intPageSize == 0)
+						return (intItemCount) / intPageSize;
+					else
+						return (intItemCount) / intPageSize + 1;
+				}
+				else
+				{
+					return _PageCount;
+				}
             }
+			set
+			{
+				_PageCount = value;
+			}
         }
 
 

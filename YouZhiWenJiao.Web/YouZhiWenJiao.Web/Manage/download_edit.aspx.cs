@@ -44,19 +44,23 @@ where categoryid = @categotyid";
 				}
 				rd.Close();
 
-				if (productId != "")
+				if(productId != "")
 				{
 					sqlCmd.CommandText = "select title,datetime,video,typeid,content from product where id=" + "'" + productId + "'";
 					var dr = sqlCmd.ExecuteReader();
-					if (dr.Read())
+					if(dr.Read())
 					{
 						txtTitle.Text = dr[0].ToString();
 						datetime.SelectedDate = DateTime.Parse(dr[1].ToString());
-						Session["video"] = dr[2].ToString();
+						ViewState["video"] = dr[2].ToString();
 						ddlListType.SelectedValue = dr[3].ToString();
 						ftbContent.Text = dr[4].ToString();
 					}
 					dr.Close();
+				}
+				else
+				{
+					datetime.SelectedDate = DateTime.Now;
 				}
 			}
 			#endregion
@@ -94,7 +98,7 @@ where categoryid = @categotyid";
 			}
 			else
 			{
-				videoUrl = Session["video"].ToString();
+				videoUrl = ViewState["video"] == null ? "" : ViewState["video"].ToString();
 			}
 
 			if (productId !="")

@@ -26,19 +26,23 @@ namespace YouZhiWenJiao.Web.Manage
 
 			productId = Request["id"] != null ? Request["id"].ToString() : "";
 
-			if (productId != "")
+			if(productId != "")
 			{
 				sqlCmd.CommandText = "select title,datetime,picture,video from product where id='" + productId + "'";
 				var dr = sqlCmd.ExecuteReader();
-				if (dr.Read())
+				if(dr.Read())
 				{
 					txtTitle.Text = dr[0].ToString();
 					datetime.SelectedDate = DateTime.Parse(dr[1].ToString());
-					Session["image"] = dr[2].ToString();
-					image.ImageUrl = Session["image"].ToString();
-					Session["video"] = dr[3].ToString();
+					ViewState["image"] = dr[2].ToString();
+					image.ImageUrl = ViewState["image"].ToString();
+					ViewState["video"] = dr[3].ToString();
 				}
 				dr.Close();
+			}
+			else
+			{
+				datetime.SelectedDate = DateTime.Now;
 			}
 		}
 
@@ -74,7 +78,7 @@ namespace YouZhiWenJiao.Web.Manage
 			}
 			else
 			{
-				imgUrl = Session["image"].ToString();
+				imgUrl = ViewState["image"] == null ? "" : ViewState["image"].ToString();
 			}
 
 			string uploadVideo = InputVideo.FileName;
@@ -107,7 +111,7 @@ namespace YouZhiWenJiao.Web.Manage
 			}
 			else
 			{
-				videoUrl = Session["video"].ToString();
+				videoUrl = ViewState["video"] == null ? "" : ViewState["video"].ToString();
 			}
 
 			if (productId != "")
