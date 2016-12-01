@@ -18,7 +18,7 @@
     <!--文字列表页主体-->
     <div class="newsbox yh">
     	<div class="block">
-        	<div class="navmenu"><span>您现在的位置: <a href="#">首页</a> > 搜索结果</span><%=SearchWD %></div>
+        	<div class="navmenu"><span>您现在的位置: <a href="index.aspx">首页</a> > 搜索结果</span><%=SearchWD %></div>
             
             <div class="text-list yh">
 				<ul>

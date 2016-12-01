@@ -4,9 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-    <title>¹«Ë¾¼ò½é</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ä¸Šæµ·ä¼˜æ™ºæ–‡æ•™</title>
     <link href="css/master.css" type="text/css" rel="stylesheet" />
     <link href="css/base.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -15,27 +14,27 @@
 <body>
 		<div class="head">
 		<div class="block yh f13">
-			<p class="tright pt10"><a onclick="SetHome(window.location)" href="javascript:void(0)" class="pl10 pr10">ÉèÎªÊ×Ò³</a> | <a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)" class="pl10 pr10">¼ÓÈëÊÕ²Ø</a></p>
+			<p class="tright pt10"><a onclick="SetHome(window.location)" href="javascript:void(0)" class="pl10 pr10">è®¾ä¸ºé¦–é¡µ</a> | <a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)" class="pl10 pr10">åŠ å…¥æ”¶è—</a></p>
 			<div class="box position_a clearfix">
-				<!--µ¼º½-->
+				<!--å¯¼èˆª-->
 				<div class="nav fleft ofHidden">
 					<ul>
 					<%ShowMenu(meauIndex); %>
 					</ul>
 				</div>
 			
-				<!--ËÑË÷-->
+				<!--æœç´¢-->
 				<form name="searchform" runat="server" class="ss ofHidden">
 					<input name='ecmsfrom' type='hidden' value='9'>
 					<input type="hidden" name="show" value="title,newstext">
-					<asp:TextBox class="input_value" id="txtSearch" runat="server" placeholder="ÇëÊäÈë¹Ø¼ü×Ö" width="150"></asp:TextBox>
-					<%--<input  name="input_value" id="input_value" type="text" runat="server" placeholder="ÇëÊäÈë¹Ø¼ü×Ö" >--%>
-					<asp:Button id="btnBack" OnClick="btnSearch_Click" runat="server" text="ËÑË÷" class="search"></asp:Button>
+					<asp:TextBox class="input_value" id="txtSearch" runat="server" placeholder="è¯·è¾“å…¥å…³é”®å­—" width="150"></asp:TextBox>
+					<%--<input  name="input_value" id="input_value" type="text" runat="server" placeholder="è¯·è¾“å…¥å…³é”®å­—" >--%>
+					<asp:Button id="btnBack" OnClick="btnSearch_Click" runat="server" text="æœç´¢" class="search"></asp:Button>
 				</form>
 			</div>
 		</div>
 	</div>
-<!--»ÃµÆÆ¬-->
+<!--å¹»ç¯ç‰‡-->
 <div class="fullSlide">
 	<div class="bd">
 		<ul>
@@ -44,6 +43,7 @@
 	</div>
 	<div class='db'>
 </div>
-</div>  
+</div>
+<script src="js/all.js" type="text/javascript"></script>
 </body>
 </html>

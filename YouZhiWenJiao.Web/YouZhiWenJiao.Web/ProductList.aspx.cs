@@ -49,7 +49,8 @@ where (deleted <> 1 or deleted is null) and showinhomepage = 1 and typeid=@TypeI
 
 			for(int rowIndex = 0; rowIndex < dt.Rows.Count; rowIndex++)
 			{
-				dt.Rows[rowIndex]["content"] = NoHtml(dt.Rows[rowIndex]["content"].ToString()).Substring(0, 100);
+				var strContent = NoHtml(dt.Rows[rowIndex]["content"].ToString());
+				dt.Rows[rowIndex]["content"] = strContent.Length > 20 ? strContent.Substring(0, 20) : strContent;
 			}
 
 			DataTable newData = new DataTable();

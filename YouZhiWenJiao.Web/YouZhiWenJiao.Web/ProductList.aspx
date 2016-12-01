@@ -29,7 +29,7 @@
 												<a href="productdetail.aspx?id=<%# DataBinder.Eval(Container.DataItem, "id1")%>" target="_parent">
 													<h3><%# DataBinder.Eval(Container.DataItem, "title1")%></h3>
 												<p style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;"><%# DataBinder.Eval(Container.DataItem, "content1")%></p>
-												<div>TIME :<%# DataBinder.Eval(Container.DataItem, "datetime1")%></div>
+												<div>日期 :<%# DataBinder.Eval(Container.DataItem, "datetime1")%></div>
 												</a>
 											</div>
 										</li>
@@ -42,7 +42,7 @@
 												<a href="productdetail.aspx?id=<%# DataBinder.Eval(Container.DataItem, "id2")%>" target="_parent">
 													<h3><%# DataBinder.Eval(Container.DataItem, "title2")%></h3>
 												<p style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;"><%# DataBinder.Eval(Container.DataItem, "content2")%></p>
-												<div>TIME :<%# DataBinder.Eval(Container.DataItem, "datetime2")%></div>
+												<div>日期 :<%# DataBinder.Eval(Container.DataItem, "datetime2")%></div>
 												</a>
 											</div>
 										</li>
@@ -55,7 +55,7 @@
 												<a href="productdetail.aspx?id=<%# DataBinder.Eval(Container.DataItem, "id3")%>" target="_parent">
 													<h3><%# DataBinder.Eval(Container.DataItem, "title3")%></h3>
 												<p style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;"><%# DataBinder.Eval(Container.DataItem, "content3")%></p>
-												<div>TIME :<%# DataBinder.Eval(Container.DataItem, "datetime3")%></div>
+												<div>日期 :<%# DataBinder.Eval(Container.DataItem, "datetime3")%></div>
 												</a>
 											</div>
 										</li>
