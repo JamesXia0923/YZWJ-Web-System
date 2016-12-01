@@ -48,7 +48,7 @@ where categoryid = @categotyid";
 
 				if (productId != "")
 				{
-					sqlCmd.CommandText = "select title,content,datetime,contentpicture1,contentpicture2,contentpicture3,typeid from product where id='" + productId + "'";
+                    sqlCmd.CommandText = "select title,content,datetime,picture,contentpicture1,contentpicture2,contentpicture3,typeid from product where id='" + productId + "'";
 					var dr = sqlCmd.ExecuteReader();
 					if(dr.Read())
 					{
@@ -70,6 +70,7 @@ where categoryid = @categotyid";
 					{
 						datetime.SelectedDate = DateTime.Now;
 					}
+                    dr.Close();
 				}
 			}
 			#endregion
@@ -175,7 +176,6 @@ where categoryid = @categotyid";
 			//{
 			//    imgUrl3 = ViewState["imgPath3"] == null ? "" : ViewState["imgPath3"].ToString();
 			//}
-
 			if (productId != "")
 			{
 				sqlCmd.CommandText = @"
