@@ -31,7 +31,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FreeTextBox, Version=1.6.3.26073, Culture=neutral" />
-    <Reference Include="SailingWebControl, Version=2.0.2011.1203, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core">
@@ -328,8 +327,6 @@
     <Content Include="js\jquery.min.js" />
     <Content Include="js\jquery.SuperSlide.2.1.1.js" />
     <Content Include="Lib\FreeTextBox.dll" />
-    <Content Include="Lib\SailingWebControl.dll" />
-    <Content Include="Lib\SailingWebDLL.dll" />
     <Content Include="Lib\System.Data.SQLite.dll" />
     <Content Include="Manage\about.aspx" />
     <Content Include="Manage\productimages.aspx" />

@@ -48,9 +48,9 @@ where categoryid = @categotyid";
 
 				if (productId != "")
 				{
-                    sqlCmd.CommandText = "select title,content,datetime,picture,contentpicture1,contentpicture2,contentpicture3,typeid from product where id='" + productId + "'";
+					sqlCmd.CommandText = "select title,content,datetime,contentpicture1,contentpicture2,contentpicture3,typeid from product where id='" + productId + "'";
 					var dr = sqlCmd.ExecuteReader();
-					if(dr.Read())
+					if (dr.Read())
 					{
 						txtTitle.Text = dr[0].ToString();
 						ftbContent.Text = dr[1].ToString();
@@ -66,11 +66,11 @@ where categoryid = @categotyid";
 
 						ddlListType.SelectedValue = dr[6].ToString();
 					}
-					else
-					{
-						datetime.SelectedDate = DateTime.Now;
-					}
-                    dr.Close();
+					dr.Close();
+				}
+				else
+				{
+					datetime.SelectedDate = DateTime.Now;
 				}
 			}
 			#endregion
