@@ -35,8 +35,8 @@
                 <% foreach(var CompanyProfile in CompanyProfileList) %>
                 <%{ %>
                 <div id="<%=CompanyProfile.typeid %>" class="content yh fright" style="width: 850px;">
-                    <p>
-                        <%=CompanyProfile.title%></p>
+                    <h2 style="text-align:center;">
+                        <%=CompanyProfile.title%></h2>
                     <p>
                         <%=CompanyProfile.content%></p>
                 </div>

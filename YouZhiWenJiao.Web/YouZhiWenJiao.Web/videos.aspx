@@ -29,7 +29,7 @@
 									<td style="text-align:center;">
 									<li class="clearfix">
 										<div class="fright" style="float:none;margin-left:120px;width:900px">
-											<p class="bt"><a href="<%# DataBinder.Eval(Container.DataItem, "video")%>" target="_parent"><%# DataBinder.Eval(Container.DataItem, "title")%></a></p>
+											<p class="bt"><a href="<%# DataBinder.Eval(Container.DataItem, "video")%>" download><%# DataBinder.Eval(Container.DataItem, "title")%></a></p>
 											<p class="ck"><span class="time"><%# DataBinder.Eval(Container.DataItem, "datetime")%></span></p>
 											<p class="jj"><%# DataBinder.Eval(Container.DataItem, "Content")%></p>
 										</div>
