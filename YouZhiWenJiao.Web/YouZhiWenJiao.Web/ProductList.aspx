@@ -23,13 +23,39 @@
 								<tr>
 									<td style=" text-align:left;">
 										<li class="clearfix">
-											<div class="photo yh"><img src="<%# DataBinder.Eval(Container.DataItem, "picture")%>" style="height: 100%; width: 100%;" /><p><%# DataBinder.Eval(Container.DataItem, "title")%></p></div>
+											<div class="photo yh"><img src="<%# DataBinder.Eval(Container.DataItem, "picture1")%>" style="height: 100%; width: 100%;" /><p><%# DataBinder.Eval(Container.DataItem, "title1")%></p></div>
 											<div class="rsp"></div>
 											<div class="text">
-												<a href="productdetail.aspx?id=<%# DataBinder.Eval(Container.DataItem, "id")%>" target="_parent">
-													<h3><%# DataBinder.Eval(Container.DataItem, "title")%></h3>
-												<p style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;"><%# DataBinder.Eval(Container.DataItem, "content")%></p>
-												<div>TIME :<%# DataBinder.Eval(Container.DataItem, "datetime")%></div>
+												<a href="productdetail.aspx?id=<%# DataBinder.Eval(Container.DataItem, "id1")%>" target="_parent">
+													<h3><%# DataBinder.Eval(Container.DataItem, "title1")%></h3>
+												<p style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;"><%# DataBinder.Eval(Container.DataItem, "content1")%></p>
+												<div>TIME :<%# DataBinder.Eval(Container.DataItem, "datetime1")%></div>
+												</a>
+											</div>
+										</li>
+									</td>
+									<td style=" text-align:left;">
+										<li class="clearfix lid<%# DataBinder.Eval(Container.DataItem, "id2")%>">
+											<div class="photo yh"><img src="<%# DataBinder.Eval(Container.DataItem, "picture2")%>" style="height: 100%; width: 100%;" /><p><%# DataBinder.Eval(Container.DataItem, "title2")%></p></div>
+											<div class="rsp"></div>
+											<div class="text">
+												<a href="productdetail.aspx?id=<%# DataBinder.Eval(Container.DataItem, "id2")%>" target="_parent">
+													<h3><%# DataBinder.Eval(Container.DataItem, "title2")%></h3>
+												<p style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;"><%# DataBinder.Eval(Container.DataItem, "content2")%></p>
+												<div>TIME :<%# DataBinder.Eval(Container.DataItem, "datetime2")%></div>
+												</a>
+											</div>
+										</li>
+									</td>
+									<td style=" text-align:left;">
+										<li class="clearfix lid<%# DataBinder.Eval(Container.DataItem, "id3")%>">
+											<div class="photo yh"><img src="<%# DataBinder.Eval(Container.DataItem, "picture3")%>" style="height: 100%; width: 100%;" /><p><%# DataBinder.Eval(Container.DataItem, "title3")%></p></div>
+											<div class="rsp"></div>
+											<div class="text">
+												<a href="productdetail.aspx?id=<%# DataBinder.Eval(Container.DataItem, "id3")%>" target="_parent">
+													<h3><%# DataBinder.Eval(Container.DataItem, "title3")%></h3>
+												<p style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;"><%# DataBinder.Eval(Container.DataItem, "content3")%></p>
+												<div>TIME :<%# DataBinder.Eval(Container.DataItem, "datetime3")%></div>
 												</a>
 											</div>
 										</li>
@@ -42,6 +68,11 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        $(function() {
+            $(".lid").hide();
+        });
+    </script>
     <script src="js/all.js" type="text/javascript"></script>
 </form>
 </body>

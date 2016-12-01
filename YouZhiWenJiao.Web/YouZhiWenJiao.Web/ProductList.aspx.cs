@@ -51,11 +51,68 @@ where (deleted <> 1 or deleted is null) and showinhomepage = 1 and typeid=@TypeI
 			{
 				dt.Rows[rowIndex]["content"] = NoHtml(dt.Rows[rowIndex]["content"].ToString()).Substring(0, 100);
 			}
-			int iAllCount = dt.Rows.Count;
+
+			DataTable newData = new DataTable();
+			newData.Columns.Add("id1",typeof(string));
+			newData.Columns.Add("title1",typeof(string));
+			newData.Columns.Add("content1",typeof(string));
+			newData.Columns.Add("picture1",typeof(string));
+			newData.Columns.Add("datetime1", typeof(string));
+			newData.Columns.Add("id2",typeof(string));
+			newData.Columns.Add("title2",typeof(string));
+			newData.Columns.Add("content2",typeof(string));
+			newData.Columns.Add("picture2",typeof(string));
+			newData.Columns.Add("datetime2", typeof(string));
+			newData.Columns.Add("id3",typeof(string));
+			newData.Columns.Add("title3",typeof(string));
+			newData.Columns.Add("content3",typeof(string));
+			newData.Columns.Add("picture3", typeof(string));
+			newData.Columns.Add("datetime3", typeof(string));
+
+			DataRow dr = null;
+			for(int rowIndex = 1; rowIndex <= dt.Rows.Count; rowIndex++)
+			{
+				if((rowIndex % 3) == 1)
+				{
+					dr = newData.NewRow();
+					dr["id1"] = dt.Rows[rowIndex - 1]["id"];
+					dr["title1"] = dt.Rows[rowIndex - 1]["title"];
+					dr["content1"] = dt.Rows[rowIndex - 1]["content"];
+					dr["picture1"] = dt.Rows[rowIndex - 1]["picture"];
+					dr["datetime1"] = dt.Rows[rowIndex - 1]["datetime"];
+				}
+				if((rowIndex % 3) == 2)
+				{
+					dr["id2"] = dt.Rows[rowIndex - 1]["id"];
+					dr["title2"] = dt.Rows[rowIndex - 1]["title"];
+					dr["content2"] = dt.Rows[rowIndex - 1]["content"];
+					dr["picture2"] = dt.Rows[rowIndex - 1]["picture"];
+					dr["datetime2"] = dt.Rows[rowIndex - 1]["datetime"];
+				}
+				if((rowIndex % 3) == 0)
+				{
+					dr["id3"] = dt.Rows[rowIndex - 1]["id"];
+					dr["title3"] = dt.Rows[rowIndex - 1]["title"];
+					dr["content3"] = dt.Rows[rowIndex - 1]["content"];
+					dr["picture3"] = dt.Rows[rowIndex - 1]["picture"];
+					dr["datetime3"] = dt.Rows[rowIndex - 1]["datetime"];
+					newData.Rows.Add(dr);
+				}
+				else
+				{
+					if(rowIndex == dt.Rows.Count)
+					{
+						newData.Rows.Add(dr);
+					}
+				}
+			}
+
+
+			int iAllCount = newData.Rows.Count;
 			int iPageSize = rptDate.PageSize;
 			int iNum = iAllCount % iPageSize;
 
-			rptDate.DataSource = dt.DefaultView;
+			rptDate.DataSource = newData.DefaultView;
 			rptDate.DataBind();
 		}
 
