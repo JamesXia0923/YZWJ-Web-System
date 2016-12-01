@@ -52,7 +52,7 @@
           'top': offset.top,
           'width': cursorSize[0]*settings.magnification,
           'height': cursorSize[1]*settings.magnification,
-          'background':'#000',
+          'background':'rgba(0,0,0,0)',
           'z-index':2147483647,
           'overflow':'hidden',
           'border': settings.zoomviewborder
