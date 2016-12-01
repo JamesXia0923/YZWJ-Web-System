@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="muiltipleproduct.aspx.cs" Inherits="YouZhiWenJiao.Web.muiltipleproduct" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="muiltipleproduct.aspx.cs" Inherits="YouZhiWenJiao.Web.muiltipleproduct" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>上海优智文教</title>
+<meta charset="utf-8">
+<title>�Ϻ������Ľ�</title>
 <link href="css/master.css" type="text/css" rel="stylesheet" />
 <link href="css/base.css" type="text/css" rel="stylesheet" />
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
@@ -17,11 +17,11 @@
 </head>
 
 <body>
-<!--头部-->
+<!--ͷ��-->
     <div><iframe frameborder="0" scrolling="no" width="100%" height="405px" src="header.aspx"></iframe></div>
     <div class="block">
 	    <div>
-	        <div class="navmenu"><span>您现在的位置: <a href="#">户外用品</a> > 产品1</span> 产品1</div>
+	        <div class="navmenu"><span>�����ڵ�λ��: <a href="#">������Ʒ</a> > ��Ʒ1</span> ��Ʒ1</div>
 	        <div class="container">
 	            <div class="products">
                     <div class="products-grids">
@@ -65,7 +65,7 @@
             </div>
         </div>
     </div>
-<!--底部-->    
+<!--�ײ�-->    
 	<div><iframe frameborder="0" scrolling="no" width="100%" class="h390" src="footer.aspx"></iframe></div>
 </body>
 </html>

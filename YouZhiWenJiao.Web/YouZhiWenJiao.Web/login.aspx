@@ -1,10 +1,10 @@
-Ôªø<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="YouZhiWenJiao.Web.login" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="YouZhiWenJiao.Web.login" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>‰∏äÊµ∑‰ºòÊô∫ÊñáÊïô</title>
+    <meta charset="utf-8">
+    <title>…œ∫£”≈÷«ŒƒΩÃ</title>
     <link href="css/master.css" type="text/css" rel="stylesheet" />
     <link href="css/base.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -12,11 +12,11 @@
 </head>
 <body>
     <form runat ="server" id="form1">
-    <!--Â§¥ÈÉ®-->
+    <!--Õ∑≤ø-->
     <div>
         <iframe frameborder="0" scrolling="no" width="100%" height="405px" src="header.aspx"></iframe>
     </div>
-    <!--ÊñáÂ≠óÂàóË°®È°µ‰∏ª‰Ωì-->
+    <!--Œƒ◊÷¡–±Ì“≥÷˜ÃÂ-->
     <div class="block">
         <div style="overflow: hidden;">
             <div class="login fleft">
@@ -25,20 +25,20 @@
                 <table border="0" cellpadding="0" cellspacing="0" width="620px">
                     <tr>
                         <td width="65px">
-                            Áî®Êà∑ÂêçÔºö
+                            ”√ªß√˚£∫
                         </td>
                         <td colspan="2" width="275px">
                             <input type="text" class="log_inp" id="txtLoginName" runat="server" tabindex="1" onclick="checkform()" />
                             <span runat="server" id="spanName" style=" color:red"></span>
                         </td>
                         <td rowspan="3" align="center" width="105px">
-                            <input type="submit" class="log_btn1" value="ÁôªÂΩï" runat="server" id="loginBtn" onserverclick="loginClick"
+                            <input type="submit" class="log_btn1" value="µ«¬º" runat="server" id="loginBtn" onserverclick="loginClick"
                                 tabindex="4" />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            ÂØÜÁ†ÅÔºö
+                            √‹¬Î£∫
                         </td>
                         <td colspan="2">
                             <input type="password" class="log_inp" id="txtPassword" runat="server" tabindex="2" onclick="checkform()" />
@@ -47,14 +47,14 @@
                     </tr>
                     <tr>
                         <td>
-                            È™åËØÅÁ†ÅÔºö
+                            —È÷§¬Î£∫
                         </td>
                         <td width="110">
                             <input type="text" class="log_inp1" id="txtYzm" runat="server" tabindex="3" onclick="checkform()" />
                         </td>
                         <td align="left">
-                            <img style="width: 80px; height: 20px; cursor: pointer" id="image1" title="Áúã‰∏çÊ∏ÖÊ•ö?Êç¢‰∏ÄÂº†"
-                                alt="È™åËØÅÁ†Å" src="CheckCode.aspx" onclick="src='CheckCode.aspx?s='+Math.random()" />
+                            <img style="width: 80px; height: 20px; cursor: pointer" id="image1" title="ø¥≤ª«Â≥˛?ªª“ª’≈"
+                                alt="—È÷§¬Î" src="CheckCode.aspx" onclick="src='CheckCode.aspx?s='+Math.random()" />
                         </td>
                     </tr>
                     <tr>

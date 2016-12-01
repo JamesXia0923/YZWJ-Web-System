@@ -1,11 +1,11 @@
-ï»¿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="YouZhiWenJiao.Web.index" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="YouZhiWenJiao.Web.index" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ä¸Šæµ·ä¼˜æ™ºæ–‡æ•™</title>
+<meta charset="utf-8">
+<title>ÉÏº£ÓÅÖÇÎÄ½Ì</title>
 <link href="css/master.css" type="text/css" rel="stylesheet" />
 <link href="css/base.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -13,9 +13,9 @@
 </head>
 
 <body>
-    <!--å¤´éƒ¨-->
+    <!--Í·²¿-->
     <div><iframe frameborder="0" scrolling="no" width="100%" height="405px" src="header.aspx"></iframe></div>
-    <!--é¦–é¡µä¸»ä½“--> 
+    <!--Ê×Ò³Ö÷Ìå--> 
     <div class="xc_pic ofHidden clearfix">
         <div class="block clearfix ofHidden">
             <b></b>
@@ -29,14 +29,14 @@
 	</div> 
     <div class="clearfix ofHidden block yh pt20">
     	<div class="index_left fleft">
-        	<div class="t1">äº§å“å±•ç¤º <span class="f14 c_666">Product</span></div>            
-            <!--ä¹å®«æ ¼-->
+        	<div class="t1">²úÆ·Õ¹Ê¾ <span class="f14 c_666">Product</span></div>            
+            <!--¾Å¹¬¸ñ-->
             <div class="ge ofHidden">
-            	<div class="w410 fleft h280 ofHidden"><a href="producttypelist.aspx" class="h280"><img src="productimages/product1.jpg" width="410" height="280"><p class="f16">æˆ·å¤–ç”¨å“</p><b class="h45"></b></a></div>
-                <div class="w410 fright h140 ofHidden"><a href="producttypelist.aspx" class="h140"><img src="productimages/product2.jpg" width="410" height="140"><p class="f14">å®¤å†…ç”¨å“</p><b class="h30"></b></a></div>
+            	<div class="w410 fleft h280 ofHidden"><a href="producttypelist.aspx" class="h280"><img src="productimages/product1.jpg" width="410" height="280"><p class="f16">»§ÍâÓÃÆ·</p><b class="h45"></b></a></div>
+                <div class="w410 fright h140 ofHidden"><a href="producttypelist.aspx" class="h140"><img src="productimages/product2.jpg" width="410" height="140"><p class="f14">ÊÒÄÚÓÃÆ·</p><b class="h30"></b></a></div>
                 <div class="w410 fright mt10">
-                	<span class="w200 fleft h130 ofHidden"><a href="producttypelist.aspx" class="h130"><img src="productimages/product3.jpg" width="200" height="130"><p class="f14">å­¦ä¹ ç”¨å“</p><b class="h30"></b></a></span>
-                    <span class="w200 fright h130 ofHidden"><a href="producttypelist.aspx" class="h130"><img src="productimages/product4.jpg" width="200" height="130"><p class="f14">å¯“æ•™äºä¹</p><b class="h30"></b></a></span>
+                	<span class="w200 fleft h130 ofHidden"><a href="producttypelist.aspx" class="h130"><img src="productimages/product3.jpg" width="200" height="130"><p class="f14">Ñ§Ï°ÓÃÆ·</p><b class="h30"></b></a></span>
+                    <span class="w200 fright h130 ofHidden"><a href="producttypelist.aspx" class="h130"><img src="productimages/product4.jpg" width="200" height="130"><p class="f14">Ô¢½ÌÓÚÀÖ</p><b class="h30"></b></a></span>
                 </div>
             </div>
             
@@ -45,7 +45,7 @@
         
         
     	<div class="index_right fright">
-        	<div class="t1">éŸ³é¢‘ä¸­å¿ƒ <span class="f14 c_666">Video Center</span></div>
+        	<div class="t1">ÒôÆµÖĞĞÄ <span class="f14 c_666">Video Center</span></div>
             <ul class="alzs clearfix ofHidden">
             <%int i = 0; %>
             <%foreach (var product in downloadList) %>
@@ -62,7 +62,7 @@
             <%} %>
             </ul>
             
-            <div class="t1 mt20">ä¼ä¸šå®£ä¼ ç‰‡ <span class="f14 c_666">Trailer</span></div>
+            <div class="t1 mt20">ÆóÒµĞû´«Æ¬ <span class="f14 c_666">Trailer</span></div>
             <p class="mt20">
             <video src="<%=myVideo.video %>" controls="controls" poster="<%=myVideo.picture %>" style = "width:270px;height:168px;background-color:#000;">
             <embed src="<%=myVideo.video %>" width="270" height="168" /> 
@@ -72,7 +72,7 @@
             </p>
         </div>
     </div>
-    <!--åº•éƒ¨--> 
+    <!--µ×²¿--> 
 	<div style="margin-top:10px"><iframe frameborder="0" scrolling="no" width="100%" class="h390" src="footer.aspx"></iframe></div>
 	<script src="js/all.js" type="text/javascript"></script>
 </body>

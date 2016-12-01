@@ -1,12 +1,12 @@
-О╩©<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="news.aspx.cs" Inherits="YouZhiWenJiao.Web.news" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="news.aspx.cs" Inherits="YouZhiWenJiao.Web.news" %>
 <%@ Register TagPrefix="Control" Namespace="YouZhiWenJiao.Web.Manage.css" Assembly="YouZhiWenJiao.Web" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Д╦┼Ф╣╥Д╪≤Ф≥╨Ф√┤Ф∙≥</title>
+<meta charset="utf-8">
+<title>ио╨ёсежгнд╫л</title>
 <link href="css/master.css" type="text/css" rel="stylesheet" />
 <link href="css/base.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -14,12 +14,12 @@
 </head>
 <body>
 <form id="form1" runat="server">
-	<!--Е╓╢И┐╗-->
+	<!--м╥╡©-->
 	<div><iframe frameborder="0" scrolling="no" width="100%" height="405px" src="header.aspx"></iframe></div>
-	<!--Ф√┤Е╜≈Е┬≈Х║╗И║╣Д╦╩Д╫⌠-->
+	<!--ндвжап╠МрЁжВлЕ-->
 	<div class="newsbox yh">
 		<div class="block">
-			<div class="navmenu"><span>Ф┌╗Г▌╟Е°╗Г └Д╫█Г╫╝: <a href="index.aspx">И╕√И║╣</a> > Е┘╛Е▐╦Ф√╟И≈╩</span>Е┘╛Е▐╦Ф√╟И≈╩</div>
+			<div class="navmenu"><span>дЗожтз╣дн╩жц: <a href="index.aspx">йврЁ</a> > ╧╚к╬пбне</span>╧╚к╬пбне</div>
 			<div class="text-list yh">
 				<ul>
 					<table class="talist">
@@ -43,7 +43,7 @@
 			</div>
 		</div>
 	</div>
-	<!--Е╨∙И┐╗--> 
+	<!--╣в╡©--> 
 	<div><iframe frameborder="0" scrolling="no" width="100%" class="h390" src="footer.aspx"></iframe></div>
 </form>
 </body>

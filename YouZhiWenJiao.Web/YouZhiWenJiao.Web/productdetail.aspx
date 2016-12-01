@@ -1,10 +1,10 @@
-О╩©<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="productdetail.aspx.cs" Inherits="YouZhiWenJiao.Web.productdetail"%>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="productdetail.aspx.cs" Inherits="YouZhiWenJiao.Web.productdetail"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Д╦┼Ф╣╥Д╪≤Ф≥╨Ф√┤Ф∙≥</title>
+<meta charset="utf-8">
+<title>ио╨ёсежгнд╫л</title>
 <link href="css/master.css" type="text/css" rel="stylesheet" />
 <link href="css/base.css" type="text/css" rel="stylesheet" />
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
@@ -17,12 +17,12 @@
 
 <body>
 <form id="form1" runat="server">
-<!--Е╓╢И┐╗-->
+<!--м╥╡©-->
 <div><iframe frameborder="0" scrolling="no" width="100%" height="405px" src="header.aspx"></iframe></div>
-<!--Д╨╖Е⌠│Д©║Ф│╞-->    
-    <!--Е█∙Д╦╙Д╨╖Е⌠│-->
+<!--╡Зф╥пео╒-->    
+    <!--╣╔╦Ж╡Зф╥-->
     <div class="block">
-        <div class="navmenu"><span>Ф┌╗Г▌╟Е°╗Г └Д╫█Г╫╝: <a href="producttypelist.aspx?id=<%=Product.categoryid %>" ><%=ModuleType %>></a> > <%=ProductType %>></span> <%=ProductType %>></div>
+        <div class="navmenu"><span>дЗожтз╣дн╩жц: <a href="producttypelist.aspx?id=<%=Product.categoryid %>" ><%=ModuleType %>></a> > <%=ProductType %>></span> <%=ProductType %>></div>
 	    <div class="container">
 	        <div class="products">
 		        <div class="products-grids">
@@ -47,7 +47,7 @@
         </div>
     </div>
 
-<!--Е╨∙И┐╗--> 
+<!--╣в╡©--> 
 	<div><iframe frameborder="0" scrolling="no" width="100%" class="h390" src="footer.aspx?categoryid=<%=Product.categoryid %>&typeid=<%=Product.typeid %>"></iframe></div>   
 
 	<script src="js/all.js" type="text/javascript"></script>

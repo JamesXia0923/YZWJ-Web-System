@@ -1,10 +1,10 @@
-ï»¿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="productlist.aspx.cs" Inherits="YouZhiWenJiao.Web.productlist" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="productlist.aspx.cs" Inherits="YouZhiWenJiao.Web.productlist" %>
 <%@ Register TagPrefix="Control" Namespace="YouZhiWenJiao.Web.Manage.css" Assembly="YouZhiWenJiao.Web" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>ä¸Šæµ·ä¼˜æ™ºæ–‡æ•™</title>
+    <meta charset="utf-8">
+    <title>ÉÏº£ÓÅÖÇÎÄ½Ì</title>
     <link href="css/master.css" type="text/css" rel="stylesheet" />
     <link href="css/base.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -12,7 +12,7 @@
 </head>
 <body>
 <form id="form1" runat="server">
-    <!--å›¾ç‰‡åˆ—è¡¨é¡µä¸»ä½“-->
+    <!--Í¼Æ¬ÁÐ±íÒ³Ö÷Ìå-->
     <div class="newsbox yh">
         <div class="block">
             <div class="pic_list">
@@ -29,7 +29,7 @@
 												<a href="productdetail.aspx?id=<%# DataBinder.Eval(Container.DataItem, "id1")%>" target="_parent">
 													<h3><%# DataBinder.Eval(Container.DataItem, "title1")%></h3>
 												<p style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;"><%# DataBinder.Eval(Container.DataItem, "content1")%></p>
-												<div>æ—¥æœŸ :<%# DataBinder.Eval(Container.DataItem, "datetime1")%></div>
+												<div>ÈÕÆÚ :<%# DataBinder.Eval(Container.DataItem, "datetime1")%></div>
 												</a>
 											</div>
 										</li>
@@ -42,7 +42,7 @@
 												<a href="productdetail.aspx?id=<%# DataBinder.Eval(Container.DataItem, "id2")%>" target="_parent">
 													<h3><%# DataBinder.Eval(Container.DataItem, "title2")%></h3>
 												<p style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;"><%# DataBinder.Eval(Container.DataItem, "content2")%></p>
-												<div>æ—¥æœŸ :<%# DataBinder.Eval(Container.DataItem, "datetime2")%></div>
+												<div>ÈÕÆÚ :<%# DataBinder.Eval(Container.DataItem, "datetime2")%></div>
 												</a>
 											</div>
 										</li>
@@ -55,7 +55,7 @@
 												<a href="productdetail.aspx?id=<%# DataBinder.Eval(Container.DataItem, "id3")%>" target="_parent">
 													<h3><%# DataBinder.Eval(Container.DataItem, "title3")%></h3>
 												<p style="overflow: hidden; text-overflow:ellipsis; white-space: nowrap;"><%# DataBinder.Eval(Container.DataItem, "content3")%></p>
-												<div>æ—¥æœŸ :<%# DataBinder.Eval(Container.DataItem, "datetime3")%></div>
+												<div>ÈÕÆÚ :<%# DataBinder.Eval(Container.DataItem, "datetime3")%></div>
 												</a>
 											</div>
 										</li>

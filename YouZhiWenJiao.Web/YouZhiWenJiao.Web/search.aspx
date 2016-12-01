@@ -1,11 +1,11 @@
-ï»¿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="search.aspx.cs" Inherits="YouZhiWenJiao.Web.search" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="search.aspx.cs" Inherits="YouZhiWenJiao.Web.search" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ä¸Šæµ·ä¼˜æ™ºæ–‡æ•™</title>
+<meta charset="utf-8">
+<title>ÉÏº£ÓÅÖÇÎÄ½Ì</title>
 <link href="css/master.css" type="text/css" rel="stylesheet" />
 <link href="css/base.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -13,12 +13,12 @@
 </head>
 <body>
 <form id="form1" runat="server">
-    <!--å¤´éƒ¨-->
+    <!--Í·²¿-->
     <div><iframe frameborder="0" scrolling="no" width="100%" height="405px" src="header.aspx"></iframe></div>
-    <!--æ–‡å­—åˆ—è¡¨é¡µä¸»ä½“-->
+    <!--ÎÄ×ÖÁÐ±íÒ³Ö÷Ìå-->
     <div class="newsbox yh">
     	<div class="block">
-        	<div class="navmenu"><span>æ‚¨çŽ°åœ¨çš„ä½ç½®: <a href="index.aspx">é¦–é¡µ</a> > æœç´¢ç»“æžœ</span><%=SearchWD %></div>
+        	<div class="navmenu"><span>ÄúÏÖÔÚµÄÎ»ÖÃ: <a href="index.aspx">Ê×Ò³</a> > ËÑË÷½á¹û</span><%=SearchWD %></div>
             
             <div class="text-list yh">
 				<ul>
@@ -30,7 +30,7 @@
 				            <div class="fright">
 				                    <p class="bt"><a href="profile.aspx" target="_parent"><%=corporateNews.title%></a></p>
 				                    <p class="jj"><a href="profile.aspx" target="_parent"><%=corporateNews.content%></a></p>
-				                    <p class="ck"><span>åˆ†ç±» : å…¬å¸ç®€ä»‹</span><span class="time"><%=corporateNews.datetime%></span></p>
+				                    <p class="ck"><span>·ÖÀà : ¹«Ë¾¼ò½é</span><span class="time"><%=corporateNews.datetime%></span></p>
 				                <%} %>
 				                <%if (corporateNews.categoryid == 2) %>
 				                <%{ %>
@@ -38,7 +38,7 @@
 				            <div class="fright">
 				                    <p class="bt"><a href="newsdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.title%></a></p>
 				                    <p class="jj"><a href="newsdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.content%></a></p>
-				                    <p class="ck"><span>åˆ†ç±» : å…¬å¸æ–°é—»</span><span class="time"><%=corporateNews.datetime%></span></p>
+				                    <p class="ck"><span>·ÖÀà : ¹«Ë¾ÐÂÎÅ</span><span class="time"><%=corporateNews.datetime%></span></p>
 				                <%} %>
 				                <%if (corporateNews.categoryid == 3) %>
 				                <%{ %>
@@ -46,7 +46,7 @@
 				            <div class="fright">
 				                    <p class="bt"><a href="productdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.title%></a></p>
 				                    <p class="jj"><a href="productdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.content%></a></p>
-				                    <p class="ck"><span>åˆ†ç±» : å›­æ‰€è£…å¤‡</span><span class="time"><%=corporateNews.datetime%></span></p>
+				                    <p class="ck"><span>·ÖÀà : Ô°Ëù×°±¸</span><span class="time"><%=corporateNews.datetime%></span></p>
 				                <%} %>
 				                <%if (corporateNews.categoryid == 4) %>
 				                <%{ %>
@@ -54,7 +54,7 @@
 				            <div class="fright">
 				                    <p class="bt"><a href="productdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.title%></a></p>
 				                    <p class="jj"><a href="productdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.content%></a></p>
-				                    <p class="ck"><span>åˆ†ç±» : å›­é•¿ä¹¦åº“</span><span class="time"><%=corporateNews.datetime%></span></p>
+				                    <p class="ck"><span>·ÖÀà : Ô°³¤Êé¿â</span><span class="time"><%=corporateNews.datetime%></span></p>
 				                <%} %>
 				                <%if (corporateNews.categoryid == 5) %>
 				                <%{ %>
@@ -62,7 +62,7 @@
 				            <div class="fright">
 				                    <p class="bt"><a href="productdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.title%></a></p>
 				                    <p class="jj"><a href="productdetail.aspx?id=<%=corporateNews.id %>" target="_parent"><%=corporateNews.content%></a></p>
-				                    <p class="ck"><span>åˆ†ç±» : æ•™å¸ˆä¹¦åº“</span><span class="time"><%=corporateNews.datetime%></span></p>
+				                    <p class="ck"><span>·ÖÀà : ½ÌÊ¦Êé¿â</span><span class="time"><%=corporateNews.datetime%></span></p>
 				                <%} %>
 				                <%if (corporateNews.categoryid == 6) %>
 				                <%{ %>
@@ -70,7 +70,7 @@
 				            <div class="fright">
 				                    <p class="bt"><a href="<%=corporateNews.video %>" target="_parent"><%=corporateNews.title%></a></p>
 				                    <p class="jj"><a href="<%=corporateNews.video %>" target="_parent"><%=corporateNews.content%></a></p>
-				                    <p class="ck"><span>åˆ†ç±» : èµ„æ–™ä¸‹è½½</span><span class="time"><%=corporateNews.datetime%></span></p>
+				                    <p class="ck"><span>·ÖÀà : ×ÊÁÏÏÂÔØ</span><span class="time"><%=corporateNews.datetime%></span></p>
 				                <%} %>
 				            </div>
 				        </li>
@@ -80,7 +80,7 @@
 			</div>
         </div>
     </div>	
-    <!--åº•éƒ¨--> 
+    <!--µ×²¿--> 
 	<div><iframe frameborder="0" scrolling="no" width="100%" class="h390" src="footer.aspx"></iframe></div>
 </form>
 </body>

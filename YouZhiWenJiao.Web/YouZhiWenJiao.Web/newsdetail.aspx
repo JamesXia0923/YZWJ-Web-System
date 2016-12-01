@@ -1,11 +1,11 @@
-О╩©<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="newsdetail.aspx.cs" Inherits="YouZhiWenJiao.Web.newsdetail" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="newsdetail.aspx.cs" Inherits="YouZhiWenJiao.Web.newsdetail" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Д╦┼Ф╣╥Д╪≤Ф≥╨Ф√┤Ф∙≥</title>
+    <meta charset="utf-8">
+    <title>ио╨ёсежгнд╫л</title>
     <link href="css/master.css" type="text/css" rel="stylesheet" />
     <link href="css/base.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -13,15 +13,15 @@
 </head>
 <body>
 <form id="form1" runat="server">
-     <!--Е╓╢И┐╗-->
+     <!--м╥╡©-->
     <div><iframe frameborder="0" scrolling="no" width="100%" height="405px" src="header.aspx"></iframe></div>
-    <!--Ф√┤Е╜≈Е┬≈Х║╗И║╣Д╦╩Д╫⌠-->
+    <!--ндвжап╠МрЁжВлЕ-->
     <div class="newsbox">
     	<div class="block">
-        	<div class="navmenu yh"><span>Ф┌╗Г▌╟Е°╗Г └Д╫█Г╫╝: <a href="CorporateNews.aspx?id=<%=CorporateNewsType.id %>"><%=CorporateNewsType.description %></a> > <%=CorporateNewsDetails.title%></span><%=CorporateNewsDetails.title%></div>
+        	<div class="navmenu yh"><span>дЗожтз╣дн╩жц: <a href="CorporateNews.aspx?id=<%=CorporateNewsType.id %>"><%=CorporateNewsType.description %></a> > <%=CorporateNewsDetails.title%></span><%=CorporateNewsDetails.title%></div>
             <div class="newsnr">
            	  <h1 class="newstitle"><%=CorporateNewsDetails.title %></h1>
-                <span class="newsxx">Е▐▒Е╦┐Ф≈╤И≈╢: <%=CorporateNewsDetails.datetime %>&nbsp;&nbsp;&nbsp;&nbsp;Ф²╔Ф╨░: Д╪≤Ф≥╨Ф√┤Ф∙≥</span>
+                <span class="newsxx">╥╒╡╪й╠╪Д: <%=CorporateNewsDetails.datetime %>&nbsp;&nbsp;&nbsp;&nbsp;ю╢т╢: сежгнд╫л</span>
                 <div class="content yh">
                	    <p><%=CorporateNewsDetails.content %></p>
                 </div>
@@ -29,7 +29,7 @@
         </div>
     </div>	
     
-    <!--Е╨∙И┐╗--> 
+    <!--╣в╡©--> 
 	<div><iframe frameborder="0" scrolling="no" width="100%" class="h390" src="footer.aspx"></iframe></div>
 </form>
 </body>
