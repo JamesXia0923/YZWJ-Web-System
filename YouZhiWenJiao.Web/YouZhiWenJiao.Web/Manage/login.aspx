@@ -31,7 +31,7 @@
               <tr height=36>
                 <td></td>
                 <td>用户名</td>
-                <td><asp:TextBox ID="txtName" runat="server" Text="管理员"  style="border-right: #000000 1px solid; border-top: #000000 1px solid; border-left: #000000 1px solid; border-bottom: #000000 1px solid" ></asp:TextBox>
+                <td><asp:TextBox ID="txtName" runat="server" style="border-right: #000000 1px solid; border-top: #000000 1px solid; border-left: #000000 1px solid; border-bottom: #000000 1px solid" ></asp:TextBox>
                 </td></tr>
               <tr height=36>
                 <td>&nbsp; </td>
