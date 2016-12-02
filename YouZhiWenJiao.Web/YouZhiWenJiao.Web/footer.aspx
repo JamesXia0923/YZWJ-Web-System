@@ -30,7 +30,7 @@
 	<div class="foot clearfix">
 		<div class="block">
 			<div class="fleft">
-				<p><a href="" class="a1">联系我们</a>|<a href="" class="a2">公司诚聘</a>|<a href="" class="a3">合作伙伴</a>|<a href="" class="a4">网站地图</a></p>
+				<p><a href="aboutMe.html" class="a1" target="_parent">联系我们</a>|<a href="index.aspx" class="a2" target="_parent">公司首页</a>|<a href="profile.aspx" class="a3" target="_parent">公司介绍</a>|<a href="news.aspx" class="a4" target="_parent">活动公告</a></p>
 				<p>Copyright © 2016 www.shqxh.com,All Rights Reserved</p>
 				<p>版权所有  上海优智文教用品有限公司</p>
 			</div>
