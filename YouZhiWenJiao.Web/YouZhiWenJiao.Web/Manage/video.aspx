@@ -47,7 +47,7 @@
 					<ITEMTEMPLATE>
 						<tr align="center">
 						<td><input type="checkbox" value='<%#DataBinder.Eval(Container.DataItem,"ID")%>' name="chkEleId"/></td >
-							<td ><%# DataBinder.Eval(Container.DataItem,"Number")%></td >
+							<td ><a href='video_edit.aspx?id=<%# DataBinder.Eval(Container.DataItem,"ID")%>'><%# DataBinder.Eval(Container.DataItem, "Number")%></a></td >
 							<td height="25" style="text-align:center"><a href='video_edit.aspx?id=<%# DataBinder.Eval(Container.DataItem,"ID")%>'><%# DataBinder.Eval(Container.DataItem, "Title")%></a></td>
 							<td height="25"><%# DataBinder.Eval(Container.DataItem, "DateTime")%></td >
 							<td height="25"><%# DataBinder.Eval(Container.DataItem, "ShowInHomePage")%></td >
