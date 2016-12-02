@@ -23,7 +23,7 @@ namespace YouZhiWenJiao.Web.Manage
 		protected void btnLog_Click(object sender, ImageClickEventArgs e)
 		{
 			Session["user"] = txtName.Text;
-			sqlCmd.CommandText = "select id from user where name=@name and password=@password";
+			sqlCmd.CommandText = "select id from user where name=@name and password=@password and typeid=1 and categoryid=" + (int)category.系统用户;
 			sqlCmd.Parameters.Add("@name", DbType.String, 20);
 			sqlCmd.Parameters.Add("@password", DbType.String, 50);
 			sqlCmd.Parameters["@name"].Value = Session["user"];
