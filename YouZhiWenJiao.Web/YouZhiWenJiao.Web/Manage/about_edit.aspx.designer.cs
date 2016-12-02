@@ -59,33 +59,6 @@ namespace YouZhiWenJiao.Web.Manage {
         protected global::System.Web.UI.WebControls.DropDownList ddlListType;
         
         /// <summary>
-        /// InputFile control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputFile InputFile;
-        
-        /// <summary>
-        /// Lb_Info control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Lb_Info;
-        
-        /// <summary>
-        /// image control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image image;
-        
-        /// <summary>
         /// ftbContent control.
         /// </summary>
         /// <remarks>

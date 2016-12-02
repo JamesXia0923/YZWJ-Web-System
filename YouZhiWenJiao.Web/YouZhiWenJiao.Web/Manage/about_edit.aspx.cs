@@ -54,8 +54,8 @@ order by type.id";
 						txtTitle.Text = dr[0].ToString();
 						ftbContent.Text = dr[1].ToString();
 						datetime.SelectedDate = DateTime.Parse(dr[2].ToString());
-						ViewState["image"] = dr[3].ToString();
-						image.ImageUrl = ViewState["image"].ToString();
+						//ViewState["image"] = dr[3].ToString();
+						//image.ImageUrl = ViewState["image"].ToString();
 						ddlListType.SelectedValue = dr[4].ToString();
 					}
 					dr.Close();
@@ -70,38 +70,38 @@ order by type.id";
 
 		protected void btnOK_Click(object sender, System.EventArgs e)
 		{
-			string uploadName = InputFile.Value;//获取待上传图片的完整路径，包括文件名  
-			string pictureName = "";//上传后的图片名，以当前时间为文件名，确保文件名没有重复 
-			imgUrl = "";
-			if (InputFile.Value != "")
-			{
-				int idx = uploadName.LastIndexOf(".");
-				string suffix = uploadName.Substring(idx);//获得上传的图片的后缀名         
+			//string uploadName = InputFile.Value;//获取待上传图片的完整路径，包括文件名  
+			//string pictureName = "";//上传后的图片名，以当前时间为文件名，确保文件名没有重复 
+			//imgUrl = "";
+			//if (InputFile.Value != "")
+			//{
+			//    int idx = uploadName.LastIndexOf(".");
+			//    string suffix = uploadName.Substring(idx);//获得上传的图片的后缀名         
 
-				pictureName = DateTime.Now.Ticks.ToString() + suffix;
-				try
-				{
-					if (uploadName != "")
-					{
-						string AppUrl = "";
-						if (Request.ApplicationPath == "/")
-							AppUrl = Request.ApplicationPath;
-						else
-							AppUrl = Request.ApplicationPath + "/";
-						string path = Server.MapPath(AppUrl + "img/" + pictureName);
-						InputFile.PostedFile.SaveAs(path);
-						imgUrl = AppUrl + "img/" + pictureName;
-					}
-				}
-				catch (Exception ex)
-				{
-					Response.Write(ex);
-				}
-			}
-			else
-			{
-				imgUrl = ViewState["image"] == null ? "" : ViewState["image"].ToString();
-			}
+			//    pictureName = DateTime.Now.Ticks.ToString() + suffix;
+			//    try
+			//    {
+			//        if (uploadName != "")
+			//        {
+			//            string AppUrl = "";
+			//            if (Request.ApplicationPath == "/")
+			//                AppUrl = Request.ApplicationPath;
+			//            else
+			//                AppUrl = Request.ApplicationPath + "/";
+			//            string path = Server.MapPath(AppUrl + "img/" + pictureName);
+			//            InputFile.PostedFile.SaveAs(path);
+			//            imgUrl = AppUrl + "img/" + pictureName;
+			//        }
+			//    }
+			//    catch (Exception ex)
+			//    {
+			//        Response.Write(ex);
+			//    }
+			//}
+			//else
+			//{
+			//    imgUrl = ViewState["image"] == null ? "" : ViewState["image"].ToString();
+			//}
 
 			if (productId != "")
 			{
