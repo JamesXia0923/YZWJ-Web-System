@@ -29,6 +29,10 @@ namespace YouZhiWenJiao.Web
 
 		protected void loginClick(object sender, EventArgs e)
 		{
+            this.spanName.InnerText = "";
+            this.spanPwd.InnerText = "";
+            this.spanYzm.InnerText = "";
+
 			if(txtLoginName.Value == "")
 			{
 				this.spanName.Visible = true;
@@ -68,8 +72,9 @@ namespace YouZhiWenJiao.Web
 			}
 			else
 			{
-				//Alert("您好，您不属于本区域居民，没有权限访问。谢谢！");
-				//return;
+                this.spanYzm.Visible = true;
+                this.spanYzm.InnerText = "用户名或密码错误！";
+                return;
 			}
 
 			if (Session["UrlReferrer"] == null)
