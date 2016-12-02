@@ -12,8 +12,8 @@
 				<tr>
 					<td id='top' valign="top">
 						<table cellspacing=0 cellpadding=0  style=" height:100%; width:100%" background="images/header_bg.jpg" border=0>
-							<tr height=56>
-								<td width=260><img height=56 src="images/header_left.jpg" width="260"></td>
+							<tr height="56">
+								<td width=260 valign="top"><img src="images/header_left.jpg" width="260" height="56"></td>
 								<td style="font-weight: bold; color: #fff; padding-top: 20px" align="center">当前用户：<%=StrName %>&nbsp;&nbsp;<a style="color: #fff" href="pass.aspx" target=main>修改口令</a> &nbsp;&nbsp;<a style="color: #fff"  href="login.aspx" target=_top>退出系统</a>&nbsp;&nbsp;<a style="color: #fff"  href="../index.aspx" target="_blank" >首页</a> </td>
 								<td align=right width=268 valign="top"><img height=56 src="images/header_right.jpg" width="268"></td>
 							</tr>
