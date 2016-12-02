@@ -35,7 +35,7 @@
                 </td></tr>
               <tr height=36>
                 <td>&nbsp; </td>
-                <td>口　令</td>
+                <td>密　码</td>
                 <td><asp:TextBox ID="txtPass" runat="server" TextMode="Password"  style="border-right: #000000 1px solid; border-top: #000000 1px solid; border-left: #000000 1px solid; border-bottom: #000000 1px solid" ></asp:TextBox></td></tr>
               <tr height=5>
                 <td colspan=3></td></tr>

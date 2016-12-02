@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CheckCode.aspx" />
+    <Content Include="Manage\pass.aspx" />
     <Content Include="news.aspx" />
     <Content Include="newsdetail.aspx" />
     <Content Include="images\log_3.jpg" />
@@ -390,6 +391,13 @@
     </Compile>
     <Compile Include="CheckCode.aspx.designer.cs">
       <DependentUpon>CheckCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\pass.aspx.cs">
+      <DependentUpon>pass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\pass.aspx.designer.cs">
+      <DependentUpon>pass.aspx</DependentUpon>
     </Compile>
     <Compile Include="news.aspx.cs">
       <DependentUpon>news.aspx</DependentUpon>

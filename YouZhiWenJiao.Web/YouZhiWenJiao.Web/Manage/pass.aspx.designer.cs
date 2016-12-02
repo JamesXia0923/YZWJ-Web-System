@@ -11,7 +11,16 @@
 namespace YouZhiWenJiao.Web.Manage {
     
     
-    public partial class login {
+    public partial class pass {
+        
+        /// <summary>
+        /// Head1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
         
         /// <summary>
         /// form1 control.
@@ -23,39 +32,39 @@ namespace YouZhiWenJiao.Web.Manage {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtName control.
+        /// OldPass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtName;
+        protected global::System.Web.UI.WebControls.TextBox OldPass;
         
         /// <summary>
-        /// txtPass control.
+        /// NewPass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPass;
+        protected global::System.Web.UI.WebControls.TextBox NewPass;
         
         /// <summary>
-        /// Prompt control.
+        /// RetryPass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Prompt;
+        protected global::System.Web.UI.WebControls.TextBox RetryPass;
         
         /// <summary>
-        /// btnLog control.
+        /// BtnOK control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnLog;
+        protected global::System.Web.UI.WebControls.Button BtnOK;
     }
 }
