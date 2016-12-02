@@ -32,6 +32,7 @@
 					          <ul class="slides">
 						        <li>
 							        <div> <img src=<%=Product.picture %> data-imagezoom="true" class="img-responsive" alt=""/> </div>
+							    </li>
 					          </ul>
 					        </div>
 				        </div>	
@@ -39,7 +40,7 @@
 				            <div class="details-left-info simpleCart_shelfItem">
 					            <P style="font-size:24px"><%=Product.title %></p>
 					            <p class="availability"><span class="color"><%=Product.content %></span></p>
-					            <p class="datetime" style="text-align:center"><%=Product.datetime %></p>
+					            <p class="datetime" style="text-align:right; padding-right:10px"><%=Product.datetime %></p>
 		                    </div>
 	                    </div>
 	                </div>
