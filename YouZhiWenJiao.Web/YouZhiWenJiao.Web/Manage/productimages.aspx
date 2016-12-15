@@ -33,25 +33,25 @@
 						<th width="200">替换</th>
 					</tr>
 					<tr align="center">
-						<td>户外用品</td>
+						<td>学前装备</td>
 						<td><asp:Image ID="image" width="410" height="280" runat="server" AlternateText="Image text" ImageAlign="left" ImageUrl="../productimages/product1.jpg" /></td>
 						<td><input id="InputFile1" style="width: 300px" type="file" runat="server" /><asp:Label ID="Lb_Info1" runat="server" ForeColor="Red"></asp:Label></td>
 						<td><input type="button" value="替换" class="coolbg" runat="server" ID="BtnRep1" name="BtnDel" onserverclick="SubRepClick1" /></td>
 					</tr>
 					<tr align="center">
-						<td>室内用品</td>
+						<td>学习材料</td>
 						<td><asp:Image ID="image1" width="410" height="140" runat="server" AlternateText="Image text" ImageAlign="left" ImageUrl="../productimages/product2.jpg"  /></td>
 						<td><input id="InputFile2" style="width: 300px" type="file" runat="server" /><asp:Label ID="Lb_Info2" runat="server" ForeColor="Red"></asp:Label></td>
 						<td><input type="button" value="替换" class="coolbg" runat="server" ID="BtnRep2" name="BtnDel" onserverclick="SubRepClick2" /></td>
 					</tr>
 					<tr align="center">
-						<td>学习用品</td>
+						<td>教学软件</td>
 						<td><asp:Image ID="image2" width="200" height="130" runat="server" AlternateText="Image text" ImageAlign="left" ImageUrl="../productimages/product3.jpg"  /></td>
 						<td><input id="InputFile3" style="width: 300px" type="file" runat="server" /><asp:Label ID="Lb_Info3" runat="server" ForeColor="Red"></asp:Label></td>
 						<td><input type="button" value="替换" class="coolbg" runat="server" ID="BtnRep3" name="BtnDel" onserverclick="SubRepClick3" /></td>
 					</tr>
 					<tr align="center">
-						<td>寓教于乐</td>
+						<td>幼教书库</td>
 						<td><asp:Image ID="image3" width="200" height="130" runat="server" AlternateText="Image text" ImageAlign="left" ImageUrl="../productimages/product4.jpg" /></td>
 						<td><input id="InputFile4" style="width: 300px" type="file" runat="server" /><asp:Label ID="Lb_Info4" runat="server" ForeColor="Red"></asp:Label></td>
 						<td><input type="button" value="替换" class="coolbg" runat="server" ID="BtnRep4" name="BtnDel" onserverclick="SubRepClick4" /></td>
