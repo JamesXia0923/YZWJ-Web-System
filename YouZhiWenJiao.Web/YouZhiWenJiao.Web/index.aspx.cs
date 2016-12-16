@@ -29,7 +29,7 @@ namespace YouZhiWenJiao.Web
 				Product.categoryid = ToInt(reader["categoryid"]);
 				Product.typeid = ToInt(reader["typeid"]);
 				Product.title = reader["title"].ToString();
-				if(Session["user"] == null)
+				if(Session["duser"] == null)
 				{
 					Product.video = "login.aspx";
 				}

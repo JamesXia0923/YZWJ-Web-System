@@ -35,7 +35,7 @@
 					PageTrCss="PageTrCss" OnPageIndexChange="PageChanged" OnItemDataBound="DataBindings">
 					<HEADERTEMPLATE>
 						<tr>
-							<td colspan="6" style=" font-weight:bold;font-size:14px; text-align:left; color:#002779; height:37px;">&nbsp;&nbsp;教&nbsp;&nbsp;师&nbsp;&nbsp;书&nbsp;&nbsp;库</td >
+							<td colspan="6" style=" font-weight:bold;font-size:14px; text-align:left; color:#002779; height:37px;">&nbsp;&nbsp;教&nbsp;&nbsp;学&nbsp;&nbsp;软&nbsp;&nbsp;件</td >
 						</tr>
 						<tr>
 							<th></th>

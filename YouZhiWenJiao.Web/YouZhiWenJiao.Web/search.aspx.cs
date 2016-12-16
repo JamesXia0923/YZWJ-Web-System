@@ -44,7 +44,7 @@ namespace YouZhiWenJiao.Web
                 }
                 model.title = model.title.Replace(SearchWD, "<font color=\"red\">" + SearchWD + "</font>");
                 model.content = model.content.Replace(SearchWD, "<font color=\"red\">" + SearchWD + "</font>");
-                if (Session["user"] == null && model.categoryid == (int)category.资料下载)
+                if (Session["duser"] == null && model.categoryid == (int)category.资料下载)
                 {
                     model.video = "login.aspx";
                 }

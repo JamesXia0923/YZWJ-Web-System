@@ -18,7 +18,7 @@ namespace YouZhiWenJiao.Web
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			CompanyProfileTypeList = new List<CommonTypeModel>();
-			var sql = "select * from type where categoryid = " + (int)category.公司简介 + " order by id";
+            var sql = "select * from type where categoryid = " + (int)category.优智文教 + " order by id";
 
 			sqlCmd.CommandText = sql;
 			IDataReader rdr = sqlCmd.ExecuteReader();
@@ -32,7 +32,7 @@ namespace YouZhiWenJiao.Web
 			CompanyProfileList = new List<CommonModel>();
 			foreach(var cpt in CompanyProfileTypeList)
 			{
-				sql = "select * from product where categoryid = " + (int)category.公司简介 + " and typeid = " + cpt.id + " and (deleted <> 1 or deleted is null) and showinhomepage = 1 order by datetime desc limit 0,1;";
+                sql = "select * from product where categoryid = " + (int)category.优智文教 + " and typeid = " + cpt.id + " and (deleted <> 1 or deleted is null) and showinhomepage = 1 order by datetime desc limit 0,1;";
 				sqlCmd.CommandText = sql;
 				rdr = sqlCmd.ExecuteReader();
 

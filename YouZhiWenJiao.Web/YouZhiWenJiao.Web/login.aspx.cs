@@ -68,7 +68,7 @@ namespace YouZhiWenJiao.Web
 
 			if(result != 0)
 			{
-				Session["user"] = txtLoginName.Value;
+				Session["duser"] = txtLoginName.Value;
 			}
 			else
 			{

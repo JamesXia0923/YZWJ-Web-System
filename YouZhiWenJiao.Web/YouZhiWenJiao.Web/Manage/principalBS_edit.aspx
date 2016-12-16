@@ -23,7 +23,7 @@
 			<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" class="tab3">
 				<tr>
 					<td align="center" colspan="2" style="font-size:15px;font-weight: bold;height:35px;width:100%; background:#edf4fc; color:black; border-right:1px solid #edf4fc; border-bottom:1px solid #edf4fc;" >
-					园&nbsp;&nbsp;长&nbsp;&nbsp;书&nbsp;&nbsp;库</td>
+					学&nbsp;&nbsp;习&nbsp;&nbsp;材&nbsp;&nbsp;料</td>
 				</tr>
 				<tr>
 					<td width="80" align="center" >标题：</td>
@@ -59,8 +59,8 @@
 					<td height="60" colspan="2" align="left" valign="middle" style="border-bottom:none; padding-left:80px;">
 						<asp:Button id="btnOK" OnClick="btnOK_Click" runat="server" text="确 定" class="coolbg"></asp:Button>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<asp:Button id="btnPreview" OnClick="btnPrewiew_Click" runat="server" text="预 览" class="coolbg"></asp:Button>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<%--<asp:Button id="btnPreview" OnClick="btnPrewiew_Click" runat="server" text="预 览" class="coolbg"></asp:Button>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--%>
 						<asp:Button id="btnBack" OnClick="btnBack_Click" runat="server" text="返回列表" class="coolbg"></asp:Button>
 					</td>
 				</tr>

@@ -31,7 +31,7 @@ type.id,
 type.description 
 from type 
 inner join category on category.id = type.categoryid 
-where type.categoryid = " + (int)category.园长书库 + ";";
+where type.categoryid = " + (int)category.学习材料 + ";";
 				var rd = sqlCmd.ExecuteReader();
 				while (rd.Read())
 				{
@@ -74,7 +74,7 @@ inner join
 newtype on newtype.id = product.typeid and newtype.categoryid = product.categoryid
 where (product.deleted <> 1 or product.deleted is null) and product.title like '@search' ";
 
-			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categotyid", "'" + ((int)category.园长书库).ToString() + "'");
+            sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categotyid", "'" + ((int)category.学习材料).ToString() + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@search", "%" + txtserarch.Value + "%");
 
 			if (ddlList.SelectedValue != "0")

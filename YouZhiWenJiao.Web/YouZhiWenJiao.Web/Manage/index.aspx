@@ -53,6 +53,11 @@
 										<tr><td height="5"></td></tr>
 										<tr>
 											<td style="text-align:center; background:url(images/menu_bt.jpg) no-repeat; height:32px;">
+											<a target="main" href="childhoodTeacherBS.aspx">幼教书库</a></td>
+										</tr>
+										<tr><td height="5"></td></tr>
+										<tr>
+											<td style="text-align:center; background:url(images/menu_bt.jpg) no-repeat; height:32px;">
 											<a target="main" href="download.aspx">下载中心</a></td>
 										</tr>
 										<tr><td height="5"></td></tr>

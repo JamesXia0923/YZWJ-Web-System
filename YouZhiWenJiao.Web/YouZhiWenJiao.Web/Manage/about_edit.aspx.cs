@@ -37,7 +37,7 @@ inner join category on category.id = type.categoryid
 where categoryid = @categotyid
 order by type.id";
 
-				sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categotyid", "'" + ((int)category.公司简介).ToString() + "'");
+                sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categotyid", "'" + ((int)category.优智文教).ToString() + "'");
 				var rd = sqlCmd.ExecuteReader();
 				while (rd.Read())
 				{
@@ -152,7 +152,7 @@ values(
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@id", "'" + productId + "'");
 
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@typeid", "'" + ddlListType.SelectedValue.ToString() + "'");
-			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categoryid", "'" + ((int)category.公司简介).ToString() + "'");
+            sqlCmd.CommandText = sqlCmd.CommandText.Replace("@categoryid", "'" + ((int)category.优智文教).ToString() + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@title", "'" + txtTitle.Text + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@datetime", "'" + datetime.SelectedDate.ToString("yyyy-MM-dd HH:mm:ss.ffff") + "'");
 			sqlCmd.CommandText = sqlCmd.CommandText.Replace("@content", "'" + ftbContent.Text + "'");

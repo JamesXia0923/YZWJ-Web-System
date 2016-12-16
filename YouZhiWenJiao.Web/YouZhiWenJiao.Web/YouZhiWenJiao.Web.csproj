@@ -60,6 +60,8 @@
   <ItemGroup>
     <Content Include="CheckCode.aspx" />
     <Content Include="Manage\pass.aspx" />
+    <Content Include="Manage\childhoodTeacherBS.aspx" />
+    <Content Include="Manage\childhoodTeacherBS_edit.aspx" />
     <Content Include="news.aspx" />
     <Content Include="newsdetail.aspx" />
     <Content Include="images\log_3.jpg" />
@@ -398,6 +400,20 @@
     </Compile>
     <Compile Include="Manage\pass.aspx.designer.cs">
       <DependentUpon>pass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\childhoodTeacherBS.aspx.cs">
+      <DependentUpon>childhoodTeacherBS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\childhoodTeacherBS.aspx.designer.cs">
+      <DependentUpon>childhoodTeacherBS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\childhoodTeacherBS_edit.aspx.cs">
+      <DependentUpon>childhoodTeacherBS_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage\childhoodTeacherBS_edit.aspx.designer.cs">
+      <DependentUpon>childhoodTeacherBS_edit.aspx</DependentUpon>
     </Compile>
     <Compile Include="news.aspx.cs">
       <DependentUpon>news.aspx</DependentUpon>

@@ -199,16 +199,17 @@ namespace YouZhiWenJiao.Web
 
 		public enum category
 		{
-			公司简介 = 1,
+            优智文教 = 1,
 			公司新闻 = 2,
-			园所装备 = 3,
-			园长书库 = 4,
-			教师书库 = 5,
+            学前装备 = 3,
+            学习材料 = 4,
+            教学软件 = 5,
 			资料下载 = 6,
 			在线留言 = 7,
 			联系我们 = 8,
 			系统用户 = 9,
-			首页视频 = 10
+			首页视频 = 10,
+            幼教书库 = 11
 		}
 
         public string NoHtml(string withHtml)

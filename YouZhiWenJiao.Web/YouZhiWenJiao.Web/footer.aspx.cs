@@ -30,7 +30,7 @@ namespace YouZhiWenJiao.Web
                     sql = sql + "where picture is not null and picture != '' and categoryid = " + categoryid.ToString() + " and typeid = " + typeid.ToString() + " ";
                 }
             }
-            sql = sql + " and categoryid not in (" + (int)category.公司简介 + "," + (int)category.公司新闻 + "," + (int)category.首页视频 + "," + (int)category.资料下载 + ")";
+            sql = sql + " and categoryid not in (" + (int)category.优智文教 + "," + (int)category.公司新闻 + "," + (int)category.首页视频 + "," + (int)category.资料下载 + ")";
 			sql = sql + " and (deleted <> 1 or deleted is null) and showinhomepage = 1 order by datetime desc limit 0,15;";
 
             sqlCmd.CommandText = sql;

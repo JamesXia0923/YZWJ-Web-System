@@ -15,7 +15,7 @@ namespace YouZhiWenJiao.Web
 		public int UniqueId = 0;
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			if (Session["user"] == null)
+			if (Session["duser"] == null)
 			{
 				Session["UrlReferrer"] = "videos.aspx";
 				Response.Redirect("login.aspx");
