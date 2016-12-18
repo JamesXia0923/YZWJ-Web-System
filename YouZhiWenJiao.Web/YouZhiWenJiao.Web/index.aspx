@@ -32,15 +32,15 @@
         	<div class="t1">产品展示 <span class="f14 c_666">Product</span></div>            
             <!--九宫格-->
             <div class="ge ofHidden">
-            	<div class="w410 fleft h280 ofHidden"><a href="producttypelist.aspx" class="h280"><img src="productimages/product1.jpg" width="410" height="280"><p class="f16">学前装备</p><b class="h45"></b></a></div>
-                <div class="w410 fright h140 ofHidden"><a href="producttypelist.aspx" class="h140"><img src="productimages/product2.jpg" width="410" height="140"><p class="f14">学习材料</p><b class="h30"></b></a></div>
-                <div class="w410 fright mt10">
-                	<span class="w200 fleft h130 ofHidden"><a href="producttypelist.aspx" class="h130"><img src="productimages/product3.jpg" width="200" height="130"><p class="f14">教学软件</p><b class="h30"></b></a></span>
-                    <span class="w200 fright h130 ofHidden"><a href="producttypelist.aspx" class="h130"><img src="productimages/product4.jpg" width="200" height="130"><p class="f14">幼教书库</p><b class="h30"></b></a></span>
-                </div>
+            	<div class="fleft ofHidden" style="width:540px;height:360px"><a href="producttypelist.aspx" class="h280"><img src="productimages/product1.jpg" width="540" height="360"></a></div>
+                <div class="fright ofHidden" style="width:280px;height:175px"><a href="producttypelist.aspx" class="h140"><img src="productimages/product3.jpg" width="280" height="175"></a></div>
+                <div class="fright ofHidden mt10" style="width:280px;height:175px"><a href="producttypelist.aspx" class="h140"><img src="productimages/product4.jpg" width="280" height="175"></a></div>
+<%--                <div class="w410 fright mt10">
+                	<span class="w200 fleft h130 ofHidden"><a href="producttypelist.aspx" class="h130"><img src="productimages/product3.jpg" width="200" height="130"></a></span>
+                </div>--%>
             </div>
             
-            <div class="index_pic1"><img src="images/product_index.jpg"></div>
+            <%--<div class="index_pic1"><img src="images/product_index.jpg"></div>--%>
         </div>
         
         
@@ -53,18 +53,18 @@
             	<li><div style="width:115px;overflow: hidden; text-overflow:ellipsis; white-space: nowrap;"><a href="<%=product.video %>"><%=product.title %></a></div></li>
             <%i++; %>
             <%} %>
-            <%if (i < 18) %>
+            <%if (i < 12) %>
             <%{ %>
-                <%for (int j = 0; j < 18 - i; j++) %>
+                <%for (int j = 0; j < 12 - i; j++) %>
                 <%{ %>
                     <li><a>&nbsp;</a></li>
                 <%} %>
             <%} %>
             </ul>
             
-            <div class="t1 mt20">企业宣传片 <span class="f14 c_666">Trailer</span></div>
-            <p class="mt20">
-            <video src="<%=myVideo.video %>" controls="controls" poster="<%=myVideo.picture %>" style = "width:270px;height:168px;background-color:#000;">
+            <div class="t1 mt10">企业宣传片 <span class="f14 c_666">Trailer</span></div>
+            <p class="mt10">
+            <video src="<%=myVideo.video %>" controls="controls" poster="<%=myVideo.picture %>" style = "width:250px;height:143px;background-color:#000;">
             <embed src="<%=myVideo.video %>" width="270" height="168" /> 
             </object> 
             </video>
@@ -73,7 +73,7 @@
         </div>
     </div>
     <!--底部--> 
-	<div style="margin-top:10px"><iframe frameborder="0" scrolling="no" width="100%" class="h390" src="footer.aspx"></iframe></div>
+	<div style="margin-top:20px"><iframe frameborder="0" scrolling="no" width="100%" class="h390" src="footer.aspx"></iframe></div>
 	<script src="js/all.js" type="text/javascript"></script>
 </body>
 </html>

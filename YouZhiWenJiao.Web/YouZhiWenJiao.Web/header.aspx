@@ -32,6 +32,7 @@
 					<%--<input  name="input_value" id="input_value" type="text" runat="server" placeholder="ÇëÊäÈë¹Ø¼ü×Ö" >--%>
 					<asp:Button id="btnBack" OnClick="btnSearch_Click" runat="server" text="ËÑË÷" class="search"></asp:Button>
 				</form>
+				<div class='db'>
 			</div>
 		</div>
 	</div>
@@ -41,8 +42,7 @@
 		<ul>
 		<li style="background:url(images/banner.jpg) #FFF center 0 no-repeat;"></li>
 		</ul>
-	</div>
-	<div class='db'>
+	</div>	
 </div>
 </div>
 <script src="js/all.js" type="text/javascript"></script>  
