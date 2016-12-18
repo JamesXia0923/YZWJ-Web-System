@@ -47,11 +47,44 @@ where (deleted <> 1 or deleted is null) and showinhomepage = 1 and categoryid = 
 				var strContent = NoHtml(dt.Rows[rowIndex]["content"].ToString());
 				dt.Rows[rowIndex]["content"] = strContent.Length > 200 ? strContent.Substring(0, 200) : strContent;
 			}
-			int iAllCount = dt.Rows.Count;
-			int iPageSize = rptDate.PageSize;
-			int iNum = iAllCount % iPageSize;
-			rptDate.DataSource = dt.DefaultView;
-			rptDate.DataBind();
+
+            DataTable newData = new DataTable();
+            newData.Columns.Add("video1", typeof(string));
+            newData.Columns.Add("title1", typeof(string));
+            newData.Columns.Add("video2", typeof(string));
+            newData.Columns.Add("title2", typeof(string));
+
+            DataRow dr = null;
+            for (int rowIndex = 1; rowIndex <= dt.Rows.Count; rowIndex++)
+            {
+                if ((rowIndex % 2) == 1)
+                {
+                    dr = newData.NewRow();
+                    dr["video1"] = dt.Rows[rowIndex - 1]["video"];
+                    dr["title1"] = dt.Rows[rowIndex - 1]["title"];
+                }
+                if ((rowIndex % 2) == 0)
+                {
+                    dr["video2"] = dt.Rows[rowIndex - 1]["video"];
+                    dr["title2"] = dt.Rows[rowIndex - 1]["title"];
+                    newData.Rows.Add(dr);
+                }
+                else
+                {
+                    if (rowIndex == dt.Rows.Count)
+                    {
+                        newData.Rows.Add(dr);
+                    }
+                }
+            }
+
+            rptDate.DataSource = newData.DefaultView;
+            rptDate.DataBind();
+            rptDate.ItemCount = dt.Rows.Count;
+            if (newData.Rows.Count % rptDate.PageSize == 0)
+                rptDate.PageCount = rptDate.ItemCount / 2 / rptDate.PageSize;
+            else
+                rptDate.PageCount = rptDate.ItemCount / 2 / rptDate.PageSize + 1;
 		}
 		protected void DataBindings(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)
 		{

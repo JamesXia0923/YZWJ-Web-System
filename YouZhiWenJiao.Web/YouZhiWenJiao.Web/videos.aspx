@@ -20,7 +20,7 @@
 	<div class="newsbox yh">
 		<div class="block">
 			<div class="navmenu"><span>您现在的位置: <a href="index.aspx">首页</a> > 资料下载</span>资料下载</div>
-			<div class="text-list yh">
+			<div class="video-list yh">
 				<ul>
 					<table class="talist">
 						<CONTROL:VIEWDATA id="rptDate" runat="Server" Select="false" Col="12" PageSize="20" AllowPage="true" OnPageIndexChange="PageChanged"  OnItemDataBound="DataBindings">
@@ -28,10 +28,15 @@
 								<tr>
 									<td style="text-align:center;">
 									<li class="clearfix">
-										<div class="fright" style="float:none;margin-left:120px;width:900px">
-											<p class="bt"><a href="<%# DataBinder.Eval(Container.DataItem, "video")%>" download><%# DataBinder.Eval(Container.DataItem, "title")%></a></p>
-											<p class="ck"><span class="time"><%# DataBinder.Eval(Container.DataItem, "datetime")%></span></p>
-											<p class="jj"><%# DataBinder.Eval(Container.DataItem, "Content")%></p>
+										<div class="fright" style="float:none;margin-left:120px;width:450px">
+											<p class="bt"><a href="<%# DataBinder.Eval(Container.DataItem, "video1")%>" download><%# DataBinder.Eval(Container.DataItem, "title1")%></a></p>
+										</div>
+									</li>
+									</td>
+									<td style="text-align:center;">
+									<li class="clearfix">
+										<div class="fright" style="float:none;margin-left:120px;width:450px">
+											<p class="bt"><a href="<%# DataBinder.Eval(Container.DataItem, "video2")%>" download><%# DataBinder.Eval(Container.DataItem, "title2")%></a></p>
 										</div>
 									</li>
 									</td>
