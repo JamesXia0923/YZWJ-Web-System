@@ -34,7 +34,7 @@
             <div class="ge ofHidden">
             	<div id="pro1" class="fleft ofHidden" style="width:540px;height:360px;text-align:center"><a href="producttypelist.aspx?id=3" class="h280"><img src="productimages/product1.jpg" width="540" height="360"></a>
             	    <div id="pro1rsp" style="position: absolute;width: 540px;height: 360px;bottom: -170px;overflow: hidden;background-color:#000" ></div>
-            	    <div id="pro1Btn" style="position: absolute;width: 540px;height: 360px;bottom: -570px;overflow: hidden;"><a href="producttypelist.aspx?id=3"><img src="images/case.png"></a></div>
+            	    <div id="pro1Btn" style="position: absolute;width: 540px;height: 360px;bottom: -570px;overflow: hidden;"><a href="producttypelist.aspx?id=3"><img src="images/case.png" style="margin-left:200px"></a></div>
             	</div>
                 <div class="fright ofHidden" style="width:280px;height:175px"><a href="producttypelist.aspx?id=4" class="h140"><img src="productimages/product2.jpg" width="280" height="175"></a></div>
                 <div class="fright ofHidden mt10" style="width:280px;height:175px"><a href="producttypelist.aspx?id=5" class="h140"><img src="productimages/product3.jpg" width="280" height="175"></a></div>

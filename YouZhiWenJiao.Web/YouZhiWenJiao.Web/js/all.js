@@ -56,7 +56,7 @@ jQuery(".team").slide({mainCell:".bd ul",autoPlay:true,effect:"leftMarquee",vis:
 	$("#pro1").hover(function() {
 	    $("#pro1Btn").show();
 	    $(this).find("#pro1rsp").stop().fadeTo(500, 0.8)
-	    $(this).find("#pro1Btn").stop().animate({ bottom: '-270' }, { duration: 500 })
+	    $(this).find("#pro1Btn").stop().animate({ bottom: '-280' }, { duration: 500 })
 	},
 	function() {
 	    $(this).find("#pro1rsp").stop().fadeTo(500, 0)
