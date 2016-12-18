@@ -16,7 +16,7 @@
     <!--头部-->
     <div><iframe frameborder="0" scrolling="no" width="100%" height="405px" src="header.aspx"></iframe></div>
     <!--首页主体--> 
-    <div class="xc_pic ofHidden clearfix">
+<%--    <div class="xc_pic ofHidden clearfix">
         <div class="block clearfix ofHidden">
             <b></b>
             <ul>
@@ -26,7 +26,7 @@
                 <li><a href="videos.aspx"><img src="images/team.png"></a></li>
             </ul>
         </div>    
-	</div> 
+	</div> --%>
     <div class="clearfix ofHidden block yh pt20">
     	<div class="index_left fleft">
         	<div class="t1">产品展示 <span class="f14 c_666">Product</span></div>            
