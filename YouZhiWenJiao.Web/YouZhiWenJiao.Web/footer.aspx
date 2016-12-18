@@ -13,7 +13,7 @@
 <body>
 <div class="team clearfix yh">
 		<div class="block">
-			<div class="t1">产品欣赏 <span class="f14 c_666">Product</span></div>			
+			<div class="t1">产品欣赏 <span class="f14 c_666">Product View</span></div>			
 			<div class="bd">
 				<ul class="picList">
 				    <%foreach (var product in ProductCollection) %>
@@ -30,9 +30,9 @@
 	<div class="foot clearfix">
 		<div class="block">
 			<div class="fleft">
-				<p><a href="aboutMe.html" class="a1" target="_parent">联系我们</a>|<a href="index.aspx" class="a2" target="_parent">公司首页</a>|<a href="profile.aspx" class="a3" target="_parent">公司介绍</a>|<a href="news.aspx" class="a4" target="_parent">活动公告</a></p>
-				<p>Copyright © 2016 www.shqxh.com,All Rights Reserved</p>
+				<p><a href="index.aspx" class="a1" target="_parent">公司首页</a>|<a href="profile.aspx" class="a2" target="_parent">优智文教</a>|<a href="news.aspx" class="a3" target="_parent">新闻中心</a>|<a href="aboutMe.html" class="a4" target="_parent">联系我们</a></p>
 				<p>版权所有  上海优智文教用品有限公司</p>
+				<p>Copyright © 2016 www.shqxh.com,All Rights Reserved</p>
 			</div>
 			
 			<div class="fright">

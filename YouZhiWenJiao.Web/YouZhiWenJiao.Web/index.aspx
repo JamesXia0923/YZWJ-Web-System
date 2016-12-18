@@ -29,7 +29,7 @@
 	</div> --%>
     <div class="clearfix ofHidden block yh pt20">
     	<div class="index_left fleft">
-        	<div class="t1">产品展示 <span class="f14 c_666">Product</span></div>            
+        	<div class="t1">产品展示 <span class="f14 c_666">Product List</span></div>            
             <!--九宫格-->
             <div class="ge ofHidden">
             	<div class="fleft ofHidden" style="width:540px;height:360px"><a href="producttypelist.aspx?id=3" class="h280"><img src="productimages/product1.jpg" width="540" height="360"></a></div>
