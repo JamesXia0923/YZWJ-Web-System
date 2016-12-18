@@ -50,12 +50,12 @@
 						<td><input id="InputFile3" style="width: 300px" type="file" runat="server" /><asp:Label ID="Lb_Info3" runat="server" ForeColor="Red"></asp:Label></td>
 						<td><input type="button" value="替换" class="coolbg" runat="server" ID="BtnRep3" name="BtnDel" onserverclick="SubRepClick3" /></td>
 					</tr>
-<%--					<tr align="center">
+					<tr align="center" style="display:none;">
 						<td>幼教书库</td>
 						<td><asp:Image ID="image3" width="200" height="130" runat="server" AlternateText="Image text" ImageAlign="left" ImageUrl="../productimages/product4.jpg" /></td>
 						<td><input id="InputFile4" style="width: 300px" type="file" runat="server" /><asp:Label ID="Lb_Info4" runat="server" ForeColor="Red"></asp:Label></td>
 						<td><input type="button" value="替换" class="coolbg" runat="server" ID="BtnRep4" name="BtnDel" onserverclick="SubRepClick4" /></td>
-					</tr>--%>
+					</tr>
 				</table>
 			</div>
 		</form>
