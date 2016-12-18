@@ -31,7 +31,7 @@
 
 			<div style=" height:610px; overflow:auto;">
 				<table width="99%" border="0" align="center" cellpadding="0" cellspacing="0" id="table">
-				<CONTROL:VIEWDATA id="rptDate" runat="Server" Select="false" Col="9" PageSize="10000" AllowPage="false"
+				<CONTROL:VIEWDATA id="rptDate" runat="Server" Select="false" Col="9" PageSize="10" AllowPage="true"
 					PageTrCss="PageTrCss" OnPageIndexChange="PageChanged" OnItemDataBound="DataBindings">
 					<HEADERTEMPLATE>
 						<tr>

@@ -33,8 +33,8 @@
             <!--¾Å¹¬¸ñ-->
             <div class="ge ofHidden">
             	<div class="fleft ofHidden" style="width:540px;height:360px"><a href="producttypelist.aspx" class="h280"><img src="productimages/product1.jpg" width="540" height="360"></a></div>
-                <div class="fright ofHidden" style="width:280px;height:175px"><a href="producttypelist.aspx" class="h140"><img src="productimages/product3.jpg" width="280" height="175"></a></div>
-                <div class="fright ofHidden mt10" style="width:280px;height:175px"><a href="producttypelist.aspx" class="h140"><img src="productimages/product4.jpg" width="280" height="175"></a></div>
+                <div class="fright ofHidden" style="width:280px;height:175px"><a href="producttypelist.aspx" class="h140"><img src="productimages/product2.jpg" width="280" height="175"></a></div>
+                <div class="fright ofHidden mt10" style="width:280px;height:175px"><a href="producttypelist.aspx" class="h140"><img src="productimages/product3.jpg" width="280" height="175"></a></div>
 <%--                <div class="w410 fright mt10">
                 	<span class="w200 fleft h130 ofHidden"><a href="producttypelist.aspx" class="h130"><img src="productimages/product3.jpg" width="200" height="130"></a></span>
                 </div>--%>
