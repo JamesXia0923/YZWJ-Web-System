@@ -50,6 +50,21 @@ jQuery(".team").slide({mainCell:".bd ul",autoPlay:true,effect:"leftMarquee",vis:
 		$(this).find(".text").animate({bottom:'-275'}, {duration: 0})
 	});
 
+	//图片列表
+	$("#pro1Btn").hide();
+	$("#pro1rsp").hide();
+	$("#pro1").hover(function() {
+	    $("#pro1Btn").show();
+	    $(this).find("#pro1rsp").stop().fadeTo(500, 0.8)
+	    $(this).find("#pro1Btn").stop().animate({ bottom: '-270' }, { duration: 500 })
+	},
+	function() {
+	    $(this).find("#pro1rsp").stop().fadeTo(500, 0)
+	    $(this).find("#pro1Btn").stop().animate({ bottom: '570' }, { duration: "fast" })
+	    $(this).find("#pro1Btn").animate({ bottom: '-570' }, { duration: 0 })
+	    $("#pro1Btn").hide();
+	});
+
 
 
 
