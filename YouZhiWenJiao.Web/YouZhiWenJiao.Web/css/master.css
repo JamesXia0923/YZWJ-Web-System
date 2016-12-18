@@ -51,6 +51,9 @@ text-shadow : rgba(0,0,0,0.5) 0 5px 6px, rgba(0,0,0,0.5) 1px 3px 3px;
 .xc_pic ul li{ float:left; width:275px; margin-top:40px;}
 .xc_pic ul li a{ display:block; width:135px; height:135px; margin:0 auto;}
 .xc_pic ul li a:hover img { animation: xuanzhuan 10s infinite; -webkit-animation: xuanzhuan 10s infinite; }
+#pro1Btn a:hover img { animation: xuanzhuan 10s infinite; -webkit-animation: xuanzhuan 10s infinite; }
+#pro2Btn a:hover img { animation: xuanzhuan 10s infinite; -webkit-animation: xuanzhuan 10s infinite; }
+#pro3Btn a:hover img { animation: xuanzhuan 10s infinite; -webkit-animation: xuanzhuan 10s infinite; }
 @-webkit-keyframes 'xuanzhuan' {from {-webkit-transform:perspective(400px) rotateY(0deg);}to {-webkit-transform:perspective(400px) rotateY(360deg);}}
 
 

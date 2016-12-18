@@ -64,6 +64,34 @@ jQuery(".team").slide({mainCell:".bd ul",autoPlay:true,effect:"leftMarquee",vis:
 	    $(this).find("#pro1Btn").animate({ bottom: '-570' }, { duration: 0 })
 	    $("#pro1Btn").hide();
 	});
+	
+	$("#pro2Btn").hide();
+	$("#pro2rsp").hide();
+	$("#pro2").hover(function() {
+	    $("#pro2Btn").show();
+	    $(this).find("#pro2rsp").stop().fadeTo(500, 0.8)
+	    $(this).find("#pro2Btn").stop().animate({ bottom: '-15' }, { duration: 500 })
+	},
+	function() {
+	    $(this).find("#pro2rsp").stop().fadeTo(500, 0)
+	    $(this).find("#pro2Btn").stop().animate({ bottom: '570' }, { duration: "fast" })
+	    $(this).find("#pro2Btn").animate({ bottom: '-570' }, { duration: 0 })
+	    $("#pro2Btn").hide();
+	});
+	
+	$("#pro3Btn").hide();
+	$("#pro3rsp").hide();
+	$("#pro3").hover(function() {
+	    $("#pro3Btn").show();
+	    $(this).find("#pro3rsp").stop().fadeTo(500, 0.8)
+	    $(this).find("#pro3Btn").stop().animate({ bottom: '-200' }, { duration: 500 })
+	},
+	function() {
+	    $(this).find("#pro3rsp").stop().fadeTo(500, 0)
+	    $(this).find("#pro3Btn").stop().animate({ bottom: '570' }, { duration: "fast" })
+	    $(this).find("#pro3Btn").animate({ bottom: '-570' }, { duration: 0 })
+	    $("#pro3Btn").hide();
+	});
 
 
 
