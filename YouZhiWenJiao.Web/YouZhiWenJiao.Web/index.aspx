@@ -32,17 +32,17 @@
         	<div class="t1">产品展示 <span class="f14 c_666">Product List</span></div>            
             <!--九宫格-->
             <div class="ge ofHidden">
-            	<div id="pro1" class="fleft ofHidden" style="width:540px;height:360px;text-align:center"><a href="producttypelist.aspx?id=3" class="h280"><img src="productimages/product1.jpg" width="540" height="360"></a>
-            	    <div id="pro1rsp" style="position:absolute;width: 540px;height: 360px;bottom: -181px;overflow: hidden;background-color:#000" ></div>
-            	    <div id="pro1Btn" style="position:absolute;width: 540px;height: 360px;bottom: -570px;overflow: hidden;"><a href="producttypelist.aspx?id=3"><img src="images/case.png" style="margin-left:200px"></a></div>
+            	<div id="pro1" class="fleft ofHidden" style="width:540px;height:360px;"><a href="producttypelist.aspx?id=3" class="h280"><img src="productimages/product1.jpg" width="540" height="360"></a>
+            	    <div id="pro1rsp" style="position:absolute;width: 540px;height: 360px;top: 464px;overflow: hidden;background-color:#000" ></div>
+            	    <div id="pro1Btn" style="position:absolute;width: 540px;height: 360px;top: -570px;overflow: hidden;"><a href="producttypelist.aspx?id=3"><img src="images/case.png" style="margin-left:170px;width:200px;height:200px"></a></div>
             	</div>
                 <div id="pro2" class="fright ofHidden" style="width:280px;height:175px"><a href="producttypelist.aspx?id=4" class="h140"><img src="productimages/product2.jpg" width="280" height="175"></a>
-                    <div id="pro2rsp" style="position:absolute;width: 280px;height: 175px;bottom: 4px;overflow: hidden;background-color:#000" ></div>
-            	    <div id="pro2Btn" style="position:absolute;width: 280px;height: 175px;bottom: -220px;overflow: hidden;"><a href="producttypelist.aspx?id=4"><img src="images/kefu.png" style="margin-left:70px"></a></div>
+                    <div id="pro2rsp" style="position:absolute;width: 280px;height: 175px;top: 464px;overflow: hidden;background-color:#000" ></div>
+            	    <div id="pro2Btn" style="position:absolute;width: 280px;height: 175px;top: -220px;overflow: hidden;"><a href="producttypelist.aspx?id=4"><img src="images/kefu.png" style="margin-left:70px"></a></div>
             	</div>
                 <div id="pro3" class="fright ofHidden mt10" style="width:280px;height:175px"><a href="producttypelist.aspx?id=5" class="h140"><img src="productimages/product3.jpg" width="280" height="175"></a>
-                    <div id="pro3rsp" style="position:absolute;width: 280px;height: 175px;bottom: -180px;overflow: hidden;background-color:#000" ></div>
-            	    <div id="pro3Btn" style="position:absolute;width: 280px;height: 175px;bottom: -400px;overflow: hidden;"><a href="producttypelist.aspx?id=5"><img src="images/dianzi.png" style="margin-left:70px"></a></div>
+                    <div id="pro3rsp" style="position:absolute;width: 280px;height: 175px;top: 649px;overflow: hidden;background-color:#000" ></div>
+            	    <div id="pro3Btn" style="position:absolute;width: 280px;height: 175px;top: -400px;overflow: hidden;"><a href="producttypelist.aspx?id=5"><img src="images/dianzi.png" style="margin-left:70px"></a></div>
             	</div>
             </div>
         </div>

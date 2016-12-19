@@ -56,12 +56,12 @@ jQuery(".team").slide({mainCell:".bd ul",autoPlay:true,effect:"leftMarquee",vis:
 	$("#pro1").hover(function() {
 	    $("#pro1Btn").show();
 	    $(this).find("#pro1rsp").stop().fadeTo(500, 0.8)
-	    $(this).find("#pro1Btn").stop().animate({ bottom: '-280' }, { duration: 500 })
+	    $(this).find("#pro1Btn").stop().animate({ top: '544' }, { duration: 500 })
 	},
 	function() {
 	    $(this).find("#pro1rsp").stop().fadeTo(500, 0)
-	    $(this).find("#pro1Btn").stop().animate({ bottom: '570' }, { duration: "fast" })
-	    $(this).find("#pro1Btn").animate({ bottom: '-570' }, { duration: 0 })
+	    $(this).find("#pro1Btn").stop().animate({ top: '570' }, { duration: "fast" })
+	    $(this).find("#pro1Btn").animate({ top: '-570' }, { duration: 0 })
 	    $("#pro1Btn").hide();
 	});
 	
@@ -70,12 +70,12 @@ jQuery(".team").slide({mainCell:".bd ul",autoPlay:true,effect:"leftMarquee",vis:
 	$("#pro2").hover(function() {
 	    $("#pro2Btn").show();
 	    $(this).find("#pro2rsp").stop().fadeTo(500, 0.8)
-	    $(this).find("#pro2Btn").stop().animate({ bottom: '-15' }, { duration: 500 })
+	    $(this).find("#pro2Btn").stop().animate({ top: '484' }, { duration: 500 })
 	},
 	function() {
 	    $(this).find("#pro2rsp").stop().fadeTo(500, 0)
-	    $(this).find("#pro2Btn").stop().animate({ bottom: '570' }, { duration: "fast" })
-	    $(this).find("#pro2Btn").animate({ bottom: '-570' }, { duration: 0 })
+	    $(this).find("#pro2Btn").stop().animate({ top: '570' }, { duration: "fast" })
+	    $(this).find("#pro2Btn").animate({ top: '-570' }, { duration: 0 })
 	    $("#pro2Btn").hide();
 	});
 	
@@ -84,12 +84,12 @@ jQuery(".team").slide({mainCell:".bd ul",autoPlay:true,effect:"leftMarquee",vis:
 	$("#pro3").hover(function() {
 	    $("#pro3Btn").show();
 	    $(this).find("#pro3rsp").stop().fadeTo(500, 0.8)
-	    $(this).find("#pro3Btn").stop().animate({ bottom: '-200' }, { duration: 500 })
+	    $(this).find("#pro3Btn").stop().animate({ top: '670' }, { duration: 500 })
 	},
 	function() {
 	    $(this).find("#pro3rsp").stop().fadeTo(500, 0)
-	    $(this).find("#pro3Btn").stop().animate({ bottom: '570' }, { duration: "fast" })
-	    $(this).find("#pro3Btn").animate({ bottom: '-570' }, { duration: 0 })
+	    $(this).find("#pro3Btn").stop().animate({ top: '570' }, { duration: "fast" })
+	    $(this).find("#pro3Btn").animate({ top: '-570' }, { duration: 0 })
 	    $("#pro3Btn").hide();
 	});
 
