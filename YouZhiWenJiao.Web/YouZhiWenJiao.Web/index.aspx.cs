@@ -14,11 +14,12 @@ namespace YouZhiWenJiao.Web
 	{
 		protected List<CommonModel> downloadList;
 		protected CommonModel myVideo;
+        protected string client;
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			Session["UrlReferrer"] = "index.aspx";
-			var sql = "select * from product where showinhomepage = 1 and categoryid = " + ((int)category.资料下载).ToString() + " and (deleted <> 1 or deleted is null) and showinhomepage = 1 limit 0,12;";
+			var sql = "select * from product where showinhomepage = 1 and categoryid = " + ((int)category.资料下载).ToString() + " and (deleted <> 1 or deleted is null) and showinhomepage = 1 limit 0,10;";
 			sqlCmd.CommandText = sql;
 			IDataReader reader = sqlCmd.ExecuteReader();
 			downloadList = new List<CommonModel>();
@@ -32,10 +33,12 @@ namespace YouZhiWenJiao.Web
 				if(Session["duser"] == null)
 				{
 					Product.video = "login.aspx";
+                    client = "login.aspx";
 				}
 				else
 				{
 					Product.video = reader["video"].ToString();
+                    client = "video/优智点读笔客户端.rar";
 				}
 				downloadList.Add(Product);
 			}

@@ -49,7 +49,8 @@
         
         
     	<div class="index_right fright">
-        	<div class="t1">音频中心 <span class="f14 c_666">Video Center</span></div>
+        	<div class="t1">下载中心 <span class="f14 c_666">Video Center</span></div>
+        	<div style="margin-top:10px"><a href="<%=client %>" style="background:url(../images/linkImg.png) no-repeat 0 3px;padding-left:18px; font-size:14px; color:#666">优智点读笔客户端</a></div>
             <ul class="alzs clearfix ofHidden">
             <%int i = 0; %>
             <%foreach (var product in downloadList) %>
@@ -57,9 +58,9 @@
             	<li><div style="width:115px;overflow: hidden; text-overflow:ellipsis; white-space: nowrap;"><a href="<%=product.video %>"><%=product.title %></a></div></li>
             <%i++; %>
             <%} %>
-            <%if (i < 12) %>
+            <%if (i < 11) %>
             <%{ %>
-                <%for (int j = 0; j < 12 - i; j++) %>
+                <%for (int j = 0; j < 10 - i; j++) %>
                 <%{ %>
                     <li><a>&nbsp;</a></li>
                 <%} %>

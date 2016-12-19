@@ -160,3 +160,4 @@ $RECYCLE.BIN/
 
 # VisualStudioCode
 .vscodeYouZhiWenJiao.Web/YouZhiWenJiao.Web/obj/Debug/YouZhiWenJiao.Web.csproj.FileListAbsolute.txt
+*.dab
