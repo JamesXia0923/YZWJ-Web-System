@@ -63,7 +63,7 @@
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<%--	<asp:Button id="btnPreview" OnClick="btnPrewiew_Click" runat="server" text="预 览" class="coolbg"></asp:Button>
 						<%--<a href="<%=href_value%> " target="_blank" class="coolbg">预览</a>--%>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--%>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<asp:Button id="btnBack" OnClick="btnBack_Click" runat="server" text="返回列表" class="coolbg"></asp:Button>
 					</td>
 				</tr>
