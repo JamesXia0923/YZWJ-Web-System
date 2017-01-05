@@ -40,7 +40,7 @@
 					</tr>
 					<tr align="center">
 						<td>学习材料</td>
-						<td><asp:Image ID="image1" width="410" height="140" runat="server" AlternateText="Image text" ImageAlign="left" ImageUrl="../productimages/product2.jpg"  /></td>
+						<td><asp:Image ID="image1" width="200" height="130" runat="server" AlternateText="Image text" ImageAlign="left" ImageUrl="../productimages/product2.jpg"  /></td>
 						<td><input id="InputFile2" style="width: 300px" type="file" runat="server" /><asp:Label ID="Lb_Info2" runat="server" ForeColor="Red"></asp:Label></td>
 						<td><input type="button" value="替换" class="coolbg" runat="server" ID="BtnRep2" name="BtnDel" onserverclick="SubRepClick2" /></td>
 					</tr>
